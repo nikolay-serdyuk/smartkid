@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">SmartKid</string>
+    <string name="activity_main_preschool">Дошкольные задания</string>
+    <string name="activity_main_1">Первый класс</string>
+    <string name="activity_main_2">Второй класс</string>
+    <string name="activity_main_3">Третий класс</string>
+    <string name="activity_main_4">Четвертый класс</string>
+    <string-array name="activity_main_grades">
+        <item>@string/activity_main_preschool</item>
+        <item>@string/activity_main_1</item>
+        <item>@string/activity_main_2</item>
+        <item>@string/activity_main_3</item>
+        <item>@string/activity_main_4</item>
+    </string-array>
+</resources>
