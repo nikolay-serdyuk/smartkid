@@ -11,4 +11,11 @@
         <item name="android:textViewStyle">@android:style/TextAppearance.Large</item>
         <item name="android:textAppearance">@android:style/TextAppearance.Large</item>
     </style>
+
+    <style name="AppThemeLight" parent="Theme.AppCompat.DayNight.DarkActionBar">
+    </style>
+    <style name="AppThemeLightLarge" parent="AppThemeLight">
+        <item name="android:textViewStyle">@android:style/TextAppearance.Large</item>
+        <item name="android:textAppearance">@android:style/TextAppearance.Large</item>
+    </style>
 </resources>
