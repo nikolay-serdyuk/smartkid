@@ -13,13 +13,13 @@ public class QAChatActivity extends AbstractChatActivity {
         bot = new QAChatBot() {
             @Override
             protected void send(String msg) {
-                QAChatActivity.this.recieve(msg);
+                QAChatActivity.this.receive(msg);
             }
         };
-        bot.start();
+        new Thread(bot).start();
     }
 
     protected void send(String msg) {
-        bot.recieve(msg);
+        bot.receive(msg);
     }
 }

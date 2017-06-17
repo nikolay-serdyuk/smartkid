@@ -69,7 +69,7 @@ public abstract class AbstractChatActivity extends AppCompatActivity {
                         e.printStackTrace();
                     }
                     s = "bye";
-                    Log.d("BOT", s);
+                    Log.d("CHAT", s);
                     send(s);
                     //
                 }
@@ -79,7 +79,7 @@ public abstract class AbstractChatActivity extends AppCompatActivity {
 
     protected abstract void send(String msg);
 
-    protected void recieve(String msg) {
+    protected void receive(String msg) {
         Message m = mHandler.obtainMessage();
         m.obj = msg;
         m.sendToTarget();
