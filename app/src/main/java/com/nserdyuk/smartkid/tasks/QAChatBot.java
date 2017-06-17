@@ -15,7 +15,9 @@ public abstract class QAChatBot extends Thread {
         incoming = new SynchronousQueue<>();
         //
         send("HIIII");
-        //
+        // 1. Попробовать Looper.loop() вместо SynchronousQueue https://developer.android.com/reference/android/os/Looper.html
+        // 2. Вместо abstract сделать класс EventListener { void notify(String msg) }
+        // 3. сделать от Runable а не от Thread
     }
 
     public void recieve(String msg) {
