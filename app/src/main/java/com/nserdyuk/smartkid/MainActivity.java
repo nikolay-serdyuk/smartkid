@@ -14,7 +14,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.nserdyuk.smartkid.grades.GragePreschoolActivity;
-import com.nserdyuk.smartkid.tasks.QAChatActivity;
+import com.nserdyuk.smartkid.tasks.ChatActivity;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
                                     int position, long id) {
                 String name = arrayOfGrades[(int) id];
                 Intent intent = nameToIntentMap.get(name);
-                intent = new Intent(MainActivity.this, QAChatActivity.class);
+                intent = new Intent(MainActivity.this, ChatActivity.class);
                 if(intent != null) {
                     startActivity(intent);
                 }

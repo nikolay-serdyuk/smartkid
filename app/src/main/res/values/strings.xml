@@ -12,4 +12,5 @@
         <item>@string/activity_main_3</item>
         <item>@string/activity_main_4</item>
     </string-array>
+    <string name="greeting">"Привет!"</string>
 </resources>

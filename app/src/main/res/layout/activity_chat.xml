@@ -1,16 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/tv_activity_main"
+        android:id="@+id/tv_activity_chat_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_vertical|center_horizontal"
         android:text="ЗАДАЧА"
+        android:textColor="@android:color/white"
         android:textSize="35dp">
     </TextView>
 
-</LinearLayout>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_activity_chat_title"
+        android:layout_above="@+id/rl_activity_chat_input_window"
+        android:id="@+id/iv_activity_chat"
+        android:src="@android:color/black" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_activity_chat_title"
+        android:layout_above="@+id/rl_activity_chat_input_window"
+        android:id="@+id/sv_activity_chat"
+        android:fillViewport="true">
+        <LinearLayout
+            android:id="@+id/ll_sv_activity_chat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        </LinearLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/rl_activity_chat_input_window"
+        android:layout_alignParentBottom="true"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true">
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/et_activity_chat"
+            android:textCursorDrawable="@layout/activity_chat_cursor"
+            android:textSize="30dp"
+            android:background="@android:color/darker_gray"
+            android:gravity="center|center_vertical|fill_vertical"
+            android:layout_marginLeft="30dip"
+            android:layout_marginRight="30dip"
+            android:layout_alignParentStart="false"
+            android:layout_centerInParent="true" />
+    </RelativeLayout>
+</RelativeLayout>

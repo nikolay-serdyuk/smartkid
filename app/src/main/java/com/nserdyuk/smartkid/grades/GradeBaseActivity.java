@@ -5,7 +5,7 @@ import android.os.Bundle;
 
 import com.nserdyuk.smartkid.R;
 
-public abstract class GradeBaseActivity extends AppCompatActivity {
+public class GradeBaseActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

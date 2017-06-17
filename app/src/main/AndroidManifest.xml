@@ -23,8 +23,8 @@
             android:theme="@style/AppThemeLightLarge"
             />
         <activity
-            android:name=".tasks.QAChatActivity"
-            android:theme="@style/NoActionBar"
+            android:name=".tasks.ChatActivity"
+            android:theme="@style/NoActionBarBlack"
             />
     </application>
 

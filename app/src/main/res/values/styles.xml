@@ -14,6 +14,7 @@
 
     <style name="AppThemeLight" parent="Theme.AppCompat.DayNight.DarkActionBar">
     </style>
+
     <style name="AppThemeLightLarge" parent="AppThemeLight">
         <item name="android:textViewStyle">@android:style/TextAppearance.Large</item>
         <item name="android:textAppearance">@android:style/TextAppearance.Large</item>
@@ -22,5 +23,11 @@
     <style name="NoActionBar" parent="Theme.AppCompat.DayNight.NoActionBar">
         <item name="android:textViewStyle">@android:style/TextAppearance.Large</item>
         <item name="android:textAppearance">@android:style/TextAppearance.Large</item>
+    </style>
+
+    <style name="NoActionBarBlack" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:textViewStyle">@android:style/TextAppearance.Large</item>
+        <item name="android:textAppearance">@android:style/TextAppearance.Large</item>
+        <item name="android:windowBackground">@android:color/black</item>
     </style>
 </resources>
