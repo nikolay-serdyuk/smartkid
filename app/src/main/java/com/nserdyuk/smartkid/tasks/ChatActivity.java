@@ -100,10 +100,8 @@ public class ChatActivity extends AppCompatActivity implements IChat {
             picMask = Constants.DEFAULT_PICS_MASK;
         }
         InputStream is;
-        List<String> images;
         try {
-            images = new ImageLoader().loadImagesAndShuffle(getAssets(), picMask);
-            is = getAssets().open(images.get(0));
+            is = new ImageLoader().getRandomImage(getAssets(), picMask);
         } catch (IOException e) {
             Log.e(TAG, ERROR_LOAD_IMAGES, e);
             Toast.makeText(this, ERROR_LOAD_IMAGES, Toast.LENGTH_SHORT).show();
