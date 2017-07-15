@@ -19,22 +19,7 @@ public class RandomReader {
         this.examples = examples;
     }
 
-    private void countLines() throws IOException {
-        new AbstractReader() {
-            public void doProcess(BufferedReader bufferedReader) throws IOException {
-                String str;
-                lines = 0;
-                while ((str = bufferedReader.readLine()) != null) {
-                    if (str.trim().isEmpty()) {
-                        throw new IOException("empty lines not allowed");
-                    }
-                    lines++;
-                }
-            }
-        }.process(fileName);
-    }
-
-    public String[] loadLines() throws IOException {
+    public String[] loadRandomLines() throws IOException {
         if (lines == 0) {
             countLines();
         }
@@ -48,6 +33,7 @@ public class RandomReader {
                 while (filePosition++ < randomPosition) {
                     bufferedReader.readLine();
                 }
+
                 int cnt = 0;
                 while (cnt < examples) {
                     ret[cnt++] = bufferedReader.readLine();
@@ -56,6 +42,21 @@ public class RandomReader {
         }.process(fileName);
 
         return ret;
+    }
+
+    private void countLines() throws IOException {
+        new AbstractReader() {
+            public void doProcess(BufferedReader bufferedReader) throws IOException {
+                String str;
+                lines = 0;
+                while ((str = bufferedReader.readLine()) != null) {
+                    if (str.trim().isEmpty()) {
+                        throw new IOException("empty lines not allowed");
+                    }
+                    lines++;
+                }
+            }
+        }.process(fileName);
     }
 
     private abstract class AbstractReader {

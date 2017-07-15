@@ -26,12 +26,14 @@ import com.nserdyuk.smartkid.io.ImageLoader;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.List;
 
 /*
     Common guide lines
     http://blog.danlew.net/2014/11/19/styles-on-android/
     https://jeroenmols.com/blog/2016/03/07/resourcenaming/
+    1. unit tests
+    2. check adb logcat Runtime Exceptions
+    3. PDB check
 */
 
 public class ChatActivity extends AppCompatActivity implements IChat {
@@ -62,6 +64,14 @@ public class ChatActivity extends AppCompatActivity implements IChat {
     }
 
     @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if (chatBot != null) {
+            chatBot.quit();
+        }
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
@@ -70,6 +80,7 @@ public class ChatActivity extends AppCompatActivity implements IChat {
         scrollView = (ScrollView) findViewById(R.id.sv_activity_chat);
         svLinearLayout = (LinearLayout) findViewById(R.id.ll_sv_activity_chat);
 
+        // TODO: remove Looper.getMainLooper()
         handler = new Handler(Looper.getMainLooper()) {
             @Override
             public void handleMessage(Message msg) {
@@ -79,19 +90,25 @@ public class ChatActivity extends AppCompatActivity implements IChat {
             }
         };
 
-        chatBot = new AbstractChatBot() {
-            @Override
-            public void send(String msg) {
-                ChatActivity.this.receive(msg);
-            }
-        };
-
         editText = (EditText) findViewById(R.id.et_activity_chat);
         editText.setOnKeyListener(new OnKeyListener());
 
         setBackgroundImage();
 
-        new Thread(chatBot).start();
+        chatBot = new AbstractChatBot(getAssets(), "long_div.txt", 3) {
+            @Override
+            public void send(String msg) {
+                ChatActivity.this.receive(msg);
+            }
+        };
+        chatBot.setOnErrorListener(new AbstractChatBot.OnErrorListener() {
+
+            @Override
+            public void onError(String message) {
+                ChatActivity.this.runOnUiThread(new ErrorReporter(message));
+            }
+        });
+        chatBot.start();
     }
 
     private void setBackgroundImage() {
@@ -104,12 +121,16 @@ public class ChatActivity extends AppCompatActivity implements IChat {
             is = new ImageLoader().getRandomImage(getAssets(), picMask);
         } catch (IOException e) {
             Log.e(TAG, ERROR_LOAD_IMAGES, e);
-            Toast.makeText(this, ERROR_LOAD_IMAGES, Toast.LENGTH_SHORT).show();
+            showError(ERROR_LOAD_IMAGES);
             finish();
             return;
         }
         ImageView myImage = (ImageView) findViewById(R.id.iv_activity_chat);
         myImage.setImageDrawable(Drawable.createFromStream(is, null));
+    }
+
+    private void showError(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 
     private void drawBubble(Bubble bubble) {
@@ -136,7 +157,7 @@ public class ChatActivity extends AppCompatActivity implements IChat {
         });
     }
 
-    private static class Bubble {
+    private class Bubble {
         private final int image;
         private final int textColor;
         private final String message;
@@ -184,5 +205,18 @@ public class ChatActivity extends AppCompatActivity implements IChat {
             return false;
         }
 
+    }
+
+    private class ErrorReporter implements Runnable {
+        private String m;
+
+        public ErrorReporter(String m) {
+            this.m = m;
+        }
+
+        @Override
+        public void run() {
+            showError(m);
+        }
     }
 }

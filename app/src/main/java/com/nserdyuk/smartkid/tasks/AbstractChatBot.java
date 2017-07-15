@@ -1,24 +1,28 @@
 package com.nserdyuk.smartkid.tasks;
 
+import android.content.res.AssetManager;
 import android.os.Handler;
-import android.os.Looper;
+import android.os.HandlerThread;
 import android.os.Message;
+import android.util.Log;
 
-public abstract class AbstractChatBot implements Runnable, IChat {
+import com.nserdyuk.smartkid.io.RandomReader;
+
+import java.io.IOException;
+
+abstract class AbstractChatBot extends HandlerThread implements IChat {
+    private static final String TAG = "AbstractChatBot";
+    private static final String ERROR = "An error occurred while processing user input";
+
     private Handler mHandler;
     private Qa[] qaArray;
     private int questions = 0;
+    private RandomReader randomReader;
+    private OnErrorListener onErrorListener;
 
-    public AbstractChatBot() {
-        mHandler = new Handler(Looper.getMainLooper()) {
-            @Override
-            public void handleMessage(Message msg) {
-                if (msg.obj instanceof String) {
-                    String s = (String)msg.obj;
-                    process(s);
-                }
-            }
-        };
+    AbstractChatBot(AssetManager am, String fileName, int examples) {
+        super(TAG);
+        this.randomReader = new RandomReader(am, fileName, examples);
     }
 
     @Override
@@ -28,50 +32,73 @@ public abstract class AbstractChatBot implements Runnable, IChat {
         m.sendToTarget();
     }
 
-    @Override
-    public void run() {
-        Looper.prepare();
-        receive("");
-        Looper.loop();
+    public abstract void send(String msg);
+
+    void setOnErrorListener(OnErrorListener listener) {
+        onErrorListener = listener;
     }
 
-    public void process(String answer) {
-        if (answer.isEmpty()) {
-            question(true);
-        } else {
-            question(check(answer));
-        }
-        send("BYTTTTT");
+    @Override
+    protected void onLooperPrepared() {
+        mHandler = new Handler(getLooper()) {
+            @Override
+            public void handleMessage(Message msg) {
+                if (msg.obj instanceof String) {
+                    String output;
+                    try {
+                        output = process((String)msg.obj);
+                    } catch (IOException e) {
+                        Log.e(TAG, ERROR, e);
+                        if (onErrorListener != null) {
+                            onErrorListener.onError(ERROR);
+                        }
+                        return;
+                    }
+                    send(output);
+                }
+            }
+        };
+    }
+
+    private String process(String input) throws IOException {
+        boolean loadNextQuestions = input.isEmpty() || (check(input) ? true : false);
+        return question(loadNextQuestions);
     }
 
     private boolean check(String answer) {
         return true;
     }
 
-    private void question(boolean loadNextQuestions) {
+    private String question(boolean loadNextQuestions) throws IOException {
         if (loadNextQuestions) {
-
+            String[] qaArray = randomReader.loadRandomLines();
         }
+        return "";
     }
 
-    private static class Qa {
-        private String rightAnswer;
-        private String userAnswer;
+    interface OnErrorListener {
+        void onError(String message);
+    }
 
-        public String getRightAnswer() {
-            return rightAnswer;
+    private class Qa {
+        private final String question;
+        private final String[] rightAnswers;
+        private final String[] userAnswers;
+
+        public Qa(String question, String[] rightAnswers) {
+            this.question = question;
+            this.rightAnswers = rightAnswers;
+            this.userAnswers = new String[rightAnswers.length];
         }
 
-        public String getUserAnswer() {
-            return userAnswer;
+        public void setUserAnswer(int num, String answer) {
+            if (num <= userAnswers.length) {
+                userAnswers[num] = answer;
+            }
         }
 
-        public void setRightAnswer(String rightAnswer) {
-            this.rightAnswer = rightAnswer;
-        }
-
-        public void setUserAnswer(String userAnswer) {
-            this.userAnswer = userAnswer;
+        public boolean checkAnswers() {
+            return false;
         }
     }
 }
