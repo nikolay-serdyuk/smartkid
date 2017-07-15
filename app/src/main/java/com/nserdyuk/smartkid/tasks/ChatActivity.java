@@ -34,7 +34,7 @@ import java.util.List;
     https://jeroenmols.com/blog/2016/03/07/resourcenaming/
 */
 
-public class ChatActivity extends AppCompatActivity {
+public class ChatActivity extends AppCompatActivity implements IChat {
     private static final String TAG = "ChatActivity";
     private static final String ERROR_LOAD_IMAGES = "An error occurred while loading images";
     private static final int LEFT_BUBBLE_TEXT_COLOR = Color.parseColor("#39555B");
@@ -43,12 +43,23 @@ public class ChatActivity extends AppCompatActivity {
     private static final int ANIMATION_DURATION = 1000;
 
     private Handler handler;
-    private IChatListener listener;
-    private ChatBot chatBot;
+    private AbstractChatBot chatBot;
     private EditText editText;
     private LayoutInflater layoutInflater;
     private ScrollView scrollView;
     private LinearLayout svLinearLayout;
+
+    @Override
+    public void send(String msg) {
+        chatBot.receive(msg);
+    }
+
+    @Override
+    public void receive(String msg) {
+        Message m = handler.obtainMessage();
+        m.obj = msg;
+        m.sendToTarget();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,17 +79,10 @@ public class ChatActivity extends AppCompatActivity {
             }
         };
 
-        chatBot = new ChatBot(new IChatListener() {
+        chatBot = new AbstractChatBot() {
             @Override
-            public void handleEvent(String msg) {
+            public void send(String msg) {
                 ChatActivity.this.receive(msg);
-            }
-        });
-
-        listener = new IChatListener() {
-            @Override
-            public void handleEvent(String msg) {
-                chatBot.receive(msg);
             }
         };
 
@@ -108,16 +112,6 @@ public class ChatActivity extends AppCompatActivity {
         }
         ImageView myImage = (ImageView) findViewById(R.id.iv_activity_chat);
         myImage.setImageDrawable(Drawable.createFromStream(is, null));
-    }
-
-    private void send(String msg) {
-        listener.handleEvent(msg);
-    }
-
-    private void receive(String msg) {
-        Message m = handler.obtainMessage();
-        m.obj = msg;
-        m.sendToTarget();
     }
 
     private void drawBubble(Bubble bubble) {
@@ -162,13 +156,13 @@ public class ChatActivity extends AppCompatActivity {
         }
     }
 
-    private static class LeftBubble extends Bubble {
+    private class LeftBubble extends Bubble {
         LeftBubble(String message) {
             super(R.drawable.b1_left, LEFT_BUBBLE_TEXT_COLOR, Gravity.START, DEFAULT_MARGIN, 0, message);
         }
     }
 
-    private static class RightBubble extends Bubble {
+    private class RightBubble extends Bubble {
         RightBubble(String message) {
             super(R.drawable.b1_right, RIGHT_BUBBLE_TEXT_COLOR, Gravity.END, 0, DEFAULT_MARGIN, message);
         }

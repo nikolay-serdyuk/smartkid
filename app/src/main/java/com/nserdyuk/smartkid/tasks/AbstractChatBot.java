@@ -4,14 +4,12 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 
-public class ChatBot implements Runnable {
+public abstract class AbstractChatBot implements Runnable, IChat {
     private Handler mHandler;
     private Qa[] qaArray;
     private int questions = 0;
-    private IChatListener listener;
 
-    public ChatBot(IChatListener listener) {
-        this.listener = listener;
+    public AbstractChatBot() {
         mHandler = new Handler(Looper.getMainLooper()) {
             @Override
             public void handleMessage(Message msg) {
@@ -23,12 +21,7 @@ public class ChatBot implements Runnable {
         };
     }
 
-    private void send(String msg) {
-        if (listener != null) {
-            listener.handleEvent(msg);
-        }
-    }
-
+    @Override
     public void receive(String msg) {
         Message m = mHandler.obtainMessage();
         m.obj = msg;
