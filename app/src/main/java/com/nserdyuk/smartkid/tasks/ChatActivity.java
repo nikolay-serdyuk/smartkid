@@ -22,7 +22,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.nserdyuk.smartkid.R;
-import com.nserdyuk.smartkid.io.ImageLoader;
+import com.nserdyuk.smartkid.io.ImageReader;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -31,6 +31,9 @@ import java.io.InputStream;
     Common guide lines
     http://blog.danlew.net/2014/11/19/styles-on-android/
     https://jeroenmols.com/blog/2016/03/07/resourcenaming/
+
+    0. вставить @NonNull
+    0. сообщения об ошибках перевести на русский
     1. unit tests
     2. check adb logcat Runtime Exceptions
     3. PDB check
@@ -95,7 +98,7 @@ public class ChatActivity extends AppCompatActivity implements IChat {
 
         setBackgroundImage();
 
-        chatBot = new AbstractChatBot(getAssets(), "long_div.txt", 3) {
+        chatBot = new AbstractChatBot(this, getAssets(), "long_div.txt", 3) {
             @Override
             public void send(String msg) {
                 ChatActivity.this.receive(msg);
@@ -118,11 +121,10 @@ public class ChatActivity extends AppCompatActivity implements IChat {
         }
         InputStream is;
         try {
-            is = new ImageLoader().getRandomImage(getAssets(), picMask);
+            is = new ImageReader().readRandomImage(getAssets(), picMask);
         } catch (IOException e) {
             Log.e(TAG, ERROR_LOAD_IMAGES, e);
             showError(ERROR_LOAD_IMAGES);
-            finish();
             return;
         }
         ImageView myImage = (ImageView) findViewById(R.id.iv_activity_chat);
@@ -131,6 +133,7 @@ public class ChatActivity extends AppCompatActivity implements IChat {
 
     private void showError(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+        finish();
     }
 
     private void drawBubble(Bubble bubble) {

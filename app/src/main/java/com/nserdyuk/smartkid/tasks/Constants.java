@@ -1,6 +1,6 @@
 package com.nserdyuk.smartkid.tasks;
 
-public class Constants {
+public final class Constants {
     public static final String ATTRIBUTE_COMPLEXITY = "complexity";
     public static final String ATTRIBUTE_EXAMPLES = "examples";
     public static final String ATTRIBUTE_FILE = "file";
@@ -11,4 +11,7 @@ public class Constants {
     public static final String ATTRIBUTE_PICS_MASK = "pics_mask";
 
     public static final String DEFAULT_PICS_MASK = ".gif";
+    public static final String STRING_DELIMITER = "|";
+
+    private Constants() {}
 }

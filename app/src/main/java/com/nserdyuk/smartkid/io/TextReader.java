@@ -7,19 +7,19 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Random;
 
-public class RandomReader {
+public class TextReader {
     private int lines;
     private String fileName;
     private int examples;
     private AssetManager am;
 
-    public RandomReader(AssetManager am, String fileName, int examples) {
+    public TextReader(AssetManager am, String fileName, int examples) {
         this.am = am;
         this.fileName = fileName;
         this.examples = examples;
     }
 
-    public String[] loadRandomLines() throws IOException {
+    public String[] readRandomLines() throws IOException {
         if (lines == 0) {
             countLines();
         }

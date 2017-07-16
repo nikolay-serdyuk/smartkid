@@ -1,28 +1,40 @@
 package com.nserdyuk.smartkid.tasks;
 
+import android.content.Context;
 import android.content.res.AssetManager;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Message;
+import android.support.annotation.NonNull;
 import android.util.Log;
 
-import com.nserdyuk.smartkid.io.RandomReader;
+import com.nserdyuk.smartkid.R;
+import com.nserdyuk.smartkid.io.TextReader;
 
 import java.io.IOException;
+import java.util.Arrays;
 
 abstract class AbstractChatBot extends HandlerThread implements IChat {
     private static final String TAG = "AbstractChatBot";
-    private static final String ERROR = "An error occurred while processing user input";
+    private static final String ERROR = "An error occurred in chat bot";
+    private static final String CONTENT_ERROR = "Invalid content";
 
+    private final String greetingMsg;
+
+    private int currentTestNum;
+    private int currentAnswer;
     private Handler mHandler;
-    private Qa[] qaArray;
-    private int questions = 0;
-    private RandomReader randomReader;
+    private Test[] tests;
+    private int numberOfTests = 0;
+    private TextReader textReader;
     private OnErrorListener onErrorListener;
 
-    AbstractChatBot(AssetManager am, String fileName, int examples) {
+    AbstractChatBot(Context context, AssetManager am, String fileName, int examples) {
         super(TAG);
-        this.randomReader = new RandomReader(am, fileName, examples);
+        textReader = new TextReader(am, fileName, examples);
+        greetingMsg = context.getResources().getString(R.string.greeting);
+        currentTestNum = 0;
+        currentAnswer = 0;
     }
 
     @Override
@@ -44,61 +56,114 @@ abstract class AbstractChatBot extends HandlerThread implements IChat {
             @Override
             public void handleMessage(Message msg) {
                 if (msg.obj instanceof String) {
-                    String output;
-                    try {
-                        output = process((String)msg.obj);
-                    } catch (IOException e) {
-                        Log.e(TAG, ERROR, e);
-                        if (onErrorListener != null) {
-                            onErrorListener.onError(ERROR);
-                        }
-                        return;
-                    }
-                    send(output);
+                    process((String) msg.obj);
                 }
             }
         };
+        startBot();
     }
 
-    private String process(String input) throws IOException {
-        boolean loadNextQuestions = input.isEmpty() || (check(input) ? true : false);
-        return question(loadNextQuestions);
+    private void startBot() {
+        process("");
     }
 
-    private boolean check(String answer) {
-        return true;
-    }
+    private void process(String input) {
+        try {
+            String msg;
+            if (input.isEmpty()) {
+                send(greetingMsg);
+                loadNextTests();
+                msg = tests[currentTestNum].getQuestion();
+            } else {
+                tests[currentTestNum].setUserAnswer(currentAnswer++, input);
+                if (currentAnswer < tests[currentTestNum].getNumberOfAnswers()) {
+                    msg = "Eще";
+                } else {
+                    boolean result = tests[currentTestNum].checkAllAnswers();
+                    msg = "";
 
-    private String question(boolean loadNextQuestions) throws IOException {
-        if (loadNextQuestions) {
-            String[] qaArray = randomReader.loadRandomLines();
+                }
+            }
+            send(msg);
+        } catch (ChatBotException e) {
+            Log.e(TAG, ERROR, e);
+            if (onErrorListener != null) {
+                onErrorListener.onError(e.getMessage());
+            }
         }
-        return "";
+    }
+
+
+    private void loadNextTests() throws ChatBotException {
+        String[] lines;
+        try {
+            lines = textReader.readRandomLines();
+        } catch (IOException e) {
+            throw new ChatBotException(e.getMessage(), e);
+        }
+
+        tests = new Test[lines.length];
+        for (int i = 0; i < lines.length; i++) {
+            String line = lines[i];
+            String[] parts = line.split(Constants.STRING_DELIMITER);
+            if (parts.length < 2) {
+                throw new ChatBotException(CONTENT_ERROR);
+            }
+            tests[i] = new Test(parts[0], Arrays.copyOfRange(parts, 1, parts.length - 1));
+        }
+        currentTestNum = 0;
+    }
+
+    @NonNull
+    private String reply(boolean loadNextQuestions) throws ChatBotException {
+        if (loadNextQuestions) {
+        }
+        return tests[currentTestNum].getQuestion();
     }
 
     interface OnErrorListener {
         void onError(String message);
     }
 
-    private class Qa {
+    private class Test {
         private final String question;
         private final String[] rightAnswers;
         private final String[] userAnswers;
 
-        public Qa(String question, String[] rightAnswers) {
+        Test(String question, String[] rightAnswers) {
             this.question = question;
             this.rightAnswers = rightAnswers;
             this.userAnswers = new String[rightAnswers.length];
         }
 
-        public void setUserAnswer(int num, String answer) {
-            if (num <= userAnswers.length) {
+        String getQuestion() {
+            return question;
+        }
+
+        void setUserAnswer(int num, String answer) {
+            if (num < userAnswers.length) {
                 userAnswers[num] = answer;
             }
         }
 
-        public boolean checkAnswers() {
-            return false;
+        int getNumberOfAnswers() {
+            return rightAnswers.length;
         }
+
+        boolean checkAllAnswers() {
+            return Arrays.equals(rightAnswers, userAnswers);
+        }
+    }
+
+    private class ChatBotException extends Exception {
+
+        ChatBotException(String message) {
+            super(message);
+        }
+
+        ChatBotException(String message, Throwable cause) {
+            super(message, cause);
+        }
+
     }
 }

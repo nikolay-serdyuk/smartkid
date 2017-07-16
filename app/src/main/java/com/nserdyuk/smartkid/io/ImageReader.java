@@ -9,8 +9,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
 
-public class ImageLoader {
-    public InputStream getRandomImage(AssetManager am, String mask) throws IOException {
+public class ImageReader {
+    public InputStream readRandomImage(AssetManager am, String mask) throws IOException {
         List<String> list = getAvailableImages(am, mask);
         Collections.shuffle(list, new Random(System.nanoTime()));
         return am.open(list.get(0));
