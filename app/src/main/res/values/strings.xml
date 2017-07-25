@@ -13,4 +13,7 @@
         <item>@string/activity_main_4</item>
     </string-array>
     <string name="greeting">"Привет!"</string>
+    <string name="rightAnswer">"Правильно!"</string>
+    <string name="wrongAnswer">"Ошибка..."</string>
+    <string name="nextAnswer">"Еще"</string>
 </resources>

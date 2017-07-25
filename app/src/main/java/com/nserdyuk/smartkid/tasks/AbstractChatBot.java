@@ -5,7 +5,6 @@ import android.content.res.AssetManager;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Message;
-import android.support.annotation.NonNull;
 import android.util.Log;
 
 import com.nserdyuk.smartkid.R;
@@ -20,21 +19,26 @@ abstract class AbstractChatBot extends HandlerThread implements IChat {
     private static final String CONTENT_ERROR = "Invalid content";
 
     private final String greetingMsg;
+    private final String rightAnswerMsg;
+    private final String wrongAnswerMsg;
+    private final String nextAnswerMsg;
 
-    private int currentTestNum;
+    private int examplesNum;
+    private int currentExample;
     private int currentAnswer;
     private Handler mHandler;
-    private Test[] tests;
-    private int numberOfTests = 0;
+    private Test[] examples;
     private TextReader textReader;
     private OnErrorListener onErrorListener;
 
-    AbstractChatBot(Context context, AssetManager am, String fileName, int examples) {
+    AbstractChatBot(Context context, AssetManager am, String fileName, int examplesNum) {
         super(TAG);
-        textReader = new TextReader(am, fileName, examples);
+        textReader = new TextReader(am, fileName, examplesNum);
+        this.examplesNum = examplesNum;
         greetingMsg = context.getResources().getString(R.string.greeting);
-        currentTestNum = 0;
-        currentAnswer = 0;
+        rightAnswerMsg = context.getResources().getString(R.string.rightAnswer);
+        wrongAnswerMsg = context.getResources().getString(R.string.wrongAnswer);
+        nextAnswerMsg = context.getResources().getString(R.string.nextAnswer);
     }
 
     @Override
@@ -67,24 +71,43 @@ abstract class AbstractChatBot extends HandlerThread implements IChat {
         process("");
     }
 
+    private boolean checkAllExamples() {
+        for (Test example : examples) {
+            if (!example.checkAllAnswers()) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     private void process(String input) {
         try {
-            String msg;
             if (input.isEmpty()) {
                 send(greetingMsg);
-                loadNextTests();
-                msg = tests[currentTestNum].getQuestion();
+                loadExamples();
+                currentExample = 0;
+                String msg = examples[currentExample].getQuestion();
+                send(msg);
             } else {
-                tests[currentTestNum].setUserAnswer(currentAnswer++, input);
-                if (currentAnswer < tests[currentTestNum].getNumberOfAnswers()) {
-                    msg = "Eще";
+                examples[currentExample].setUserAnswer(currentAnswer++, input);
+                if (currentAnswer < examples[currentExample].getNumberOfAnswers()) {
+                    send(nextAnswerMsg);
                 } else {
-                    boolean result = tests[currentTestNum].checkAllAnswers();
-                    msg = "";
-
+                    currentAnswer = 0;
+                    currentExample = (currentExample + 1) % examplesNum;
+                    if (currentExample == 0) {
+                        boolean resultOk = checkAllExamples();
+                         if (resultOk) {
+                             send(rightAnswerMsg);
+                             loadExamples();
+                         } else {
+                             send(wrongAnswerMsg);
+                         }
+                    }
+                    String msg = examples[currentExample].getQuestion();
+                    send(msg);
                 }
             }
-            send(msg);
         } catch (ChatBotException e) {
             Log.e(TAG, ERROR, e);
             if (onErrorListener != null) {
@@ -94,7 +117,7 @@ abstract class AbstractChatBot extends HandlerThread implements IChat {
     }
 
 
-    private void loadNextTests() throws ChatBotException {
+    private void loadExamples() throws ChatBotException {
         String[] lines;
         try {
             lines = textReader.readRandomLines();
@@ -102,23 +125,15 @@ abstract class AbstractChatBot extends HandlerThread implements IChat {
             throw new ChatBotException(e.getMessage(), e);
         }
 
-        tests = new Test[lines.length];
+        examples = new Test[lines.length];
         for (int i = 0; i < lines.length; i++) {
             String line = lines[i];
             String[] parts = line.split(Constants.STRING_DELIMITER);
             if (parts.length < 2) {
                 throw new ChatBotException(CONTENT_ERROR);
             }
-            tests[i] = new Test(parts[0], Arrays.copyOfRange(parts, 1, parts.length - 1));
+            examples[i] = new Test(parts[0], Arrays.copyOfRange(parts, 1, parts.length));
         }
-        currentTestNum = 0;
-    }
-
-    @NonNull
-    private String reply(boolean loadNextQuestions) throws ChatBotException {
-        if (loadNextQuestions) {
-        }
-        return tests[currentTestNum].getQuestion();
     }
 
     interface OnErrorListener {

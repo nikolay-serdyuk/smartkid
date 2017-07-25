@@ -33,10 +33,11 @@ import java.io.InputStream;
     https://jeroenmols.com/blog/2016/03/07/resourcenaming/
 
     0. вставить @NonNull
-    0. сообщения об ошибках перевести на русский
-    1. unit tests
-    2. check adb logcat Runtime Exceptions
-    3. PDB check
+    1. сообщения об ошибках перевести на русский
+    2. unit tests
+    3. check adb logcat Runtime Exceptions
+    4. Проверить как выглядет на смартфоне
+    5. PDB check
 */
 
 public class ChatActivity extends AppCompatActivity implements IChat {
@@ -83,7 +84,6 @@ public class ChatActivity extends AppCompatActivity implements IChat {
         scrollView = (ScrollView) findViewById(R.id.sv_activity_chat);
         svLinearLayout = (LinearLayout) findViewById(R.id.ll_sv_activity_chat);
 
-        // TODO: remove Looper.getMainLooper()
         handler = new Handler(Looper.getMainLooper()) {
             @Override
             public void handleMessage(Message msg) {
@@ -96,9 +96,15 @@ public class ChatActivity extends AppCompatActivity implements IChat {
         editText = (EditText) findViewById(R.id.et_activity_chat);
         editText.setOnKeyListener(new OnKeyListener());
 
-        setBackgroundImage();
+        try {
+            setBackgroundImage();
+        } catch (IOException e) {
+            Log.e(TAG, ERROR_LOAD_IMAGES, e);
+            showError(ERROR_LOAD_IMAGES);
+            return;
+        }
 
-        chatBot = new AbstractChatBot(this, getAssets(), "long_div.txt", 3) {
+        chatBot = new AbstractChatBot(this, getAssets(), "div_rem.txt", 1) {
             @Override
             public void send(String msg) {
                 ChatActivity.this.receive(msg);
@@ -114,19 +120,12 @@ public class ChatActivity extends AppCompatActivity implements IChat {
         chatBot.start();
     }
 
-    private void setBackgroundImage() {
+    private void setBackgroundImage() throws IOException {
         String picMask = getIntent().getStringExtra(Constants.ATTRIBUTE_PICS_MASK);
         if (picMask == null) {
             picMask = Constants.DEFAULT_PICS_MASK;
         }
-        InputStream is;
-        try {
-            is = new ImageReader().readRandomImage(getAssets(), picMask);
-        } catch (IOException e) {
-            Log.e(TAG, ERROR_LOAD_IMAGES, e);
-            showError(ERROR_LOAD_IMAGES);
-            return;
-        }
+        InputStream is = new ImageReader().readRandomImage(getAssets(), picMask);
         ImageView myImage = (ImageView) findViewById(R.id.iv_activity_chat);
         myImage.setImageDrawable(Drawable.createFromStream(is, null));
     }
