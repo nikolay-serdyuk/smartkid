@@ -14,6 +14,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.nserdyuk.smartkid.grades.GragePreschoolActivity;
+import com.nserdyuk.smartkid.grades.ListAdapter;
 import com.nserdyuk.smartkid.tasks.ChatActivity;
 
 import java.util.HashMap;
@@ -40,30 +41,12 @@ public class MainActivity extends AppCompatActivity {
                                     int position, long id) {
                 String name = arrayOfGrades[(int) id];
                 Intent intent = nameToIntentMap.get(name);
-                intent = new Intent(MainActivity.this, ChatActivity.class);
+                // intent = new Intent(MainActivity.this, ChatActivity.class);
                 if(intent != null) {
                     startActivity(intent);
                 }
             }
         });
-    }
-
-    private static class ListAdapter extends ArrayAdapter<String> {
-        public ListAdapter(Context context, String[] tasks) {
-            super(context, 0, tasks);
-        }
-
-        @NonNull
-        @Override
-        public View getView(int position, View convertView, @NonNull ViewGroup parent) {
-            String label = getItem(position);
-            if (convertView == null) {
-                convertView = LayoutInflater.from(getContext()).inflate(R.layout.activity_main_list_item, parent, false);
-            }
-            TextView tvLabel = (TextView) convertView.findViewById(R.id.activity_main_list_item_label);
-            tvLabel.setText(label);
-            return convertView;
-        }
     }
 
     private void setupNameToIntent() {

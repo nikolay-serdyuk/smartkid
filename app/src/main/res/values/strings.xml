@@ -1,19 +1,39 @@
 <resources>
     <string name="app_name">SmartKid</string>
+
+    <string name="greeting">"Привет!"</string>
+    <string name="rightAnswer">"Правильно!"</string>
+    <string name="wrongAnswer">"Ошибка..."</string>
+    <string name="nextAnswer">"Еще"</string>
+
     <string name="activity_main_preschool">Дошкольные задания</string>
     <string name="activity_main_1">Первый класс</string>
     <string name="activity_main_2">Второй класс</string>
     <string name="activity_main_3">Третий класс</string>
     <string name="activity_main_4">Четвертый класс</string>
+    <string name="activity_main_5">Пятый класс</string>
+
     <string-array name="activity_main_grades">
         <item>@string/activity_main_preschool</item>
         <item>@string/activity_main_1</item>
         <item>@string/activity_main_2</item>
         <item>@string/activity_main_3</item>
         <item>@string/activity_main_4</item>
+        <item>@string/activity_main_5</item>
     </string-array>
-    <string name="greeting">"Привет!"</string>
-    <string name="rightAnswer">"Правильно!"</string>
-    <string name="wrongAnswer">"Ошибка..."</string>
-    <string name="nextAnswer">"Еще"</string>
+
+    <string name="activity_simple_add10">Простое сложение до 10</string>
+    <string name="activity_simple_sub10">Простое вычитание до 10</string>
+    <string name="activity_simple_add20">Простое сложение до 20</string>
+    <string name="activity_simple_sub20">Простое вычитание до 20</string>
+    <string name="activity_guess_number">Угадай число</string>
+
+    <string-array name="activity_main_preschool_tasks">
+        <item>@string/activity_simple_add10</item>
+        <item>@string/activity_guess_number</item>
+        <item>@string/activity_simple_sub10</item>
+        <item>@string/activity_simple_add20</item>
+        <item>@string/activity_simple_sub20</item>
+    </string-array>
+
 </resources>
