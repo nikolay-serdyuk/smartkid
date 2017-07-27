@@ -81,7 +81,7 @@ public class GradeActivity extends AppCompatActivity {
 /*
         intent = new Intent(this, Images.class);
         nameToIntentMap.put(getResources().getString(R.string.all_images), intent);
-
+*/
         intent = new Intent(this, ChatActivity.class);
         intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 3);
         intent.putExtra(Constants.ATTRIBUTE_FILE, "sub_zero.txt");
@@ -112,12 +112,8 @@ public class GradeActivity extends AppCompatActivity {
         intent.putExtra(Constants.ATTRIBUTE_FILE, "long_long_div.txt");
         nameToIntentMap.put(getResources().getString(R.string.all_long_long_div), intent);
 
-        intent = new Intent(this, DivRemActivity.class);
-        intent.putExtra(Constants.ATTRIBUTE_FIRST_QUESTION,
-                getResources().getString(R.string.all_div_rem_first_question));
-        intent.putExtra(Constants.ATTRIBUTE_SECOND_QUESTION,
-                getResources().getString(R.string.all_div_rem_second_question));
-        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 3);
+        intent = new Intent(this, ChatActivity.class);
+        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 1);
         intent.putExtra(Constants.ATTRIBUTE_FILE, "div_rem.txt");
         nameToIntentMap.put(getResources().getString(R.string.all_div_rem), intent);
 
@@ -126,6 +122,7 @@ public class GradeActivity extends AppCompatActivity {
         intent.putExtra(Constants.ATTRIBUTE_FILE, "long_mul.txt");
         nameToIntentMap.put(getResources().getString(R.string.all_long_mul), intent);
 
+        /*
         intent = new Intent(this, ClockFace.class);
         nameToIntentMap.put(getResources().getString(R.string.all_clock_face), intent);
 

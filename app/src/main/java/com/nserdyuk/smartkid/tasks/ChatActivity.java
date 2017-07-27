@@ -168,7 +168,7 @@ public class ChatActivity extends AppCompatActivity implements IChat {
         });
     }
 
-    private class Bubble {
+    private static class Bubble {
         private final int image;
         private final int textColor;
         private final String message;
@@ -186,13 +186,13 @@ public class ChatActivity extends AppCompatActivity implements IChat {
         }
     }
 
-    private class LeftBubble extends Bubble {
+    private static class LeftBubble extends Bubble {
         LeftBubble(String message) {
             super(R.drawable.b1_left, LEFT_BUBBLE_TEXT_COLOR, Gravity.START, DEFAULT_MARGIN, 0, message);
         }
     }
 
-    private class RightBubble extends Bubble {
+    private static class RightBubble extends Bubble {
         RightBubble(String message) {
             super(R.drawable.b1_right, RIGHT_BUBBLE_TEXT_COLOR, Gravity.END, 0, DEFAULT_MARGIN, message);
         }
