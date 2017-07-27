@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".grades.GragePreschoolActivity"
+            android:name=".GradeActivity"
             android:theme="@style/AppThemeLightLarge"
             />
         <activity

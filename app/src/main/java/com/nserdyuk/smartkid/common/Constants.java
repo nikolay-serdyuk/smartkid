@@ -1,6 +1,7 @@
-package com.nserdyuk.smartkid.tasks;
+package com.nserdyuk.smartkid.common;
 
 public final class Constants {
+    public static final String ATTRIBUTE_GRADE = "grade";
     public static final String ATTRIBUTE_COMPLEXITY = "complexity";
     public static final String ATTRIBUTE_EXAMPLES = "examples";
     public static final String ATTRIBUTE_FILE = "file";

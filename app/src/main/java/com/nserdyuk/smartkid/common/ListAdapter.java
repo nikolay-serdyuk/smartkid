@@ -1,4 +1,4 @@
-package com.nserdyuk.smartkid.grades;
+package com.nserdyuk.smartkid.common;
 
 import android.content.Context;
 import android.support.annotation.NonNull;

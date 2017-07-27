@@ -22,18 +22,44 @@
         <item>@string/activity_main_5</item>
     </string-array>
 
-    <string name="activity_simple_add10">Простое сложение до 10</string>
-    <string name="activity_simple_sub10">Простое вычитание до 10</string>
-    <string name="activity_simple_add20">Простое сложение до 20</string>
-    <string name="activity_simple_sub20">Простое вычитание до 20</string>
-    <string name="activity_guess_number">Угадай число</string>
+    <string name="all_simple_add10">Простое сложение до 10</string>
+    <string name="all_simple_sub10">Простое вычитание до 10</string>
+    <string name="all_simple_add20">Простое сложение до 20</string>
+    <string name="all_simple_sub20">Простое вычитание до 20</string>
+    <string name="all_guess_number">Угадай число</string>
 
-    <string-array name="activity_main_preschool_tasks">
-        <item>@string/activity_simple_add10</item>
-        <item>@string/activity_guess_number</item>
-        <item>@string/activity_simple_sub10</item>
-        <item>@string/activity_simple_add20</item>
-        <item>@string/activity_simple_sub20</item>
+    <string-array name="all_grade0">
+        <item>@string/all_simple_add10</item>
+        <item>@string/all_guess_number</item>
+        <item>@string/all_simple_sub10</item>
+        <item>@string/all_simple_add20</item>
+        <item>@string/all_simple_sub20</item>
     </string-array>
 
+    <string-array name="all_grade1">
+        <item>@string/all_simple_add20</item>
+        <item>@string/all_simple_sub20</item>
+    </string-array>
+
+    <string-array name="all_grade2">
+        <item>@string/all_simple_sub20</item>
+    </string-array>
+
+    <string-array name="all_grade3">
+    </string-array>
+
+    <string-array name="all_grade4">
+    </string-array>
+
+    <string-array name="all_grade5">
+    </string-array>
+
+    <array name="all_grades">
+        <item>@array/all_grade0</item>
+        <item>@array/all_grade1</item>
+        <item>@array/all_grade2</item>
+        <item>@array/all_grade3</item>
+        <item>@array/all_grade4</item>
+        <item>@array/all_grade5</item>
+    </array>
 </resources>

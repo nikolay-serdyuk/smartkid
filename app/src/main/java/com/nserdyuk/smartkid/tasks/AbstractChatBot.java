@@ -8,6 +8,7 @@ import android.os.Message;
 import android.util.Log;
 
 import com.nserdyuk.smartkid.R;
+import com.nserdyuk.smartkid.common.Constants;
 import com.nserdyuk.smartkid.io.TextReader;
 
 import java.io.IOException;

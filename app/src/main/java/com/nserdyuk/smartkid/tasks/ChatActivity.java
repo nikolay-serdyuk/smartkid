@@ -22,7 +22,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.nserdyuk.smartkid.R;
+import com.nserdyuk.smartkid.common.Constants;
 import com.nserdyuk.smartkid.io.ImageReader;
+
+import org.apache.commons.lang3.StringUtils;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -43,6 +46,7 @@ import java.io.InputStream;
 public class ChatActivity extends AppCompatActivity implements IChat {
     private static final String TAG = "ChatActivity";
     private static final String ERROR_LOAD_IMAGES = "An error occurred while loading images";
+    private static final String ERROR_INVALID_PARAMETER = "An error occurred while reading extended data from intent";
     private static final int LEFT_BUBBLE_TEXT_COLOR = Color.parseColor("#39555B");
     private static final int RIGHT_BUBBLE_TEXT_COLOR = Color.parseColor("#29508E");
     private static final int DEFAULT_MARGIN = 15;
@@ -104,7 +108,12 @@ public class ChatActivity extends AppCompatActivity implements IChat {
             return;
         }
 
-        chatBot = new AbstractChatBot(this, getAssets(), "div_rem.txt", 1) {
+        String fileName = getIntent().getStringExtra(Constants.ATTRIBUTE_FILE);
+        if (StringUtils.isBlank(fileName)) {
+            showError(ERROR_INVALID_PARAMETER);
+        }
+        int examplesNum = getIntent().getIntExtra(Constants.ATTRIBUTE_EXAMPLES, 0);
+        chatBot = new AbstractChatBot(this, getAssets(), fileName, examplesNum) {
             @Override
             public void send(String msg) {
                 ChatActivity.this.receive(msg);
