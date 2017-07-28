@@ -25,62 +25,62 @@
         <item>@string/activity_main_5</item>
     </string-array>
 
-    <string name="all_simple_add10">Простое сложение до 10</string>
-    <string name="all_guess_number">Угадай число</string>
-    <string name="all_simple_sub10">Простое вычитание до 10</string>
-    <string name="all_simple_add20">Простое сложение до 20</string>
-    <string name="all_simple_sub20">Простое вычитание до 20</string>
-    <string name="all_sub_zero">Сложение и вычитание (обычное или с нулем)</string>
-    <string name="all_sub_zero_long">Сложение и вычитание больших чисел</string>
-    <string name="all_single_quotient">Однозначное частное</string>
-    <string name="all_div_rem">Деление с остатком</string>
-    <string name="all_long_div">Деление столбиком</string>
-    <string name="all_long_long_div">Деление столбиком двухзначных (4 к.)</string>
-    <string name="all_long_mul">Умножение двухзначных чисел</string>
-    <string name="all_muldiv_10_100_1000">Деление и умножение на 10, 100, 1000</string>
+    <string name="activity_grade_simple_add10">Простое сложение до 10</string>
+    <string name="activity_grade_guess_number">Угадай число</string>
+    <string name="activity_grade_simple_sub10">Простое вычитание до 10</string>
+    <string name="activity_grade_simple_add20">Простое сложение до 20</string>
+    <string name="activity_grade_simple_sub20">Простое вычитание до 20</string>
+    <string name="activity_grade_sub_zero">Сложение и вычитание (обычное или с нулем)</string>
+    <string name="activity_grade_sub_zero_long">Сложение и вычитание больших чисел</string>
+    <string name="activity_grade_single_quotient">Однозначное частное</string>
+    <string name="activity_grade_div_rem">Деление с остатком</string>
+    <string name="activity_grade_long_div">Деление столбиком</string>
+    <string name="activity_grade_long_long_div">Деление столбиком двухзначных (4 к.)</string>
+    <string name="activity_grade_long_mul">Умножение двухзначных чисел</string>
+    <string name="activity_grade_muldiv_10_100_1000">Деление и умножение на 10, 100, 1000</string>
 
-    <string-array name="all_grade0">
-        <item>@string/all_simple_add10</item>
-        <item>@string/all_guess_number</item>
-        <item>@string/all_simple_sub10</item>
-        <item>@string/all_simple_add20</item>
-        <item>@string/all_simple_sub20</item>
+    <string-array name="grade0">
+        <item>@string/activity_grade_simple_add10</item>
+        <item>@string/activity_grade_guess_number</item>
+        <item>@string/activity_grade_simple_sub10</item>
+        <item>@string/activity_grade_simple_add20</item>
+        <item>@string/activity_grade_simple_sub20</item>
     </string-array>
 
-    <string-array name="all_grade1">
-        <item>@string/all_simple_add20</item>
-        <item>@string/all_sub_zero_long</item>
+    <string-array name="grade1">
+        <item>@string/activity_grade_simple_add20</item>
+        <item>@string/activity_grade_sub_zero_long</item>
     </string-array>
 
-    <string-array name="all_grade2">
-        <item>@string/all_sub_zero</item>
-        <item>@string/all_sub_zero</item>
-        <item>@string/all_single_quotient</item>
+    <string-array name="grade2">
+        <item>@string/activity_grade_sub_zero</item>
+        <item>@string/activity_grade_sub_zero</item>
+        <item>@string/activity_grade_single_quotient</item>
     </string-array>
 
-    <string-array name="all_grade3">
-        <item>@string/all_div_rem</item>
-        <item>@string/all_long_div</item>
-        <item>@string/all_muldiv_10_100_1000</item>
+    <string-array name="grade3">
+        <item>@string/activity_grade_div_rem</item>
+        <item>@string/activity_grade_long_div</item>
+        <item>@string/activity_grade_muldiv_10_100_1000</item>
     </string-array>
 
-    <string-array name="all_grade4">
-        <item>@string/all_div_rem</item>
-        <item>@string/all_long_div</item>
-        <item>@string/all_long_long_div</item>
-        <item>@string/all_long_mul</item>
-        <item>@string/all_muldiv_10_100_1000</item>
+    <string-array name="grade4">
+        <item>@string/activity_grade_div_rem</item>
+        <item>@string/activity_grade_long_div</item>
+        <item>@string/activity_grade_long_long_div</item>
+        <item>@string/activity_grade_long_mul</item>
+        <item>@string/activity_grade_muldiv_10_100_1000</item>
     </string-array>
 
-    <string-array name="all_grade5">
+    <string-array name="grade5">
     </string-array>
 
     <array name="all_grades">
-        <item>@array/all_grade0</item>
-        <item>@array/all_grade1</item>
-        <item>@array/all_grade2</item>
-        <item>@array/all_grade3</item>
-        <item>@array/all_grade4</item>
-        <item>@array/all_grade5</item>
+        <item>@array/grade0</item>
+        <item>@array/grade1</item>
+        <item>@array/grade2</item>
+        <item>@array/grade3</item>
+        <item>@array/grade4</item>
+        <item>@array/grade5</item>
     </array>
 </resources>

@@ -57,27 +57,27 @@ public class GradeActivity extends AppCompatActivity {
         intent = new Intent(this, ChatActivity.class);
         intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 2);
         intent.putExtra(Constants.ATTRIBUTE_FILE, "simple_add.txt");
-        nameToIntentMap.put(getResources().getString(R.string.all_simple_add10), intent);
+        nameToIntentMap.put(getResources().getString(R.string.activity_grade_simple_add10), intent);
 
         intent = new Intent(this, ChatActivity.class);
         intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 1);
         intent.putExtra(Constants.ATTRIBUTE_FILE, "simple_guess.txt");
-        nameToIntentMap.put(getResources().getString(R.string.all_guess_number), intent);
+        nameToIntentMap.put(getResources().getString(R.string.activity_grade_guess_number), intent);
 
         intent = new Intent(this, ChatActivity.class);
         intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 1);
         intent.putExtra(Constants.ATTRIBUTE_FILE, "simple_sub.txt");
-        nameToIntentMap.put(getResources().getString(R.string.all_simple_sub10), intent);
+        nameToIntentMap.put(getResources().getString(R.string.activity_grade_simple_sub10), intent);
 
         intent = new Intent(this, ChatActivity.class);
         intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 1);
         intent.putExtra(Constants.ATTRIBUTE_FILE, "simple_add_20.txt");
-        nameToIntentMap.put(getResources().getString(R.string.all_simple_add20), intent);
+        nameToIntentMap.put(getResources().getString(R.string.activity_grade_simple_add20), intent);
 
         intent = new Intent(this, ChatActivity.class);
         intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 1);
         intent.putExtra(Constants.ATTRIBUTE_FILE, "simple_sub_20.txt");
-        nameToIntentMap.put(getResources().getString(R.string.all_simple_sub20), intent);
+        nameToIntentMap.put(getResources().getString(R.string.activity_grade_simple_sub20), intent);
 /*
         intent = new Intent(this, Images.class);
         nameToIntentMap.put(getResources().getString(R.string.all_images), intent);
@@ -85,42 +85,42 @@ public class GradeActivity extends AppCompatActivity {
         intent = new Intent(this, ChatActivity.class);
         intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 3);
         intent.putExtra(Constants.ATTRIBUTE_FILE, "sub_zero.txt");
-        nameToIntentMap.put(getResources().getString(R.string.all_sub_zero), intent);
+        nameToIntentMap.put(getResources().getString(R.string.activity_grade_sub_zero), intent);
 
         intent = new Intent(this, ChatActivity.class);
         intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 3);
         intent.putExtra(Constants.ATTRIBUTE_FILE, "sub_zero_long.txt");
-        nameToIntentMap.put(getResources().getString(R.string.all_sub_zero_long), intent);
+        nameToIntentMap.put(getResources().getString(R.string.activity_grade_sub_zero_long), intent);
 
         intent = new Intent(this, ChatActivity.class);
         intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 3);
         intent.putExtra(Constants.ATTRIBUTE_FILE, "muldiv_10_100_1000.txt");
-        nameToIntentMap.put(getResources().getString(R.string.all_muldiv_10_100_1000), intent);
+        nameToIntentMap.put(getResources().getString(R.string.activity_grade_muldiv_10_100_1000), intent);
 
         intent = new Intent(this, ChatActivity.class);
         intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 3);
         intent.putExtra(Constants.ATTRIBUTE_FILE, "single_quotient.txt");
-        nameToIntentMap.put(getResources().getString(R.string.all_single_quotient), intent);
+        nameToIntentMap.put(getResources().getString(R.string.activity_grade_single_quotient), intent);
 
         intent = new Intent(this, ChatActivity.class);
         intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 3);
         intent.putExtra(Constants.ATTRIBUTE_FILE, "long_div.txt");
-        nameToIntentMap.put(getResources().getString(R.string.all_long_div), intent);
+        nameToIntentMap.put(getResources().getString(R.string.activity_grade_long_div), intent);
 
         intent = new Intent(this, ChatActivity.class);
         intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 1);
         intent.putExtra(Constants.ATTRIBUTE_FILE, "long_long_div.txt");
-        nameToIntentMap.put(getResources().getString(R.string.all_long_long_div), intent);
+        nameToIntentMap.put(getResources().getString(R.string.activity_grade_long_long_div), intent);
 
         intent = new Intent(this, ChatActivity.class);
         intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 1);
         intent.putExtra(Constants.ATTRIBUTE_FILE, "div_rem.txt");
-        nameToIntentMap.put(getResources().getString(R.string.all_div_rem), intent);
+        nameToIntentMap.put(getResources().getString(R.string.activity_grade_div_rem), intent);
 
         intent = new Intent(this, ChatActivity.class);
         intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 3);
         intent.putExtra(Constants.ATTRIBUTE_FILE, "long_mul.txt");
-        nameToIntentMap.put(getResources().getString(R.string.all_long_mul), intent);
+        nameToIntentMap.put(getResources().getString(R.string.activity_grade_long_mul), intent);
 
         /*
         intent = new Intent(this, ClockFace.class);
