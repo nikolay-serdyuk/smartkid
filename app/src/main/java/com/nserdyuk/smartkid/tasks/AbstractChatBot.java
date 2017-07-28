@@ -114,6 +114,7 @@ abstract class AbstractChatBot extends HandlerThread implements IChat {
             if (onErrorListener != null) {
                 onErrorListener.onError(e.getMessage());
             }
+            quit();
         }
     }
 

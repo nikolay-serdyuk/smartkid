@@ -36,10 +36,10 @@ import java.io.InputStream;
     https://jeroenmols.com/blog/2016/03/07/resourcenaming/
 
     0. вставить @NonNull
-    1. сообщения об ошибках перевести на русский
-    2. unit tests
-    3. check adb logcat Runtime Exceptions
-    4. Проверить как выглядет на смартфоне
+    1. unit tests
+    2. check adb logcat Runtime Exceptions
+    3. Проверить как выглядет на смартфоне
+    4. Запретить поворот приложения
     5. PDB check
 */
 
@@ -69,14 +69,6 @@ public class ChatActivity extends AppCompatActivity implements IChat {
         Message m = handler.obtainMessage();
         m.obj = msg;
         m.sendToTarget();
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        if (chatBot != null) {
-            chatBot.quit();
-        }
     }
 
     @Override
