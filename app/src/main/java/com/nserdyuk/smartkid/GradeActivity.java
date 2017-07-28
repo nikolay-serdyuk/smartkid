@@ -44,6 +44,7 @@ public class GradeActivity extends AppCompatActivity {
                 String name = arrayOfTasks[(int) id];
                 Intent intent = nameToIntentMap.get(name);
                 if (intent != null) {
+                    intent.putExtra(Constants.ATTRIBUTE_TITLE, name);
                     startActivity(intent);
                 }
             }

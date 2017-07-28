@@ -9,9 +9,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_vertical|center_horizontal"
-        android:text="ЗАДАЧА"
         android:textColor="@android:color/white"
-        android:textSize="35dp">
+        android:textSize="30dp">
     </TextView>
 
     <ImageView

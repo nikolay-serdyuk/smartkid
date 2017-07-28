@@ -100,6 +100,7 @@ abstract class AbstractChatBot extends HandlerThread implements IChat {
                         boolean resultOk = checkAllExamples();
                          if (resultOk) {
                              send(rightAnswerMsg);
+
                              loadExamples();
                          } else {
                              send(wrongAnswerMsg);

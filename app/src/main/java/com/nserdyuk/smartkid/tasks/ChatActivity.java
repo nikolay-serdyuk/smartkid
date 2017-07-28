@@ -1,14 +1,12 @@
 package com.nserdyuk.smartkid.tasks;
 
 import android.animation.ObjectAnimator;
-import android.content.DialogInterface;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Gravity;
@@ -32,6 +30,7 @@ import org.apache.commons.lang3.StringUtils;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Locale;
 
 /*
     Common guide lines
@@ -55,12 +54,18 @@ public class ChatActivity extends AppCompatActivity implements IChat {
     private static final int DEFAULT_MARGIN = 15;
     private static final int ANIMATION_DURATION = 1000;
 
+    private String rightAnswerMsg;
+
     private Handler handler;
     private AbstractChatBot chatBot;
     private EditText editText;
     private LayoutInflater layoutInflater;
     private ScrollView scrollView;
     private LinearLayout svLinearLayout;
+    private TextView title;
+
+    private String titleMessage;
+    private int correctAnswers;
 
     @Override
     public void send(String msg) {
@@ -84,6 +89,8 @@ public class ChatActivity extends AppCompatActivity implements IChat {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
 
+        rightAnswerMsg = getResources().getString(R.string.rightAnswer);
+
         layoutInflater = getLayoutInflater();
         scrollView = (ScrollView) findViewById(R.id.sv_activity_chat);
         svLinearLayout = (LinearLayout) findViewById(R.id.ll_sv_activity_chat);
@@ -92,7 +99,12 @@ public class ChatActivity extends AppCompatActivity implements IChat {
             @Override
             public void handleMessage(Message msg) {
                 if (msg.obj instanceof String) {
-                    drawBubble(new RightBubble((String) msg.obj));
+                    String str = (String) msg.obj;
+                    drawBubble(new RightBubble(str));
+                    if (rightAnswerMsg.equals(str)) {
+                        correctAnswers++;
+                        updateTitle();
+                    }
                 }
             }
         };
@@ -107,6 +119,10 @@ public class ChatActivity extends AppCompatActivity implements IChat {
             showError(ERROR_LOAD_IMAGES);
             return;
         }
+
+        titleMessage = getIntent().getStringExtra(Constants.ATTRIBUTE_TITLE);
+        title = (TextView) findViewById(R.id.tv_activity_chat_title);
+        updateTitle();
 
         String fileName = getIntent().getStringExtra(Constants.ATTRIBUTE_FILE);
         if (StringUtils.isBlank(fileName)) {
@@ -127,6 +143,16 @@ public class ChatActivity extends AppCompatActivity implements IChat {
             }
         });
         chatBot.start();
+    }
+
+    private void updateTitle() {
+        String t;
+        if (correctAnswers > 0) {
+            t = String.format(Locale.US, Constants.RIGHT_ANSWER_FORMAT, titleMessage, correctAnswers);
+        } else {
+            t = titleMessage;
+        }
+        title.setText(t);
     }
 
     private void setBackgroundImage() throws IOException {

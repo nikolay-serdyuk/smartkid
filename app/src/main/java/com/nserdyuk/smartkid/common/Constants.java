@@ -14,5 +14,7 @@ public final class Constants {
     public static final String DEFAULT_PICS_MASK = ".gif";
     public static final String STRING_DELIMITER = "\\|";
 
+    public static final String RIGHT_ANSWER_FORMAT = "%s [%d]";
+
     private Constants() {}
 }
