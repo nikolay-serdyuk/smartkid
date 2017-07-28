@@ -5,6 +5,9 @@
     <string name="rightAnswer">"Правильно!"</string>
     <string name="wrongAnswer">"Ошибка..."</string>
     <string name="nextAnswer">"Еще"</string>
+    <string name="exitQuestion">"Выход?"</string>
+    <string name="yesAnswer">"Да"</string>
+    <string name="noAnswer">"Нет"</string>
 
     <string name="activity_main_preschool">Дошкольные задания</string>
     <string name="activity_main_1">Первый класс</string>

@@ -1,12 +1,14 @@
 package com.nserdyuk.smartkid.tasks;
 
 import android.animation.ObjectAnimator;
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Gravity;
@@ -23,6 +25,7 @@ import android.widget.Toast;
 
 import com.nserdyuk.smartkid.R;
 import com.nserdyuk.smartkid.common.Constants;
+import com.nserdyuk.smartkid.common.Dialogs;
 import com.nserdyuk.smartkid.io.ImageReader;
 
 import org.apache.commons.lang3.StringUtils;
@@ -69,6 +72,11 @@ public class ChatActivity extends AppCompatActivity implements IChat {
         Message m = handler.obtainMessage();
         m.obj = msg;
         m.sendToTarget();
+    }
+
+    @Override
+    public void onBackPressed() {
+        Dialogs.showExitDialog(this);
     }
 
     @Override
