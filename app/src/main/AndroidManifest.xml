@@ -26,6 +26,10 @@
             android:name=".tasks.ChatActivity"
             android:theme="@style/NoActionBarBlack"
             />
+        <activity
+            android:name=".tasks.Grid2D"
+            android:theme="@style/NoActionBarBlack"
+            />
     </application>
 
 </manifest>

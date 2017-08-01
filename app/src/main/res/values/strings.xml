@@ -38,8 +38,10 @@
     <string name="activity_grade_long_long_div">Деление столбиком двухзначных (4 к.)</string>
     <string name="activity_grade_long_mul">Умножение двухзначных чисел</string>
     <string name="activity_grade_muldiv_10_100_1000">Деление и умножение на 10, 100, 1000</string>
+    <string name="activity_grade_grid_2d_easy">Координатный угол (легкий уровень)</string>
 
     <string-array name="grade0">
+        <item>@string/activity_grade_grid_2d_easy</item>
         <item>@string/activity_grade_simple_add10</item>
         <item>@string/activity_grade_guess_number</item>
         <item>@string/activity_grade_simple_sub10</item>

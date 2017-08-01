@@ -37,6 +37,8 @@ import java.util.Locale;
     http://blog.danlew.net/2014/11/19/styles-on-android/
     https://jeroenmols.com/blog/2016/03/07/resourcenaming/
 
+    0. Проверить что в xml файлах нет предупреждений
+    0. Проверить что задания расположены в правильном порядке
     0. вставить @NonNull
     1. unit tests
     2. check adb logcat Runtime Exceptions

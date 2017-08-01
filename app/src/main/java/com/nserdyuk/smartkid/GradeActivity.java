@@ -11,6 +11,7 @@ import android.widget.ListView;
 import com.nserdyuk.smartkid.common.ListAdapter;
 import com.nserdyuk.smartkid.tasks.ChatActivity;
 import com.nserdyuk.smartkid.common.Constants;
+import com.nserdyuk.smartkid.tasks.Grid2D;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -162,12 +163,12 @@ public class GradeActivity extends AppCompatActivity {
         intent.putExtra(Constants.ATTRIBUTE_FILE, "PresentContinuous.txt");
         intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 3);
         nameToIntentMap.put(getResources().getString(R.string.all_english_present_continuous), intent);
-
+*/
         intent = new Intent(this, Grid2D.class);
         intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 1);
-        intent.putExtra(Constants.ATTRIBUTE_COMPLEXITY, Constants.Complexity.EASY.toString());
-        nameToIntentMap.put(getResources().getString(R.string.all_grid_2d_easy), intent);
-
+        // intent.putExtra(Constants.ATTRIBUTE_COMPLEXITY, Constants.Complexity.EASY.toString());
+        nameToIntentMap.put(getResources().getString(R.string.activity_grade_grid_2d_easy), intent);
+/*
         intent = new Intent(this, Grid2D.class);
         intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 7);
         intent.putExtra(Constants.ATTRIBUTE_COMPLEXITY, Constants.Complexity.HARD.toString());
