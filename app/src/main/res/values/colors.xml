@@ -5,6 +5,9 @@
     <color name="colorAccent">#FF4081</color>
     <color name="red">#FF0000</color>
 
+    <color name="leftBubble">#39555B</color>
+    <color name="rightBubble">#29508E</color>
+
     <color name="error">#008500</color>
     <color name="grid2dBar">#AEF100</color>
     <color name="xAxis">#FD3F49</color>

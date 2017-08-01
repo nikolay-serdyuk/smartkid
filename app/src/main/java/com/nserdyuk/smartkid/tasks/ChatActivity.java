@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Gravity;
@@ -51,11 +52,11 @@ public class ChatActivity extends AppCompatActivity implements IChat {
     private static final String TAG = "ChatActivity";
     private static final String ERROR_LOAD_IMAGES = "An error occurred while loading images";
     private static final String ERROR_INVALID_PARAMETER = "An error occurred while reading extended data from intent";
-    private static final int LEFT_BUBBLE_TEXT_COLOR = Color.parseColor("#39555B");
-    private static final int RIGHT_BUBBLE_TEXT_COLOR = Color.parseColor("#29508E");
     private static final int DEFAULT_MARGIN = 15;
     private static final int ANIMATION_DURATION = 1000;
 
+    private int colorLeftBubble;
+    private int colorRightBubble;
     private String rightAnswerMsg;
 
     private Handler handler;
@@ -92,6 +93,8 @@ public class ChatActivity extends AppCompatActivity implements IChat {
         setContentView(R.layout.activity_chat);
 
         rightAnswerMsg = getResources().getString(R.string.rightAnswer);
+        colorLeftBubble = ContextCompat.getColor(this, R.color.leftBubble);
+        colorRightBubble = ContextCompat.getColor(this, R.color.rightBubble);
 
         layoutInflater = getLayoutInflater();
         scrollView = (ScrollView) findViewById(R.id.sv_activity_chat);
@@ -214,15 +217,15 @@ public class ChatActivity extends AppCompatActivity implements IChat {
         }
     }
 
-    private static class LeftBubble extends Bubble {
+    private class LeftBubble extends Bubble {
         LeftBubble(String message) {
-            super(R.drawable.b1_left, LEFT_BUBBLE_TEXT_COLOR, Gravity.START, DEFAULT_MARGIN, 0, message);
+            super(R.drawable.b1_left, colorLeftBubble, Gravity.START, DEFAULT_MARGIN, 0, message);
         }
     }
 
-    private static class RightBubble extends Bubble {
+    private class RightBubble extends Bubble {
         RightBubble(String message) {
-            super(R.drawable.b1_right, RIGHT_BUBBLE_TEXT_COLOR, Gravity.END, 0, DEFAULT_MARGIN, message);
+            super(R.drawable.b1_right, colorRightBubble, Gravity.END, 0, DEFAULT_MARGIN, message);
         }
     }
 

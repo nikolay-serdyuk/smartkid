@@ -28,7 +28,6 @@ public class Grid2dView extends View {
     private final static int TEXT_TOP_MARGIN = 15;
 
     private Paint paint;
-    private Random random;
     private Canvas canvas;
     private int leftMargin;
     private int topMargin;
@@ -92,12 +91,12 @@ public class Grid2dView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         this.canvas = canvas;
-        columnWidth = this.canvas.getWidth() / (COLUMNS);
-        rowHeight = this.canvas.getHeight() / (ROWS);
+        columnWidth = canvas.getWidth() / (COLUMNS);
+        rowHeight = canvas.getHeight() / (ROWS);
         maxX = (COLUMNS - 1) * columnWidth;
         maxY = (ROWS - 1) * rowHeight;
-        leftMargin = (this.canvas.getWidth() - maxX) / 2;
-        topMargin = (this.canvas.getHeight() - maxY) / 2;
+        leftMargin = (canvas.getWidth() - maxX) / 2;
+        topMargin = (canvas.getHeight() - maxY) / 2;
 
         drawBar(barColor);
 
@@ -128,7 +127,6 @@ public class Grid2dView extends View {
     private void init(Context context) {
         paint = new Paint();
         paint.setStrokeCap(Paint.Cap.ROUND);
-        random = new Random();
         errorColor = ContextCompat.getColor(context, R.color.error);
         barColor = ContextCompat.getColor(context, R.color.grid2dBar);
         xAxisColor = ContextCompat.getColor(context, R.color.xAxis);
