@@ -16,7 +16,6 @@ public final class Dialogs {
                     public void onClick(DialogInterface dialog, int which) {
                         activity.finish();
                     }
-
                 })
                 .setNegativeButton(activity.getResources().getString(R.string.noAnswer), null)
                 .show();

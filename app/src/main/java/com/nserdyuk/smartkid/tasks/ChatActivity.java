@@ -88,6 +88,12 @@ public class ChatActivity extends AppCompatActivity implements IChat {
     }
 
     @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        chatBot.quit();
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
