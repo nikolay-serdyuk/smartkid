@@ -27,7 +27,7 @@ abstract class AbstractChatBot extends HandlerThread implements IChat {
     private int examplesNum;
     private int currentExample;
     private int currentAnswer;
-    private Handler mHandler;
+    private volatile Handler mHandler;
     private Test[] examples;
     private TextReader textReader;
     private OnErrorListener onErrorListener;

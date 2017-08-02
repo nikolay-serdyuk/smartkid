@@ -59,7 +59,7 @@ public class ChatActivity extends AppCompatActivity implements IChat {
     private int colorRightBubble;
     private String rightAnswerMsg;
 
-    private Handler handler;
+    private volatile Handler handler;
     private AbstractChatBot chatBot;
     private EditText editText;
     private LayoutInflater layoutInflater;
