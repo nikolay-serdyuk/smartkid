@@ -1,7 +1,6 @@
 package com.nserdyuk.smartkid.tasks;
 
 import android.animation.ObjectAnimator;
-import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
@@ -43,6 +42,7 @@ import java.util.Locale;
     0. вставить @NonNull
     1. unit tests
     2. check adb logcat Runtime Exceptions
+    3. протестировать с входом и выходом из спящего режима
     3. Проверить как выглядет на смартфоне
     4. Запретить поворот приложения
     5. PDB check
@@ -71,14 +71,14 @@ public class ChatActivity extends AppCompatActivity implements IChat {
     private int correctAnswers;
 
     @Override
-    public void send(String msg) {
-        chatBot.receive(msg);
+    public void send(Object object) {
+        chatBot.receive(object);
     }
 
     @Override
-    public void receive(String msg) {
+    public void receive(Object object) {
         Message m = handler.obtainMessage();
-        m.obj = msg;
+        m.obj = object;
         m.sendToTarget();
     }
 
@@ -142,8 +142,8 @@ public class ChatActivity extends AppCompatActivity implements IChat {
         int examplesNum = getIntent().getIntExtra(Constants.ATTRIBUTE_EXAMPLES, 0);
         chatBot = new AbstractChatBot(this, getAssets(), fileName, examplesNum) {
             @Override
-            public void send(String msg) {
-                ChatActivity.this.receive(msg);
+            public void send(Object object) {
+                ChatActivity.this.receive(object);
             }
         };
         chatBot.setOnErrorListener(new AbstractChatBot.OnErrorListener() {
@@ -256,7 +256,7 @@ public class ChatActivity extends AppCompatActivity implements IChat {
     }
 
     private class ErrorReporter implements Runnable {
-        private String m;
+        private final String m;
 
         public ErrorReporter(String m) {
             this.m = m;

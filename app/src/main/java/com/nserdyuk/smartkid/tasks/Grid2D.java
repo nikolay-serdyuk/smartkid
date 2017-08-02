@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.nserdyuk.smartkid.R;
-import com.nserdyuk.smartkid.common.Grid2dView;
+import com.nserdyuk.smartkid.views.Grid2dView;
 
 public class Grid2D extends Activity {
 

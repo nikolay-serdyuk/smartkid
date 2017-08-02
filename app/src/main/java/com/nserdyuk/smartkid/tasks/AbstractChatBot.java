@@ -2,9 +2,6 @@ package com.nserdyuk.smartkid.tasks;
 
 import android.content.Context;
 import android.content.res.AssetManager;
-import android.os.Handler;
-import android.os.HandlerThread;
-import android.os.Message;
 import android.util.Log;
 
 import com.nserdyuk.smartkid.R;
@@ -14,7 +11,7 @@ import com.nserdyuk.smartkid.io.TextReader;
 import java.io.IOException;
 import java.util.Arrays;
 
-abstract class AbstractChatBot extends HandlerThread implements IChat {
+public abstract class AbstractChatBot extends AbstractBot {
     private static final String TAG = "AbstractChatBot";
     private static final String ERROR = "An error occurred in chat bot";
     private static final String CONTENT_ERROR = "Invalid content";
@@ -27,12 +24,11 @@ abstract class AbstractChatBot extends HandlerThread implements IChat {
     private int examplesNum;
     private int currentExample;
     private int currentAnswer;
-    private volatile Handler mHandler;
     private Test[] examples;
     private TextReader textReader;
     private OnErrorListener onErrorListener;
 
-    AbstractChatBot(Context context, AssetManager am, String fileName, int examplesNum) {
+    public AbstractChatBot(Context context, AssetManager am, String fileName, int examplesNum) {
         super(TAG);
         textReader = new TextReader(am, fileName, examplesNum);
         this.examplesNum = examplesNum;
@@ -42,46 +38,23 @@ abstract class AbstractChatBot extends HandlerThread implements IChat {
         nextAnswerMsg = context.getResources().getString(R.string.nextAnswer);
     }
 
-    @Override
-    public void receive(String msg) {
-        Message m = mHandler.obtainMessage();
-        m.obj = msg;
-        m.sendToTarget();
-    }
 
-    public abstract void send(String msg);
-
-    void setOnErrorListener(OnErrorListener listener) {
+    public void setOnErrorListener(OnErrorListener listener) {
         onErrorListener = listener;
     }
 
     @Override
-    protected void onLooperPrepared() {
-        mHandler = new Handler(getLooper()) {
-            @Override
-            public void handleMessage(Message msg) {
-                if (msg.obj instanceof String) {
-                    process((String) msg.obj);
-                }
-            }
-        };
-        startBot();
-    }
-
-    private void startBot() {
+    protected void startBot() {
         process("");
     }
 
-    private boolean checkAllExamples() {
-        for (Test example : examples) {
-            if (!example.checkAllAnswers()) {
-                return false;
-            }
+    @Override
+    protected void process(Object o) {
+        if (!(o instanceof String)) {
+            return;
         }
-        return true;
-    }
 
-    private void process(String input) {
+        String input = (String)o;
         try {
             if (input.isEmpty()) {
                 send(greetingMsg);
@@ -118,6 +91,14 @@ abstract class AbstractChatBot extends HandlerThread implements IChat {
         }
     }
 
+    private boolean checkAllExamples() {
+        for (Test example : examples) {
+            if (!example.checkAllAnswers()) {
+                return false;
+            }
+        }
+        return true;
+    }
 
     private void loadExamples() throws ChatBotException {
         String[] lines;

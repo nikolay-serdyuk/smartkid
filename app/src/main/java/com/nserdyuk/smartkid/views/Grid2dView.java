@@ -1,4 +1,4 @@
-package com.nserdyuk.smartkid.common;
+package com.nserdyuk.smartkid.views;
 
 import android.content.Context;
 import android.content.res.ColorStateList;
