@@ -48,7 +48,7 @@ import java.util.Locale;
     5. PDB check
 */
 
-public class ChatActivity extends AppCompatActivity implements IChat {
+public class ChatActivity extends AppCompatActivity implements ICommunication {
     private static final String TAG = "ChatActivity";
     private static final String ERROR_LOAD_IMAGES = "An error occurred while loading images";
     private static final String ERROR_INVALID_PARAMETER = "An error occurred while reading extended data from intent";

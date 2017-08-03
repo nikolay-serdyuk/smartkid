@@ -14,7 +14,7 @@ import com.nserdyuk.smartkid.common.Constants;
 import com.nserdyuk.smartkid.common.Point;
 import com.nserdyuk.smartkid.views.Grid2dView;
 
-public class Grid2dActivity extends Activity implements IChat {
+public class Grid2dActivity extends Activity implements ICommunication {
 
     private final static int COLOR_BACKGROUND = Color.WHITE;
     private final static int COLOR_TEXT_TITLE = Color.BLACK;

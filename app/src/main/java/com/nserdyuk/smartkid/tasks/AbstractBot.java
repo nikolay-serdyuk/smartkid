@@ -4,7 +4,7 @@ import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Message;
 
-public abstract class AbstractBot extends HandlerThread implements IChat {
+public abstract class AbstractBot extends HandlerThread implements ICommunication {
     private volatile Handler mHandler;
 
     public AbstractBot(String name) {
