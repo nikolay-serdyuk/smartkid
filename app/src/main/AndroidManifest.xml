@@ -27,7 +27,7 @@
             android:theme="@style/NoActionBarBlack"
             />
         <activity
-            android:name=".tasks.Grid2D"
+            android:name=".tasks.Grid2dActivity"
             android:theme="@style/NoActionBarBlack"
             />
     </application>

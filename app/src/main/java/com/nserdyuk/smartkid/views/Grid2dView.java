@@ -1,25 +1,25 @@
 package com.nserdyuk.smartkid.views;
 
 import android.content.Context;
-import android.content.res.ColorStateList;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
+import android.view.MotionEvent;
 import android.view.View;
 
 import com.nserdyuk.smartkid.R;
+import com.nserdyuk.smartkid.common.Point;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 public class Grid2dView extends View {
 
     private final static int COLOR_TEXT = Color.BLACK;
-    private final static int WIDTH_DOT = 15;
+    private final static int SIZE_DOT = 15;
     private final static int WIDTH_GRID_MINOR = 6;
     private final static int SIZE_TEXT = 30;
     private final static int COLUMNS = 7;
@@ -35,15 +35,17 @@ public class Grid2dView extends View {
     private int maxY;
     private int columnWidth;
     private int rowHeight;
-    private int textSize = SIZE_TEXT;
-    private int xAxisColor = Color.BLACK;
-    private int yAxisColor = Color.BLACK;
-    private int dotColor = Color.BLACK;
+    private int xAxisColor;
+    private int yAxisColor;
+    private int dotColor;
     private int barColor;
-    private int dotWidth = WIDTH_DOT;
+    private int textSize = SIZE_TEXT;
+    private int dotSize = SIZE_DOT;
     private int minorAxisWidth = WIDTH_GRID_MINOR;
     private int majorAxisWidth = 2 * WIDTH_GRID_MINOR;
-    private int errorColor = Color.RED;
+    private OnTouchListener onTouchListener;
+
+    private List<Point> points = new ArrayList<>();
 
     public Grid2dView(Context context) {
         super(context);
@@ -53,6 +55,15 @@ public class Grid2dView extends View {
     public Grid2dView(Context context, AttributeSet attrs) {
         super(context, attrs);
         init(context);
+    }
+
+    public void setOnTouchListener(OnTouchListener listener) {
+        onTouchListener = listener;
+    }
+
+    public void clearPoints() {
+        points.clear();
+        // TODO: invalidate() ?
     }
 
     public void setAxisWidth(int width) {
@@ -72,8 +83,8 @@ public class Grid2dView extends View {
         this.dotColor = color;
     }
 
-    public void setDotWidth(int width) {
-        this.dotWidth = width;
+    public void setDotSize(int size) {
+        this.dotSize = size;
     }
 
     public void setBarColor(int color) {
@@ -84,8 +95,31 @@ public class Grid2dView extends View {
         this.textSize = size;
     }
 
-    public void setErrorColor(int color) {
-        this.errorColor = color;
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        float x;
+        float y;
+        x = event.getX();
+        y = event.getY();
+
+        switch (event.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                break;
+            case MotionEvent.ACTION_MOVE:
+                break;
+            case MotionEvent.ACTION_CANCEL:
+                break;
+            case MotionEvent.ACTION_UP:
+                Point p = new Point(getColumn((int) x), getRow((int) y));
+                points.add(p);
+                invalidate();
+                if (onTouchListener != null) {
+                    onTouchListener.onTouch(p);
+                }
+                break;
+        }
+        return true;
+
     }
 
     @Override
@@ -122,16 +156,18 @@ public class Grid2dView extends View {
             print(Integer.toString(i), i, true, yAxisColor, textSize);
         }
 
+        for (Point p : points) {
+            drawDot(p.getX(), rows - p.getY(), dotColor, dotSize);
+        }
     }
 
     private void init(Context context) {
         paint = new Paint();
         paint.setStrokeCap(Paint.Cap.ROUND);
-        errorColor = ContextCompat.getColor(context, R.color.error);
         barColor = ContextCompat.getColor(context, R.color.grid2dBar);
         xAxisColor = ContextCompat.getColor(context, R.color.xAxis);
         yAxisColor = ContextCompat.getColor(context, R.color.yAxis);
-        errorColor = ContextCompat.getColor(context, R.color.error);
+        dotColor = ContextCompat.getColor(context, R.color.dot);
     }
 
     private void print(String str, int num, boolean Vertical, int color, int width) {
@@ -160,7 +196,7 @@ public class Grid2dView extends View {
 
     private void drawDot(int column, int row, int color, int width) {
         paint.setColor(color);
-        paint.setStrokeWidth(dotWidth);
+        paint.setStrokeWidth(dotSize);
         canvas.drawCircle(leftMargin + column * columnWidth, topMargin + row * rowHeight,
                 width, paint);
     }
@@ -184,6 +220,10 @@ public class Grid2dView extends View {
         x += columnWidth / 2;
         x /= columnWidth;
         return x;
+    }
+
+    public interface OnTouchListener {
+        void onTouch(Point point);
     }
 
 }

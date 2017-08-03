@@ -12,4 +12,5 @@
     <color name="grid2dBar">#AEF100</color>
     <color name="xAxis">#FD3F49</color>
     <color name="yAxis">#A168D5</color>
+    <color name="dot">#0E0874</color>
 </resources>
