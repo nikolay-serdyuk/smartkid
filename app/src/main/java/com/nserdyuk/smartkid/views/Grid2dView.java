@@ -95,28 +95,34 @@ public class Grid2dView extends View {
         this.textSize = size;
     }
 
+    public int getRows() { return ROWS; }
+
+    public int getColumns() { return COLUMNS; }
+
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        float x;
-        float y;
-        x = event.getX();
-        y = event.getY();
+        if (isClickable()) {
+            float x;
+            float y;
+            x = event.getX();
+            y = event.getY();
 
-        switch (event.getAction()) {
-            case MotionEvent.ACTION_DOWN:
-                break;
-            case MotionEvent.ACTION_MOVE:
-                break;
-            case MotionEvent.ACTION_CANCEL:
-                break;
-            case MotionEvent.ACTION_UP:
-                Point p = new Point(getColumn((int) x), getRow((int) y));
-                points.add(p);
-                invalidate();
-                if (onTouchListener != null) {
-                    onTouchListener.onTouch(p);
-                }
-                break;
+            switch (event.getAction()) {
+                case MotionEvent.ACTION_DOWN:
+                    break;
+                case MotionEvent.ACTION_MOVE:
+                    break;
+                case MotionEvent.ACTION_CANCEL:
+                    break;
+                case MotionEvent.ACTION_UP:
+                    Point p = new Point(getColumn((int) x), getRow((int) y));
+                    points.add(p);
+                    invalidate();
+                    if (onTouchListener != null) {
+                        onTouchListener.onTouch(p);
+                    }
+                    break;
+            }
         }
         return true;
 

@@ -2,10 +2,10 @@ package com.nserdyuk.smartkid.tasks;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.TextView;
 
 import com.nserdyuk.smartkid.R;
+import com.nserdyuk.smartkid.common.Complexity;
 import com.nserdyuk.smartkid.common.Constants;
 import com.nserdyuk.smartkid.common.Point;
 import com.nserdyuk.smartkid.views.Grid2dView;
@@ -18,6 +18,7 @@ public class Grid2dActivity extends AbstractCommunicationActivity implements ICo
     private Grid2dView grid2dView;
     private TextView textView;
     private AbstractGrid2dBot bot;
+    private boolean greetingMsgPassed;
 
     @Override
     public void send(Object object) {
@@ -33,6 +34,10 @@ public class Grid2dActivity extends AbstractCommunicationActivity implements ICo
     @Override
     protected void process(Object o) {
         if (o instanceof String) {
+            if (greetingMsgPassed) {
+                grid2dView.setClickable(true);
+            }
+            greetingMsgPassed = true;
             String str = (String) o;
             textView.setText(str);
         }
@@ -51,19 +56,21 @@ public class Grid2dActivity extends AbstractCommunicationActivity implements ICo
         grid2dView.setOnTouchListener(new Grid2dView.OnTouchListener() {
             @Override
             public void onTouch(Point point) {
+                grid2dView.setClickable(false);
                 send(point);
             }
         });
 
         int examplesNum = getIntent().getIntExtra(Constants.ATTRIBUTE_EXAMPLES, 0);
-        bot = new AbstractGrid2dBot(this, examplesNum) {
+        Complexity complexity = Complexity.valueOf(getIntent().getStringExtra(Constants.ATTRIBUTE_COMPLEXITY));
+        bot = new AbstractGrid2dBot(this, examplesNum, complexity, grid2dView.getRows(), grid2dView.getColumns()) {
             @Override
             public void send(Object object) {
                 Grid2dActivity.this.receive(object);
             }
         };
         bot.start();
-        grid2dView.setEnabled(false);
+        grid2dView.setClickable(false);
     }
 
 }

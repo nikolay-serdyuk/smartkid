@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.nserdyuk.smartkid.common.Complexity;
 import com.nserdyuk.smartkid.common.ListAdapter;
 import com.nserdyuk.smartkid.tasks.ChatActivity;
 import com.nserdyuk.smartkid.common.Constants;
@@ -166,7 +167,7 @@ public class GradeActivity extends AppCompatActivity {
 */
         intent = new Intent(this, Grid2dActivity.class);
         intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 1);
-        // intent.putExtra(Constants.ATTRIBUTE_COMPLEXITY, Constants.Complexity.EASY.toString());
+        intent.putExtra(Constants.ATTRIBUTE_COMPLEXITY, Complexity.EASY.toString());
         nameToIntentMap.put(getResources().getString(R.string.activity_grade_grid_2d_easy), intent);
 /*
         intent = new Intent(this, Grid2dActivity.class);
