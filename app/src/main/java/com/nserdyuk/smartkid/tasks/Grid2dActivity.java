@@ -1,11 +1,7 @@
 package com.nserdyuk.smartkid.tasks;
 
-import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
-import android.os.Message;
 import android.util.Log;
 import android.widget.TextView;
 
@@ -14,12 +10,11 @@ import com.nserdyuk.smartkid.common.Constants;
 import com.nserdyuk.smartkid.common.Point;
 import com.nserdyuk.smartkid.views.Grid2dView;
 
-public class Grid2dActivity extends Activity implements ICommunication {
+public class Grid2dActivity extends AbstractCommunicationActivity implements ICommunication {
 
     private final static int COLOR_BACKGROUND = Color.WHITE;
     private final static int COLOR_TEXT_TITLE = Color.BLACK;
 
-    private volatile Handler handler;
     private Grid2dView grid2dView;
     private TextView textView;
     private AbstractGrid2dBot bot;
@@ -30,16 +25,17 @@ public class Grid2dActivity extends Activity implements ICommunication {
     }
 
     @Override
-    public void receive(Object object) {
-        Message m = handler.obtainMessage();
-        m.obj = object;
-        m.sendToTarget();
-    }
-
-    @Override
     protected void onDestroy() {
         super.onDestroy();
         bot.quit();
+    }
+
+    @Override
+    protected void process(Object o) {
+        if (o instanceof String) {
+            String str = (String) o;
+            textView.setText(str);
+        }
     }
 
     @Override
@@ -55,27 +51,19 @@ public class Grid2dActivity extends Activity implements ICommunication {
         grid2dView.setOnTouchListener(new Grid2dView.OnTouchListener() {
             @Override
             public void onTouch(Point point) {
-                Log.d("DBG", "DBG: " + point.getX() + " " + point.getY());
+                send(point);
             }
         });
 
-        handler = new Handler(Looper.getMainLooper()) {
-            @Override
-            public void handleMessage(Message msg) {
-                if (msg.obj instanceof Point) {
-                    Point point = (Point) msg.obj;
-                }
-            }
-        };
-
         int examplesNum = getIntent().getIntExtra(Constants.ATTRIBUTE_EXAMPLES, 0);
-        bot = new AbstractGrid2dBot(examplesNum) {
+        bot = new AbstractGrid2dBot(this, examplesNum) {
             @Override
             public void send(Object object) {
                 Grid2dActivity.this.receive(object);
             }
         };
         bot.start();
+        grid2dView.setEnabled(false);
     }
 
 }

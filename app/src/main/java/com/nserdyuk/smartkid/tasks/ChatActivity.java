@@ -3,11 +3,7 @@ package com.nserdyuk.smartkid.tasks;
 import android.animation.ObjectAnimator;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
-import android.os.Message;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.KeyEvent;
@@ -38,17 +34,17 @@ import java.util.Locale;
     https://jeroenmols.com/blog/2016/03/07/resourcenaming/
 
     0. Проверить что в xml файлах нет предупреждений
-    0. Проверить что задания расположены в правильном порядке
-    0. вставить @NonNull
-    1. unit tests
-    2. check adb logcat Runtime Exceptions
-    3. протестировать с входом и выходом из спящего режима
-    3. Проверить как выглядет на смартфоне
-    4. Запретить поворот приложения
-    5. PDB check
+    1. Проверить что задания расположены в правильном порядке
+    2. вставить @NonNull
+    3. unit tests
+    5. протестировать с входом и выходом из спящего режима
+    6. Проверить как выглядет на смартфоне
+    7. Запретить поворот приложения
+    8. PDB check
+    9. check adb logcat Runtime Exceptions
 */
 
-public class ChatActivity extends AppCompatActivity implements ICommunication {
+public class ChatActivity extends AbstractCommunicationActivity {
     private static final String TAG = "ChatActivity";
     private static final String ERROR_LOAD_IMAGES = "An error occurred while loading images";
     private static final String ERROR_INVALID_PARAMETER = "An error occurred while reading extended data from intent";
@@ -59,7 +55,6 @@ public class ChatActivity extends AppCompatActivity implements ICommunication {
     private int colorRightBubble;
     private String rightAnswerMsg;
 
-    private volatile Handler handler;
     private AbstractChatBot chatBot;
     private EditText editText;
     private LayoutInflater layoutInflater;
@@ -73,13 +68,6 @@ public class ChatActivity extends AppCompatActivity implements ICommunication {
     @Override
     public void send(Object object) {
         chatBot.receive(object);
-    }
-
-    @Override
-    public void receive(Object object) {
-        Message m = handler.obtainMessage();
-        m.obj = object;
-        m.sendToTarget();
     }
 
     @Override
@@ -105,20 +93,6 @@ public class ChatActivity extends AppCompatActivity implements ICommunication {
         layoutInflater = getLayoutInflater();
         scrollView = (ScrollView) findViewById(R.id.sv_activity_chat);
         svLinearLayout = (LinearLayout) findViewById(R.id.ll_sv_activity_chat);
-
-        handler = new Handler(Looper.getMainLooper()) {
-            @Override
-            public void handleMessage(Message msg) {
-                if (msg.obj instanceof String) {
-                    String str = (String) msg.obj;
-                    drawBubble(new RightBubble(str));
-                    if (rightAnswerMsg.equals(str)) {
-                        correctAnswers++;
-                        updateTitle();
-                    }
-                }
-            }
-        };
 
         editText = (EditText) findViewById(R.id.et_activity_chat);
         editText.setOnKeyListener(new OnKeyListener());
@@ -152,8 +126,21 @@ public class ChatActivity extends AppCompatActivity implements ICommunication {
             public void onError(String message) {
                 ChatActivity.this.runOnUiThread(new ErrorReporter(message));
             }
+
         });
         chatBot.start();
+    }
+
+    @Override
+    protected void process(Object o) {
+        if (o instanceof String) {
+            String str = (String) o;
+            drawBubble(new RightBubble(str));
+            if (rightAnswerMsg.equals(str)) {
+                correctAnswers++;
+                updateTitle();
+            }
+        }
     }
 
     private void updateTitle() {
