@@ -40,6 +40,9 @@
     <string name="activity_grade_muldiv_10_100_1000">Деление и умножение на 10, 100, 1000</string>
     <string name="activity_grade_grid_2d_easy">Координатный угол (легкий уровень)</string>
     <string name="activity_grade_grid_2d_hard">Координатный угол (сложный уровень)</string>
+    <string name="activity_grade_time_hard">Время (сложный уровень)</string>
+    <string name="activity_grade_time_easy_add">Время, сложение (легкий уровень)</string>
+    <string name="activity_grade_time_easy_sub">Время, вычитание (легкий уровень)</string>
 
     <string-array name="grade0">
         <item>@string/activity_grade_grid_2d_easy</item>
@@ -56,6 +59,7 @@
     </string-array>
 
     <string-array name="grade2">
+        <item>@string/activity_grade_time_easy_add</item>
         <item>@string/activity_grade_grid_2d_hard</item>
         <item>@string/activity_grade_sub_zero</item>
         <item>@string/activity_grade_sub_zero</item>
@@ -63,12 +67,14 @@
     </string-array>
 
     <string-array name="grade3">
+        <item>@string/activity_grade_time_easy_sub</item>
         <item>@string/activity_grade_div_rem</item>
         <item>@string/activity_grade_long_div</item>
         <item>@string/activity_grade_muldiv_10_100_1000</item>
     </string-array>
 
     <string-array name="grade4">
+        <item>@string/activity_grade_time_hard</item>
         <item>@string/activity_grade_div_rem</item>
         <item>@string/activity_grade_long_div</item>
         <item>@string/activity_grade_long_long_div</item>

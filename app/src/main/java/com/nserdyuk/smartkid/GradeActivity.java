@@ -81,10 +81,7 @@ public class GradeActivity extends AppCompatActivity {
         intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 1);
         intent.putExtra(Constants.ATTRIBUTE_FILE, "simple_sub_20.txt");
         nameToIntentMap.put(getResources().getString(R.string.activity_grade_simple_sub20), intent);
-/*
-        intent = new Intent(this, Images.class);
-        nameToIntentMap.put(getResources().getString(R.string.all_images), intent);
-*/
+
         intent = new Intent(this, ChatActivity.class);
         intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 3);
         intent.putExtra(Constants.ATTRIBUTE_FILE, "sub_zero.txt");
@@ -124,6 +121,34 @@ public class GradeActivity extends AppCompatActivity {
         intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 3);
         intent.putExtra(Constants.ATTRIBUTE_FILE, "long_mul.txt");
         nameToIntentMap.put(getResources().getString(R.string.activity_grade_long_mul), intent);
+
+        intent = new Intent(this, ChatActivity.class);
+        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 1);
+        intent.putExtra(Constants.ATTRIBUTE_FILE, "time_hard.txt");
+        intent.putExtra(Constants.ATTRIBUTE_PICS_MASK, "TIME.jpg");
+        nameToIntentMap.put(getResources().getString(R.string.activity_grade_time_hard), intent);
+
+        intent = new Intent(this, ChatActivity.class);
+        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 1);
+        intent.putExtra(Constants.ATTRIBUTE_FILE, "time_easy_add.txt");
+        intent.putExtra(Constants.ATTRIBUTE_PICS_MASK, "TIME.jpg");
+        nameToIntentMap.put(getResources().getString(R.string.activity_grade_time_easy_add), intent);
+
+        intent = new Intent(this, ChatActivity.class);
+        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 1);
+        intent.putExtra(Constants.ATTRIBUTE_FILE, "time_easy_sub.txt");
+        intent.putExtra(Constants.ATTRIBUTE_PICS_MASK, "TIME.jpg");
+        nameToIntentMap.put(getResources().getString(R.string.activity_grade_time_easy_sub), intent);
+
+        intent = new Intent(this, Grid2dActivity.class);
+        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 1);
+        intent.putExtra(Constants.ATTRIBUTE_COMPLEXITY, Complexity.EASY.toString());
+        nameToIntentMap.put(getResources().getString(R.string.activity_grade_grid_2d_easy), intent);
+
+        intent = new Intent(this, Grid2dActivity.class);
+        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 7);
+        intent.putExtra(Constants.ATTRIBUTE_COMPLEXITY, Complexity.HARD.toString());
+        nameToIntentMap.put(getResources().getString(R.string.activity_grade_grid_2d_hard), intent);
 
         /*
         intent = new Intent(this, ClockFace.class);
@@ -165,46 +190,5 @@ public class GradeActivity extends AppCompatActivity {
         intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 3);
         nameToIntentMap.put(getResources().getString(R.string.all_english_present_continuous), intent);
 */
-        intent = new Intent(this, Grid2dActivity.class);
-        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 1);
-        intent.putExtra(Constants.ATTRIBUTE_COMPLEXITY, Complexity.EASY.toString());
-        nameToIntentMap.put(getResources().getString(R.string.activity_grade_grid_2d_easy), intent);
-
-        intent = new Intent(this, Grid2dActivity.class);
-        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 7);
-        intent.putExtra(Constants.ATTRIBUTE_COMPLEXITY, Complexity.HARD.toString());
-        nameToIntentMap.put(getResources().getString(R.string.activity_grade_grid_2d_hard), intent);
-
-/*
-        intent = new Intent(this, DivRemActivity.class);
-        intent.putExtra(Constants.ATTRIBUTE_FIRST_QUESTION,
-                getResources().getString(R.string.all_time_first_question));
-        intent.putExtra(Constants.ATTRIBUTE_SECOND_QUESTION,
-                getResources().getString(R.string.all_time_second_question));
-        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 1);
-        intent.putExtra(Constants.ATTRIBUTE_FILE, "time_hard.txt");
-        intent.putExtra(Constants.ATTRIBUTE_PICS_MASK, "TIME.jpg");
-        nameToIntentMap.put(getResources().getString(R.string.all_time_hard), intent);
-
-        intent = new Intent(this, DivRemActivity.class);
-        intent.putExtra(Constants.ATTRIBUTE_FIRST_QUESTION,
-                getResources().getString(R.string.all_time_first_question));
-        intent.putExtra(Constants.ATTRIBUTE_SECOND_QUESTION,
-                getResources().getString(R.string.all_time_second_question));
-        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 1);
-        intent.putExtra(Constants.ATTRIBUTE_FILE, "time_easy_add.txt");
-        intent.putExtra(Constants.ATTRIBUTE_PICS_MASK, "TIME.jpg");
-        nameToIntentMap.put(getResources().getString(R.string.all_time_easy_add), intent);
-
-        intent = new Intent(this, DivRemActivity.class);
-        intent.putExtra(Constants.ATTRIBUTE_FIRST_QUESTION,
-                getResources().getString(R.string.all_time_first_question));
-        intent.putExtra(Constants.ATTRIBUTE_SECOND_QUESTION,
-                getResources().getString(R.string.all_time_second_question));
-        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 1);
-        intent.putExtra(Constants.ATTRIBUTE_FILE, "time_easy_sub.txt");
-        intent.putExtra(Constants.ATTRIBUTE_PICS_MASK, "TIME.jpg");
-        nameToIntentMap.put(getResources().getString(R.string.all_time_easy_sub), intent);
-        */
     }
 }

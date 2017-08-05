@@ -7,12 +7,11 @@ import java.io.InputStream;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Random;
 
 public class ImageReader {
     public InputStream readRandomImage(AssetManager am, String mask) throws IOException {
         List<String> list = getAvailableImages(am, mask);
-        Collections.shuffle(list, new Random(System.nanoTime()));
+        Collections.shuffle(list);
         return am.open(list.get(0));
     }
 

@@ -63,6 +63,7 @@ public class TextReader {
         public abstract void doProcess(BufferedReader bufferedReader) throws IOException;
 
         public void process(String fileName) throws IOException {
+            Utils.assertNonUiThread();
             try (BufferedReader br = new BufferedReader(new InputStreamReader(am.open(fileName)))) {
                 doProcess(br);
             }
