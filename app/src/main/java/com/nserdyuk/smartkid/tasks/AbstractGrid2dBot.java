@@ -4,16 +4,18 @@ import android.content.Context;
 
 import com.nserdyuk.smartkid.R;
 import com.nserdyuk.smartkid.common.Complexity;
+import com.nserdyuk.smartkid.common.Constants;
 import com.nserdyuk.smartkid.common.Point;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Locale;
 import java.util.Random;
 
 public abstract class AbstractGrid2dBot extends AbstractBot {
     private static final String TAG = "AbstractGrid2dBot";
-    private static final Point INVALID_POINT = new Point(-1, -1);
+    private static final Point START_POINT = new Point(-1, -1);
     private static final int SHORT_DELAY = 500;
     private static final int LONG_DELAY = 1500;
 
@@ -23,9 +25,13 @@ public abstract class AbstractGrid2dBot extends AbstractBot {
     private final Complexity complexity;
     private final int examplesNum;
     private final List<Point> generatedList = new ArrayList<>();
+    private final List<Point> userList = new ArrayList<>();
     private final int rows;
     private final int columns;
     private final Random random;
+
+    private int currentPoint;
+    private int solved;
 
 
     public AbstractGrid2dBot(Context context, int examplesNum, Complexity complexity, int rows, int columns) {
@@ -42,7 +48,7 @@ public abstract class AbstractGrid2dBot extends AbstractBot {
 
     @Override
     protected void startBot() {
-        process(INVALID_POINT);
+        process(START_POINT);
     }
 
     @Override
@@ -51,31 +57,45 @@ public abstract class AbstractGrid2dBot extends AbstractBot {
             return;
         }
 
-        if (INVALID_POINT.equals(o)) {
-            send(greetingMsg);
-            /*
-            delay(LONG_DELAY);
-            send("");
-            delay(SHORT_DELAY);
-            */
+        if (START_POINT.equals(o)) {
+            sendWithDelay(greetingMsg, LONG_DELAY);
             generatePoints();
+            currentPoint = 0;
+        } else {
+            userList.add((Point) o);
+            if (currentPoint == examplesNum) {
+                currentPoint = 0;
+                if (userList.equals(generatedList)) {
+                    sendWithDelay(rightAnswerMsg, LONG_DELAY);
+                    generatePoints();
+                    solved += examplesNum;
+                } else {
+                    sendWithDelay(wrongAnswerMsg, LONG_DELAY);
+                }
+                send(Constants.GRID2D_CLEAR_POINTS);
+                userList.clear();
+            }
+        }
+        Point p = generatedList.get(currentPoint++);
+        String msg = String.format(Locale.US, solved == 0 ? Constants.GRID2D_POINT_FORMAT : Constants.GRID2D_POINT_FORMAT_EXAMPLES, p.getX(), p.getY(), solved);
+        sendWithDelay(msg, SHORT_DELAY);
+    }
+
+    private void sendWithDelay(String msg, long millis) {
+        send(msg);
+        delay(millis);
+    }
+
+    private void delay(long millis) {
+        try {
+            Thread.sleep(millis);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
         }
     }
 
     private void generatePoints() {
         generatedList.clear();
-
-        if (complexity == Complexity.HARD) {
-            for (int i = 0; i < columns; i++) {
-                Point p = new Point(i, 0);
-                generatedList.add(p);
-            }
-
-            for (int i = 1; i < rows; i++) {
-                Point p = new Point(0, i);
-                generatedList.add(p);
-            }
-        }
 
         for (int i = 0; i < examplesNum; i++) {
             Point p;
@@ -88,15 +108,17 @@ public abstract class AbstractGrid2dBot extends AbstractBot {
         }
 
         if (complexity == Complexity.HARD) {
-            Collections.shuffle(generatedList);
-        }
-    }
+            for (int i = 0; i < columns; i++) {
+                Point p = new Point(i, 0);
+                generatedList.add(p);
+            }
 
-    private void delay(long millis) {
-        try {
-            Thread.sleep(millis);
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
+            for (int i = 1; i < rows; i++) {
+                Point p = new Point(0, i);
+                generatedList.add(p);
+            }
+
+            Collections.shuffle(generatedList);
         }
     }
 

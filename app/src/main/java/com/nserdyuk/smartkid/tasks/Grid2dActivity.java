@@ -18,7 +18,10 @@ public class Grid2dActivity extends AbstractCommunicationActivity implements ICo
     private Grid2dView grid2dView;
     private TextView textView;
     private AbstractGrid2dBot bot;
-    private boolean greetingMsgPassed;
+
+    private String greetingMsg;
+    private String rightAnswerMsg;
+    private String wrongAnswerMsg;
 
     @Override
     public void send(Object object) {
@@ -34,12 +37,19 @@ public class Grid2dActivity extends AbstractCommunicationActivity implements ICo
     @Override
     protected void process(Object o) {
         if (o instanceof String) {
-            if (greetingMsgPassed) {
-                grid2dView.setClickable(true);
-            }
-            greetingMsgPassed = true;
             String str = (String) o;
+
+            if (Constants.GRID2D_CLEAR_POINTS.equals(str)) {
+                grid2dView.clearPoints();
+                return;
+            }
+
             textView.setText(str);
+            if (greetingMsg.equals(str) || rightAnswerMsg.equals(str) || wrongAnswerMsg.equals(str)) {
+                return;
+            }
+
+            grid2dView.setClickable(true);
         }
     }
 
@@ -50,6 +60,10 @@ public class Grid2dActivity extends AbstractCommunicationActivity implements ICo
         textView = (TextView) findViewById(R.id.tv_activity_grid2d);
         textView.setBackgroundColor(COLOR_BACKGROUND);
         textView.setTextColor(COLOR_TEXT_TITLE);
+
+        greetingMsg = getResources().getString(R.string.greeting);
+        rightAnswerMsg = getResources().getString(R.string.rightAnswer);
+        wrongAnswerMsg = getResources().getString(R.string.wrongAnswer);
 
         grid2dView = (Grid2dView)findViewById(R.id.grid_activity_grid2d);
         grid2dView.setBackgroundColor(COLOR_BACKGROUND);

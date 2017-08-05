@@ -15,6 +15,7 @@ public abstract class AbstractChatBot extends AbstractBot {
     private static final String TAG = "AbstractChatBot";
     private static final String ERROR = "An error occurred in chat bot";
     private static final String CONTENT_ERROR = "Invalid content";
+    private static final String WELCOME_MESSAGE = "";
 
     private final String greetingMsg;
     private final String rightAnswerMsg;
@@ -45,7 +46,7 @@ public abstract class AbstractChatBot extends AbstractBot {
 
     @Override
     protected void startBot() {
-        process("");
+        process(WELCOME_MESSAGE);
     }
 
     @Override
@@ -56,7 +57,7 @@ public abstract class AbstractChatBot extends AbstractBot {
 
         String input = (String)o;
         try {
-            if (input.isEmpty()) {
+            if (WELCOME_MESSAGE.equals(o)) {
                 send(greetingMsg);
                 loadExamples();
                 currentExample = 0;
@@ -73,7 +74,6 @@ public abstract class AbstractChatBot extends AbstractBot {
                         boolean resultOk = checkAllExamples();
                          if (resultOk) {
                              send(rightAnswerMsg);
-
                              loadExamples();
                          } else {
                              send(wrongAnswerMsg);

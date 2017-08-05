@@ -63,7 +63,7 @@ public class Grid2dView extends View {
 
     public void clearPoints() {
         points.clear();
-        // TODO: invalidate() ?
+        invalidate();
     }
 
     public void setAxisWidth(int width) {

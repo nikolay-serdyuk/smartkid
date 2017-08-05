@@ -14,7 +14,10 @@ public final class Constants {
     public static final String DEFAULT_PICS_MASK = ".gif";
     public static final String STRING_DELIMITER = "\\|";
 
-    public static final String RIGHT_ANSWER_FORMAT = "%s [%d]";
+    public static final String RIGHT_ANSWER_FORMAT = "%s\t[%d]";
+    public static final String GRID2D_POINT_FORMAT = "(%d, %d)";
+    public static final String GRID2D_POINT_FORMAT_EXAMPLES = GRID2D_POINT_FORMAT + "\t[%d]";
+    public static final String GRID2D_CLEAR_POINTS = "";
 
     private Constants() {}
 }
