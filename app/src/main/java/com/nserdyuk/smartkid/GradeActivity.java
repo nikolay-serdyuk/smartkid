@@ -58,7 +58,7 @@ public class GradeActivity extends AppCompatActivity {
         nameToIntentMap = new HashMap<>();
 
         intent = new Intent(this, ChatActivity.class);
-        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 2);
+        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 1);
         intent.putExtra(Constants.ATTRIBUTE_FILE, "simple_add.txt");
         nameToIntentMap.put(getResources().getString(R.string.activity_grade_simple_add10), intent);
 
