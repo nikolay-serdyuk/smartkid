@@ -45,7 +45,7 @@ public class Grid2dView extends View {
     private int majorAxisWidth = 2 * WIDTH_GRID_MINOR;
     private OnTouchListener onTouchListener;
 
-    private List<Point> points = new ArrayList<>();
+    private final List<Point> points = new ArrayList<>();
 
     public Grid2dView(Context context) {
         super(context);

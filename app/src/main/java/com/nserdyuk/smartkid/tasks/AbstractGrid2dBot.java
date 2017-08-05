@@ -32,7 +32,7 @@ public abstract class AbstractGrid2dBot extends AbstractBot {
     private int currentPoint;
     private int solved;
     private List<Point> generatedList = new ArrayList<>();
-    private List<Point> userList = new ArrayList<>();
+    private final List<Point> userList = new ArrayList<>();
 
 
     public AbstractGrid2dBot(Context context, int examplesNum, Complexity complexity, int rows, int columns) {

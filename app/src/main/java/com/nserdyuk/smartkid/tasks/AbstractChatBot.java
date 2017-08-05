@@ -22,11 +22,11 @@ public abstract class AbstractChatBot extends AbstractBot {
     private final String wrongAnswerMsg;
     private final String nextAnswerMsg;
 
-    private int examplesNum;
+    private final int examplesNum;
     private int currentExample;
     private int currentAnswer;
     private Test[] examples;
-    private TextReader textReader;
+    private final TextReader textReader;
     private OnErrorListener onErrorListener;
 
     public AbstractChatBot(Context context, AssetManager am, String fileName, int examplesNum) {

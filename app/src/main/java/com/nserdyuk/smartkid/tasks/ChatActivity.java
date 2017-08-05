@@ -64,6 +64,7 @@ public class ChatActivity extends AbstractCommunicationActivity {
 
     private String titleMessage;
     private int correctAnswers;
+    private int examplesNum;
 
     @Override
     public void send(Object object) {
@@ -113,7 +114,7 @@ public class ChatActivity extends AbstractCommunicationActivity {
         if (StringUtils.isBlank(fileName)) {
             showError(ERROR_INVALID_PARAMETER);
         }
-        int examplesNum = getIntent().getIntExtra(Constants.ATTRIBUTE_EXAMPLES, 0);
+        examplesNum = getIntent().getIntExtra(Constants.ATTRIBUTE_EXAMPLES, 0);
         chatBot = new AbstractChatBot(this, getAssets(), fileName, examplesNum) {
             @Override
             public void send(Object object) {
@@ -137,7 +138,7 @@ public class ChatActivity extends AbstractCommunicationActivity {
             String str = (String) o;
             drawBubble(new RightBubble(str));
             if (rightAnswerMsg.equals(str)) {
-                correctAnswers++;
+                correctAnswers += examplesNum;
                 updateTitle();
             }
         }

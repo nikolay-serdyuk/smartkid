@@ -31,7 +31,7 @@ public class GradeActivity extends AppCompatActivity {
         initListView();
     }
 
-    protected void initListView() {
+    private void initListView() {
         TypedArray menuResources = getResources().obtainTypedArray(R.array.all_grades);
         int id = menuResources.getResourceId(grade, 0);
         arrayOfTasks = getResources().getStringArray(id);
