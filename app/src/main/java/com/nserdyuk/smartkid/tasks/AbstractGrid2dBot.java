@@ -1,6 +1,7 @@
 package com.nserdyuk.smartkid.tasks;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.nserdyuk.smartkid.R;
 import com.nserdyuk.smartkid.common.Complexity;
@@ -24,14 +25,14 @@ public abstract class AbstractGrid2dBot extends AbstractBot {
     private final String wrongAnswerMsg;
     private final Complexity complexity;
     private final int examplesNum;
-    private final List<Point> generatedList = new ArrayList<>();
-    private final List<Point> userList = new ArrayList<>();
     private final int rows;
     private final int columns;
     private final Random random;
 
     private int currentPoint;
     private int solved;
+    private List<Point> generatedList = new ArrayList<>();
+    private List<Point> userList = new ArrayList<>();
 
 
     public AbstractGrid2dBot(Context context, int examplesNum, Complexity complexity, int rows, int columns) {
@@ -63,6 +64,8 @@ public abstract class AbstractGrid2dBot extends AbstractBot {
             currentPoint = 0;
         } else {
             userList.add((Point) o);
+            Log.e("DBG: read ", " " + ((Point) o).getX() + " " + ((Point) o).getY());
+
             if (currentPoint == examplesNum) {
                 currentPoint = 0;
                 if (userList.equals(generatedList)) {
@@ -119,6 +122,7 @@ public abstract class AbstractGrid2dBot extends AbstractBot {
             }
 
             Collections.shuffle(generatedList);
+            generatedList = generatedList.subList(0, examplesNum);
         }
     }
 

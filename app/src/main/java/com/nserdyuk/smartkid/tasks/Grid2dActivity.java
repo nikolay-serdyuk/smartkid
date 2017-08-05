@@ -7,6 +7,7 @@ import android.widget.TextView;
 import com.nserdyuk.smartkid.R;
 import com.nserdyuk.smartkid.common.Complexity;
 import com.nserdyuk.smartkid.common.Constants;
+import com.nserdyuk.smartkid.common.Dialogs;
 import com.nserdyuk.smartkid.common.Point;
 import com.nserdyuk.smartkid.views.Grid2dView;
 
@@ -26,6 +27,11 @@ public class Grid2dActivity extends AbstractCommunicationActivity implements ICo
     @Override
     public void send(Object object) {
         bot.receive(object);
+    }
+
+    @Override
+    public void onBackPressed() {
+        Dialogs.showExitDialog(this);
     }
 
     @Override
