@@ -15,11 +15,11 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.nserdyuk.smartkid.R;
 import com.nserdyuk.smartkid.common.Constants;
 import com.nserdyuk.smartkid.common.Dialogs;
+import com.nserdyuk.smartkid.common.Utils;
 import com.nserdyuk.smartkid.io.ImageReader;
 
 import org.apache.commons.lang3.StringUtils;
@@ -109,7 +109,7 @@ public class ChatActivity extends AbstractCommunicationActivity {
 
         String fileName = getIntent().getStringExtra(Constants.ATTRIBUTE_FILE);
         if (StringUtils.isBlank(fileName)) {
-            showError(ERROR_INVALID_PARAMETER);
+            Utils.showError(this, ERROR_INVALID_PARAMETER);
         }
         examplesNum = getIntent().getIntExtra(Constants.ATTRIBUTE_EXAMPLES, 0);
         chatBot = new AbstractChatBot(this, getAssets(), fileName, examplesNum) {
@@ -122,7 +122,7 @@ public class ChatActivity extends AbstractCommunicationActivity {
 
             @Override
             public void onError(String message) {
-                runOnUiThread(new ErrorReporter(message));
+                Utils.showErrorInUiThread(ChatActivity.this, message);
             }
 
         });
@@ -169,15 +169,10 @@ public class ChatActivity extends AbstractCommunicationActivity {
                     });
                 } catch (IOException e) {
                     Log.e(TAG, ERROR_LOAD_IMAGES, e);
-                    runOnUiThread(new ErrorReporter(ERROR_LOAD_IMAGES));
+                    Utils.showErrorInUiThread(ChatActivity.this, ERROR_LOAD_IMAGES);
                 }
             }
         }).start();
-    }
-
-    private void showError(String message) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
-        finish();
     }
 
     private void drawBubble(Bubble bubble) {
@@ -254,16 +249,4 @@ public class ChatActivity extends AbstractCommunicationActivity {
 
     }
 
-    private class ErrorReporter implements Runnable {
-        private final String m;
-
-        public ErrorReporter(String m) {
-            this.m = m;
-        }
-
-        @Override
-        public void run() {
-            showError(m);
-        }
-    }
 }

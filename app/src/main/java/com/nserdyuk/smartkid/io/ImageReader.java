@@ -2,6 +2,8 @@ package com.nserdyuk.smartkid.io;
 
 import android.content.res.AssetManager;
 
+import com.nserdyuk.smartkid.common.Utils;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Collections;
