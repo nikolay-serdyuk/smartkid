@@ -1,54 +1,48 @@
 package com.nserdyuk.smartkid.io;
 
-import android.app.Activity;
 import android.content.res.AssetManager;
 import android.graphics.drawable.Drawable;
+import android.os.AsyncTask;
 import android.util.Log;
-import android.widget.ImageView;
 
 import com.nserdyuk.smartkid.common.Utils;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Locale;
+import java.util.Random;
 
-public final class ImageReader {
-    private static final String ERROR_NO_IMAGES_FOUND = "No images found with mask %s";
+public class ImageReader extends AsyncTask<String, Void, Drawable> {
     private static final String ERROR_LOAD_IMAGES = "An error occurred while loading images";
+    private static final String ERROR_NO_IMAGES_FOUND = "No images found with mask %s";
+    private static final String TAG = ImageReader.class.getName();
 
-    public static void setBackgroundRandomImage(final Activity activity, final ImageView imageView, final String mask) {
-        new Thread(new Runnable() {
+    private final AssetManager assetManager;
 
-            @Override
-            public void run() {
-                try {
-                    InputStream is = readRandomImage(activity.getAssets(), mask);
-                    final Drawable drawable = Drawable.createFromStream(is, null);
-                    activity.runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            imageView.setImageDrawable(drawable);
-                        }
-                    });
-                } catch (IOException e) {
-                    Log.e(activity.getClass().getName(), ERROR_LOAD_IMAGES, e);
-                    Utils.showErrorInUiThread(activity, ERROR_LOAD_IMAGES);
-                }
-            }
-        }).start();
+    public ImageReader(AssetManager assetManager) {
+        this.assetManager = assetManager;
     }
 
-    private static InputStream readRandomImage(AssetManager am, String mask) throws IOException {
+    @Override
+    protected Drawable doInBackground(String... mask) {
+        Drawable drawable = null;
+        try (InputStream is = readRandomImage(assetManager, mask[0])){
+            drawable = Drawable.createFromStream(is, null);
+        } catch (IOException e) {
+            Log.e(TAG, ERROR_LOAD_IMAGES, e);
+        }
+        return drawable;
+    }
+
+    private InputStream readRandomImage(AssetManager am, String mask) throws IOException {
         Utils.assertNonUiThread();
         List<String> list = getAvailableImages(am, mask);
-        Collections.shuffle(list);
-        return am.open(list.get(0));
+        return am.open(list.get(new Random().nextInt(list.size())));
     }
 
-    private static List<String> getAvailableImages(AssetManager am, String mask) throws IOException {
+    private List<String> getAvailableImages(AssetManager am, String mask) throws IOException {
         List<String> images = new LinkedList<>();
         String[] list = am.list("");
         if (list.length > 0) {
@@ -63,4 +57,5 @@ public final class ImageReader {
         }
         return images;
     }
+
 }

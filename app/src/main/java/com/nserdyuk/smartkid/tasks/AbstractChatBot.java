@@ -27,7 +27,7 @@ public abstract class AbstractChatBot extends AbstractBot {
     private int currentAnswer;
     private Test[] examples;
     private final TextReader textReader;
-    private OnErrorListener onErrorListener;
+    private volatile OnErrorListener onErrorListener;
 
     public AbstractChatBot(Context context, AssetManager am, String fileName, int examplesNum) {
         super(TAG);

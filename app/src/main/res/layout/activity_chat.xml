@@ -14,7 +14,7 @@
     </TextView>
 
     <ImageView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tv_activity_chat_title"
         android:layout_above="@+id/rl_activity_chat_input_window"

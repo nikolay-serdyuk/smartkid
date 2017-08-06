@@ -1,6 +1,7 @@
 package com.nserdyuk.smartkid.tasks;
 
 import android.animation.ObjectAnimator;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.view.Gravity;
@@ -42,6 +43,7 @@ import java.util.Locale;
 */
 
 public class ChatActivity extends AbstractCommunicationActivity {
+    private static final String ERROR_LOAD_IMAGES = "An error occurred while loading images";
     private static final String ERROR_INVALID_PARAMETER = "An error occurred while reading extended data from intent";
     private static final int DEFAULT_MARGIN = 15;
     private static final int ANIMATION_DURATION = 1000;
@@ -94,14 +96,11 @@ public class ChatActivity extends AbstractCommunicationActivity {
         editText = (EditText) findViewById(R.id.et_activity_chat);
         editText.setOnKeyListener(new OnKeyListener());
 
-        imageView = (ImageView) findViewById(R.id.iv_activity_chat);
-        String extra = getIntent().getStringExtra(Constants.ATTRIBUTE_PICS_MASK);
-        String picMask = extra != null ? extra : Constants.DEFAULT_PICS_MASK;
-        ImageReader.setBackgroundRandomImage(this, imageView, picMask);
-
         titleMessage = getIntent().getStringExtra(Constants.ATTRIBUTE_TITLE);
         title = (TextView) findViewById(R.id.tv_activity_chat_title);
         updateTitle();
+
+        setBackgroundImage();
 
         String fileName = getIntent().getStringExtra(Constants.ATTRIBUTE_FILE);
         if (StringUtils.isBlank(fileName)) {
@@ -135,6 +134,28 @@ public class ChatActivity extends AbstractCommunicationActivity {
                 updateTitle();
             }
         }
+    }
+
+    private void setBackgroundImage() {
+        imageView = (ImageView) findViewById(R.id.iv_activity_chat);
+        String extra = getIntent().getStringExtra(Constants.ATTRIBUTE_PICS_MASK);
+        String picMask = extra != null ? extra : Constants.DEFAULT_PICS_MASK;
+
+        new ImageReader(getAssets()) {
+            @Override
+            protected void onPostExecute(final Drawable drawable) {
+                if (drawable != null) {
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            imageView.setImageDrawable(drawable);
+                        }
+                    });
+                } else {
+                    Utils.showErrorInUiThread(ChatActivity.this, ERROR_LOAD_IMAGES);
+                }
+            }
+        }.execute(picMask);
     }
 
     private void updateTitle() {
