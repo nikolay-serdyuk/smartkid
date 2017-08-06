@@ -7,9 +7,12 @@ import java.io.InputStream;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Locale;
 
 public class ImageReader {
+    private static final String ERROR_NO_IMAGES_FOUND = "No images found with mask %s";
     public InputStream readRandomImage(AssetManager am, String mask) throws IOException {
+        Utils.assertNonUiThread();
         List<String> list = getAvailableImages(am, mask);
         Collections.shuffle(list);
         return am.open(list.get(0));
@@ -24,6 +27,9 @@ public class ImageReader {
                     images.add(file);
                 }
             }
+        }
+        if (images.size() == 0) {
+            throw new IOException(String.format(Locale.US, ERROR_NO_IMAGES_FOUND, mask));
         }
         return images;
     }

@@ -61,6 +61,7 @@ public class ChatActivity extends AbstractCommunicationActivity {
     private ScrollView scrollView;
     private LinearLayout svLinearLayout;
     private TextView title;
+    private ImageView imageView;
 
     private String titleMessage;
     private int correctAnswers;
@@ -98,13 +99,9 @@ public class ChatActivity extends AbstractCommunicationActivity {
         editText = (EditText) findViewById(R.id.et_activity_chat);
         editText.setOnKeyListener(new OnKeyListener());
 
-        try {
-            setBackgroundImage();
-        } catch (IOException e) {
-            Log.e(TAG, ERROR_LOAD_IMAGES, e);
-            showError(ERROR_LOAD_IMAGES);
-            return;
-        }
+        imageView = (ImageView) findViewById(R.id.iv_activity_chat);
+
+        setBackgroundImage();
 
         titleMessage = getIntent().getStringExtra(Constants.ATTRIBUTE_TITLE);
         title = (TextView) findViewById(R.id.tv_activity_chat_title);
@@ -125,7 +122,7 @@ public class ChatActivity extends AbstractCommunicationActivity {
 
             @Override
             public void onError(String message) {
-                ChatActivity.this.runOnUiThread(new ErrorReporter(message));
+                runOnUiThread(new ErrorReporter(message));
             }
 
         });
@@ -154,14 +151,28 @@ public class ChatActivity extends AbstractCommunicationActivity {
         title.setText(t);
     }
 
-    private void setBackgroundImage() throws IOException {
-        String picMask = getIntent().getStringExtra(Constants.ATTRIBUTE_PICS_MASK);
-        if (picMask == null) {
-            picMask = Constants.DEFAULT_PICS_MASK;
-        }
-        InputStream is = new ImageReader().readRandomImage(getAssets(), picMask);
-        ImageView myImage = (ImageView) findViewById(R.id.iv_activity_chat);
-        myImage.setImageDrawable(Drawable.createFromStream(is, null));
+    private void setBackgroundImage() {
+        String extra = getIntent().getStringExtra(Constants.ATTRIBUTE_PICS_MASK);
+        final String picMask = extra != null ? extra : Constants.DEFAULT_PICS_MASK;
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    InputStream is = new ImageReader().readRandomImage(getAssets(), picMask);
+                    final Drawable drawable = Drawable.createFromStream(is, null);
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            imageView.setImageDrawable(drawable);
+                        }
+                    });
+                } catch (IOException e) {
+                    Log.e(TAG, ERROR_LOAD_IMAGES, e);
+                    runOnUiThread(new ErrorReporter(ERROR_LOAD_IMAGES));
+                }
+            }
+        }).start();
     }
 
     private void showError(String message) {
