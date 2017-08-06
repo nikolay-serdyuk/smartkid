@@ -142,6 +142,7 @@ public class ChatActivity extends AbstractCommunicationActivity {
         String picMask = extra != null ? extra : Constants.DEFAULT_PICS_MASK;
 
         new ImageReader(getAssets()) {
+
             @Override
             protected void onPostExecute(final Drawable drawable) {
                 if (drawable != null) {
@@ -151,10 +152,14 @@ public class ChatActivity extends AbstractCommunicationActivity {
                             imageView.setImageDrawable(drawable);
                         }
                     });
-                } else {
-                    Utils.showErrorInUiThread(ChatActivity.this, ERROR_LOAD_IMAGES);
                 }
             }
+
+            @Override
+            protected void onError(Exception e) {
+                Utils.showErrorInUiThread(ChatActivity.this, ERROR_LOAD_IMAGES);
+            }
+
         }.execute(picMask);
     }
 

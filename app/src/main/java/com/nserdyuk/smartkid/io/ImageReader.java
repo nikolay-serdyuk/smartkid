@@ -32,9 +32,12 @@ public class ImageReader extends AsyncTask<String, Void, Drawable> {
             drawable = Drawable.createFromStream(is, null);
         } catch (IOException e) {
             Log.e(TAG, ERROR_LOAD_IMAGES, e);
+            onError(e);
         }
         return drawable;
     }
+
+    protected void onError(Exception e) {}
 
     private InputStream readRandomImage(AssetManager am, String mask) throws IOException {
         Utils.assertNonUiThread();
