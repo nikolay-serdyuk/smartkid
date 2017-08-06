@@ -11,7 +11,7 @@ import com.nserdyuk.smartkid.common.Dialogs;
 import com.nserdyuk.smartkid.common.Point;
 import com.nserdyuk.smartkid.views.Grid2dView;
 
-public class Grid2dActivity extends AbstractCommunicationActivity implements ICommunication {
+public class Grid2dActivity extends AbstractCommunicationActivity {
 
     private final static int COLOR_BACKGROUND = Color.WHITE;
     private final static int COLOR_TEXT_TITLE = Color.BLACK;
@@ -25,11 +25,6 @@ public class Grid2dActivity extends AbstractCommunicationActivity implements ICo
     private String wrongAnswerMsg;
 
     @Override
-    public void send(Object object) {
-        bot.receive(object);
-    }
-
-    @Override
     public void onBackPressed() {
         Dialogs.showExitDialog(this);
     }
@@ -38,6 +33,11 @@ public class Grid2dActivity extends AbstractCommunicationActivity implements ICo
     protected void onDestroy() {
         super.onDestroy();
         bot.quit();
+    }
+
+    @Override
+    protected void send(Object object) {
+        bot.receive(object);
     }
 
     @Override

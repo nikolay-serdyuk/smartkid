@@ -4,21 +4,20 @@ import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Message;
 
-public abstract class AbstractBot extends HandlerThread implements ICommunication {
+public abstract class AbstractBot extends HandlerThread {
     private volatile Handler mHandler;
 
     public AbstractBot(String name) {
         super(name);
     }
 
-    @Override
     public void receive(Object msg) {
         Message m = mHandler.obtainMessage();
         m.obj = msg;
         m.sendToTarget();
     }
 
-    public abstract void send(Object msg);
+    protected abstract void send(Object msg);
 
     @Override
     protected void onLooperPrepared() {

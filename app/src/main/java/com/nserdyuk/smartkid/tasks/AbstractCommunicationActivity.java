@@ -6,17 +6,16 @@ import android.os.Looper;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 
-public abstract class AbstractCommunicationActivity extends AppCompatActivity implements ICommunication {
+public abstract class AbstractCommunicationActivity extends AppCompatActivity {
     private volatile Handler handler;
 
-    @Override
     public void receive(Object object) {
         Message m = handler.obtainMessage();
         m.obj = object;
         m.sendToTarget();
     }
 
-    public abstract void send(Object msg);
+    protected abstract void send(Object msg);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -65,11 +65,6 @@ public class ChatActivity extends AbstractCommunicationActivity {
     private int examplesNum;
 
     @Override
-    public void send(Object object) {
-        chatBot.receive(object);
-    }
-
-    @Override
     public void onBackPressed() {
         Dialogs.showExitDialog(this);
     }
@@ -78,6 +73,11 @@ public class ChatActivity extends AbstractCommunicationActivity {
     protected void onDestroy() {
         super.onDestroy();
         chatBot.quit();
+    }
+
+    @Override
+    protected void send(Object object) {
+        chatBot.receive(object);
     }
 
     @Override
