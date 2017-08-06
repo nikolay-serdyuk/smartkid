@@ -5,7 +5,7 @@ import android.os.Looper;
 import android.widget.Toast;
 
 public final class Utils {
-    private static String ERROR_CANT_RUN_IN_UI = "can't run in UI thread";
+    private static final String ERROR_CANT_RUN_IN_UI = "can't run in UI thread";
 
     public static void assertNonUiThread() {
         if (isUiThread()) {

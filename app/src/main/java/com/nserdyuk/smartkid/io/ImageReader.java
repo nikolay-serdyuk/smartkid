@@ -1,6 +1,10 @@
 package com.nserdyuk.smartkid.io;
 
+import android.app.Activity;
 import android.content.res.AssetManager;
+import android.graphics.drawable.Drawable;
+import android.util.Log;
+import android.widget.ImageView;
 
 import com.nserdyuk.smartkid.common.Utils;
 
@@ -11,16 +15,40 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Locale;
 
-public class ImageReader {
+public final class ImageReader {
     private static final String ERROR_NO_IMAGES_FOUND = "No images found with mask %s";
-    public InputStream readRandomImage(AssetManager am, String mask) throws IOException {
+    private static final String ERROR_LOAD_IMAGES = "An error occurred while loading images";
+
+    public static void setBackgroundRandomImage(final Activity activity, final ImageView imageView, final String mask) {
+        new Thread(new Runnable() {
+
+            @Override
+            public void run() {
+                try {
+                    InputStream is = readRandomImage(activity.getAssets(), mask);
+                    final Drawable drawable = Drawable.createFromStream(is, null);
+                    activity.runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            imageView.setImageDrawable(drawable);
+                        }
+                    });
+                } catch (IOException e) {
+                    Log.e(activity.getClass().getName(), ERROR_LOAD_IMAGES, e);
+                    Utils.showErrorInUiThread(activity, ERROR_LOAD_IMAGES);
+                }
+            }
+        }).start();
+    }
+
+    private static InputStream readRandomImage(AssetManager am, String mask) throws IOException {
         Utils.assertNonUiThread();
         List<String> list = getAvailableImages(am, mask);
         Collections.shuffle(list);
         return am.open(list.get(0));
     }
 
-    private List<String> getAvailableImages(AssetManager am, String mask) throws IOException {
+    private static List<String> getAvailableImages(AssetManager am, String mask) throws IOException {
         List<String> images = new LinkedList<>();
         String[] list = am.list("");
         if (list.length > 0) {

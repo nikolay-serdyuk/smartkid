@@ -15,7 +15,7 @@ import java.util.Locale;
 import java.util.Random;
 
 public abstract class AbstractGrid2dBot extends AbstractBot {
-    private static final String TAG = "AbstractGrid2dBot";
+    private static final String TAG = AbstractGrid2dBot.class.getName();
     private static final Point START_POINT = new Point(-1, -1);
     private static final int SHORT_DELAY = 500;
     private static final int LONG_DELAY = 1500;

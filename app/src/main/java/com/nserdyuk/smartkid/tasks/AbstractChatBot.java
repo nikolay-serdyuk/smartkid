@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.util.Arrays;
 
 public abstract class AbstractChatBot extends AbstractBot {
-    private static final String TAG = "AbstractChatBot";
+    private static final String TAG = AbstractChatBot.class.getName();
     private static final String ERROR = "An error occurred in chat bot";
     private static final String CONTENT_ERROR = "Invalid content";
     private static final String WELCOME_MESSAGE = "";

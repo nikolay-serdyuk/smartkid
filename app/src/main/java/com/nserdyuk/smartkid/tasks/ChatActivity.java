@@ -1,10 +1,8 @@
 package com.nserdyuk.smartkid.tasks;
 
 import android.animation.ObjectAnimator;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -24,8 +22,7 @@ import com.nserdyuk.smartkid.io.ImageReader;
 
 import org.apache.commons.lang3.StringUtils;
 
-import java.io.IOException;
-import java.io.InputStream;
+
 import java.util.Locale;
 
 /*
@@ -45,8 +42,6 @@ import java.util.Locale;
 */
 
 public class ChatActivity extends AbstractCommunicationActivity {
-    private static final String TAG = "ChatActivity";
-    private static final String ERROR_LOAD_IMAGES = "An error occurred while loading images";
     private static final String ERROR_INVALID_PARAMETER = "An error occurred while reading extended data from intent";
     private static final int DEFAULT_MARGIN = 15;
     private static final int ANIMATION_DURATION = 1000;
@@ -100,8 +95,9 @@ public class ChatActivity extends AbstractCommunicationActivity {
         editText.setOnKeyListener(new OnKeyListener());
 
         imageView = (ImageView) findViewById(R.id.iv_activity_chat);
-
-        setBackgroundImage();
+        String extra = getIntent().getStringExtra(Constants.ATTRIBUTE_PICS_MASK);
+        String picMask = extra != null ? extra : Constants.DEFAULT_PICS_MASK;
+        ImageReader.setBackgroundRandomImage(this, imageView, picMask);
 
         titleMessage = getIntent().getStringExtra(Constants.ATTRIBUTE_TITLE);
         title = (TextView) findViewById(R.id.tv_activity_chat_title);
@@ -149,30 +145,6 @@ public class ChatActivity extends AbstractCommunicationActivity {
             t = titleMessage;
         }
         title.setText(t);
-    }
-
-    private void setBackgroundImage() {
-        String extra = getIntent().getStringExtra(Constants.ATTRIBUTE_PICS_MASK);
-        final String picMask = extra != null ? extra : Constants.DEFAULT_PICS_MASK;
-
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    InputStream is = new ImageReader().readRandomImage(getAssets(), picMask);
-                    final Drawable drawable = Drawable.createFromStream(is, null);
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            imageView.setImageDrawable(drawable);
-                        }
-                    });
-                } catch (IOException e) {
-                    Log.e(TAG, ERROR_LOAD_IMAGES, e);
-                    Utils.showErrorInUiThread(ChatActivity.this, ERROR_LOAD_IMAGES);
-                }
-            }
-        }).start();
     }
 
     private void drawBubble(Bubble bubble) {
