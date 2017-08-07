@@ -6,6 +6,7 @@ import android.util.Log;
 
 import com.nserdyuk.smartkid.R;
 import com.nserdyuk.smartkid.common.Constants;
+import com.nserdyuk.smartkid.common.IErrorListener;
 import com.nserdyuk.smartkid.io.TextReader;
 
 import java.io.IOException;
@@ -27,7 +28,7 @@ public abstract class AbstractChatBot extends AbstractBot {
     private int currentAnswer;
     private Test[] examples;
     private final TextReader textReader;
-    private volatile OnErrorListener onErrorListener;
+    private volatile IErrorListener errorListener;
 
     public AbstractChatBot(Context context, AssetManager am, String fileName, int examplesNum) {
         super(TAG);
@@ -40,8 +41,8 @@ public abstract class AbstractChatBot extends AbstractBot {
     }
 
 
-    public void setOnErrorListener(OnErrorListener listener) {
-        onErrorListener = listener;
+    public void setOnErrorListener(IErrorListener listener) {
+        errorListener = listener;
     }
 
     @Override
@@ -85,8 +86,8 @@ public abstract class AbstractChatBot extends AbstractBot {
             }
         } catch (ChatBotException e) {
             Log.e(TAG, ERROR, e);
-            if (onErrorListener != null) {
-                onErrorListener.onError(e.getMessage());
+            if (errorListener != null) {
+                errorListener.onError(e);
             }
         }
     }
@@ -117,10 +118,6 @@ public abstract class AbstractChatBot extends AbstractBot {
             }
             examples[i] = new Test(parts[0], Arrays.copyOfRange(parts, 1, parts.length));
         }
-    }
-
-    interface OnErrorListener {
-        void onError(String message);
     }
 
     private class Test {

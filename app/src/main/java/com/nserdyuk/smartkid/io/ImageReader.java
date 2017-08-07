@@ -6,6 +6,7 @@ import android.os.AsyncTask;
 import android.util.Log;
 
 import com.nserdyuk.smartkid.common.Utils;
+import com.nserdyuk.smartkid.common.IErrorListener;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -20,9 +21,14 @@ public class ImageReader extends AsyncTask<String, Void, Drawable> {
     private static final String TAG = ImageReader.class.getName();
 
     private final AssetManager assetManager;
+    private volatile IErrorListener errorListener;
 
     public ImageReader(AssetManager assetManager) {
         this.assetManager = assetManager;
+    }
+
+    public void setOnErrorListener(IErrorListener listener) {
+        errorListener = listener;
     }
 
     @Override
@@ -32,12 +38,12 @@ public class ImageReader extends AsyncTask<String, Void, Drawable> {
             drawable = Drawable.createFromStream(is, null);
         } catch (IOException e) {
             Log.e(TAG, ERROR_LOAD_IMAGES, e);
-            onError(e);
+            if (errorListener != null) {
+                errorListener.onError(e);
+            }
         }
         return drawable;
     }
-
-    protected void onError(Exception e) {}
 
     private InputStream readRandomImage(AssetManager am, String mask) throws IOException {
         Utils.assertNonUiThread();

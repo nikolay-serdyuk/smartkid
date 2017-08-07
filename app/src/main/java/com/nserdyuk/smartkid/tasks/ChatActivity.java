@@ -18,6 +18,7 @@ import android.widget.TextView;
 import com.nserdyuk.smartkid.R;
 import com.nserdyuk.smartkid.common.Constants;
 import com.nserdyuk.smartkid.common.Dialogs;
+import com.nserdyuk.smartkid.common.IErrorListener;
 import com.nserdyuk.smartkid.common.Utils;
 import com.nserdyuk.smartkid.io.ImageReader;
 
@@ -113,11 +114,11 @@ public class ChatActivity extends AbstractCommunicationActivity {
                 ChatActivity.this.receive(object);
             }
         };
-        chatBot.setOnErrorListener(new AbstractChatBot.OnErrorListener() {
+        chatBot.setOnErrorListener(new IErrorListener() {
 
             @Override
-            public void onError(String message) {
-                Utils.showErrorInUiThread(ChatActivity.this, message);
+            public void onError(Exception e) {
+                Utils.showErrorInUiThread(ChatActivity.this, e.getMessage());
             }
 
         });
@@ -141,7 +142,7 @@ public class ChatActivity extends AbstractCommunicationActivity {
         String extra = getIntent().getStringExtra(Constants.ATTRIBUTE_PICS_MASK);
         String picMask = extra != null ? extra : Constants.DEFAULT_PICS_MASK;
 
-        new ImageReader(getAssets()) {
+        ImageReader ir = new ImageReader(getAssets()) {
 
             @Override
             protected void onPostExecute(final Drawable drawable) {
@@ -154,13 +155,16 @@ public class ChatActivity extends AbstractCommunicationActivity {
                     });
                 }
             }
+        };
+        ir.setOnErrorListener(new IErrorListener() {
 
             @Override
-            protected void onError(Exception e) {
+            public void onError(Exception e) {
                 Utils.showErrorInUiThread(ChatActivity.this, ERROR_LOAD_IMAGES);
             }
 
-        }.execute(picMask);
+        });
+        ir.execute(picMask);
     }
 
     private void updateTitle() {
