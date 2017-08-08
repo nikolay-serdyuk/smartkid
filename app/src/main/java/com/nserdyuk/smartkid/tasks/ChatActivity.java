@@ -40,6 +40,7 @@ import java.util.Locale;
     6. Проверить как выглядет на смартфоне
     7. Запретить поворот приложения
     8. PDB check
+    9. lint!!!!
     9. check adb logcat Runtime Exceptions
 */
 

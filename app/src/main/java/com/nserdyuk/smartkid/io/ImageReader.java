@@ -3,6 +3,7 @@ package com.nserdyuk.smartkid.io;
 import android.content.res.AssetManager;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
+import android.support.annotation.Nullable;
 import android.util.Log;
 
 import com.nserdyuk.smartkid.common.Utils;
@@ -31,6 +32,7 @@ public class ImageReader extends AsyncTask<String, Void, Drawable> {
         errorListener = listener;
     }
 
+    @Nullable
     @Override
     protected Drawable doInBackground(String... mask) {
         Drawable drawable = null;
