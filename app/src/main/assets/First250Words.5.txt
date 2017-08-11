@@ -1,25 +1,25 @@
-Already уже
-Bag сумка
-Big большой
-Bus автобус
-Clock часы
-Dark темный
-Door дверь
-East Восток
-Every каждый
-Find искать
-Girl девочка
-Hall холл
-High высокий
-Kiss поцелуй
-Long длинный
-Name имя
-Only только
-People люди
-Reply отвечать
-School школа
-Smile улыбка
-Tall высокий
-Use пользоваться
-When когда
-World мир(земной_шар)
+Already|уже
+Bag|сумка
+Big|большой
+Bus|автобус
+Clock|часы
+Dark|темный
+Door|дверь
+East|Восток
+Every|каждый
+Find|искать
+Girl|девочка
+Hall|холл
+High|высокий
+Kiss|поцелуй
+Long|длинный
+Name|имя
+Only|только
+People|люди
+Reply|отвечать
+School|школа
+Smile|улыбка
+Tall|высокий
+Use|пользоваться
+When|когда
+World|мир (земной_шар)

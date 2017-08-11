@@ -1,25 +1,25 @@
-﻿After после того как 
-Baby малыш
-Berry ягода
-Bring приносить
-Chair стул
-Cow корова
-Doctor доктор
-Each каждый
-Enter входить
-Fast быстрый
-Game игра
-Grey серый
-Heart сердце
-In в,внутри
-Listen слушать
-Morning утро
-Offer предлагать
-Part часть
-Ready готовый
-Run бежать
-Sky небо
-Sun солнце
-Try пытаться
-Well хорошо
-Woman женщина
+﻿After|после чего-либо, кого-либо
+Baby|малыш
+Berry|ягода
+Bring|приносить
+Chair|стул
+Cow|корова
+Doctor|доктор
+Each|каждый
+Enter|входить
+Fast|быстрый
+Game|игра
+Grey|серый
+Heart|сердце
+In|в, внутри
+Listen|слушать
+Morning|утро
+Offer|предлагать
+Part|часть
+Ready|готовый
+Run|бежать
+Sky|небо
+Sun|солнце
+Try|пытаться
+Well|хорошо
+Woman|женщина

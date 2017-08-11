@@ -1,25 +1,25 @@
-Apple
-Bed
-Body
-Can
-Cool
-Difficult
-Drink
-Else
-Family
-Free
-Good
-Have
-House
-Life
-Many
-Night
-Other
-Put
-Road
-Show
-Speak
-Today
-War
-Window
-Yes
+Apple|яблоко
+Bed|кровать, диван
+Body|тело
+Can|могу, можешь
+Cool|прохладно, свежо
+Difficult|трудный, сложный
+Drink|напиток,  глоток, пить
+Else|иначе
+Family|семья
+Free|свободный
+Good|еда
+Have|иметь
+House|дом
+Life|жизнь
+Many|много, несколько
+Night|ночь
+Other|другой
+Put|положить
+Road|дорога
+Show|показывать
+Speak|говорить
+Today|сегодня
+War|война
+Window|окно
+Yes|да

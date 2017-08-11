@@ -30,6 +30,10 @@
             android:name=".tasks.Grid2dActivity"
             android:theme="@style/NoActionBarBlack"
             />
+        <activity
+            android:name=".tasks.DictionaryActivity"
+            android:theme="@style/AppThemeLightLarge"
+            />
     </application>
 
 </manifest>

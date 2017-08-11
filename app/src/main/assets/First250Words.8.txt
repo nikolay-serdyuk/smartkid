@@ -1,25 +1,25 @@
-Any
-Beautiful
-Blue
-Call
-Cold
-Dear
-Dress
-Egg
-Fall
-For
-Gold
-Happy
-Hot
-Let
-Man
-Next
-Or
-Power
-River
-Shop
-Son
-Thing
-Want
-Why
-Yellow
+Any|любой
+Beautiful|красивый
+Blue|голубой
+Call|звонок, звонить, вызывать
+Cold|холодный, холодно
+Dear|дорогой
+Dress|платье
+Egg|яйцо
+Fall|падать, падение
+For|для
+Gold|золото
+Happy|счастливый
+Hot|горячий
+Let|позволить
+Man|человек, мужчина
+Next|следующий
+Or|или
+Power|энергия, сила, мощь
+River|река
+Shop|магазин
+Son|сын
+Thing|вещь
+Want|хотеть
+Why|почему, зачем
+Yellow|желтый

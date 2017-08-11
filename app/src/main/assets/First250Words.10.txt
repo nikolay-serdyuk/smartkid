@@ -1,25 +1,25 @@
-Arm
-Before
-Book
-Car
-Copy
-Dig
-Drive
-Empty
-Famous
-Friend
-Great
-Head
-How
-Light
-May
-No
-Paper
-Rain
-Roof
-Sing
-Star
-Too
-Water
-Winter
-Young
+Arm|рука (от плеча до запястья)
+Before|до
+Book|книга
+Car|машина
+Copy|копировать, копия
+Dig|копать
+Drive|вести машину
+Empty|пустой
+Famous|известный, знаменитый
+Friend|друг
+Great|великий, огромный
+Head|голова
+How|как, каким образом
+Light|свет
+May|могу, можешь
+No|нет
+Paper|бумага
+Rain|дождь
+Roof|крыша
+Sing|петь
+Star|звезда
+Too|тоже, также
+Water|вода
+Winter|зима
+Young|молодой

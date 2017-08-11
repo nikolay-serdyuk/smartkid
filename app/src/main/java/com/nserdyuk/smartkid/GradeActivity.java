@@ -12,6 +12,7 @@ import com.nserdyuk.smartkid.common.Complexity;
 import com.nserdyuk.smartkid.common.ListAdapter;
 import com.nserdyuk.smartkid.tasks.ChatActivity;
 import com.nserdyuk.smartkid.common.Constants;
+import com.nserdyuk.smartkid.tasks.DictionaryActivity;
 import com.nserdyuk.smartkid.tasks.Grid2dActivity;
 
 import java.util.HashMap;
@@ -125,19 +126,19 @@ public class GradeActivity extends AppCompatActivity {
         intent = new Intent(this, ChatActivity.class);
         intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 1);
         intent.putExtra(Constants.ATTRIBUTE_FILE, "time_hard.txt");
-        intent.putExtra(Constants.ATTRIBUTE_PICS_MASK, "TIME.jpg");
+        intent.putExtra(Constants.ATTRIBUTE_FILE_MASK, "TIME.jpg");
         nameToIntentMap.put(getResources().getString(R.string.activity_grade_time_hard), intent);
 
         intent = new Intent(this, ChatActivity.class);
         intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 1);
         intent.putExtra(Constants.ATTRIBUTE_FILE, "time_easy_add.txt");
-        intent.putExtra(Constants.ATTRIBUTE_PICS_MASK, "TIME.jpg");
+        intent.putExtra(Constants.ATTRIBUTE_FILE_MASK, "TIME.jpg");
         nameToIntentMap.put(getResources().getString(R.string.activity_grade_time_easy_add), intent);
 
         intent = new Intent(this, ChatActivity.class);
         intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 1);
         intent.putExtra(Constants.ATTRIBUTE_FILE, "time_easy_sub.txt");
-        intent.putExtra(Constants.ATTRIBUTE_PICS_MASK, "TIME.jpg");
+        intent.putExtra(Constants.ATTRIBUTE_FILE_MASK, "TIME.jpg");
         nameToIntentMap.put(getResources().getString(R.string.activity_grade_time_easy_sub), intent);
 
         intent = new Intent(this, Grid2dActivity.class);
@@ -161,11 +162,13 @@ public class GradeActivity extends AppCompatActivity {
 
         intent = new Intent(this, CubeActivity.class);
         nameToIntentMap.put(getResources().getString(R.string.all_cube), intent);
+        */
 
-        intent = new Intent(this, EnglishDictionaryActivity.class);
+        intent = new Intent(this, DictionaryActivity.class);
         intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 12);
-        nameToIntentMap.put(getResources().getString(R.string.all_english_top250), intent);
-
+        intent.putExtra(Constants.ATTRIBUTE_FILE_MASK, "First250Words");
+        nameToIntentMap.put(getResources().getString(R.string.activity_grade_dictionary), intent);
+        /*
         intent = new Intent(this, EnglishDictionaryActivity.class);
         intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 12);
         intent.putExtra("rus", true);

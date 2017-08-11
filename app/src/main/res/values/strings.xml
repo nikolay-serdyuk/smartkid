@@ -43,6 +43,8 @@
     <string name="activity_grade_time_hard">Время (сложный уровень)</string>
     <string name="activity_grade_time_easy_add">Время, сложение (легкий уровень)</string>
     <string name="activity_grade_time_easy_sub">Время, вычитание (легкий уровень)</string>
+    <string name="activity_grade_dictionary">Перевод с английского</string>
+    <string name="activity_grade_dictionary_reverse">Перевод на английский</string>
 
     <string-array name="grade0">
         <item>@string/activity_grade_grid_2d_easy</item>
@@ -54,6 +56,7 @@
     </string-array>
 
     <string-array name="grade1">
+        <item>@string/activity_grade_dictionary</item>
         <item>@string/activity_grade_simple_add20</item>
         <item>@string/activity_grade_sub_zero_long</item>
     </string-array>

@@ -42,6 +42,8 @@ import java.util.Locale;
     8. PDB check
     9. lint!!!!
     9. check adb logcat Runtime Exceptions
+    10. форматирование xml файлов
+    11. переименовать activity_grade_base в activity_grade
 */
 
 public class ChatActivity extends AbstractCommunicationActivity {
@@ -140,20 +142,15 @@ public class ChatActivity extends AbstractCommunicationActivity {
 
     private void setBackgroundImage() {
         imageView = (ImageView) findViewById(R.id.iv_activity_chat);
-        String extra = getIntent().getStringExtra(Constants.ATTRIBUTE_PICS_MASK);
+        String extra = getIntent().getStringExtra(Constants.ATTRIBUTE_FILE_MASK);
         String picMask = extra != null ? extra : Constants.DEFAULT_PICS_MASK;
 
         ImageReader ir = new ImageReader(getAssets()) {
 
             @Override
-            protected void onPostExecute(final Drawable drawable) {
+            protected void onPostExecute(Drawable drawable) {
                 if (drawable != null) {
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            imageView.setImageDrawable(drawable);
-                        }
-                    });
+                    imageView.setImageDrawable(drawable);
                 }
             }
         };

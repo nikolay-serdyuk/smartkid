@@ -1,25 +1,25 @@
-And
-Be
-Black
-Buy
-Club
-Dead
-Dream
-Eat
-Face
-Fly
-Go
-Hang
-Home
-Last
-Make
-New
-Open
-Play
-Right
-See
-Some
-There
-Wait
-Who
-Year
+And|и
+Be|быть
+Black|черный
+Buy|покупать
+Club|клуб
+Dead|мертвый
+Dream|мечта
+Eat|кушать, есть
+Face|лицо
+Fly|летать, полет
+Go|идти
+Hang|рука (от запястья до пальцев)
+Home|дом (где живешь)
+Last|последний
+Make|делать
+New|новый
+Open|открывать
+Play|играть
+Right|правильный, правый
+See|смотреть
+Some|несколько, некоторый
+There|здесь
+Wait|ждать
+Who|кто
+Year|год
