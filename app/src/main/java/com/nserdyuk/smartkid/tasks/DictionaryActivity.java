@@ -1,5 +1,6 @@
 package com.nserdyuk.smartkid.tasks;
 
+import android.content.SharedPreferences;
 import android.content.res.AssetManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -22,20 +23,21 @@ import java.util.Collections;
 import java.util.List;
 
 public class DictionaryActivity extends AppCompatActivity {
+    private static final String TAG = DictionaryActivity.class.getName();
     private static final String ERROR_IO = "An I/O error occurred while reading a file";
     private static final String ERROR_NO_LINES = "File is empty";
     private static final String ERROR_NO_FILES = "No files found";
 
+    private static int DELAY = 500;
+
     private final List<String> files = Collections.synchronizedList(new ArrayList<String>());
     private final List<String> lines = Collections.synchronizedList(new ArrayList<String>());
-    private int fileNumber;
+    private volatile int fileNumber;
     private int examplesNum;
     private ArrayAdapter<String> adapter;
     private TextView textView;
 
     // TODO:
-    // добавить имя файла внизу
-    // сделать сохранение последнего файла
     // сделать английский наоборот
     // сделать подсветку стрелок влево вправо
 
@@ -105,6 +107,11 @@ public class DictionaryActivity extends AppCompatActivity {
                         files.add(file);
                     }
                 }
+
+                if (!files.isEmpty()) {
+                    fileNumber = files.indexOf(loadLastViewedFile(files.get(0)));
+                }
+
             } catch (IOException e) {
                 Log.e(TAG, ERROR_IO, e);
                 Utils.showErrorInUiThread(DictionaryActivity.this, ERROR_IO);
@@ -117,10 +124,16 @@ public class DictionaryActivity extends AppCompatActivity {
             if (files.isEmpty()) {
                 Utils.showError(DictionaryActivity.this, ERROR_NO_FILES);
             } else {
-                new ReadRandomLinesTask(am, files.get(0), examplesNum)
+                new ReadRandomLinesTask(am, files.get(fileNumber), examplesNum)
                         .executeOnExecutor(AsyncTask.SERIAL_EXECUTOR);
             }
         }
+
+        private String loadLastViewedFile(String defaultFile) {
+            SharedPreferences preferences = getPreferences(MODE_PRIVATE);
+            return preferences.getString(DictionaryActivity.TAG, defaultFile);
+        }
+
     }
 
     private class ReadRandomLinesTask extends AsyncTask<Void, Void, Void> {
@@ -138,6 +151,10 @@ public class DictionaryActivity extends AppCompatActivity {
         @Override
         protected Void doInBackground(Void... params) {
             try {
+                sleep(DELAY);
+
+                saveLastViewedFile(fileName);
+
                 String[] newLines = new TextReader(am, fileName, examplesNum).readRandomLines();
                 lines.clear();
                 for (String newLine : newLines) {
@@ -158,6 +175,21 @@ public class DictionaryActivity extends AppCompatActivity {
             } else {
                 adapter.notifyDataSetChanged();
                 textView.setText(files.get(fileNumber));
+            }
+        }
+
+        private void saveLastViewedFile(String file) {
+            SharedPreferences preferences = getPreferences(MODE_PRIVATE);
+            SharedPreferences.Editor editor = preferences.edit();
+            editor.putString(DictionaryActivity.TAG, file);
+            editor.commit();
+        }
+
+        private void sleep(int delay) {
+            try {
+                Thread.sleep(delay);
+            } catch(InterruptedException ex) {
+                Thread.currentThread().interrupt();
             }
         }
     }
