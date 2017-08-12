@@ -21,25 +21,22 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 public class DictionaryActivity extends AppCompatActivity {
     private static final String TAG = DictionaryActivity.class.getName();
     private static final String ERROR_IO = "An I/O error occurred while reading a file";
     private static final String ERROR_NO_LINES = "File is empty";
     private static final String ERROR_NO_FILES = "No files found";
-
-    private static int DELAY = 500;
+    private static final String EMPTY_STRING = "";
 
     private final List<String> files = Collections.synchronizedList(new ArrayList<String>());
     private final List<String> lines = Collections.synchronizedList(new ArrayList<String>());
-    private volatile int fileNumber;
+    private int fileNumber;
     private int examplesNum;
+    private boolean multilang;
     private ArrayAdapter<String> adapter;
     private TextView textView;
-
-    // TODO:
-    // сделать английский наоборот
-    // сделать подсветку стрелок влево вправо
 
     @Override
     public void onBackPressed() {
@@ -73,6 +70,8 @@ public class DictionaryActivity extends AppCompatActivity {
         examplesNum = getIntent().getIntExtra(Constants.ATTRIBUTE_EXAMPLES, 3);
         String fileMask = getIntent().getStringExtra(Constants.ATTRIBUTE_FILE_MASK);
 
+        multilang = getIntent().getBooleanExtra(Constants.ATTRIBUTE_MULTILANG, false);
+
         new GetFileListTask(getAssets(), fileMask).executeOnExecutor(AsyncTask.SERIAL_EXECUTOR);
     }
 
@@ -88,7 +87,7 @@ public class DictionaryActivity extends AppCompatActivity {
         return files.get(fileNumber);
     }
 
-    private class GetFileListTask extends AsyncTask<Void, Void, Void> {
+    private class GetFileListTask extends AsyncTask<Void, Void, String> {
         private final String TAG = GetFileListTask.class.getName();
         private final AssetManager am;
         private final String fileMask;
@@ -99,9 +98,9 @@ public class DictionaryActivity extends AppCompatActivity {
         }
 
         @Override
-        protected Void doInBackground(Void... params) {
+        protected String doInBackground(Void... params) {
             try {
-                String[] list = am.list("");
+                String[] list = am.list(EMPTY_STRING);
                 for (String file : list) {
                     if (file.contains(fileMask)) {
                         files.add(file);
@@ -109,22 +108,23 @@ public class DictionaryActivity extends AppCompatActivity {
                 }
 
                 if (!files.isEmpty()) {
-                    fileNumber = files.indexOf(loadLastViewedFile(files.get(0)));
+                    return loadLastViewedFile(files.get(0));
                 }
-
             } catch (IOException e) {
                 Log.e(TAG, ERROR_IO, e);
                 Utils.showErrorInUiThread(DictionaryActivity.this, ERROR_IO);
             }
-            return null;
+            return EMPTY_STRING;
         }
 
         @Override
-        protected void onPostExecute(Void params) {
+        protected void onPostExecute(String lastViewedFile) {
             if (files.isEmpty()) {
                 Utils.showError(DictionaryActivity.this, ERROR_NO_FILES);
             } else {
-                new ReadRandomLinesTask(am, files.get(fileNumber), examplesNum)
+                int indexOfLast = files.indexOf(lastViewedFile);
+                fileNumber = indexOfLast < 0 ? 0 : indexOfLast;
+                new ReadRandomLinesTask(am, lastViewedFile, examplesNum)
                         .executeOnExecutor(AsyncTask.SERIAL_EXECUTOR);
             }
         }
@@ -133,7 +133,6 @@ public class DictionaryActivity extends AppCompatActivity {
             SharedPreferences preferences = getPreferences(MODE_PRIVATE);
             return preferences.getString(DictionaryActivity.TAG, defaultFile);
         }
-
     }
 
     private class ReadRandomLinesTask extends AsyncTask<Void, Void, Void> {
@@ -151,15 +150,14 @@ public class DictionaryActivity extends AppCompatActivity {
         @Override
         protected Void doInBackground(Void... params) {
             try {
-                sleep(DELAY);
-
+                Random random = new Random();
                 saveLastViewedFile(fileName);
 
                 String[] newLines = new TextReader(am, fileName, examplesNum).readRandomLines();
                 lines.clear();
                 for (String newLine : newLines) {
                     String[] parts = newLine.split(Constants.STRING_DELIMITER);
-                    lines.add(parts[0]);
+                    lines.add(parts[multilang ? random.nextInt(parts.length) : 0]);
                 }
             } catch (IOException e) {
                 Log.e(TAG, ERROR_IO, e);
@@ -170,7 +168,7 @@ public class DictionaryActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(Void result) {
-            if(lines.isEmpty()) {
+            if (lines.isEmpty()) {
                 Utils.showError(DictionaryActivity.this, ERROR_NO_LINES);
             } else {
                 adapter.notifyDataSetChanged();
@@ -183,14 +181,6 @@ public class DictionaryActivity extends AppCompatActivity {
             SharedPreferences.Editor editor = preferences.edit();
             editor.putString(DictionaryActivity.TAG, file);
             editor.commit();
-        }
-
-        private void sleep(int delay) {
-            try {
-                Thread.sleep(delay);
-            } catch(InterruptedException ex) {
-                Thread.currentThread().interrupt();
-            }
         }
     }
 }

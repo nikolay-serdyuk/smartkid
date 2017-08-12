@@ -2,7 +2,7 @@ Always|всегда
 Ball|мяч
 Bird|птица
 But|но
-Close|закрыто
+Close|закрывать
 Day|день
 Down|вниз
 Easy|легкий

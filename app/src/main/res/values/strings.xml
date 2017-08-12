@@ -3,7 +3,7 @@
 
     <string name="greeting">"Привет!"</string>
     <string name="rightAnswer">"Правильно!"</string>
-    <string name="wrongAnswer">"Ошибка..."</string>
+    <string name="wrongAnswer">"Ошибка…"</string>
     <string name="nextAnswer">"Еще"</string>
     <string name="exitQuestion">"Выход?"</string>
     <string name="yesAnswer">"Да"</string>
@@ -40,49 +40,56 @@
     <string name="activity_grade_muldiv_10_100_1000">Деление и умножение на 10, 100, 1000</string>
     <string name="activity_grade_grid_2d_easy">Координатный угол (легкий уровень)</string>
     <string name="activity_grade_grid_2d_hard">Координатный угол (сложный уровень)</string>
-    <string name="activity_grade_time_hard">Время (сложный уровень)</string>
     <string name="activity_grade_time_easy_add">Время, сложение (легкий уровень)</string>
     <string name="activity_grade_time_easy_sub">Время, вычитание (легкий уровень)</string>
+    <string name="activity_grade_time_hard">Время (сложный уровень)</string>
     <string name="activity_grade_dictionary">Перевод с английского</string>
-    <string name="activity_grade_dictionary_reverse">Перевод на английский</string>
+    <string name="activity_grade_dictionary_multilang">Перевод с английского и обратно</string>
 
     <string-array name="grade0">
-        <item>@string/activity_grade_grid_2d_easy</item>
         <item>@string/activity_grade_simple_add10</item>
         <item>@string/activity_grade_guess_number</item>
         <item>@string/activity_grade_simple_sub10</item>
         <item>@string/activity_grade_simple_add20</item>
         <item>@string/activity_grade_simple_sub20</item>
+        <item>@string/activity_grade_grid_2d_easy</item>
     </string-array>
 
     <string-array name="grade1">
-        <item>@string/activity_grade_dictionary</item>
-        <item>@string/activity_grade_simple_add20</item>
-        <item>@string/activity_grade_sub_zero_long</item>
+        <item>@string/activity_grade_time_easy_add</item>
+        <item>@string/activity_grade_time_easy_sub</item>
+        <item>@string/activity_grade_sub_zero</item>
+        <item>@string/activity_grade_grid_2d_easy</item>
     </string-array>
 
     <string-array name="grade2">
-        <item>@string/activity_grade_time_easy_add</item>
-        <item>@string/activity_grade_grid_2d_hard</item>
-        <item>@string/activity_grade_sub_zero</item>
-        <item>@string/activity_grade_sub_zero</item>
+        <item>@string/activity_grade_long_div</item>
+        <item>@string/activity_grade_sub_zero_long</item>
         <item>@string/activity_grade_single_quotient</item>
+        <item>@string/activity_grade_div_rem</item>
+        <item>@string/activity_grade_time_hard</item>
+        <item>@string/activity_grade_grid_2d_hard</item>
+        <item>@string/activity_grade_dictionary</item>
+        <item>@string/activity_grade_dictionary_multilang</item>
     </string-array>
 
     <string-array name="grade3">
-        <item>@string/activity_grade_time_easy_sub</item>
-        <item>@string/activity_grade_div_rem</item>
-        <item>@string/activity_grade_long_div</item>
         <item>@string/activity_grade_muldiv_10_100_1000</item>
+        <item>@string/activity_grade_long_mul</item>
+        <item>@string/activity_grade_grid_2d_hard</item>
+        <item>@string/activity_grade_dictionary</item>
+        <item>@string/activity_grade_dictionary_multilang</item>
     </string-array>
 
     <string-array name="grade4">
         <item>@string/activity_grade_time_hard</item>
         <item>@string/activity_grade_div_rem</item>
-        <item>@string/activity_grade_long_div</item>
-        <item>@string/activity_grade_long_long_div</item>
-        <item>@string/activity_grade_long_mul</item>
         <item>@string/activity_grade_muldiv_10_100_1000</item>
+        <item>@string/activity_grade_long_mul</item>
+        <item>@string/activity_grade_long_long_div</item>
+        <item>@string/activity_grade_sub_zero_long</item>
+        <item>@string/activity_grade_dictionary</item>
+        <item>@string/activity_grade_dictionary_multilang</item>
     </string-array>
 
     <string-array name="grade5">

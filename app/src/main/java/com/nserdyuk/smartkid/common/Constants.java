@@ -1,15 +1,13 @@
 package com.nserdyuk.smartkid.common;
 
 public final class Constants {
-    public static final String ATTRIBUTE_GRADE = "grade";
-    public static final String ATTRIBUTE_COMPLEXITY = "complexity";
-    public static final String ATTRIBUTE_EXAMPLES = "examples";
-    public static final String ATTRIBUTE_FILE = "file";
-    public static final String ATTRIBUTE_TITLE = "title";
-    public static final String ATTRIBUTE_SOLVED = "solved";
-    public static final String ATTRIBUTE_FIRST_QUESTION = "first_question";
-    public static final String ATTRIBUTE_SECOND_QUESTION = "second_question";
-    public static final String ATTRIBUTE_FILE_MASK = "file_mask";
+    public static final String ATTRIBUTE_GRADE = "GRADE";
+    public static final String ATTRIBUTE_COMPLEXITY = "COMPLEXITY";
+    public static final String ATTRIBUTE_EXAMPLES = "EXAMPLES";
+    public static final String ATTRIBUTE_FILE = "FILE";
+    public static final String ATTRIBUTE_TITLE = "TITLE";
+    public static final String ATTRIBUTE_FILE_MASK = "FILE_MASK";
+    public static final String ATTRIBUTE_MULTILANG = "MULTILANG";
 
     public static final String DEFAULT_PICS_MASK = ".gif";
     public static final String STRING_DELIMITER = "\\|";

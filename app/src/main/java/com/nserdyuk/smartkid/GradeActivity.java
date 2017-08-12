@@ -167,13 +167,16 @@ public class GradeActivity extends AppCompatActivity {
         intent = new Intent(this, DictionaryActivity.class);
         intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 12);
         intent.putExtra(Constants.ATTRIBUTE_FILE_MASK, "First250Words");
+        intent.putExtra(Constants.ATTRIBUTE_MULTILANG, false);
         nameToIntentMap.put(getResources().getString(R.string.activity_grade_dictionary), intent);
-        /*
-        intent = new Intent(this, EnglishDictionaryActivity.class);
-        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 12);
-        intent.putExtra("rus", true);
-        nameToIntentMap.put(getResources().getString(R.string.all_english_rus_top250), intent);
 
+        intent = new Intent(this, DictionaryActivity.class);
+        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 12);
+        intent.putExtra(Constants.ATTRIBUTE_FILE_MASK, "First250Words");
+        intent.putExtra(Constants.ATTRIBUTE_MULTILANG, true);
+        nameToIntentMap.put(getResources().getString(R.string.activity_grade_dictionary_multilang), intent);
+
+        /*
         intent = new Intent(this, EnglishDictionaryActivity.class);
         intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 25);
         nameToIntentMap.put(getResources().getString(R.string.all_english_Masha23), intent);
