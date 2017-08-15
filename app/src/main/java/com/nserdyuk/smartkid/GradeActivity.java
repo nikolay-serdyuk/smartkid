@@ -21,7 +21,7 @@ import java.util.Map;
 public class GradeActivity extends AppCompatActivity {
     private int grade;
     private String[] arrayOfTasks;
-    private Map<String, Intent> nameToIntentMap = null;
+    private Map<String, Intent> nameToIntentMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

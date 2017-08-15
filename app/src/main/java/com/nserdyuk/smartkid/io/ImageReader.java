@@ -63,7 +63,7 @@ public class ImageReader extends AsyncTask<String, Void, Drawable> {
                 }
             }
         }
-        if (images.size() == 0) {
+        if (images.isEmpty()) {
             throw new IOException(String.format(Locale.US, ERROR_NO_IMAGES_FOUND, mask));
         }
         return images;

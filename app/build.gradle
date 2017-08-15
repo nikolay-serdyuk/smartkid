@@ -1,4 +1,14 @@
 apply plugin: 'com.android.application'
+apply plugin: 'pmd'
+
+task pmd(type: Pmd) {
+    ruleSetFiles = files("$project.rootDir/rules-pmd.xml")
+    source = fileTree('src/main/java/')
+
+    reports {
+        consoleOutput = true
+    }
+}
 
 android {
     compileSdkVersion 25

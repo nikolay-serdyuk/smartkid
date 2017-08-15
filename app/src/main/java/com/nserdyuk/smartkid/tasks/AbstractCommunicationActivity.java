@@ -29,6 +29,6 @@ public abstract class AbstractCommunicationActivity extends AppCompatActivity {
         };
     }
 
-    protected void process(Object o) {}
+    protected abstract void process(Object o);
 
 }

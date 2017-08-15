@@ -233,8 +233,7 @@ public class ChatActivity extends AbstractCommunicationActivity {
 
         @Override
         public boolean onKey(View view, int keyCode, KeyEvent event) {
-            if (keyCode == KeyEvent.KEYCODE_ENTER) {
-                if (event.getAction() == KeyEvent.ACTION_DOWN) {
+            if (keyCode == KeyEvent.KEYCODE_ENTER && event.getAction() == KeyEvent.ACTION_DOWN) {
                     String msg = editText.getText().toString();
                     if (!msg.isEmpty()) {
                         drawBubble(new LeftBubble(msg));
@@ -242,7 +241,6 @@ public class ChatActivity extends AbstractCommunicationActivity {
                         send(msg);
                     }
                     return true;
-                }
             }
             return false;
         }

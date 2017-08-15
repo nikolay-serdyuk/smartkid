@@ -11,9 +11,9 @@ import java.util.Random;
 
 public class TextReader {
     private int lines;
-    private String fileName;
-    private int examples;
-    private AssetManager am;
+    private final String fileName;
+    private final int examples;
+    private final AssetManager am;
 
     public TextReader(AssetManager am, String fileName, int examples) {
         this.am = am;

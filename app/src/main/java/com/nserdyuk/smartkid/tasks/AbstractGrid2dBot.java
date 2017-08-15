@@ -1,7 +1,6 @@
 package com.nserdyuk.smartkid.tasks;
 
 import android.content.Context;
-import android.util.Log;
 
 import com.nserdyuk.smartkid.R;
 import com.nserdyuk.smartkid.common.Complexity;
@@ -64,7 +63,6 @@ public abstract class AbstractGrid2dBot extends AbstractBot {
             currentPoint = 0;
         } else {
             userList.add((Point) o);
-            Log.e("DBG: read ", " " + ((Point) o).getX() + " " + ((Point) o).getY());
 
             if (currentPoint == examplesNum) {
                 currentPoint = 0;

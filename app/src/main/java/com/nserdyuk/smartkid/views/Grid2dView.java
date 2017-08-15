@@ -102,10 +102,8 @@ public class Grid2dView extends View {
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         if (isClickable()) {
-            float x;
-            float y;
-            x = event.getX();
-            y = event.getY();
+            float x = event.getX();
+            float y = event.getY();
 
             switch (event.getAction()) {
                 case MotionEvent.ACTION_DOWN:
@@ -215,17 +213,20 @@ public class Grid2dView extends View {
     }
 
     private int getRow(int y) {
-        y -= topMargin;
-        y += rowHeight / 2;
-        y /= rowHeight;
-        return ROWS - 1 - y;
+        int result = y;
+        result -= topMargin;
+        result += rowHeight / 2;
+        result /= rowHeight;
+        result = ROWS - 1 - result;
+        return result;
     }
 
     private int getColumn(int x) {
-        x -= leftMargin;
-        x += columnWidth / 2;
-        x /= columnWidth;
-        return x;
+        int result = x;
+        result -= leftMargin;
+        result += columnWidth / 2;
+        result /= columnWidth;
+        return result;
     }
 
     public interface OnTouchListener {

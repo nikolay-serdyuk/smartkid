@@ -92,7 +92,7 @@ public class DictionaryActivity extends AppCompatActivity {
         private final AssetManager am;
         private final String fileMask;
 
-        private GetFileListTask(AssetManager am, String fileMask) {
+        public GetFileListTask(AssetManager am, String fileMask) {
             this.am = am;
             this.fileMask = fileMask;
         }
@@ -141,7 +141,7 @@ public class DictionaryActivity extends AppCompatActivity {
         private final String fileName;
         private final int examplesNum;
 
-        private ReadRandomLinesTask(AssetManager am, String fileName, int examplesNum) {
+        public ReadRandomLinesTask(AssetManager am, String fileName, int examplesNum) {
             this.am = am;
             this.fileName = fileName;
             this.examplesNum = examplesNum;
