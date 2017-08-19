@@ -9,6 +9,11 @@
     <string name="yesAnswer">"Да"</string>
     <string name="noAnswer">"Нет"</string>
 
+    <string name="greetingEnglish">"Hello!"</string>
+    <string name="rightAnswerEnglish">"Right!"</string>
+    <string name="wrongAnswerEnglish">"Error..."</string>
+
+
     <string name="activity_main_preschool">Дошкольные задания</string>
     <string name="activity_main_1">Первый класс</string>
     <string name="activity_main_2">Второй класс</string>
@@ -45,6 +50,8 @@
     <string name="activity_grade_time_hard">Время (сложный уровень)</string>
     <string name="activity_grade_dictionary">Перевод с английского</string>
     <string name="activity_grade_dictionary_multilang">Перевод с английского и обратно</string>
+    <string name="activity_grade_present_simple">Present Simple</string>
+    <string name="activity_grade_present_continuous">Present Continuous</string>
 
     <string-array name="grade0">
         <item>@string/activity_grade_simple_add10</item>
@@ -79,6 +86,8 @@
         <item>@string/activity_grade_grid_2d_hard</item>
         <item>@string/activity_grade_dictionary</item>
         <item>@string/activity_grade_dictionary_multilang</item>
+        <item>@string/activity_grade_present_simple</item>
+        <item>@string/activity_grade_present_continuous</item>
     </string-array>
 
     <string-array name="grade4">
@@ -90,6 +99,8 @@
         <item>@string/activity_grade_sub_zero_long</item>
         <item>@string/activity_grade_dictionary</item>
         <item>@string/activity_grade_dictionary_multilang</item>
+        <item>@string/activity_grade_present_simple</item>
+        <item>@string/activity_grade_present_continuous</item>
     </string-array>
 
     <string-array name="grade5">

@@ -1,4 +1,4 @@
-package com.nserdyuk.smartkid.tasks;
+package com.nserdyuk.smartkid.tasks.base;
 
 import android.os.Bundle;
 import android.os.Handler;
@@ -6,7 +6,7 @@ import android.os.Looper;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 
-public abstract class AbstractCommunicationActivity extends AppCompatActivity {
+public abstract class CommunicationActivity extends AppCompatActivity {
     private volatile Handler handler;
 
     public void receive(Object object) {
@@ -24,11 +24,10 @@ public abstract class AbstractCommunicationActivity extends AppCompatActivity {
         handler = new Handler(Looper.getMainLooper()) {
             @Override
             public void handleMessage(Message msg) {
-                process(msg.obj);
+                onMessage(msg.obj);
             }
         };
     }
 
-    protected abstract void process(Object o);
-
+    protected abstract void onMessage(Object o);
 }

@@ -7,7 +7,7 @@ import android.support.annotation.Nullable;
 import android.util.Log;
 
 import com.nserdyuk.smartkid.common.Utils;
-import com.nserdyuk.smartkid.common.IErrorListener;
+import com.nserdyuk.smartkid.common.ErrorListener;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -22,13 +22,13 @@ public class ImageReader extends AsyncTask<String, Void, Drawable> {
     private static final String TAG = ImageReader.class.getName();
 
     private final AssetManager assetManager;
-    private volatile IErrorListener errorListener;
+    private volatile ErrorListener errorListener;
 
     public ImageReader(AssetManager assetManager) {
         this.assetManager = assetManager;
     }
 
-    public void setOnErrorListener(IErrorListener listener) {
+    public void setOnErrorListener(ErrorListener listener) {
         errorListener = listener;
     }
 

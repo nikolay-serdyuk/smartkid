@@ -18,9 +18,10 @@ import android.widget.TextView;
 import com.nserdyuk.smartkid.R;
 import com.nserdyuk.smartkid.common.Constants;
 import com.nserdyuk.smartkid.common.Dialogs;
-import com.nserdyuk.smartkid.common.IErrorListener;
+import com.nserdyuk.smartkid.common.ErrorListener;
 import com.nserdyuk.smartkid.common.Utils;
 import com.nserdyuk.smartkid.io.ImageReader;
+import com.nserdyuk.smartkid.tasks.base.CommunicationActivity;
 
 import org.apache.commons.lang3.StringUtils;
 
@@ -44,9 +45,10 @@ import java.util.Locale;
     9. check adb logcat Runtime Exceptions
     10. форматирование xml файлов
     11. переименовать activity_grade_base в activity_grade
+    12. вставить copyright?
 */
 
-public class ChatActivity extends AbstractCommunicationActivity {
+public class ChatActivity extends CommunicationActivity {
     private static final String ERROR_LOAD_IMAGES = "An error occurred while loading images";
     private static final String ERROR_INVALID_PARAMETER = "An error occurred while reading extended data from intent";
     private static final int DEFAULT_MARGIN = 15;
@@ -56,7 +58,7 @@ public class ChatActivity extends AbstractCommunicationActivity {
     private int colorRightBubble;
     private String rightAnswerMsg;
 
-    private AbstractChatBot chatBot;
+    private ChatBot bot;
     private EditText editText;
     private LayoutInflater layoutInflater;
     private ScrollView scrollView;
@@ -76,12 +78,12 @@ public class ChatActivity extends AbstractCommunicationActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        chatBot.quit();
+        bot.quit();
     }
 
     @Override
     protected void send(Object object) {
-        chatBot.receive(object);
+        bot.receive(object);
     }
 
     @Override
@@ -104,20 +106,18 @@ public class ChatActivity extends AbstractCommunicationActivity {
         title = (TextView) findViewById(R.id.tv_activity_chat_title);
         updateTitle();
 
-        setBackgroundImage();
-
         String fileName = getIntent().getStringExtra(Constants.ATTRIBUTE_FILE);
         if (StringUtils.isBlank(fileName)) {
             Utils.showError(this, ERROR_INVALID_PARAMETER);
         }
         examplesNum = getIntent().getIntExtra(Constants.ATTRIBUTE_EXAMPLES, 0);
-        chatBot = new AbstractChatBot(this, getAssets(), fileName, examplesNum) {
+        bot = new ChatBot(this, getAssets(), fileName, examplesNum) {
             @Override
             public void send(Object object) {
                 ChatActivity.this.receive(object);
             }
         };
-        chatBot.setOnErrorListener(new IErrorListener() {
+        bot.setOnErrorListener(new ErrorListener() {
 
             @Override
             public void onError(Exception e) {
@@ -125,11 +125,12 @@ public class ChatActivity extends AbstractCommunicationActivity {
             }
 
         });
-        chatBot.start();
+        bot.start();
+        setBackgroundImage();
     }
 
     @Override
-    protected void process(Object o) {
+    protected void onMessage(Object o) {
         if (o instanceof String) {
             String str = (String) o;
             drawBubble(new RightBubble(str));
@@ -154,7 +155,7 @@ public class ChatActivity extends AbstractCommunicationActivity {
                 }
             }
         };
-        ir.setOnErrorListener(new IErrorListener() {
+        ir.setOnErrorListener(new ErrorListener() {
 
             @Override
             public void onError(Exception e) {

@@ -9,16 +9,17 @@ import com.nserdyuk.smartkid.common.Complexity;
 import com.nserdyuk.smartkid.common.Constants;
 import com.nserdyuk.smartkid.common.Dialogs;
 import com.nserdyuk.smartkid.common.Point;
+import com.nserdyuk.smartkid.tasks.base.CommunicationActivity;
 import com.nserdyuk.smartkid.views.Grid2dView;
 
-public class Grid2dActivity extends AbstractCommunicationActivity {
+public class Grid2dActivity extends CommunicationActivity {
 
     private final static int COLOR_BACKGROUND = Color.WHITE;
     private final static int COLOR_TEXT_TITLE = Color.BLACK;
 
     private Grid2dView grid2dView;
     private TextView textView;
-    private AbstractGrid2dBot bot;
+    private Grid2dBot bot;
 
     private String greetingMsg;
     private String rightAnswerMsg;
@@ -41,7 +42,7 @@ public class Grid2dActivity extends AbstractCommunicationActivity {
     }
 
     @Override
-    protected void process(Object o) {
+    protected void onMessage(Object o) {
         if (o instanceof String) {
             String str = (String) o;
 
@@ -83,7 +84,7 @@ public class Grid2dActivity extends AbstractCommunicationActivity {
 
         int examplesNum = getIntent().getIntExtra(Constants.ATTRIBUTE_EXAMPLES, 0);
         Complexity complexity = Complexity.valueOf(getIntent().getStringExtra(Constants.ATTRIBUTE_COMPLEXITY));
-        bot = new AbstractGrid2dBot(this, examplesNum, complexity, grid2dView.getRows(), grid2dView.getColumns()) {
+        bot = new Grid2dBot(this, examplesNum, complexity, grid2dView.getRows(), grid2dView.getColumns()) {
             @Override
             public void send(Object object) {
                 Grid2dActivity.this.receive(object);

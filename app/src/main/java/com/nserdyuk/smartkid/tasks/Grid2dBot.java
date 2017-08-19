@@ -6,6 +6,8 @@ import com.nserdyuk.smartkid.R;
 import com.nserdyuk.smartkid.common.Complexity;
 import com.nserdyuk.smartkid.common.Constants;
 import com.nserdyuk.smartkid.common.Point;
+import com.nserdyuk.smartkid.common.Utils;
+import com.nserdyuk.smartkid.tasks.base.Bot;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -13,8 +15,8 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Random;
 
-public abstract class AbstractGrid2dBot extends AbstractBot {
-    private static final String TAG = AbstractGrid2dBot.class.getName();
+public abstract class Grid2dBot extends Bot {
+    private static final String TAG = Grid2dBot.class.getName();
     private static final Point START_POINT = new Point(-1, -1);
     private static final int SHORT_DELAY = 500;
     private static final int LONG_DELAY = 1500;
@@ -34,7 +36,7 @@ public abstract class AbstractGrid2dBot extends AbstractBot {
     private final List<Point> userList = new ArrayList<>();
 
 
-    public AbstractGrid2dBot(Context context, int examplesNum, Complexity complexity, int rows, int columns) {
+    public Grid2dBot(Context context, int examplesNum, Complexity complexity, int rows, int columns) {
         super(TAG);
         greetingMsg = context.getResources().getString(R.string.greeting);
         rightAnswerMsg = context.getResources().getString(R.string.rightAnswer);
@@ -47,12 +49,12 @@ public abstract class AbstractGrid2dBot extends AbstractBot {
     }
 
     @Override
-    protected void startBot() {
-        process(START_POINT);
+    protected void onStart() {
+        onMessage(START_POINT);
     }
 
     @Override
-    protected void process(Object o) {
+    protected void onMessage(Object o) {
         if (!(o instanceof Point)) {
             return;
         }
@@ -84,15 +86,7 @@ public abstract class AbstractGrid2dBot extends AbstractBot {
 
     private void sendWithDelay(String msg, long millis) {
         send(msg);
-        delay(millis);
-    }
-
-    private void delay(long millis) {
-        try {
-            Thread.sleep(millis);
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-        }
+        Utils.delay(millis);
     }
 
     private void generatePoints() {

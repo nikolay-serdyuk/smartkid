@@ -13,6 +13,7 @@ import com.nserdyuk.smartkid.common.ListAdapter;
 import com.nserdyuk.smartkid.tasks.ChatActivity;
 import com.nserdyuk.smartkid.common.Constants;
 import com.nserdyuk.smartkid.tasks.DictionaryActivity;
+import com.nserdyuk.smartkid.tasks.ExaminationActivity;
 import com.nserdyuk.smartkid.tasks.Grid2dActivity;
 
 import java.util.HashMap;
@@ -176,25 +177,16 @@ public class GradeActivity extends AppCompatActivity {
         intent.putExtra(Constants.ATTRIBUTE_MULTILANG, true);
         nameToIntentMap.put(getResources().getString(R.string.activity_grade_dictionary_multilang), intent);
 
-        /*
-        intent = new Intent(this, EnglishDictionaryActivity.class);
-        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 25);
-        nameToIntentMap.put(getResources().getString(R.string.all_english_Masha23), intent);
-
-        intent = new Intent(this, EnglishDictionaryActivity.class);
-        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 25);
-        intent.putExtra("rus", true);
-        nameToIntentMap.put(getResources().getString(R.string.all_english_rus_Masha23), intent);
-
-        intent = new Intent(this, EnglishTest1Activity.class);
+        intent = new Intent(this, ExaminationActivity.class);
         intent.putExtra(Constants.ATTRIBUTE_FILE, "PresentSimple.txt");
         intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 3);
-        nameToIntentMap.put(getResources().getString(R.string.all_english_present_simple), intent);
+        nameToIntentMap.put(getResources().getString(R.string.activity_grade_present_simple), intent);
 
-        intent = new Intent(this, EnglishTest1Activity.class);
+        intent = new Intent(this, ExaminationActivity.class);
         intent.putExtra(Constants.ATTRIBUTE_FILE, "PresentContinuous.txt");
         intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 3);
-        nameToIntentMap.put(getResources().getString(R.string.all_english_present_continuous), intent);
-*/
+        nameToIntentMap.put(getResources().getString(R.string.activity_grade_present_continuous), intent);
+
+        // TODO: add files all_english_Masha23.txt
     }
 }

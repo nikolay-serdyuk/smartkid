@@ -6,32 +6,35 @@ import android.util.Log;
 
 import com.nserdyuk.smartkid.R;
 import com.nserdyuk.smartkid.common.Constants;
-import com.nserdyuk.smartkid.common.IErrorListener;
 import com.nserdyuk.smartkid.io.TextReader;
+import com.nserdyuk.smartkid.tasks.base.BotException;
+import com.nserdyuk.smartkid.tasks.base.Bot;
+
+import org.apache.commons.lang3.StringUtils;
 
 import java.io.IOException;
 import java.util.Arrays;
 
-public abstract class AbstractChatBot extends AbstractBot {
-    private static final String TAG = AbstractChatBot.class.getName();
-    private static final String ERROR = "An error occurred in chat bot";
+public abstract class ChatBot extends Bot {
+    private static final String TAG = ChatBot.class.getName();
+    private static final String ERROR = "An error occurred in bot";
     private static final String CONTENT_ERROR = "Invalid content";
-    private static final String WELCOME_MESSAGE = "";
+    private static final String START_MESSAGE = "";
 
     private final String greetingMsg;
     private final String rightAnswerMsg;
     private final String wrongAnswerMsg;
     private final String nextAnswerMsg;
-
     private final int examplesNum;
+    private final TextReader textReader;
+
     private int currentExample;
     private int currentAnswer;
     private Test[] examples;
-    private final TextReader textReader;
-    private volatile IErrorListener errorListener;
 
-    public AbstractChatBot(Context context, AssetManager am, String fileName, int examplesNum) {
+    public ChatBot(Context context, AssetManager am, String fileName, int examplesNum) {
         super(TAG);
+
         textReader = new TextReader(am, fileName, examplesNum);
         this.examplesNum = examplesNum;
         greetingMsg = context.getResources().getString(R.string.greeting);
@@ -40,55 +43,48 @@ public abstract class AbstractChatBot extends AbstractBot {
         nextAnswerMsg = context.getResources().getString(R.string.nextAnswer);
     }
 
-
-    public void setOnErrorListener(IErrorListener listener) {
-        errorListener = listener;
+    @Override
+    protected void onStart() {
+        onMessage(START_MESSAGE);
     }
 
     @Override
-    protected void startBot() {
-        process(WELCOME_MESSAGE);
-    }
-
-    @Override
-    protected void process(Object o) {
-        if (!(o instanceof String)) {
+    protected void onMessage(Object obj) {
+        if (!(obj instanceof String)) {
             return;
         }
 
-        String input = (String)o;
+        String input = (String)obj;
         try {
-            if (WELCOME_MESSAGE.equals(o)) {
+            if (START_MESSAGE.equals(input)) {
                 send(greetingMsg);
                 loadExamples();
                 currentExample = 0;
-                String msg = examples[currentExample].getQuestion();
-                send(msg);
             } else {
                 examples[currentExample].setUserAnswer(currentAnswer++, input);
                 if (currentAnswer < examples[currentExample].getNumberOfAnswers()) {
                     send(nextAnswerMsg);
+                    return;
                 } else {
                     currentAnswer = 0;
                     currentExample = (currentExample + 1) % examplesNum;
                     if (currentExample == 0) {
                         boolean resultOk = checkAllExamples();
-                         if (resultOk) {
-                             send(rightAnswerMsg);
-                             loadExamples();
-                         } else {
-                             send(wrongAnswerMsg);
-                         }
+                        if (resultOk) {
+                            send(rightAnswerMsg);
+                            loadExamples();
+                        } else {
+                            send(wrongAnswerMsg);
+                        }
                     }
-                    String msg = examples[currentExample].getQuestion();
-                    send(msg);
                 }
             }
-        } catch (ChatBotException e) {
+
+            String msg = examples[currentExample].getQuestion();
+            send(msg);
+        } catch (BotException e) {
             Log.e(TAG, ERROR, e);
-            if (errorListener != null) {
-                errorListener.onError(e);
-            }
+            onError(e);
         }
     }
 
@@ -101,20 +97,20 @@ public abstract class AbstractChatBot extends AbstractBot {
         return true;
     }
 
-    private void loadExamples() throws ChatBotException {
+    private void loadExamples() throws BotException {
         String[] lines;
         try {
             lines = textReader.readRandomLines();
         } catch (IOException e) {
-            throw new ChatBotException(e.getMessage(), e);
+            throw new BotException(e.getMessage(), e);
         }
 
         examples = new Test[lines.length];
         for (int i = 0; i < lines.length; i++) {
             String line = lines[i];
-            String[] parts = line.split(Constants.STRING_DELIMITER);
+            String[] parts = StringUtils.split(line, Constants.STRING_DELIMITER);
             if (parts.length < 2) {
-                throw new ChatBotException(CONTENT_ERROR);
+                throw new BotException(CONTENT_ERROR);
             }
             examples[i] = new Test(parts[0], Arrays.copyOfRange(parts, 1, parts.length));
         }
@@ -150,15 +146,4 @@ public abstract class AbstractChatBot extends AbstractBot {
         }
     }
 
-    private class ChatBotException extends Exception {
-
-        ChatBotException(String message) {
-            super(message);
-        }
-
-        ChatBotException(String message, Throwable cause) {
-            super(message, cause);
-        }
-
-    }
 }

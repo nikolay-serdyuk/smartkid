@@ -1,5 +1,5 @@
 package com.nserdyuk.smartkid.common;
 
-public interface IErrorListener {
+public interface ErrorListener {
     void onError(Exception e);
 }

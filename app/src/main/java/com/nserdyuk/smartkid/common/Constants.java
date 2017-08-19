@@ -10,7 +10,8 @@ public final class Constants {
     public static final String ATTRIBUTE_MULTILANG = "MULTILANG";
 
     public static final String DEFAULT_PICS_MASK = ".gif";
-    public static final String STRING_DELIMITER = "\\|";
+
+    public static final char STRING_DELIMITER = '|';
 
     public static final String RIGHT_ANSWER_FORMAT = "%s\t\t[%d]";
     public static final String GRID2D_POINT_FORMAT = "(%d, %d)";

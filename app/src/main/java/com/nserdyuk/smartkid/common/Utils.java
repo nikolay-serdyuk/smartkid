@@ -23,6 +23,14 @@ public final class Utils {
 
     }
 
+    public static void delay(long millis) {
+        try {
+            Thread.sleep(millis);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+    }
+
     private static boolean isUiThread() {
         return Thread.currentThread() == Looper.getMainLooper().getThread();
     }

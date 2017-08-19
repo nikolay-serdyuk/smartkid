@@ -17,6 +17,8 @@ import com.nserdyuk.smartkid.common.OnSwipeTouchListener;
 import com.nserdyuk.smartkid.common.Utils;
 import com.nserdyuk.smartkid.io.TextReader;
 
+import org.apache.commons.lang3.StringUtils;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -156,7 +158,7 @@ public class DictionaryActivity extends AppCompatActivity {
                 String[] newLines = new TextReader(am, fileName, examplesNum).readRandomLines();
                 lines.clear();
                 for (String newLine : newLines) {
-                    String[] parts = newLine.split(Constants.STRING_DELIMITER);
+                    String[] parts = StringUtils.split(newLine, Constants.STRING_DELIMITER);
                     lines.add(parts[multilang ? random.nextInt(parts.length) : 0]);
                 }
             } catch (IOException e) {
