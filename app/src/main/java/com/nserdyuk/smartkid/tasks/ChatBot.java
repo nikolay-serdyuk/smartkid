@@ -63,12 +63,15 @@ public abstract class ChatBot extends Bot {
             } else {
                 examples[currentExample].setUserAnswer(currentAnswer++, input);
                 if (currentAnswer < examples[currentExample].getNumberOfAnswers()) {
+                    // There are more answers for this question. E.g. divisor and remainder.
+                    // Let's ask to input them.
                     send(nextAnswerMsg);
                     return;
                 } else {
                     currentAnswer = 0;
                     currentExample = (currentExample + 1) % examplesNum;
                     if (currentExample == 0) {
+                        // We have got answers for all the shown examples. Let's check them.
                         boolean resultOk = checkAllExamples();
                         if (resultOk) {
                             send(rightAnswerMsg);
