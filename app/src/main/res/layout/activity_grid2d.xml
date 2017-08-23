@@ -8,7 +8,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/tv_activity_grid2d"
-        android:text="hello"
         android:textSize="40sp"
         android:gravity="center_vertical|center_horizontal"
         />

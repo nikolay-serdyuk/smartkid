@@ -28,26 +28,6 @@ import org.apache.commons.lang3.StringUtils;
 
 import java.util.Locale;
 
-/*
-    Common guide lines
-    http://blog.danlew.net/2014/11/19/styles-on-android/
-    https://jeroenmols.com/blog/2016/03/07/resourcenaming/
-
-    0. Проверить что в xml файлах нет предупреждений
-    1. Проверить что задания расположены в правильном порядке
-    2. вставить @NonNull
-    3. unit tests
-    5. протестировать с входом и выходом из спящего режима
-    6. Проверить как выглядет на смартфоне
-    7. Запретить поворот приложения
-    8. PDB check
-    9. lint!!!!
-    9. check adb logcat Runtime Exceptions
-    10. форматирование xml файлов
-    11. переименовать activity_grade_base в activity_grade
-    12. вставить copyright?
-*/
-
 public class ChatActivity extends CommunicationActivity {
     private static final String ERROR_LOAD_IMAGES = "An error occurred while loading images";
     private static final String ERROR_INVALID_PARAMETER = "An error occurred while reading extended data from intent";

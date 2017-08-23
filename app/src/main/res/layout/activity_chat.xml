@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical|center_horizontal"
         android:textColor="@android:color/white"
-        android:textSize="30dp">
+        android:textSize="30sp">
     </TextView>
 
     <ImageView
@@ -49,8 +49,8 @@
             android:inputType="number"
             android:ems="10"
             android:id="@+id/et_activity_chat"
-            android:textCursorDrawable="@layout/activity_chat_cursor"
-            android:textSize="30dp"
+            android:textCursorDrawable="@drawable/activity_chat_cursor"
+            android:textSize="30sp"
             android:background="@android:color/darker_gray"
             android:gravity="center|center_vertical|fill_vertical"
             android:layout_marginLeft="30dip"

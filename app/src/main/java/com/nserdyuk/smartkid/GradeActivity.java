@@ -53,6 +53,7 @@ public class GradeActivity extends AppCompatActivity {
                 }
             }
         });
+        menuResources.recycle();
     }
 
     private void setupNameToIntent() {
@@ -151,19 +152,6 @@ public class GradeActivity extends AppCompatActivity {
         intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 7);
         intent.putExtra(Constants.ATTRIBUTE_COMPLEXITY, Complexity.HARD.toString());
         nameToIntentMap.put(getResources().getString(R.string.activity_grade_grid_2d_hard), intent);
-
-        /*
-        intent = new Intent(this, ClockFace.class);
-        nameToIntentMap.put(getResources().getString(R.string.all_clock_face), intent);
-
-        intent = new Intent(this, ClockActivity.class);
-        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 10);
-        intent.putExtra(Constants.ATTRIBUTE_COMPLEXITY, Constants.Complexity.HARD.toString());
-        nameToIntentMap.put(getResources().getString(R.string.all_clock), intent);
-
-        intent = new Intent(this, CubeActivity.class);
-        nameToIntentMap.put(getResources().getString(R.string.all_cube), intent);
-        */
 
         intent = new Intent(this, DictionaryActivity.class);
         intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 12);
