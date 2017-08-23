@@ -27,7 +27,7 @@ public class GradeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_grade_base);
+        setContentView(R.layout.activity_grade);
         grade = getIntent().getIntExtra(Constants.ATTRIBUTE_GRADE, 0);
         setupNameToIntent();
         initListView();
