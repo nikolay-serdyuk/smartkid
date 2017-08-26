@@ -54,14 +54,19 @@ public abstract class ChatBot extends Bot {
             return;
         }
 
-        String input = (String)obj;
+        String inputStr = (String)obj;
         try {
-            if (START_MESSAGE.equals(input)) {
+            if (START_MESSAGE.equals(inputStr)) {
                 send(greetingMsg);
                 loadExamples();
                 currentExample = 0;
             } else {
-                examples[currentExample].setUserAnswer(currentAnswer++, input);
+                // A special case, when user inputs many zeroes,
+                // in the begining e.g. 0043. They should be cleared.
+                int inputNum = Integer.parseInt(inputStr);
+                inputStr = String.valueOf(inputNum);
+
+                examples[currentExample].setUserAnswer(currentAnswer++, inputStr);
                 if (currentAnswer < examples[currentExample].getNumberOfAnswers()) {
                     // There are more answers for this question. E.g. divisor and remainder.
                     // Let's ask to input them.
