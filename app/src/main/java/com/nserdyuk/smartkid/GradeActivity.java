@@ -6,15 +6,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.ListView;
 
 import com.nserdyuk.smartkid.common.Complexity;
-import com.nserdyuk.smartkid.common.ListAdapter;
 import com.nserdyuk.smartkid.tasks.ChatActivity;
 import com.nserdyuk.smartkid.common.Constants;
 import com.nserdyuk.smartkid.tasks.DictionaryActivity;
 import com.nserdyuk.smartkid.tasks.ExaminationActivity;
 import com.nserdyuk.smartkid.tasks.Grid2dActivity;
+import com.nserdyuk.smartkid.tasks.TimeSetActivity;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -39,7 +41,8 @@ public class GradeActivity extends AppCompatActivity {
         arrayOfTasks = getResources().getStringArray(id);
 
         ListView lv = (ListView) findViewById(R.id.list_activity_grade_base);
-        ListAdapter adapter = new ListAdapter(this, arrayOfTasks);
+        BaseAdapter adapter = new ArrayAdapter<>(this, R.layout.activity_main_list_item,
+                R.id.activity_main_list_item_label, arrayOfTasks);
         lv.setAdapter(adapter);
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -129,19 +132,19 @@ public class GradeActivity extends AppCompatActivity {
         intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 1);
         intent.putExtra(Constants.ATTRIBUTE_FILE, "time_hard.txt");
         intent.putExtra(Constants.ATTRIBUTE_FILE_MASK, "TIME.jpg");
-        nameToIntentMap.put(getResources().getString(R.string.activity_grade_time_hard), intent);
+        nameToIntentMap.put(getResources().getString(R.string.activity_grade_time_add_sub_hard), intent);
 
         intent = new Intent(this, ChatActivity.class);
         intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 1);
         intent.putExtra(Constants.ATTRIBUTE_FILE, "time_easy_add.txt");
         intent.putExtra(Constants.ATTRIBUTE_FILE_MASK, "TIME.jpg");
-        nameToIntentMap.put(getResources().getString(R.string.activity_grade_time_easy_add), intent);
+        nameToIntentMap.put(getResources().getString(R.string.activity_grade_time_add_easy), intent);
 
         intent = new Intent(this, ChatActivity.class);
         intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 1);
         intent.putExtra(Constants.ATTRIBUTE_FILE, "time_easy_sub.txt");
         intent.putExtra(Constants.ATTRIBUTE_FILE_MASK, "TIME.jpg");
-        nameToIntentMap.put(getResources().getString(R.string.activity_grade_time_easy_sub), intent);
+        nameToIntentMap.put(getResources().getString(R.string.activity_grade_time_sub_easy), intent);
 
         intent = new Intent(this, Grid2dActivity.class);
         intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 1);
@@ -174,6 +177,16 @@ public class GradeActivity extends AppCompatActivity {
         intent.putExtra(Constants.ATTRIBUTE_FILE, "PresentContinuous.txt");
         intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 3);
         nameToIntentMap.put(getResources().getString(R.string.activity_grade_present_continuous), intent);
+
+        intent = new Intent(this, TimeSetActivity.class);
+        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 10);
+        intent.putExtra(Constants.ATTRIBUTE_COMPLEXITY, Complexity.EASY.toString());
+        nameToIntentMap.put(getResources().getString(R.string.activity_grade_time_set_easy), intent);
+
+        intent = new Intent(this, TimeSetActivity.class);
+        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 10);
+        intent.putExtra(Constants.ATTRIBUTE_COMPLEXITY, Complexity.HARD.toString());
+        nameToIntentMap.put(getResources().getString(R.string.activity_grade_time_set_hard), intent);
 
         // TODO: add files all_english_Masha23.txt
     }

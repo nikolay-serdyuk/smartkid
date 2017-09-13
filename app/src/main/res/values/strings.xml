@@ -2,7 +2,7 @@
     <string name="app_name">SmartKid</string>
 
     <string name="greeting">"Привет!"</string>
-    <string name="rightAnswer">"Правильно!"</string>
+    <string name="rightAnswer">"Правильно"</string>
     <string name="wrongAnswer">"Ошибка…"</string>
     <string name="nextAnswer">"Еще"</string>
     <string name="exitQuestion">"Выход?"</string>
@@ -13,6 +13,91 @@
     <string name="rightAnswerEnglish">"Right!"</string>
     <string name="wrongAnswerEnglish">"Error..."</string>
 
+    <array name="all_grades">
+        <item>@array/grade0</item>
+        <item>@array/grade1</item>
+        <item>@array/grade2</item>
+        <item>@array/grade3</item>
+        <item>@array/grade4</item>
+        <item>@array/grade5</item>
+    </array>
+
+    <string-array name="activity_timeset_minutes">
+        <item>5 | пять минут</item>
+        <item>10 | десять минут</item>
+        <item>15 | пятнадцать минут</item>
+        <item>20 | двадцать минут</item>
+        <item>25 | двадцать пять минут</item>
+        <item>30 | тридцать минут</item>
+        <item>35 | тридцать пять минут</item>
+        <item>40 | сорок минут</item>
+        <item>45 | сорок пять минут</item>
+        <item>50 | пятьдесят минут</item>
+        <item>55 | пятьдесят пять минут</item>
+    </string-array>
+
+    <string-array name="activity_timeset_hours">
+        <item>1 | один час,</item>
+        <item>2 | два часа,</item>
+        <item>3 | три часа,</item>
+        <item>4 | четыре часа,</item>
+        <item>5 | пять часов,</item>
+        <item>6 | шесть часов,</item>
+        <item>7 | семь часов,</item>
+        <item>8 | восемь часов,</item>
+        <item>9 | девять часов,</item>
+        <item>10 | десять часов,</item>
+        <item>11 | одинадцать часов,</item>
+        <item>12 | двенадцать часов,</item>
+    </string-array>
+
+    <string-array name="activity_timeset_minutes_first_half">
+        <item>5 | пять минут</item>
+        <item>10 | десять минут</item>
+        <item>15 | пятнадцать минут</item>
+        <item>15 | четверть</item>
+        <item>20 | двадцать минут</item>
+        <item>25 | двадцать пять минут</item>
+        <item>30 | половина</item>
+    </string-array>
+
+    <string-array name="activity_timeset_hours_first_half">
+        <item>12 | первого</item>
+        <item>1 | второго</item>
+        <item>2 | третьего</item>
+        <item>3 | четвертого</item>
+        <item>4 | пятого</item>
+        <item>5 | шестого</item>
+        <item>6 | седьмого</item>
+        <item>7 | восьмого</item>
+        <item>8 | девятого</item>
+        <item>9 | десятого</item>
+        <item>10 | одинадцатого</item>
+        <item>11 | двенадцатого</item>
+    </string-array>
+
+    <string-array name="activity_timeset_minutes_second_half">
+        <item>40 | без двадцати минут</item>
+        <item>45 | без пятнадцати минут</item>
+        <item>45 | без четверти</item>
+        <item>50 | без десяти минут</item>
+        <item>55 | без пяти минут</item>
+    </string-array>
+
+    <string-array name="activity_timeset_hours_second_half">
+        <item>12 | час</item>
+        <item>1 | два</item>
+        <item>2 | три</item>
+        <item>3 | четыре</item>
+        <item>4 | пять</item>
+        <item>5 | шесть</item>
+        <item>6 | семь</item>
+        <item>7 | восемь</item>
+        <item>8 | девять</item>
+        <item>9 | десять</item>
+        <item>10 | одинадцать</item>
+        <item>11 | двенадцать</item>
+    </string-array>
 
     <string name="activity_main_preschool">Дошкольные задания</string>
     <string name="activity_main_1">Первый класс</string>
@@ -45,9 +130,11 @@
     <string name="activity_grade_muldiv_10_100_1000">Деление и умножение на 10, 100, 1000</string>
     <string name="activity_grade_grid_2d_easy">Координатный угол (легкий уровень)</string>
     <string name="activity_grade_grid_2d_hard">Координатный угол (сложный уровень)</string>
-    <string name="activity_grade_time_easy_add">Время, сложение (легкий уровень)</string>
-    <string name="activity_grade_time_easy_sub">Время, вычитание (легкий уровень)</string>
-    <string name="activity_grade_time_hard">Время (сложный уровень)</string>
+    <string name="activity_grade_time_add_easy">Время, сложение (легкий уровень)</string>
+    <string name="activity_grade_time_sub_easy">Время, вычитание (легкий уровень)</string>
+    <string name="activity_grade_time_add_sub_hard">Время, сложение и вычитание (сложный уровень)</string>
+    <string name="activity_grade_time_set_easy">Установка времени (легкий уровень)</string>
+    <string name="activity_grade_time_set_hard">Установка времени (сложный уровень)</string>
     <string name="activity_grade_dictionary">Перевод с английского</string>
     <string name="activity_grade_dictionary_multilang">Перевод с английского и обратно</string>
     <string name="activity_grade_present_simple">Present Simple</string>
@@ -63,8 +150,10 @@
     </string-array>
 
     <string-array name="grade1">
-        <item>@string/activity_grade_time_easy_add</item>
-        <item>@string/activity_grade_time_easy_sub</item>
+        <item>@string/activity_grade_time_add_easy</item>
+        <item>@string/activity_grade_time_sub_easy</item>
+        <item>@string/activity_grade_time_set_easy</item>
+        <item>@string/activity_grade_time_set_hard</item>
         <item>@string/activity_grade_sub_zero</item>
         <item>@string/activity_grade_grid_2d_easy</item>
     </string-array>
@@ -74,7 +163,8 @@
         <item>@string/activity_grade_sub_zero_long</item>
         <item>@string/activity_grade_single_quotient</item>
         <item>@string/activity_grade_div_rem</item>
-        <item>@string/activity_grade_time_hard</item>
+        <item>@string/activity_grade_time_add_sub_hard</item>
+        <item>@string/activity_grade_time_set_hard</item>
         <item>@string/activity_grade_grid_2d_hard</item>
         <item>@string/activity_grade_dictionary</item>
         <item>@string/activity_grade_dictionary_multilang</item>
@@ -91,7 +181,7 @@
     </string-array>
 
     <string-array name="grade4">
-        <item>@string/activity_grade_time_hard</item>
+        <item>@string/activity_grade_time_add_sub_hard</item>
         <item>@string/activity_grade_div_rem</item>
         <item>@string/activity_grade_muldiv_10_100_1000</item>
         <item>@string/activity_grade_long_mul</item>
@@ -105,13 +195,4 @@
 
     <string-array name="grade5">
     </string-array>
-
-    <array name="all_grades">
-        <item>@array/grade0</item>
-        <item>@array/grade1</item>
-        <item>@array/grade2</item>
-        <item>@array/grade3</item>
-        <item>@array/grade4</item>
-        <item>@array/grade5</item>
-    </array>
 </resources>

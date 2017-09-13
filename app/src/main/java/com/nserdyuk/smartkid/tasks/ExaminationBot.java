@@ -21,8 +21,8 @@ public abstract class ExaminationBot extends Bot {
     private static final String CONTENT_ERROR = "Invalid content";
     private static final String START_MESSAGE = "";
 
-    private static final int SHORT_DELAY = 1000;
-    private static final int LONG_DELAY = 1500;
+    private static final int SHORT_DELAY = 1500;
+    private static final int LONG_DELAY = 2000;
 
     private final String greetingMsg;
     private final String rightAnswerMsg;
@@ -54,6 +54,7 @@ public abstract class ExaminationBot extends Bot {
             return;
         }
 
+        Utils.delay(SHORT_DELAY);
         String input = (String)obj;
         try {
             if (START_MESSAGE.equals(input)) {
@@ -74,7 +75,7 @@ public abstract class ExaminationBot extends Bot {
                 }
             }
             String msg = examples[currentExample].getQuestionAndAnswers();
-            sendWithDelay(msg, SHORT_DELAY);
+            send(msg);
         } catch (BotException e) {
             Log.e(TAG, ERROR, e);
             onError(e);

@@ -5,6 +5,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.TypedValue;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
@@ -29,6 +30,7 @@ public class ExaminationActivity extends CommunicationActivity {
     private static final String FONT_NAME = "fonts/SueEllenFrancisco.ttf";
     private static final String ERROR_LOAD_IMAGES = "An error occurred while loading images";
     private static final int ANSWER_FONT_SIZE = 35;
+    private static final int BUTTON_MARGIN = 20;
 
     private Typeface typeface;
     private TextView title;
@@ -124,17 +126,16 @@ public class ExaminationActivity extends CommunicationActivity {
     }
 
     private void updateTitle() {
-        String t;
-        if (correctAnswers > 0) {
-            t = String.format(Locale.US, Constants.RIGHT_ANSWER_FORMAT, titleMessage, correctAnswers);
-        } else {
-            t = titleMessage;
-        }
-        title.setText(t);
+        title.setText(correctAnswers == 0 ?
+                titleMessage : String.format(Locale.US, Constants.RIGHT_ANSWER_FORMAT, titleMessage, correctAnswers));
     }
 
     private void addAnswerButton(String answer) {
         RadioButton button = new RadioButton(this);
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        params.setMargins(0, BUTTON_MARGIN, 0, BUTTON_MARGIN);
+        button.setLayoutParams(params);
         button.setText(answer);
         button.setTextSize(TypedValue.COMPLEX_UNIT_SP, ANSWER_FONT_SIZE);
         setStyledFont(button);

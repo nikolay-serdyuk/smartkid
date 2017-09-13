@@ -17,6 +17,8 @@ public final class Constants {
     public static final String GRID2D_POINT_FORMAT = "(%d, %d)";
     public static final String GRID2D_POINT_FORMAT_EXAMPLES = GRID2D_POINT_FORMAT + "\t\t[%d]";
     public static final String GRID2D_CLEAR_POINTS = "";
+    public static final String TIME_ITEM_FORMAT = "%d:%d";
+    public static final String TIMESET_EXAMPLE_FORMAT = "%s\t\t%s, %s";
 
     private Constants() {}
 }
