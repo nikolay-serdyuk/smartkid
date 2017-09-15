@@ -62,7 +62,6 @@
     </string-array>
 
     <string-array name="activity_timeset_hours_first_half">
-        <item>12 | первого</item>
         <item>1 | второго</item>
         <item>2 | третьего</item>
         <item>3 | четвертого</item>
@@ -74,6 +73,7 @@
         <item>9 | десятого</item>
         <item>10 | одинадцатого</item>
         <item>11 | двенадцатого</item>
+        <item>12 | первого</item>
     </string-array>
 
     <string-array name="activity_timeset_minutes_second_half">
@@ -85,7 +85,6 @@
     </string-array>
 
     <string-array name="activity_timeset_hours_second_half">
-        <item>12 | час</item>
         <item>1 | два</item>
         <item>2 | три</item>
         <item>3 | четыре</item>
@@ -97,6 +96,7 @@
         <item>9 | десять</item>
         <item>10 | одинадцать</item>
         <item>11 | двенадцать</item>
+        <item>12 | час</item>
     </string-array>
 
     <string name="activity_main_preschool">Дошкольные задания</string>

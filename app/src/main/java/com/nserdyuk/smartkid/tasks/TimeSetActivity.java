@@ -184,8 +184,8 @@ public class TimeSetActivity extends AppCompatActivity {
 
         @Override
         public void onTimeSet(RadialPickerLayout view, int hour, int minute) {
-            hour = (hour == 12 | hour == 0) ? 12 : hour % 12;
-            examples[(int) selectedItem].setUserInput(new TimeItem(hour, minute));
+            int adjustedHour = hour % 12;
+            examples[(int) selectedItem].setUserInput(new TimeItem(adjustedHour == 0 ? 12 : adjustedHour, minute));
             adapter.notifyDataSetChanged();
         }
     }

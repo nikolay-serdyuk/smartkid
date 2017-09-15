@@ -179,12 +179,12 @@ public class GradeActivity extends AppCompatActivity {
         nameToIntentMap.put(getResources().getString(R.string.activity_grade_present_continuous), intent);
 
         intent = new Intent(this, TimeSetActivity.class);
-        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 10);
+        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 8);
         intent.putExtra(Constants.ATTRIBUTE_COMPLEXITY, Complexity.EASY.toString());
         nameToIntentMap.put(getResources().getString(R.string.activity_grade_time_set_easy), intent);
 
         intent = new Intent(this, TimeSetActivity.class);
-        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 10);
+        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 8);
         intent.putExtra(Constants.ATTRIBUTE_COMPLEXITY, Complexity.HARD.toString());
         nameToIntentMap.put(getResources().getString(R.string.activity_grade_time_set_hard), intent);
 
