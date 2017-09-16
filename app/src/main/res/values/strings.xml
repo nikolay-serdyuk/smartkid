@@ -115,6 +115,9 @@
         <item>@string/activity_main_5</item>
     </string-array>
 
+    <string name="activity_timeset_answer_right">"правильно"</string>
+    <string name="activity_timeset_answer_wrong">"ошибка"</string>
+
     <string name="activity_grade_simple_add10">Простое сложение до 10</string>
     <string name="activity_grade_guess_number">Угадай число</string>
     <string name="activity_grade_simple_sub10">Простое вычитание до 10</string>

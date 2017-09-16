@@ -1,12 +1,18 @@
 package com.nserdyuk.smartkid.tasks;
 
+import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.nserdyuk.smartkid.R;
 import com.nserdyuk.smartkid.common.Complexity;
@@ -26,6 +32,9 @@ import java.util.Locale;
 import java.util.Random;
 
 public class TimeSetActivity extends AppCompatActivity {
+    private final static int COLOR_RIGHT = Color.GRAY;
+    private final static int COLOR_WRONG = Color.RED;
+
     private final List<Pair<Integer, String>> HOURS = new ArrayList<>();
     private final List<Pair<Integer, String>> MINUTES = new ArrayList<>();
     private final List<Pair<Integer, String>> HOURS_FIRST_HALF = new ArrayList<>();
@@ -34,9 +43,7 @@ public class TimeSetActivity extends AppCompatActivity {
     private final List<Pair<Integer, String>> MINUTES_SECOND_HALF = new ArrayList<>();
     private final Random RANDOM = new Random();
 
-    private String rightAnswerMsg;
-    private String wrongAnswerMsg;
-    private long selectedItem = -1;
+    private long selectedItem;
     private Example[] examples;
 
     private TimePickerDialog timePickerDialog;
@@ -52,8 +59,8 @@ public class TimeSetActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timeset);
 
-        rightAnswerMsg = getResources().getString(R.string.rightAnswer);
-        wrongAnswerMsg = getResources().getString(R.string.wrongAnswer);
+        String rightAnswerMsg = getResources().getString(R.string.activity_timeset_answer_right);
+        String wrongAnswerMsg = getResources().getString(R.string.activity_timeset_answer_wrong);
 
         fillArray(getResources().getStringArray(R.array.activity_timeset_hours), HOURS);
         fillArray(getResources().getStringArray(R.array.activity_timeset_minutes), MINUTES);
@@ -77,8 +84,7 @@ public class TimeSetActivity extends AppCompatActivity {
         }
 
         ListView lv = (ListView) findViewById(R.id.list_activity_timeset);
-        adapter = new ArrayAdapter<>(this, R.layout.activity_timeset_list_item,
-                R.id.activity_timeset_list_item_label, examples);
+        adapter = new Adapter(this, examples, COLOR_RIGHT, COLOR_WRONG, rightAnswerMsg, wrongAnswerMsg);
         lv.setAdapter(adapter);
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view,
@@ -130,7 +136,7 @@ public class TimeSetActivity extends AppCompatActivity {
         }
     }
 
-    private class Example {
+    private static class Example {
         private final TimeItem timeItem;
         private final String expression;
         private TimeItem userInput;
@@ -144,16 +150,21 @@ public class TimeSetActivity extends AppCompatActivity {
             this.userInput = userInput;
         }
 
+        TimeItem getUserInput() {
+            return userInput;
+        }
+
+        boolean checkUserInput() {
+            return timeItem.equals(userInput);
+        }
+
         @Override
         public String toString() {
-            if (userInput == null) {
-                return expression;
-            }
-            return String.format(Locale.US, Constants.TIMESET_EXAMPLE_FORMAT, expression, userInput.toString(), timeItem.equals(userInput) ? rightAnswerMsg : wrongAnswerMsg);
+            return expression;
         }
     }
 
-    private class ExampleFactory {
+    private static class ExampleFactory {
         private final Random RANDOM = new Random();
         private final List<Pair<Integer, String>> hoursMap;
         private final List<Pair<Integer, String>> minutesMap;
@@ -187,6 +198,49 @@ public class TimeSetActivity extends AppCompatActivity {
             int adjustedHour = hour % 12;
             examples[(int) selectedItem].setUserInput(new TimeItem(adjustedHour == 0 ? 12 : adjustedHour, minute));
             adapter.notifyDataSetChanged();
+        }
+    }
+
+    private static class Adapter extends ArrayAdapter<Example> {
+        private final int rightAnswerColor;
+        private final int wrongAnswerColor;
+        private final String rightAnswerMsg;
+        private final String wrongAnswerMsg;
+
+        Adapter(Context context, Example[] tasks, int rightAnswerColor, int wrongAnswerColor, String rightAnswerMsg, String wrongAnswerMsg) {
+            super(context, 0, tasks);
+            this.rightAnswerColor = rightAnswerColor;
+            this.wrongAnswerColor = wrongAnswerColor;
+            this.rightAnswerMsg = rightAnswerMsg;
+            this.wrongAnswerMsg = wrongAnswerMsg;
+        }
+
+        @NonNull
+        @Override
+        public View getView(int position, View convertView, @NonNull ViewGroup parent) {
+            Example example = getItem(position);
+            if (convertView == null) {
+                convertView = LayoutInflater.from(getContext()).inflate(R.layout.activity_main_list_item, parent, false);
+            }
+
+            TextView tvLabel = (TextView) convertView.findViewById(R.id.activity_main_list_item_label);
+            String label = example.toString();
+            TimeItem userInput = example.getUserInput();
+            if (userInput != null) {
+                String answer;
+                int color;
+                if (example.checkUserInput()) {
+                    answer = rightAnswerMsg;
+                    color = rightAnswerColor;
+                } else {
+                    answer = wrongAnswerMsg;
+                    color = wrongAnswerColor;
+                }
+                label = String.format(Locale.US, Constants.TIMESET_EXAMPLE_FORMAT, label, userInput, answer);
+                tvLabel.setBackgroundColor(color);
+            }
+            tvLabel.setText(label);
+            return convertView;
         }
     }
 }
