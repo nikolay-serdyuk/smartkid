@@ -178,6 +178,11 @@ public class GradeActivity extends AppCompatActivity {
         intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 3);
         nameToIntentMap.put(getResources().getString(R.string.activity_grade_present_continuous), intent);
 
+        intent = new Intent(this, ExaminationActivity.class);
+        intent.putExtra(Constants.ATTRIBUTE_FILE, "PastSimple.txt");
+        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 3);
+        nameToIntentMap.put(getResources().getString(R.string.activity_grade_past_simple), intent);
+
         intent = new Intent(this, TimeSetActivity.class);
         intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 8);
         intent.putExtra(Constants.ATTRIBUTE_COMPLEXITY, Complexity.EASY.toString());

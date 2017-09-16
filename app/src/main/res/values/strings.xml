@@ -13,15 +13,6 @@
     <string name="rightAnswerEnglish">"Right!"</string>
     <string name="wrongAnswerEnglish">"Error..."</string>
 
-    <array name="all_grades">
-        <item>@array/grade0</item>
-        <item>@array/grade1</item>
-        <item>@array/grade2</item>
-        <item>@array/grade3</item>
-        <item>@array/grade4</item>
-        <item>@array/grade5</item>
-    </array>
-
     <string-array name="activity_timeset_minutes">
         <item>5 | пять минут</item>
         <item>10 | десять минут</item>
@@ -142,6 +133,7 @@
     <string name="activity_grade_dictionary_multilang">Перевод с английского и обратно</string>
     <string name="activity_grade_present_simple">Present Simple</string>
     <string name="activity_grade_present_continuous">Present Continuous</string>
+    <string name="activity_grade_past_simple">Past Simple</string>
 
     <string-array name="grade0">
         <item>@string/activity_grade_simple_add10</item>
@@ -157,13 +149,12 @@
         <item>@string/activity_grade_time_sub_easy</item>
         <item>@string/activity_grade_time_set_easy</item>
         <item>@string/activity_grade_time_set_hard</item>
-        <item>@string/activity_grade_sub_zero</item>
         <item>@string/activity_grade_grid_2d_easy</item>
     </string-array>
 
     <string-array name="grade2">
         <item>@string/activity_grade_long_div</item>
-        <item>@string/activity_grade_sub_zero_long</item>
+        <item>@string/activity_grade_sub_zero</item>
         <item>@string/activity_grade_single_quotient</item>
         <item>@string/activity_grade_div_rem</item>
         <item>@string/activity_grade_time_add_sub_hard</item>
@@ -181,6 +172,7 @@
         <item>@string/activity_grade_dictionary_multilang</item>
         <item>@string/activity_grade_present_simple</item>
         <item>@string/activity_grade_present_continuous</item>
+        <item>@string/activity_grade_sub_zero_long</item>
     </string-array>
 
     <string-array name="grade4">
@@ -197,5 +189,22 @@
     </string-array>
 
     <string-array name="grade5">
+        <item>@string/activity_grade_long_mul</item>
+        <item>@string/activity_grade_long_long_div</item>
+        <item>@string/activity_grade_sub_zero_long</item>
+        <item>@string/activity_grade_time_add_sub_hard</item>
+        <item>@string/activity_grade_dictionary_multilang</item>
+        <item>@string/activity_grade_present_continuous</item>
+        <item>@string/activity_grade_past_simple</item>
     </string-array>
+
+    <array name="all_grades">
+        <item>@array/grade0</item>
+        <item>@array/grade1</item>
+        <item>@array/grade2</item>
+        <item>@array/grade3</item>
+        <item>@array/grade4</item>
+        <item>@array/grade5</item>
+    </array>
+
 </resources>
