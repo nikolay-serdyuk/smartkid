@@ -134,6 +134,7 @@
     <string name="activity_grade_present_simple">Present Simple</string>
     <string name="activity_grade_present_continuous">Present Continuous</string>
     <string name="activity_grade_past_simple">Past Simple</string>
+    <string name="activity_grade_irregular_verbs">Irregular Verbs</string>
 
     <string-array name="grade0">
         <item>@string/activity_grade_simple_add10</item>
@@ -196,6 +197,7 @@
         <item>@string/activity_grade_dictionary_multilang</item>
         <item>@string/activity_grade_present_continuous</item>
         <item>@string/activity_grade_past_simple</item>
+        <item>@string/activity_grade_irregular_verbs</item>
     </string-array>
 
     <array name="all_grades">

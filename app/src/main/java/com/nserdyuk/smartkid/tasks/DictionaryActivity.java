@@ -94,7 +94,7 @@ public class DictionaryActivity extends AppCompatActivity {
         private final AssetManager am;
         private final String fileMask;
 
-        public GetFileListTask(AssetManager am, String fileMask) {
+        GetFileListTask(AssetManager am, String fileMask) {
             this.am = am;
             this.fileMask = fileMask;
         }
@@ -110,7 +110,8 @@ public class DictionaryActivity extends AppCompatActivity {
                 }
 
                 if (!files.isEmpty()) {
-                    return loadLastViewedFile(files.get(0));
+                    String lastViewedFile = loadLastViewedFile();
+                    return lastViewedFile.contains(fileMask) ? lastViewedFile : files.get(0);
                 }
             } catch (IOException e) {
                 Log.e(TAG, ERROR_IO, e);
@@ -131,9 +132,9 @@ public class DictionaryActivity extends AppCompatActivity {
             }
         }
 
-        private String loadLastViewedFile(String defaultFile) {
+        private String loadLastViewedFile() {
             SharedPreferences preferences = getPreferences(MODE_PRIVATE);
-            return preferences.getString(DictionaryActivity.TAG, defaultFile);
+            return preferences.getString(DictionaryActivity.TAG, EMPTY_STRING);
         }
     }
 
@@ -143,7 +144,7 @@ public class DictionaryActivity extends AppCompatActivity {
         private final String fileName;
         private final int examplesNum;
 
-        public ReadRandomLinesTask(AssetManager am, String fileName, int examplesNum) {
+        ReadRandomLinesTask(AssetManager am, String fileName, int examplesNum) {
             this.am = am;
             this.fileName = fileName;
             this.examplesNum = examplesNum;

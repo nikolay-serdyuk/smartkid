@@ -168,6 +168,12 @@ public class GradeActivity extends AppCompatActivity {
         intent.putExtra(Constants.ATTRIBUTE_MULTILANG, true);
         nameToIntentMap.put(getResources().getString(R.string.activity_grade_dictionary_multilang), intent);
 
+        intent = new Intent(this, DictionaryActivity.class);
+        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 12);
+        intent.putExtra(Constants.ATTRIBUTE_FILE_MASK, "50MostCommonIrregularVerbs");
+        intent.putExtra(Constants.ATTRIBUTE_MULTILANG, false);
+        nameToIntentMap.put(getResources().getString(R.string.activity_grade_irregular_verbs), intent);
+
         intent = new Intent(this, ExaminationActivity.class);
         intent.putExtra(Constants.ATTRIBUTE_FILE, "PresentSimple.txt");
         intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 3);
