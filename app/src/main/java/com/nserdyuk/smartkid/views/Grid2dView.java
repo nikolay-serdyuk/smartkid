@@ -168,10 +168,10 @@ public class Grid2dView extends View {
     private void init(Context context) {
         paint = new Paint();
         paint.setStrokeCap(Paint.Cap.ROUND);
-        barColor = ContextCompat.getColor(context, R.color.grid2dBar);
-        xAxisColor = ContextCompat.getColor(context, R.color.xAxis);
-        yAxisColor = ContextCompat.getColor(context, R.color.yAxis);
-        dotColor = ContextCompat.getColor(context, R.color.dot);
+        barColor = ContextCompat.getColor(context, R.color.activity_grid2d_bar);
+        xAxisColor = ContextCompat.getColor(context, R.color.activity_grid2d_x_axis);
+        yAxisColor = ContextCompat.getColor(context, R.color.activity_grid2d_y_axis);
+        dotColor = ContextCompat.getColor(context, R.color.activity_grid2d_dot);
     }
 
     private void print(String str, int num, boolean Vertical, int color, int width) {

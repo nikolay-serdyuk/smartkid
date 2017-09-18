@@ -4,13 +4,13 @@ import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -32,9 +32,6 @@ import java.util.Locale;
 import java.util.Random;
 
 public class TimeSetActivity extends AppCompatActivity {
-    private final static int COLOR_RIGHT = Color.GRAY;
-    private final static int COLOR_WRONG = Color.RED;
-
     private final List<Pair<Integer, String>> HOURS = new ArrayList<>();
     private final List<Pair<Integer, String>> MINUTES = new ArrayList<>();
     private final List<Pair<Integer, String>> HOURS_FIRST_HALF = new ArrayList<>();
@@ -47,7 +44,7 @@ public class TimeSetActivity extends AppCompatActivity {
     private Example[] examples;
 
     private TimePickerDialog timePickerDialog;
-    private BaseAdapter adapter;
+    private Adapter adapter;
 
     @Override
     public void onBackPressed() {
@@ -84,7 +81,9 @@ public class TimeSetActivity extends AppCompatActivity {
         }
 
         ListView lv = (ListView) findViewById(R.id.list_activity_timeset);
-        adapter = new Adapter(this, examples, COLOR_RIGHT, COLOR_WRONG, rightAnswerMsg, wrongAnswerMsg);
+        adapter = new Adapter(this, examples, rightAnswerMsg, wrongAnswerMsg);
+        adapter.setRightAnswerColor(ContextCompat.getColor(this, R.color.activity_timeset_right_answer));
+        adapter.setWrongAnswerColor(ContextCompat.getColor(this, R.color.activity_timeset_wrong_answer));
         lv.setAdapter(adapter);
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view,
@@ -202,17 +201,36 @@ public class TimeSetActivity extends AppCompatActivity {
     }
 
     private static class Adapter extends ArrayAdapter<Example> {
-        private final int rightAnswerColor;
-        private final int wrongAnswerColor;
+        private final static int COLOR_RIGHT = Color.GRAY;
+        private final static int COLOR_WRONG = Color.RED;
+
+        private int rightAnswerColor;
+        private int wrongAnswerColor;
         private final String rightAnswerMsg;
         private final String wrongAnswerMsg;
 
-        Adapter(Context context, Example[] tasks, int rightAnswerColor, int wrongAnswerColor, String rightAnswerMsg, String wrongAnswerMsg) {
+        Adapter(Context context, Example[] tasks, String rightAnswerMsg, String wrongAnswerMsg) {
             super(context, 0, tasks);
-            this.rightAnswerColor = rightAnswerColor;
-            this.wrongAnswerColor = wrongAnswerColor;
             this.rightAnswerMsg = rightAnswerMsg;
             this.wrongAnswerMsg = wrongAnswerMsg;
+            this.rightAnswerColor = COLOR_RIGHT;
+            this.wrongAnswerColor = COLOR_WRONG;
+        }
+
+        public void setRightAnswerColor(int rightAnswerColor) {
+            this.rightAnswerColor = rightAnswerColor;
+        }
+
+        public int getRightAnswerColor() {
+            return rightAnswerColor;
+        }
+
+        public void setWrongAnswerColor(int wrongAnswerColor) {
+            this.wrongAnswerColor = wrongAnswerColor;
+        }
+
+        public int getWrongAnswerColor() {
+            return wrongAnswerColor;
         }
 
         @NonNull

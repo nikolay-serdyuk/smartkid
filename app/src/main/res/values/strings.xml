@@ -2,16 +2,16 @@
     <string name="app_name">SmartKid</string>
 
     <string name="greeting">"Привет!"</string>
-    <string name="rightAnswer">"Правильно"</string>
-    <string name="wrongAnswer">"Ошибка…"</string>
-    <string name="nextAnswer">"Еще"</string>
-    <string name="exitQuestion">"Выход?"</string>
-    <string name="yesAnswer">"Да"</string>
-    <string name="noAnswer">"Нет"</string>
+    <string name="right_answer">"Правильно"</string>
+    <string name="wrong_answer">"Ошибка…"</string>
+    <string name="next_answer">"Еще"</string>
+    <string name="exit_question">"Выход?"</string>
+    <string name="yes_answer">"Да"</string>
+    <string name="no_answer">"Нет"</string>
 
-    <string name="greetingEnglish">"Hello!"</string>
-    <string name="rightAnswerEnglish">"Right!"</string>
-    <string name="wrongAnswerEnglish">"Error..."</string>
+    <string name="greeting_english">"Hello!"</string>
+    <string name="right_answer_english">"Right!"</string>
+    <string name="wrong_answer_english">"Error..."</string>
 
     <string-array name="activity_timeset_minutes">
         <item>5 | пять минут</item>

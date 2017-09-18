@@ -38,9 +38,9 @@ public abstract class ChatBot extends Bot {
         textReader = new TextReader(am, fileName, examplesNum);
         this.examplesNum = examplesNum;
         greetingMsg = context.getResources().getString(R.string.greeting);
-        rightAnswerMsg = context.getResources().getString(R.string.rightAnswer);
-        wrongAnswerMsg = context.getResources().getString(R.string.wrongAnswer);
-        nextAnswerMsg = context.getResources().getString(R.string.nextAnswer);
+        rightAnswerMsg = context.getResources().getString(R.string.right_answer);
+        wrongAnswerMsg = context.getResources().getString(R.string.wrong_answer);
+        nextAnswerMsg = context.getResources().getString(R.string.next_answer);
     }
 
     @Override

@@ -97,9 +97,9 @@ public class ExaminationActivity extends CommunicationActivity {
         title = (TextView) findViewById(R.id.tv_activity_examination_title);
         updateTitle();
 
-        rightAnswerMsg = getResources().getString(R.string.rightAnswerEnglish);
-        wrongAnswerMsg = getResources().getString(R.string.wrongAnswerEnglish);
-        greetingMsg = getResources().getString(R.string.greetingEnglish);
+        rightAnswerMsg = getResources().getString(R.string.right_answer_english);
+        wrongAnswerMsg = getResources().getString(R.string.wrong_answer_english);
+        greetingMsg = getResources().getString(R.string.greeting_english);
 
         mainText = (TextView) findViewById(R.id.tv_activity_examination_main_text);
 

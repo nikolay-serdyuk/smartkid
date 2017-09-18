@@ -39,8 +39,8 @@ public abstract class Grid2dBot extends Bot {
     public Grid2dBot(Context context, int examplesNum, Complexity complexity, int rows, int columns) {
         super(TAG);
         greetingMsg = context.getResources().getString(R.string.greeting);
-        rightAnswerMsg = context.getResources().getString(R.string.rightAnswer);
-        wrongAnswerMsg = context.getResources().getString(R.string.wrongAnswer);
+        rightAnswerMsg = context.getResources().getString(R.string.right_answer);
+        wrongAnswerMsg = context.getResources().getString(R.string.wrong_answer);
         random = new Random();
         this.examplesNum = examplesNum;
         this.complexity = complexity;

@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
-    <color name="red">#FF0000</color>
+    <color name="colorRed">#FF0000</color>
 
-    <color name="leftBubble">#39555B</color>
-    <color name="rightBubble">#29508E</color>
+    <color name="activity_chat_left_bubble">#39555B</color>
+    <color name="activity_chat_right_bubble">#29508E</color>
 
-    <color name="error">#008500</color>
-    <color name="grid2dBar">#AEF100</color>
-    <color name="xAxis">#FD3F49</color>
-    <color name="yAxis">#A168D5</color>
-    <color name="dot">#0E0874</color>
+    <color name="activity_grid2d_bar">#AEF100</color>
+    <color name="activity_grid2d_x_axis">#FD3F49</color>
+    <color name="activity_grid2d_y_axis">#A168D5</color>
+    <color name="activity_grid2d_dot">#0E0874</color>
+
+    <color name="activity_timeset_wrong_answer">#FF66B2</color>
+    <color name="activity_timeset_right_answer">#A0A0A0</color>
 </resources>

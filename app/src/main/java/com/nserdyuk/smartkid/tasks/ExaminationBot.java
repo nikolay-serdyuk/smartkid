@@ -38,9 +38,9 @@ public abstract class ExaminationBot extends Bot {
 
         textReader = new TextReader(am, fileName, examplesNum);
         this.examplesNum = examplesNum;
-        greetingMsg = context.getResources().getString(R.string.greetingEnglish);
-        rightAnswerMsg = context.getResources().getString(R.string.rightAnswerEnglish);
-        wrongAnswerMsg = context.getResources().getString(R.string.wrongAnswerEnglish);
+        greetingMsg = context.getResources().getString(R.string.greeting_english);
+        rightAnswerMsg = context.getResources().getString(R.string.right_answer_english);
+        wrongAnswerMsg = context.getResources().getString(R.string.wrong_answer_english);
     }
 
     @Override

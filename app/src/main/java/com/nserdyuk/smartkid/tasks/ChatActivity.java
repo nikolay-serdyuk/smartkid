@@ -71,9 +71,9 @@ public class ChatActivity extends CommunicationActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
 
-        rightAnswerMsg = getResources().getString(R.string.rightAnswer);
-        colorLeftBubble = ContextCompat.getColor(this, R.color.leftBubble);
-        colorRightBubble = ContextCompat.getColor(this, R.color.rightBubble);
+        rightAnswerMsg = getResources().getString(R.string.right_answer);
+        colorLeftBubble = ContextCompat.getColor(this, R.color.activity_chat_left_bubble);
+        colorRightBubble = ContextCompat.getColor(this, R.color.activity_chat_right_bubble);
 
         layoutInflater = getLayoutInflater();
         scrollView = (ScrollView) findViewById(R.id.sv_activity_chat);

@@ -69,8 +69,8 @@ public class Grid2dActivity extends CommunicationActivity {
         textView.setTextColor(COLOR_TEXT_TITLE);
 
         greetingMsg = getResources().getString(R.string.greeting);
-        rightAnswerMsg = getResources().getString(R.string.rightAnswer);
-        wrongAnswerMsg = getResources().getString(R.string.wrongAnswer);
+        rightAnswerMsg = getResources().getString(R.string.right_answer);
+        wrongAnswerMsg = getResources().getString(R.string.wrong_answer);
 
         grid2dView = (Grid2dView)findViewById(R.id.grid_activity_grid2d);
         grid2dView.setBackgroundColor(COLOR_BACKGROUND);
