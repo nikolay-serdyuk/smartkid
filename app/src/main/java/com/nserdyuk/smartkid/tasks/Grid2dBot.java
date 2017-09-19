@@ -6,7 +6,6 @@ import com.nserdyuk.smartkid.R;
 import com.nserdyuk.smartkid.common.Complexity;
 import com.nserdyuk.smartkid.common.Constants;
 import com.nserdyuk.smartkid.common.Point;
-import com.nserdyuk.smartkid.common.Utils;
 import com.nserdyuk.smartkid.tasks.base.Bot;
 
 import java.util.ArrayList;
@@ -15,7 +14,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Random;
 
-public abstract class Grid2dBot extends Bot {
+abstract class Grid2dBot extends Bot {
     private static final String TAG = Grid2dBot.class.getName();
     private static final Point START_POINT = new Point(-1, -1);
     private static final int SHORT_DELAY = 500;
@@ -36,7 +35,7 @@ public abstract class Grid2dBot extends Bot {
     private final List<Point> userList = new ArrayList<>();
 
 
-    public Grid2dBot(Context context, int examplesNum, Complexity complexity, int rows, int columns) {
+    Grid2dBot(Context context, int examplesNum, Complexity complexity, int rows, int columns) {
         super(TAG);
         greetingMsg = context.getResources().getString(R.string.greeting);
         rightAnswerMsg = context.getResources().getString(R.string.right_answer);
@@ -82,11 +81,6 @@ public abstract class Grid2dBot extends Bot {
         Point p = generatedList.get(currentPoint++);
         String msg = String.format(Locale.US, solved == 0 ? Constants.GRID2D_POINT_FORMAT : Constants.GRID2D_POINT_FORMAT_EXAMPLES, p.getX(), p.getY(), solved);
         sendWithDelay(msg, SHORT_DELAY);
-    }
-
-    private void sendWithDelay(String msg, long millis) {
-        send(msg);
-        Utils.delay(millis);
     }
 
     private void generatePoints() {

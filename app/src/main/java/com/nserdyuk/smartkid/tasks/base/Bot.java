@@ -5,6 +5,7 @@ import android.os.HandlerThread;
 import android.os.Message;
 
 import com.nserdyuk.smartkid.common.ErrorListener;
+import com.nserdyuk.smartkid.common.Utils;
 
 public abstract class Bot extends HandlerThread {
     private volatile Handler handler;
@@ -26,6 +27,11 @@ public abstract class Bot extends HandlerThread {
     }
 
     protected abstract void send(Object msg);
+
+    protected void sendWithDelay(String msg, long millis) {
+        send(msg);
+        Utils.delay(millis);
+    }
 
     @Override
     protected void onLooperPrepared() {

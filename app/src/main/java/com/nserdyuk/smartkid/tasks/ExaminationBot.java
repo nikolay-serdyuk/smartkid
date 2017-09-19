@@ -15,7 +15,7 @@ import org.apache.commons.lang3.StringUtils;
 
 import java.io.IOException;
 
-public abstract class ExaminationBot extends Bot {
+abstract class ExaminationBot extends Bot {
     private static final String TAG = ExaminationBot.class.getName();
     private static final String ERROR = "An error occurred in bot";
     private static final String CONTENT_ERROR = "Invalid content";
@@ -33,7 +33,7 @@ public abstract class ExaminationBot extends Bot {
     private Test[] examples;
     private int currentExample;
 
-    public ExaminationBot(Context context, AssetManager am, String fileName, int examplesNum) {
+    ExaminationBot(Context context, AssetManager am, String fileName, int examplesNum) {
         super(TAG);
 
         textReader = new TextReader(am, fileName, examplesNum);
@@ -89,11 +89,6 @@ public abstract class ExaminationBot extends Bot {
             }
         }
         return true;
-    }
-
-    private void sendWithDelay(String msg, long millis) {
-        send(msg);
-        Utils.delay(millis);
     }
 
     private void loadExamples() throws BotException {

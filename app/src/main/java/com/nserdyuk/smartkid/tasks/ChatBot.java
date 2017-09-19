@@ -15,7 +15,7 @@ import org.apache.commons.lang3.StringUtils;
 import java.io.IOException;
 import java.util.Arrays;
 
-public abstract class ChatBot extends Bot {
+abstract class ChatBot extends Bot {
     private static final String TAG = ChatBot.class.getName();
     private static final String ERROR = "An error occurred in bot";
     private static final String CONTENT_ERROR = "Invalid content";
@@ -32,7 +32,7 @@ public abstract class ChatBot extends Bot {
     private int currentAnswer;
     private Test[] examples;
 
-    public ChatBot(Context context, AssetManager am, String fileName, int examplesNum) {
+    ChatBot(Context context, AssetManager am, String fileName, int examplesNum) {
         super(TAG);
 
         textReader = new TextReader(am, fileName, examplesNum);
