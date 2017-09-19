@@ -245,17 +245,9 @@ public class TimeSetActivity extends AppCompatActivity {
             String label = example.toString();
             TimeItem userInput = example.getUserInput();
             if (userInput != null) {
-                String answer;
-                int color;
-                if (example.checkUserInput()) {
-                    answer = rightAnswerMsg;
-                    color = rightAnswerColor;
-                } else {
-                    answer = wrongAnswerMsg;
-                    color = wrongAnswerColor;
-                }
-                label = String.format(Locale.US, Constants.TIMESET_EXAMPLE_FORMAT, label, userInput, answer);
-                tvLabel.setBackgroundColor(color);
+                boolean resultOk = example.checkUserInput();
+                label = String.format(Locale.US, Constants.TIMESET_EXAMPLE_FORMAT, label, userInput, resultOk ? rightAnswerMsg : wrongAnswerMsg);
+                tvLabel.setBackgroundColor(resultOk ? rightAnswerColor : wrongAnswerColor);
             }
             tvLabel.setText(label);
             return convertView;
