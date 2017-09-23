@@ -1,5 +1,6 @@
 package com.nserdyuk.smartkid.tasks;
 
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.content.res.AssetManager;
 import android.os.AsyncTask;
@@ -40,6 +41,11 @@ public class DictionaryActivity extends AppCompatActivity {
     private ArrayAdapter<String> adapter;
     private TextView textView;
 
+    private String yesAnswerMsg;
+    private String noAnswerMsg;
+    private String previousPageQuestion;
+    private String nextPageQuestion;
+
     @Override
     public void onBackPressed() {
         Dialogs.showExitDialog(this);
@@ -50,6 +56,12 @@ public class DictionaryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dictionary);
 
+        yesAnswerMsg = getResources().getString(R.string.yes_answer);
+        noAnswerMsg = getResources().getString(R.string.no_answer);
+
+        previousPageQuestion = getResources().getString(R.string.activity_dictionary_previous_page_question);
+        nextPageQuestion = getResources().getString(R.string.activity_dictionary_next_page_question);
+
         textView = (TextView) findViewById(R.id.tv_activity_dictionary);
         adapter = new ArrayAdapter<>(this, R.layout.activity_dictionary_list_item,
                 R.id.activity_dictionary_list_item_label, lines);
@@ -58,14 +70,12 @@ public class DictionaryActivity extends AppCompatActivity {
         listView.setOnTouchListener(new OnSwipeTouchListener(this) {
             @Override
             public void onSwipeLeft() {
-                new ReadRandomLinesTask(getAssets(), getPreviousFileName(), examplesNum)
-                        .executeOnExecutor(AsyncTask.SERIAL_EXECUTOR);
+                handleSwipe(previousPageQuestion, getPreviousFileName());
             }
 
             @Override
             public void onSwipeRight() {
-                new ReadRandomLinesTask(getAssets(), getNextFileName(), examplesNum)
-                        .executeOnExecutor(AsyncTask.SERIAL_EXECUTOR);
+                handleSwipe(nextPageQuestion, getNextFileName());
             }
         });
 
@@ -75,6 +85,17 @@ public class DictionaryActivity extends AppCompatActivity {
         multilang = getIntent().getBooleanExtra(Constants.ATTRIBUTE_MULTILANG, false);
 
         new GetFileListTask(getAssets(), fileMask).executeOnExecutor(AsyncTask.SERIAL_EXECUTOR);
+    }
+
+    private void handleSwipe(String confirmQuestion, final String fileName) {
+        Dialogs.showYesNoDialog(this,
+                confirmQuestion, yesAnswerMsg, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        new ReadRandomLinesTask(getAssets(), fileName, examplesNum)
+                                .executeOnExecutor(AsyncTask.SERIAL_EXECUTOR);
+                    }
+                }, noAnswerMsg);
     }
 
     private String getNextFileName() {

@@ -109,6 +109,9 @@
     <string name="activity_timeset_answer_right">"правильно"</string>
     <string name="activity_timeset_answer_wrong">"ошибка"</string>
 
+    <string name="activity_dictionary_previous_page_question">"Предыдущая страница?"</string>
+    <string name="activity_dictionary_next_page_question">"Следующая страница?"</string>
+
     <string name="activity_grade_simple_add10">Простое сложение до 10</string>
     <string name="activity_grade_guess_number">Угадай число</string>
     <string name="activity_grade_simple_sub10">Простое вычитание до 10</string>
