@@ -13,6 +13,7 @@ import android.widget.ListView;
 import com.nserdyuk.smartkid.common.Complexity;
 import com.nserdyuk.smartkid.tasks.ChatActivity;
 import com.nserdyuk.smartkid.common.Constants;
+import com.nserdyuk.smartkid.tasks.ClockfaceActivity;
 import com.nserdyuk.smartkid.tasks.DictionaryActivity;
 import com.nserdyuk.smartkid.tasks.ExaminationActivity;
 import com.nserdyuk.smartkid.tasks.Grid2dActivity;
@@ -198,6 +199,9 @@ public class GradeActivity extends AppCompatActivity {
         intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 8);
         intent.putExtra(Constants.ATTRIBUTE_COMPLEXITY, Complexity.HARD.toString());
         nameToIntentMap.put(getResources().getString(R.string.activity_grade_time_set_hard), intent);
+
+        intent = new Intent(this, ClockfaceActivity.class);
+        nameToIntentMap.put(getResources().getString(R.string.activity_grade_clockface), intent);
 
         // TODO: add files all_english_Masha23.txt
     }

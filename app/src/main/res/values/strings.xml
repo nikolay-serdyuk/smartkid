@@ -8,6 +8,7 @@
     <string name="exit_question">"Выход?"</string>
     <string name="yes_answer">"Да"</string>
     <string name="no_answer">"Нет"</string>
+    <string name="solved">"Решено"</string>
 
     <string name="greeting_english">"Hello!"</string>
     <string name="right_answer_english">"Right!"</string>
@@ -138,6 +139,7 @@
     <string name="activity_grade_present_continuous">Present Continuous</string>
     <string name="activity_grade_past_simple">Past Simple</string>
     <string name="activity_grade_irregular_verbs">Irregular Verbs</string>
+    <string name="activity_grade_clockface">Сколько времени?</string>
 
     <string-array name="grade0">
         <item>@string/activity_grade_simple_add10</item>
@@ -149,6 +151,7 @@
     </string-array>
 
     <string-array name="grade1">
+        <item>@string/activity_grade_clockface</item>
         <item>@string/activity_grade_time_add_easy</item>
         <item>@string/activity_grade_time_sub_easy</item>
         <item>@string/activity_grade_time_set_easy</item>

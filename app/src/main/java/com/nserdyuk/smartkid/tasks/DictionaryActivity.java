@@ -31,7 +31,6 @@ public class DictionaryActivity extends AppCompatActivity {
     private static final String ERROR_IO = "An I/O error occurred while reading a file";
     private static final String ERROR_NO_LINES = "File is empty";
     private static final String ERROR_NO_FILES = "No files found";
-    private static final String EMPTY_STRING = "";
 
     private final List<String> files = Collections.synchronizedList(new ArrayList<String>());
     private final List<String> lines = Collections.synchronizedList(new ArrayList<String>());
@@ -123,7 +122,7 @@ public class DictionaryActivity extends AppCompatActivity {
         @Override
         protected String doInBackground(Void... params) {
             try {
-                String[] list = am.list(EMPTY_STRING);
+                String[] list = am.list(Constants.EMPTY_STRING);
                 for (String file : list) {
                     if (file.contains(fileMask)) {
                         files.add(file);
@@ -138,7 +137,7 @@ public class DictionaryActivity extends AppCompatActivity {
                 Log.e(TAG, ERROR_IO, e);
                 Utils.showErrorInUiThread(DictionaryActivity.this, ERROR_IO);
             }
-            return EMPTY_STRING;
+            return Constants.EMPTY_STRING;
         }
 
         @Override
@@ -155,7 +154,7 @@ public class DictionaryActivity extends AppCompatActivity {
 
         private String loadLastViewedFile() {
             SharedPreferences preferences = getPreferences(MODE_PRIVATE);
-            return preferences.getString(DictionaryActivity.TAG, EMPTY_STRING);
+            return preferences.getString(DictionaryActivity.TAG, Constants.EMPTY_STRING);
         }
     }
 
