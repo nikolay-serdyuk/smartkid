@@ -203,6 +203,16 @@ public class GradeActivity extends AppCompatActivity {
         intent = new Intent(this, ClockfaceActivity.class);
         nameToIntentMap.put(getResources().getString(R.string.activity_grade_clockface), intent);
 
+        intent = new Intent(this, ChatActivity.class);
+        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 1);
+        intent.putExtra(Constants.ATTRIBUTE_FILE, "round_hundreds.txt");
+        nameToIntentMap.put(getResources().getString(R.string.activity_grade_round_easy), intent);
+
+        intent = new Intent(this, ChatActivity.class);
+        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 1);
+        intent.putExtra(Constants.ATTRIBUTE_FILE, "round_millions.txt");
+        nameToIntentMap.put(getResources().getString(R.string.activity_grade_round_hard), intent);
+
         // TODO: add files all_english_Masha23.txt
     }
 }

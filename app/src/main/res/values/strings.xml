@@ -140,6 +140,8 @@
     <string name="activity_grade_past_simple">Past Simple</string>
     <string name="activity_grade_irregular_verbs">Irregular Verbs</string>
     <string name="activity_grade_clockface">Сколько времени?</string>
+    <string name="activity_grade_round_easy">Округление чисел (легкий уровень)</string>
+    <string name="activity_grade_round_hard">Округление чисел (сложный уровень)</string>
 
     <string-array name="grade0">
         <item>@string/activity_grade_simple_add10</item>
@@ -200,6 +202,8 @@
         <item>@string/activity_grade_long_long_div</item>
         <item>@string/activity_grade_sub_zero_long</item>
         <item>@string/activity_grade_time_add_sub_hard</item>
+        <item>@string/activity_grade_round_easy</item>
+        <item>@string/activity_grade_round_hard</item>
         <item>@string/activity_grade_dictionary_multilang</item>
         <item>@string/activity_grade_present_continuous</item>
         <item>@string/activity_grade_past_simple</item>
