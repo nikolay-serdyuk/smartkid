@@ -10,17 +10,11 @@ public class ShapeRenderer implements Renderer {
 
     private static final float ANGLE = 60.0f;
     private static final float SCALE_FACTOR = 0.35f;
-    private static final int EDGE_LENGTH = 3;
 
-    private static final float START_X = -2.f;
-    private static final float START_Y = -2.f;
-    private static final float START_Z = -2.f;
+    private final Shape shape;
 
-    private final Shape multiCube;
-
-    public ShapeRenderer() {
-        multiCube = new CompositeCube(START_X, START_Y, START_Z, EDGE_LENGTH);
-        multiCube.setRandomVisibility();
+    public ShapeRenderer(Shape shape) {
+        this.shape = shape;
     }
 
     @Override
@@ -49,7 +43,7 @@ public class ShapeRenderer implements Renderer {
         gl.glTranslatef(0.0f, 0.0f, -10.0f);
         gl.glRotatef(ANGLE, 1.0f, 1.0f, 1.0f);
         gl.glScalef(SCALE_FACTOR, SCALE_FACTOR, SCALE_FACTOR);
-        multiCube.draw(gl);
+        shape.draw(gl);
         gl.glLoadIdentity();
     }
 }

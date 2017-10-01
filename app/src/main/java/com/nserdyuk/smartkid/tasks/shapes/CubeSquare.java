@@ -2,10 +2,10 @@ package com.nserdyuk.smartkid.tasks.shapes;
 
 import javax.microedition.khronos.opengles.GL10;
 
-class CubeSquare implements Shape {
+public class CubeSquare implements Shape {
     private final Shape[] cubeLines;
 
-    CubeSquare(float x, float y, float z, int size) {
+    public CubeSquare(float x, float y, float z, int size) {
         cubeLines = new CubeLine[size];
         for (int i = 0; i < size; i++) {
             cubeLines[i] = new CubeLine(x, y + i * 2, z, size);

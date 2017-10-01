@@ -8,7 +8,7 @@ import java.util.Random;
 
 import javax.microedition.khronos.opengles.GL10;
 
-class Cube implements Shape {
+public class Cube implements Shape {
     private static final int LINE_WIDTH = 5;
     private static final int VISIBILITY_PROBABILITY_FACTOR = 4;
 
@@ -62,10 +62,6 @@ class Cube implements Shape {
 
     private static final Random RANDOM = new Random();
 
-    private final float x;
-    private final float y;
-    private final float z;
-
     private final FloatBuffer vertexBuffer;
     private final FloatBuffer colorBuffer;
     private final FloatBuffer colorEdgeBuffer;
@@ -75,10 +71,7 @@ class Cube implements Shape {
 
     private boolean visible;
 
-    Cube(float x, float y, float z) {
-        this.x = x;
-        this.y = y;
-        this.z = z;
+    public Cube(float x, float y, float z) {
         visible = true;
 
         float[] vertices = new float[INITIAL_VERTICES.length];

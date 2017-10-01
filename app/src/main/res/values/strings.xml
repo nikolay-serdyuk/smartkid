@@ -145,13 +145,13 @@
     <string name="activity_grade_cubes">Рисование кубиков</string>
 
     <string-array name="grade0">
-        <item>@string/activity_grade_cubes</item>
         <item>@string/activity_grade_simple_add10</item>
         <item>@string/activity_grade_guess_number</item>
         <item>@string/activity_grade_simple_sub10</item>
         <item>@string/activity_grade_simple_add20</item>
         <item>@string/activity_grade_simple_sub20</item>
         <item>@string/activity_grade_grid_2d_easy</item>
+        <item>@string/activity_grade_cubes</item>
     </string-array>
 
     <string-array name="grade1">
