@@ -46,6 +46,10 @@
             android:name=".tasks.ClockfaceActivity"
             android:theme="@style/AppThemeLightLarge"
             />
+        <activity
+            android:name=".tasks.FiguresActivity"
+            android:theme="@style/AppThemeLightLarge"
+            />
     </application>
 
 </manifest>

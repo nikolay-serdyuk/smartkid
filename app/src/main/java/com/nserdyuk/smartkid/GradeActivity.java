@@ -14,6 +14,7 @@ import com.nserdyuk.smartkid.common.Complexity;
 import com.nserdyuk.smartkid.tasks.ChatActivity;
 import com.nserdyuk.smartkid.common.Constants;
 import com.nserdyuk.smartkid.tasks.ClockfaceActivity;
+import com.nserdyuk.smartkid.tasks.FiguresActivity;
 import com.nserdyuk.smartkid.tasks.DictionaryActivity;
 import com.nserdyuk.smartkid.tasks.ExaminationActivity;
 import com.nserdyuk.smartkid.tasks.Grid2dActivity;
@@ -212,6 +213,9 @@ public class GradeActivity extends AppCompatActivity {
         intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 1);
         intent.putExtra(Constants.ATTRIBUTE_FILE, "round_millions.txt");
         nameToIntentMap.put(getResources().getString(R.string.activity_grade_round_hard), intent);
+
+        intent = new Intent(this, FiguresActivity.class);
+        nameToIntentMap.put(getResources().getString(R.string.activity_grade_cubes), intent);
 
         // TODO: add files all_english_Masha23.txt
     }

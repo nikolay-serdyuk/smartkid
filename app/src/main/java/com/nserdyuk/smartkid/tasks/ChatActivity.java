@@ -30,7 +30,6 @@ import java.util.Locale;
 
 public class ChatActivity extends CommunicationActivity {
     private static final String ERROR_LOAD_IMAGES = "An error occurred while loading images";
-    private static final String ERROR_INVALID_PARAMETER = "An error occurred while reading extended data from intent";
     private static final int DEFAULT_MARGIN = 15;
     private static final int ANIMATION_DURATION = 1000;
 
@@ -87,9 +86,6 @@ public class ChatActivity extends CommunicationActivity {
         updateTitle();
 
         String fileName = getIntent().getStringExtra(Constants.ATTRIBUTE_FILE);
-        if (StringUtils.isBlank(fileName)) {
-            Utils.showError(this, ERROR_INVALID_PARAMETER);
-        }
         examplesNum = getIntent().getIntExtra(Constants.ATTRIBUTE_EXAMPLES, 0);
         bot = new ChatBot(this, getAssets(), fileName, examplesNum) {
             @Override
