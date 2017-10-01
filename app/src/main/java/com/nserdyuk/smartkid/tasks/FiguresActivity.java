@@ -43,7 +43,7 @@ public class FiguresActivity extends AppCompatActivity {
         setContentView(view);
     }
 
-    public GLSurfaceView createNewView() {
+    private GLSurfaceView createNewView() {
 
         Shape multiCube = new CompositeCube(START_X, START_Y, START_Z, EDGE_LENGTH);
         multiCube.setRandomVisibility();
