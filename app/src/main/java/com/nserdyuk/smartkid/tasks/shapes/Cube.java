@@ -129,7 +129,7 @@ class Cube implements Shape {
 
     @Override
     public void setRandomVisibility() {
-        if (((z == 2) || (y == 2) || (x == 2)) && RANDOM.nextInt(VISIBILITY_PROBABILITY_FACTOR) == 0) {
+        if (RANDOM.nextInt(VISIBILITY_PROBABILITY_FACTOR) == 0) {
             setVisible(false);
         }
     }
