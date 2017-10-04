@@ -22,7 +22,7 @@ public class FiguresActivity extends AppCompatActivity {
     private static final float START_Y = -2.f;
     private static final float START_Z = -2.f;
 
-    private List<GLSurfaceView> viewList;
+    private final List<GLSurfaceView> viewList = new ArrayList<>();
     private int viewListIndex;
 
     @Override
@@ -37,7 +37,6 @@ public class FiguresActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        viewList = new ArrayList<>();
         GLSurfaceView view = createNewView();
         viewList.add(view);
         setContentView(view);
@@ -47,8 +46,8 @@ public class FiguresActivity extends AppCompatActivity {
 
         Shape multiCube = new CompositeCube(START_X, START_Y, START_Z, EDGE_LENGTH);
         multiCube.setRandomVisibility();
-        Renderer renderer = new ShapeRenderer(multiCube);
 
+        Renderer renderer = new ShapeRenderer(multiCube);
         GLSurfaceView view = new GLSurfaceView(this);
         view.setRenderer(renderer);
         view.setRenderMode(GLSurfaceView.RENDERMODE_WHEN_DIRTY);
