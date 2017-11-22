@@ -217,6 +217,11 @@ public class GradeActivity extends AppCompatActivity {
         intent = new Intent(this, FiguresActivity.class);
         nameToIntentMap.put(getResources().getString(R.string.activity_grade_cubes), intent);
 
+        intent = new Intent(this, ExaminationActivity.class);
+        intent.putExtra(Constants.ATTRIBUTE_FILE, "Articles.txt");
+        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 1);
+        nameToIntentMap.put(getResources().getString(R.string.activity_grade_articles), intent);
+
         // TODO: add files all_english_Masha23.txt
     }
 }

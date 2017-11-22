@@ -143,6 +143,7 @@
     <string name="activity_grade_round_easy">Округление чисел (легкий уровень)</string>
     <string name="activity_grade_round_hard">Округление чисел (сложный уровень)</string>
     <string name="activity_grade_cubes">Рисование кубиков</string>
+    <string name="activity_grade_articles">Articles</string>
 
     <string-array name="grade0">
         <item>@string/activity_grade_simple_add10</item>
@@ -210,6 +211,7 @@
         <item>@string/activity_grade_present_continuous</item>
         <item>@string/activity_grade_past_simple</item>
         <item>@string/activity_grade_irregular_verbs</item>
+        <item>@string/activity_grade_articles</item>
     </string-array>
 
     <array name="all_grades">
