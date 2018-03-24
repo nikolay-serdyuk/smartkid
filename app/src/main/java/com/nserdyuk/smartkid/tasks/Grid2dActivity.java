@@ -83,7 +83,7 @@ public class Grid2dActivity extends CommunicationActivity {
         });
 
         int examplesNum = getIntent().getIntExtra(Constants.ATTRIBUTE_EXAMPLES, 0);
-        Complexity complexity = Complexity.valueOf(getIntent().getStringExtra(Constants.ATTRIBUTE_COMPLEXITY));
+        Complexity complexity = (Complexity) getIntent().getSerializableExtra(Constants.ATTRIBUTE_COMPLEXITY);
         bot = new Grid2dBot(this, examplesNum, complexity, grid2dView.getRows(), grid2dView.getColumns()) {
             @Override
             public void send(Object object) {

@@ -74,7 +74,7 @@ public class TimeSetActivity extends AppCompatActivity {
 
         int examplesNum = getIntent().getIntExtra(Constants.ATTRIBUTE_EXAMPLES, 0);
         examples = new Example[examplesNum];
-        Complexity complexity = Complexity.valueOf(getIntent().getStringExtra(Constants.ATTRIBUTE_COMPLEXITY));
+        Complexity complexity = (Complexity) getIntent().getSerializableExtra(Constants.ATTRIBUTE_COMPLEXITY);
         int range = complexity == Complexity.EASY ? 1 : factories.length;
         for (int i = 0; i < examplesNum; i++) {
             examples[i] = factories[RANDOM.nextInt(range)].create();

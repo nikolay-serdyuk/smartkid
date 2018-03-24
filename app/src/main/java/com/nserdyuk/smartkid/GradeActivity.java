@@ -150,12 +150,12 @@ public class GradeActivity extends AppCompatActivity {
 
         intent = new Intent(this, Grid2dActivity.class);
         intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 1);
-        intent.putExtra(Constants.ATTRIBUTE_COMPLEXITY, Complexity.EASY.toString());
+        intent.putExtra(Constants.ATTRIBUTE_COMPLEXITY, Complexity.EASY);
         nameToIntentMap.put(getResources().getString(R.string.activity_grade_grid_2d_easy), intent);
 
         intent = new Intent(this, Grid2dActivity.class);
         intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 7);
-        intent.putExtra(Constants.ATTRIBUTE_COMPLEXITY, Complexity.HARD.toString());
+        intent.putExtra(Constants.ATTRIBUTE_COMPLEXITY, Complexity.HARD);
         nameToIntentMap.put(getResources().getString(R.string.activity_grade_grid_2d_hard), intent);
 
         intent = new Intent(this, DictionaryActivity.class);
@@ -193,12 +193,12 @@ public class GradeActivity extends AppCompatActivity {
 
         intent = new Intent(this, TimeSetActivity.class);
         intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 8);
-        intent.putExtra(Constants.ATTRIBUTE_COMPLEXITY, Complexity.EASY.toString());
+        intent.putExtra(Constants.ATTRIBUTE_COMPLEXITY, Complexity.EASY);
         nameToIntentMap.put(getResources().getString(R.string.activity_grade_time_set_easy), intent);
 
         intent = new Intent(this, TimeSetActivity.class);
         intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 8);
-        intent.putExtra(Constants.ATTRIBUTE_COMPLEXITY, Complexity.HARD.toString());
+        intent.putExtra(Constants.ATTRIBUTE_COMPLEXITY, Complexity.HARD);
         nameToIntentMap.put(getResources().getString(R.string.activity_grade_time_set_hard), intent);
 
         intent = new Intent(this, ClockfaceActivity.class);
