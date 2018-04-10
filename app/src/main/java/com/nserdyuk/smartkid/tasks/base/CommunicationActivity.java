@@ -9,7 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 public abstract class CommunicationActivity extends AppCompatActivity {
     private volatile Handler handler;
 
-    public void receive(Object object) {
+    protected void receive(Object object) {
         Message m = handler.obtainMessage();
         m.obj = object;
         m.sendToTarget();

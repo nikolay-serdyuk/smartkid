@@ -4,6 +4,7 @@ import android.animation.ObjectAnimator;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
+import android.text.Html;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -21,10 +22,8 @@ import com.nserdyuk.smartkid.common.Dialogs;
 import com.nserdyuk.smartkid.common.ErrorListener;
 import com.nserdyuk.smartkid.common.Utils;
 import com.nserdyuk.smartkid.io.ImageReader;
+import com.nserdyuk.smartkid.tasks.base.Bot;
 import com.nserdyuk.smartkid.tasks.base.CommunicationActivity;
-
-import org.apache.commons.lang3.StringUtils;
-
 
 import java.util.Locale;
 
@@ -37,7 +36,7 @@ public class ChatActivity extends CommunicationActivity {
     private int colorRightBubble;
     private String rightAnswerMsg;
 
-    private ChatBot bot;
+    private Bot bot;
     private EditText editText;
     private LayoutInflater layoutInflater;
     private ScrollView scrollView;
@@ -165,7 +164,7 @@ public class ChatActivity extends CommunicationActivity {
 
         TextView textView = (TextView) item.findViewById(R.id.tv_activity_chat_list_item);
         textView.setTextColor(bubble.textColor);
-        textView.setText(bubble.message);
+        textView.setText(Html.fromHtml(bubble.message, Html.FROM_HTML_MODE_LEGACY));
 
         scrollView.post(new Runnable() {
             @Override

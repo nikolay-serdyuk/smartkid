@@ -12,7 +12,7 @@ public abstract class Bot extends HandlerThread {
     private volatile ErrorListener errorListener;
 
 
-    public Bot(String name) {
+    protected Bot(String name) {
         super(name);
     }
 
