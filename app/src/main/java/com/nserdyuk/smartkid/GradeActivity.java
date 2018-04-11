@@ -227,6 +227,16 @@ public class GradeActivity extends AppCompatActivity {
         intent.putExtra(Constants.ATTRIBUTE_FILE, "fractions_add_sub.txt");
         nameToIntentMap.put(getResources().getString(R.string.activity_grade_fractions_add_sub), intent);
 
+        intent = new Intent(this, ChatActivity.class);
+        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 1);
+        intent.putExtra(Constants.ATTRIBUTE_FILE, "fractions_mul.txt");
+        nameToIntentMap.put(getResources().getString(R.string.activity_grade_fractions_mul), intent);
+
+        intent = new Intent(this, ChatActivity.class);
+        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 1);
+        intent.putExtra(Constants.ATTRIBUTE_FILE, "fractions_div.txt");
+        nameToIntentMap.put(getResources().getString(R.string.activity_grade_fractions_div), intent);
+
         // TODO: add files all_english_Masha23.txt
     }
 }
