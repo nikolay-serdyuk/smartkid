@@ -125,6 +125,7 @@
     <string name="activity_grade_long_div">Деление столбиком</string>
     <string name="activity_grade_long_long_div">Деление столбиком двухзначных (4 к.)</string>
     <string name="activity_grade_long_mul">Умножение двухзначных чисел</string>
+    <string name="activity_grade_mul">Таблица умножения</string>
     <string name="activity_grade_muldiv_10_100_1000">Деление и умножение на 10, 100, 1000</string>
     <string name="activity_grade_grid_2d_easy">Координатный угол (легкий уровень)</string>
     <string name="activity_grade_grid_2d_hard">Координатный угол (сложный уровень)</string>
@@ -168,6 +169,7 @@
     </string-array>
 
     <string-array name="grade2">
+        <item>@string/activity_grade_mul</item>
         <item>@string/activity_grade_long_div</item>
         <item>@string/activity_grade_sub_zero</item>
         <item>@string/activity_grade_single_quotient</item>

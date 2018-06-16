@@ -91,6 +91,11 @@ public class GradeActivity extends AppCompatActivity {
         nameToIntentMap.put(getResources().getString(R.string.activity_grade_simple_sub20), intent);
 
         intent = new Intent(this, ChatActivity.class);
+        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 1);
+        intent.putExtra(Constants.ATTRIBUTE_FILE, "mul.txt");
+        nameToIntentMap.put(getResources().getString(R.string.activity_grade_mul), intent);
+
+        intent = new Intent(this, ChatActivity.class);
         intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 3);
         intent.putExtra(Constants.ATTRIBUTE_FILE, "sub_zero.txt");
         nameToIntentMap.put(getResources().getString(R.string.activity_grade_sub_zero), intent);
