@@ -97,6 +97,7 @@
     <string name="activity_main_3">Третий класс</string>
     <string name="activity_main_4">Четвертый класс</string>
     <string name="activity_main_5">Пятый класс</string>
+    <string name="activity_main_6">Шестой класс</string>
 
     <string-array name="activity_main_grades">
         <item>@string/activity_main_preschool</item>
@@ -105,6 +106,7 @@
         <item>@string/activity_main_3</item>
         <item>@string/activity_main_4</item>
         <item>@string/activity_main_5</item>
+        <item>@string/activity_main_6</item>
     </string-array>
 
     <string name="activity_timeset_answer_right">"правильно"</string>
@@ -148,6 +150,7 @@
     <string name="activity_grade_fractions_add_sub">Сложение и вычитание дробей</string>
     <string name="activity_grade_fractions_mul">Умножение дробей</string>
     <string name="activity_grade_fractions_div">Деление дробей</string>
+    <string name="activity_grade_cm_kg_l">Преобразование величин</string>
 
     <string-array name="grade0">
         <item>@string/activity_grade_simple_add10</item>
@@ -222,6 +225,21 @@
         <item>@string/activity_grade_fractions_div</item>
     </string-array>
 
+    <string-array name="grade6">
+        <item>@string/activity_grade_long_mul</item>
+        <item>@string/activity_grade_long_long_div</item>
+        <item>@string/activity_grade_sub_zero_long</item>
+        <item>@string/activity_grade_time_add_sub_hard</item>
+        <item>@string/activity_grade_round_easy</item>
+        <item>@string/activity_grade_round_hard</item>
+        <item>@string/activity_grade_dictionary_multilang</item>
+        <item>@string/activity_grade_irregular_verbs</item>
+        <item>@string/activity_grade_articles</item>
+        <item>@string/activity_grade_fractions_mul</item>
+        <item>@string/activity_grade_fractions_div</item>
+        <item>@string/activity_grade_cm_kg_l</item>
+    </string-array>
+
     <array name="all_grades">
         <item>@array/grade0</item>
         <item>@array/grade1</item>
@@ -229,6 +247,7 @@
         <item>@array/grade3</item>
         <item>@array/grade4</item>
         <item>@array/grade5</item>
+        <item>@array/grade6</item>
     </array>
 
 </resources>

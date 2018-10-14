@@ -48,7 +48,8 @@
             android:id="@+id/et_activity_chat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="number"
+            android:inputType="numberSigned|numberDecimal"
+
             android:ems="10"
             android:textCursorDrawable="@drawable/activity_chat_cursor"
             android:textSize="30sp"

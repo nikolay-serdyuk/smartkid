@@ -125,10 +125,11 @@ abstract class ChatBot extends Bot {
 
         void setUserAnswer(int n, String answer) {
             // A special case, when user inputs many zeroes,
-            // in the beginning e.g. 0043. They should be cleared.
-            int inputNum = Integer.parseInt(answer);
-            String newAnswer = String.valueOf(inputNum);
+            // in the beginning, e.g. 0043, or at the end, e.g. 43.0.
+            // They should be cleared.
+            String newAnswer = answer.replaceFirst("^0*", "").replaceAll("\\.0*$", "");
             userAnswers[n] = newAnswer;
+            System.out.println("DBG " + newAnswer);
         }
 
         Example getExample() {
