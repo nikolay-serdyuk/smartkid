@@ -152,6 +152,7 @@
     <string name="activity_grade_fractions_div">Деление дробей</string>
     <string name="activity_grade_cm_kg_l">Преобразование величин</string>
     <string name="activity_grade_parens_easy">Выражения со скобками (легкий уровень)</string>
+    <string name="activity_grade_tenth_mul_div">Деление и умножение на 0.01, 0.1, 10, 100</string>
 
     <string-array name="grade0">
         <item>@string/activity_grade_simple_add10</item>
@@ -240,6 +241,7 @@
         <item>@string/activity_grade_fractions_mul</item>
         <item>@string/activity_grade_fractions_div</item>
         <item>@string/activity_grade_cm_kg_l</item>
+        <item>@string/activity_grade_tenth_mul_div</item>
     </string-array>
 
     <array name="all_grades">

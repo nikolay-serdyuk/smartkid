@@ -127,7 +127,8 @@ abstract class ChatBot extends Bot {
             // A special case, when user inputs many zeroes,
             // in the beginning, e.g. 0043, or at the end, e.g. 43.0.
             // They should be cleared.
-            String newAnswer = answer.replaceFirst("^0*", "").replaceAll("\\.(0*)?$", "");
+            // Problem values: 0.28
+            String newAnswer = answer.replaceFirst("^0*([1-9])", "$1").replaceAll("\\.(0*)?$", "");
             userAnswers[n] = newAnswer;
         }
 

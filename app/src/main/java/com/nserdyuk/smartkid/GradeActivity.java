@@ -252,6 +252,11 @@ public class GradeActivity extends AppCompatActivity {
         intent.putExtra(Constants.ATTRIBUTE_FILE, "parens_easy.txt");
         nameToIntentMap.put(getResources().getString(R.string.activity_grade_parens_easy), intent);
 
+        intent = new Intent(this, ChatActivity.class);
+        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 1);
+        intent.putExtra(Constants.ATTRIBUTE_FILE, "tenth_mul_div.txt");
+        nameToIntentMap.put(getResources().getString(R.string.activity_grade_tenth_mul_div), intent);
+
         // TODO: add files all_english_Masha23.txt
     }
 }
