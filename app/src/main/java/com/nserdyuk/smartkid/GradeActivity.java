@@ -4,8 +4,6 @@ import android.content.Intent;
 import android.content.res.TypedArray;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
@@ -46,16 +44,12 @@ public class GradeActivity extends AppCompatActivity {
         BaseAdapter adapter = new ArrayAdapter<>(this, R.layout.activity_main_list_item,
                 R.id.activity_main_list_item_label, arrayOfTasks);
         lv.setAdapter(adapter);
-        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view,
-                                    int position, long id) {
-                String name = arrayOfTasks[(int) id];
-                Intent intent = nameToIntentMap.get(name);
-                if (intent != null) {
-                    intent.putExtra(Constants.ATTRIBUTE_TITLE, name);
-                    startActivity(intent);
-                }
+        lv.setOnItemClickListener((parent, view, position, id1) -> {
+            String name = arrayOfTasks[(int) id1];
+            Intent intent = nameToIntentMap.get(name);
+            if (intent != null) {
+                intent.putExtra(Constants.ATTRIBUTE_TITLE, name);
+                startActivity(intent);
             }
         });
         menuResources.recycle();
@@ -256,7 +250,5 @@ public class GradeActivity extends AppCompatActivity {
         intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 1);
         intent.putExtra(Constants.ATTRIBUTE_FILE, "tenth_mul_div.txt");
         nameToIntentMap.put(getResources().getString(R.string.activity_grade_tenth_mul_div), intent);
-
-        // TODO: add files all_english_Masha23.txt
     }
 }

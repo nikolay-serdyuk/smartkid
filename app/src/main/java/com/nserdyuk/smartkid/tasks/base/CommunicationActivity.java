@@ -22,6 +22,7 @@ public abstract class CommunicationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         handler = new Handler(Looper.getMainLooper()) {
+
             @Override
             public void handleMessage(Message msg) {
                 onMessage(msg.obj);

@@ -14,10 +14,10 @@ public class OnSwipeTouchListener implements View.OnTouchListener {
         gestureDetector = new GestureDetector(context, new GestureListener());
     }
 
-    public void onSwipeLeft() {
+    protected void onSwipeLeft() {
     }
 
-    public void onSwipeRight() {
+    protected void onSwipeRight() {
     }
 
     public boolean onTouch(View v, MotionEvent event) {

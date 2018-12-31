@@ -8,7 +8,6 @@ import com.nserdyuk.smartkid.R;
 import com.nserdyuk.smartkid.common.Complexity;
 import com.nserdyuk.smartkid.common.Constants;
 import com.nserdyuk.smartkid.common.Dialogs;
-import com.nserdyuk.smartkid.common.Point;
 import com.nserdyuk.smartkid.tasks.base.CommunicationActivity;
 import com.nserdyuk.smartkid.views.Grid2dView;
 
@@ -74,17 +73,15 @@ public class Grid2dActivity extends CommunicationActivity {
 
         grid2dView = (Grid2dView)findViewById(R.id.grid_activity_grid2d);
         grid2dView.setBackgroundColor(COLOR_BACKGROUND);
-        grid2dView.setOnTouchListener(new Grid2dView.OnTouchListener() {
-            @Override
-            public void onTouch(Point point) {
-                grid2dView.setClickable(false);
-                send(point);
-            }
+        grid2dView.setOnTouchListener(point -> {
+            grid2dView.setClickable(false);
+            send(point);
         });
 
         int examplesNum = getIntent().getIntExtra(Constants.ATTRIBUTE_EXAMPLES, 0);
         Complexity complexity = (Complexity) getIntent().getSerializableExtra(Constants.ATTRIBUTE_COMPLEXITY);
         bot = new Grid2dBot(this, examplesNum, complexity, grid2dView.getRows(), grid2dView.getColumns()) {
+
             @Override
             public void send(Object object) {
                 Grid2dActivity.this.receive(object);

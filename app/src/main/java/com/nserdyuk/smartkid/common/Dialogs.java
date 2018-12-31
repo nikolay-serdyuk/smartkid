@@ -22,12 +22,7 @@ public final class Dialogs {
         return showYesNoDialog(activity,
                 activity.getResources().getString(R.string.exit_question),
                 activity.getResources().getString(R.string.yes_answer),
-                new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        activity.finish();
-                    }
-                },
+                (dialog, which) -> activity.finish(),
                 activity.getResources().getString(R.string.no_answer));
     }
 

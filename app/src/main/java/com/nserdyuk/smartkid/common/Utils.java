@@ -1,11 +1,27 @@
 package com.nserdyuk.smartkid.common;
 
 import android.app.Activity;
+import android.content.res.AssetManager;
 import android.os.Looper;
 import android.widget.Toast;
 
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 public final class Utils {
     private static final String ERROR_CANT_RUN_IN_UI = "can't run in UI thread";
+
+    public static List<String> getFilteredAssetsList(AssetManager am, String mask) throws IOException {
+        return Optional.ofNullable(am.list(""))
+                .map(Arrays::stream)
+                .orElseGet(Stream::empty)
+                .filter(file -> file.contains(mask))
+                .collect(Collectors.toList());
+    }
 
     public static void assertNonUiThread() {
         if (isUiThread()) {

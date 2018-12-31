@@ -12,7 +12,6 @@ import android.widget.TimePicker;
 import com.nserdyuk.smartkid.R;
 import com.nserdyuk.smartkid.common.Constants;
 import com.nserdyuk.smartkid.common.Dialogs;
-import com.nserdyuk.smartkid.common.ErrorListener;
 import com.nserdyuk.smartkid.common.Utils;
 import com.nserdyuk.smartkid.io.ImageReader;
 import com.nserdyuk.smartkid.views.ClockfaceView;
@@ -84,14 +83,7 @@ public class ClockfaceActivity extends AppCompatActivity {
                 }
             }
         };
-        ir.setOnErrorListener(new ErrorListener() {
-
-            @Override
-            public void onError(Exception e) {
-                Utils.showErrorInUiThread(ClockfaceActivity.this, ERROR_LOAD_CLOCKFACE_IMAGE);
-            }
-
-        });
+        ir.setOnErrorListener(e -> Utils.showErrorInUiThread(this, ERROR_LOAD_CLOCKFACE_IMAGE));
         ir.execute(CLOCKFACE_PICTURE);
     }
 
@@ -112,8 +104,7 @@ public class ClockfaceActivity extends AppCompatActivity {
             }
 
             String title = solved != 0 ?
-                    String.format(Locale.US, Constants.CLOCKFACE_TITLE_FORMAT, solvedMsg, solved)
-                    : Constants.EMPTY_STRING;
+                    String.format(Locale.US, Constants.CLOCKFACE_TITLE_FORMAT, solvedMsg, solved) : "";
             titleMessage.setText(title);
             timePicker.setEnabled(true);
         }

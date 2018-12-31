@@ -3,8 +3,6 @@ package com.nserdyuk.smartkid;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
@@ -23,14 +21,10 @@ public class MainActivity extends AppCompatActivity {
         BaseAdapter adapter = new ArrayAdapter<>(this, R.layout.activity_main_list_item,
                 R.id.activity_main_list_item_label, grades);
         lv.setAdapter(adapter);
-        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view,
-                                    int position, long id) {
-                Intent intent = new Intent(MainActivity.this, GradeActivity.class);
-                intent.putExtra(Constants.ATTRIBUTE_GRADE, (int) id);
-                startActivity(intent);
-            }
+        lv.setOnItemClickListener((parent, view, position, id) -> {
+            Intent intent = new Intent(this, GradeActivity.class);
+            intent.putExtra(Constants.ATTRIBUTE_GRADE, (int) id);
+            startActivity(intent);
         });
     }
 

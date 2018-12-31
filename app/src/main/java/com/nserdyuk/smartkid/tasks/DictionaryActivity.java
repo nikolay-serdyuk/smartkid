@@ -1,6 +1,5 @@
 package com.nserdyuk.smartkid.tasks;
 
-import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.content.res.AssetManager;
 import android.os.AsyncTask;
@@ -32,8 +31,8 @@ public class DictionaryActivity extends AppCompatActivity {
     private static final String ERROR_NO_LINES = "File is empty";
     private static final String ERROR_NO_FILES = "No files found";
 
-    private final List<String> files = Collections.synchronizedList(new ArrayList<String>());
-    private final List<String> lines = Collections.synchronizedList(new ArrayList<String>());
+    private final List<String> files = Collections.synchronizedList(new ArrayList<>());
+    private final List<String> lines = Collections.synchronizedList(new ArrayList<>());
     private int fileNumber;
     private int examplesNum;
     private boolean multilang;
@@ -68,12 +67,12 @@ public class DictionaryActivity extends AppCompatActivity {
         listView.setAdapter(adapter);
         listView.setOnTouchListener(new OnSwipeTouchListener(this) {
             @Override
-            public void onSwipeLeft() {
+            protected void onSwipeLeft() {
                 handleSwipe(previousPageQuestion, getPreviousFileName());
             }
 
             @Override
-            public void onSwipeRight() {
+            protected void onSwipeRight() {
                 handleSwipe(nextPageQuestion, getNextFileName());
             }
         });
@@ -87,14 +86,9 @@ public class DictionaryActivity extends AppCompatActivity {
     }
 
     private void handleSwipe(String confirmQuestion, final String fileName) {
-        Dialogs.showYesNoDialog(this,
-                confirmQuestion, yesAnswerMsg, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        new ReadRandomLinesTask(getAssets(), fileName, examplesNum)
-                                .executeOnExecutor(AsyncTask.SERIAL_EXECUTOR);
-                    }
-                }, noAnswerMsg);
+        Dialogs.showYesNoDialog(this, confirmQuestion, yesAnswerMsg,
+                (dialog, which) -> new ReadRandomLinesTask(getAssets(), fileName, examplesNum)
+                        .executeOnExecutor(AsyncTask.SERIAL_EXECUTOR), noAnswerMsg);
     }
 
     private String getNextFileName() {
@@ -122,13 +116,7 @@ public class DictionaryActivity extends AppCompatActivity {
         @Override
         protected String doInBackground(Void... params) {
             try {
-                String[] list = am.list(Constants.EMPTY_STRING);
-                for (String file : list) {
-                    if (file.contains(fileMask)) {
-                        files.add(file);
-                    }
-                }
-
+                files.addAll(Utils.getFilteredAssetsList(am, fileMask));
                 if (!files.isEmpty()) {
                     String lastViewedFile = loadLastViewedFile();
                     return lastViewedFile.contains(fileMask) ? lastViewedFile : files.get(0);
@@ -137,7 +125,7 @@ public class DictionaryActivity extends AppCompatActivity {
                 Log.e(TAG, ERROR_IO, e);
                 Utils.showErrorInUiThread(DictionaryActivity.this, ERROR_IO);
             }
-            return Constants.EMPTY_STRING;
+            return "";
         }
 
         @Override
@@ -154,7 +142,7 @@ public class DictionaryActivity extends AppCompatActivity {
 
         private String loadLastViewedFile() {
             SharedPreferences preferences = getPreferences(MODE_PRIVATE);
-            return preferences.getString(DictionaryActivity.TAG, Constants.EMPTY_STRING);
+            return preferences.getString(DictionaryActivity.TAG, "");
         }
     }
 

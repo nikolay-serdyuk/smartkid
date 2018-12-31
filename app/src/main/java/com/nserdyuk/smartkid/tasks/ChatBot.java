@@ -15,7 +15,7 @@ import java.io.IOException;
 
 abstract class ChatBot extends Bot {
     private static final String TAG = ChatBot.class.getName();
-    private static final String ERROR = "An error occurred in bot";
+    private static final String ERROR_MESSAGE = "An error occurred in bot";
     private static final String START_MESSAGE = "";
     private static final Gson GSON = new Gson();
 
@@ -86,7 +86,7 @@ abstract class ChatBot extends Bot {
             msg = tests[currentExample].getExample().getAnswers()[currentAnswer].getHint();
             send(msg);
         } catch (BotException e) {
-            Log.e(TAG, ERROR, e);
+            Log.e(TAG, ERROR_MESSAGE, e);
             onError(e);
         }
     }
@@ -128,7 +128,8 @@ abstract class ChatBot extends Bot {
             // in the beginning, e.g. 0043, or at the end, e.g. 43.0.
             // They should be cleared.
             // Problem values: 0.28
-            String newAnswer = answer.replaceFirst("^0*([1-9])", "$1").replaceAll("\\.(0*)?$", "");
+            String newAnswer = answer.replaceFirst("^0*([1-9])", "$1")
+                    .replaceAll("\\.(0*)?$", "");
             userAnswers[n] = newAnswer;
         }
 

@@ -13,7 +13,6 @@ import android.widget.TextView;
 import com.nserdyuk.smartkid.R;
 import com.nserdyuk.smartkid.common.Constants;
 import com.nserdyuk.smartkid.common.Dialogs;
-import com.nserdyuk.smartkid.common.ErrorListener;
 import com.nserdyuk.smartkid.common.Utils;
 import com.nserdyuk.smartkid.io.ImageReader;
 import com.nserdyuk.smartkid.tasks.base.CommunicationActivity;
@@ -112,14 +111,7 @@ public class ExaminationActivity extends CommunicationActivity {
                 ExaminationActivity.this.receive(object);
             }
         };
-        bot.setOnErrorListener(new ErrorListener() {
-
-            @Override
-            public void onError(Exception e) {
-                Utils.showErrorInUiThread(ExaminationActivity.this, e.getMessage());
-            }
-
-        });
+        bot.setOnErrorListener(e -> Utils.showErrorInUiThread(this, e.getMessage()));
         bot.start();
 
         setBackgroundImageAndFont();
@@ -139,13 +131,10 @@ public class ExaminationActivity extends CommunicationActivity {
         button.setText(answer);
         button.setTextSize(TypedValue.COMPLEX_UNIT_SP, ANSWER_FONT_SIZE);
         setStyledFont(button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mainText.setEnabled(false);
-                disableAllButtons();
-                send(((RadioButton) v).getText());
-            }
+        button.setOnClickListener(v -> {
+            mainText.setEnabled(false);
+            disableAllButtons();
+            send(((RadioButton) v).getText());
         });
         answerBlockLayout.addView(button);
     }
@@ -172,14 +161,7 @@ public class ExaminationActivity extends CommunicationActivity {
                 }
             }
         };
-        ir.setOnErrorListener(new ErrorListener() {
-
-            @Override
-            public void onError(Exception e) {
-                Utils.showErrorInUiThread(ExaminationActivity.this, ERROR_LOAD_IMAGES);
-            }
-
-        });
+        ir.setOnErrorListener(e -> Utils.showErrorInUiThread(this, ERROR_LOAD_IMAGES));
         ir.execute(PIC_MASK);
     }
 

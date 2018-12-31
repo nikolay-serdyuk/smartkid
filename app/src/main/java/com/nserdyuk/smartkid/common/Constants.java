@@ -12,7 +12,6 @@ public final class Constants {
     public static final String DEFAULT_PICS_MASK = ".gif";
 
     public static final char STRING_DELIMITER = '|';
-    public static final String EMPTY_STRING = "";
 
     public static final String RIGHT_ANSWER_FORMAT = "%s\t\t[%d]";
     public static final String GRID2D_POINT_FORMAT = "(%d, %d)";
@@ -23,7 +22,7 @@ public final class Constants {
     public static final String CLOCKFACE_TITLE_FORMAT = "%s %d";
 
 
-    public static final float SIN360[] = {
+    public static final float DEGREE_TO_SIN[] = {
             0.0f, 0.017452406f, 0.034899496f, 0.05233596f, 0.06975647f, 0.08715574f, 0.104528464f,
             0.12186935f, 0.1391731f, 0.15643448f, 0.17364818f, 0.190809f, 0.2079117f, 0.22495104f,
             0.2419219f, 0.25881904f, 0.27563736f, 0.2923717f, 0.309017f, 0.32556814f, 0.34202012f,
@@ -82,7 +81,7 @@ public final class Constants {
             -0.052335963f, -0.0348996f, -0.017452609f,
     };
 
-    public static final float COS360[] = {
+    public static final float DEGREE_TO_COS[] = {
             1.0f, 0.9998477f, 0.99939084f, 0.9986295f, 0.9975641f, 0.9961947f, 0.9945219f,
             0.99254614f, 0.99026805f, 0.98768836f, 0.9848077f, 0.98162717f, 0.9781476f, 0.97437006f,
             0.9702957f, 0.9659258f, 0.9612617f, 0.9563048f, 0.95105654f, 0.94551855f, 0.9396926f,

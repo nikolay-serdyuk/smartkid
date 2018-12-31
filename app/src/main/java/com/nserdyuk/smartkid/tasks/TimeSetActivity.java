@@ -1,5 +1,6 @@
 package com.nserdyuk.smartkid.tasks;
 
+import android.app.TimePickerDialog;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -9,10 +10,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.TimePicker;
 
 import com.nserdyuk.smartkid.R;
 import com.nserdyuk.smartkid.common.Complexity;
@@ -22,9 +23,6 @@ import com.nserdyuk.smartkid.common.Dialogs;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
-
-import com.sleepbot.datetimepicker.time.RadialPickerLayout;
-import com.sleepbot.datetimepicker.time.TimePickerDialog;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -85,15 +83,13 @@ public class TimeSetActivity extends AppCompatActivity {
         adapter.setRightAnswerColor(ContextCompat.getColor(this, R.color.activity_timeset_right_answer));
         adapter.setWrongAnswerColor(ContextCompat.getColor(this, R.color.activity_timeset_wrong_answer));
         lv.setAdapter(adapter);
-        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            public void onItemClick(AdapterView<?> parent, View view,
-                                    int position, long id) {
-                selectedItem = id;
-                timePickerDialog.show(getSupportFragmentManager(), "time");
-            }
+        lv.setOnItemClickListener((parent, view, position, id) -> {
+            selectedItem = id;
+            timePickerDialog.show();
         });
 
-        timePickerDialog = TimePickerDialog.newInstance(new OnTimeSetListener(), 11, 45, false, false);
+        timePickerDialog = new TimePickerDialog(this,
+                new OnTimeSetListener(), 11, 45, false);
     }
 
     private void fillArray(String[] items, List<Pair<Integer, String>> pairs) {
@@ -193,7 +189,7 @@ public class TimeSetActivity extends AppCompatActivity {
     private class OnTimeSetListener implements TimePickerDialog.OnTimeSetListener {
 
         @Override
-        public void onTimeSet(RadialPickerLayout view, int hour, int minute) {
+        public void onTimeSet(TimePicker view, int hour, int minute) {
             int adjustedHour = hour % 12;
             examples[(int) selectedItem].setUserInput(new TimeItem(adjustedHour == 0 ? 12 : adjustedHour, minute));
             adapter.notifyDataSetChanged();
@@ -246,7 +242,8 @@ public class TimeSetActivity extends AppCompatActivity {
             TimeItem userInput = example.getUserInput();
             if (userInput != null) {
                 boolean resultOk = example.checkUserInput();
-                label = String.format(Locale.US, Constants.TIMESET_EXAMPLE_FORMAT, label, userInput, resultOk ? rightAnswerMsg : wrongAnswerMsg);
+                String message = resultOk ? rightAnswerMsg : wrongAnswerMsg;
+                label = String.format(Locale.US, Constants.TIMESET_EXAMPLE_FORMAT, label, userInput, message);
                 tvLabel.setBackgroundColor(resultOk ? rightAnswerColor : wrongAnswerColor);
             }
             tvLabel.setText(label);

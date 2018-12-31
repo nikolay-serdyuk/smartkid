@@ -17,8 +17,8 @@ import java.io.IOException;
 
 abstract class ExaminationBot extends Bot {
     private static final String TAG = ExaminationBot.class.getName();
-    private static final String ERROR = "An error occurred in bot";
-    private static final String CONTENT_ERROR = "Invalid content";
+    private static final String ERROR_MESSAGE = "An error occurred in bot";
+    private static final String INVALID_CONTENT_ERROR = "Invalid content";
     private static final String START_MESSAGE = "";
 
     private static final int SHORT_DELAY = 1500;
@@ -77,7 +77,7 @@ abstract class ExaminationBot extends Bot {
             String msg = examples[currentExample].getQuestionAndAnswers();
             send(msg);
         } catch (BotException e) {
-            Log.e(TAG, ERROR, e);
+            Log.e(TAG, ERROR_MESSAGE, e);
             onError(e);
         }
     }
@@ -104,7 +104,7 @@ abstract class ExaminationBot extends Bot {
             String line = lines[i];
             String[] parts = StringUtils.split(line, Constants.STRING_DELIMITER);
             if (parts.length < 2) {
-                throw new BotException(CONTENT_ERROR);
+                throw new BotException(INVALID_CONTENT_ERROR);
             }
             examples[i] = new Test(line);
         }

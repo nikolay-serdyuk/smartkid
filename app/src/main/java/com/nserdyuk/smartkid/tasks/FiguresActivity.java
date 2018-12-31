@@ -54,7 +54,7 @@ public class FiguresActivity extends AppCompatActivity {
         view.setOnTouchListener(new OnSwipeTouchListener(this) {
 
             @Override
-            public void onSwipeLeft() {
+            protected void onSwipeLeft() {
                 if (viewListIndex > 0) {
                     viewListIndex--;
                     setContentView(viewList.get(viewListIndex));
@@ -62,7 +62,7 @@ public class FiguresActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onSwipeRight() {
+            protected void onSwipeRight() {
                 GLSurfaceView view;
                 viewListIndex++;
                 if (viewListIndex == viewList.size()) {

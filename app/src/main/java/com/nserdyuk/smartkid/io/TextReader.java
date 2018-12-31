@@ -30,6 +30,8 @@ public class TextReader {
         final int randomPosition = new Random().nextInt(lines - examples + 1);
 
         new AbstractReader() {
+
+            @Override
             public void doProcess(BufferedReader bufferedReader) throws IOException {
                 int filePosition = 0;
                 while (filePosition++ < randomPosition) {
@@ -48,6 +50,8 @@ public class TextReader {
 
     private void countLines() throws IOException {
         new AbstractReader() {
+
+            @Override
             public void doProcess(BufferedReader bufferedReader) throws IOException {
                 String str;
                 lines = 0;
@@ -62,9 +66,9 @@ public class TextReader {
     }
 
     private abstract class AbstractReader {
-        public abstract void doProcess(BufferedReader bufferedReader) throws IOException;
+        abstract void doProcess(BufferedReader bufferedReader) throws IOException;
 
-        public void process(String fileName) throws IOException {
+        void process(String fileName) throws IOException {
             Utils.assertNonUiThread();
             try (BufferedReader br = new BufferedReader(new InputStreamReader(am.open(fileName)))) {
                 doProcess(br);

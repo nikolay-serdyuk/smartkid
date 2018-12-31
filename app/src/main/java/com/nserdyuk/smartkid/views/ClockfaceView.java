@@ -114,8 +114,8 @@ public class ClockfaceView extends AppCompatImageView {
         float radiusX = centerX * radiusFactor;
         float radiusY = centerY * radiusFactor;
         int angle = (minute * 6 + 270) % 360;
-        float endX = centerX + Constants.COS360[angle] * radiusX;
-        float endY = centerY + Constants.SIN360[angle] * radiusY;
+        float endX = centerX + Constants.DEGREE_TO_COS[angle] * radiusX;
+        float endY = centerY + Constants.DEGREE_TO_SIN[angle] * radiusY;
         paint.setStrokeWidth(width);
         paint.setColor(color);
         canvas.drawLine(centerX, centerY, endX, endY, paint);

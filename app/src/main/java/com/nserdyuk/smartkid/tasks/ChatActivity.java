@@ -19,7 +19,6 @@ import android.widget.TextView;
 import com.nserdyuk.smartkid.R;
 import com.nserdyuk.smartkid.common.Constants;
 import com.nserdyuk.smartkid.common.Dialogs;
-import com.nserdyuk.smartkid.common.ErrorListener;
 import com.nserdyuk.smartkid.common.Utils;
 import com.nserdyuk.smartkid.io.ImageReader;
 import com.nserdyuk.smartkid.tasks.base.Bot;
@@ -87,19 +86,13 @@ public class ChatActivity extends CommunicationActivity {
         String fileName = getIntent().getStringExtra(Constants.ATTRIBUTE_FILE);
         examplesNum = getIntent().getIntExtra(Constants.ATTRIBUTE_EXAMPLES, 0);
         bot = new ChatBot(this, getAssets(), fileName, examplesNum) {
+
             @Override
             public void send(Object object) {
                 ChatActivity.this.receive(object);
             }
         };
-        bot.setOnErrorListener(new ErrorListener() {
-
-            @Override
-            public void onError(Exception e) {
-                Utils.showErrorInUiThread(ChatActivity.this, e.getMessage());
-            }
-
-        });
+        bot.setOnErrorListener(e -> Utils.showErrorInUiThread(this, e.getMessage()));
         bot.start();
         setBackgroundImage();
     }
@@ -130,14 +123,7 @@ public class ChatActivity extends CommunicationActivity {
                 }
             }
         };
-        ir.setOnErrorListener(new ErrorListener() {
-
-            @Override
-            public void onError(Exception e) {
-                Utils.showErrorInUiThread(ChatActivity.this, ERROR_LOAD_IMAGES);
-            }
-
-        });
+        ir.setOnErrorListener(e -> Utils.showErrorInUiThread(this, ERROR_LOAD_IMAGES));
         ir.execute(picMask);
     }
 
@@ -168,13 +154,10 @@ public class ChatActivity extends CommunicationActivity {
         // because it requires at least API 24 whereas my device supports API 19.
         textView.setText(Html.fromHtml(bubble.message));
 
-        scrollView.post(new Runnable() {
-            @Override
-            public void run() {
+        scrollView.post(() ->
                 ObjectAnimator.ofInt(scrollView, "scrollY", svLinearLayout.getBottom())
-                        .setDuration(ANIMATION_DURATION).start();
-            }
-        });
+                .setDuration(ANIMATION_DURATION)
+                .start());
     }
 
     private static class Bubble {

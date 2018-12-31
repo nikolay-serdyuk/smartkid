@@ -19,16 +19,21 @@
 
     <com.nserdyuk.smartkid.views.ClockfaceView
         android:id="@+id/iv_activity_clockface"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:scaleX="0.7"
+        android:scaleY="0.7"
         />
 
     <TimePicker
         android:id="@+id/tp_activity_clockface"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:scaleX="1.4"
-        android:scaleY="1.4"
+        android:timePickerMode="spinner"
         android:descendantFocusability="blocksDescendants"
+        android:scaleX="1.7"
+        android:scaleY="1.7"
         />
 </LinearLayout>

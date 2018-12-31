@@ -11,7 +11,6 @@ import com.nserdyuk.smartkid.common.ErrorListener;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Random;
@@ -36,7 +35,7 @@ public class ImageReader extends AsyncTask<String, Void, Drawable> {
     @Override
     protected Drawable doInBackground(String... mask) {
         Drawable drawable = null;
-        try (InputStream is = readRandomImage(assetManager, mask[0])){
+        try (InputStream is = readRandomAsset(assetManager, mask[0])){
             drawable = Drawable.createFromStream(is, null);
         } catch (IOException e) {
             Log.e(TAG, ERROR_LOAD_IMAGES, e);
@@ -47,26 +46,12 @@ public class ImageReader extends AsyncTask<String, Void, Drawable> {
         return drawable;
     }
 
-    private InputStream readRandomImage(AssetManager am, String mask) throws IOException {
+    private InputStream readRandomAsset(AssetManager am, String mask) throws IOException {
         Utils.assertNonUiThread();
-        List<String> list = getAvailableImages(am, mask);
-        return am.open(list.get(new Random().nextInt(list.size())));
-    }
-
-    private List<String> getAvailableImages(AssetManager am, String mask) throws IOException {
-        List<String> images = new LinkedList<>();
-        String[] list = am.list("");
-        if (list.length > 0) {
-            for (String file : list) {
-                if (file.contains(mask)) {
-                    images.add(file);
-                }
-            }
-        }
-        if (images.isEmpty()) {
+        List<String> list = Utils.getFilteredAssetsList(am, mask);
+        if (list.isEmpty()) {
             throw new IOException(String.format(Locale.US, ERROR_NO_IMAGES_FOUND, mask));
         }
-        return images;
+        return am.open(list.get(new Random().nextInt(list.size())));
     }
-
 }

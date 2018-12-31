@@ -79,7 +79,9 @@ abstract class Grid2dBot extends Bot {
             }
         }
         Point p = generatedList.get(currentPoint++);
-        String msg = String.format(Locale.US, solved == 0 ? Constants.GRID2D_POINT_FORMAT : Constants.GRID2D_POINT_FORMAT_EXAMPLES, p.getX(), p.getY(), solved);
+        String msg = String.format(Locale.US,
+                solved == 0 ? Constants.GRID2D_POINT_FORMAT : Constants.GRID2D_POINT_FORMAT_EXAMPLES,
+                p.getX(), p.getY(), solved);
         sendWithDelay(msg, SHORT_DELAY);
     }
 
