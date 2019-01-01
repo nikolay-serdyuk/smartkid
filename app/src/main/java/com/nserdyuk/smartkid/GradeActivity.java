@@ -1,254 +1,134 @@
 package com.nserdyuk.smartkid;
 
+import android.content.Context;
 import android.content.Intent;
-import android.content.res.TypedArray;
+import android.content.res.AssetManager;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.BaseAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonParser;
 import com.nserdyuk.smartkid.common.Complexity;
-import com.nserdyuk.smartkid.tasks.ChatActivity;
+import com.nserdyuk.smartkid.common.Utils;
+import com.nserdyuk.smartkid.models.Assignment;
 import com.nserdyuk.smartkid.common.Constants;
-import com.nserdyuk.smartkid.tasks.ClockfaceActivity;
-import com.nserdyuk.smartkid.tasks.FiguresActivity;
-import com.nserdyuk.smartkid.tasks.DictionaryActivity;
-import com.nserdyuk.smartkid.tasks.ExaminationActivity;
-import com.nserdyuk.smartkid.tasks.Grid2dActivity;
-import com.nserdyuk.smartkid.tasks.TimeSetActivity;
 
-import java.util.HashMap;
-import java.util.Map;
+import org.apache.commons.lang3.ArrayUtils;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 
 public class GradeActivity extends AppCompatActivity {
-    private int grade;
-    private String[] arrayOfTasks;
-    private Map<String, Intent> nameToIntentMap;
+    private static final String SETUP_FILE = "assignments.json";
+    private static final String ACTIVITY_NOT_FOUND_ERROR = "Activity not found";
+    private static final String CANT_READ_SETUP_ERROR = "Can't read setup file";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grade);
-        grade = getIntent().getIntExtra(Constants.ATTRIBUTE_GRADE, 0);
-        setupNameToIntent();
-        initListView();
+        int grade = getIntent().getIntExtra(Constants.ATTRIBUTE_GRADE, 0);
+        try {
+            List<NamedIntent> intentList = initIntentArray(grade);
+            intentList.sort(Comparator.comparing(NamedIntent::getName));
+            initListView(intentList);
+        } catch (IOException e) {
+            Utils.showError(this, CANT_READ_SETUP_ERROR);
+        } catch (ClassNotFoundException e) {
+            Utils.showError(this, ACTIVITY_NOT_FOUND_ERROR);
+        }
     }
 
-    private void initListView() {
-        TypedArray menuResources = getResources().obtainTypedArray(R.array.all_grades);
-        int id = menuResources.getResourceId(grade, 0);
-        arrayOfTasks = getResources().getStringArray(id);
-
-        ListView lv = (ListView) findViewById(R.id.list_activity_grade_base);
-        BaseAdapter adapter = new ArrayAdapter<>(this, R.layout.activity_main_list_item,
-                R.id.activity_main_list_item_label, arrayOfTasks);
-        lv.setAdapter(adapter);
-        lv.setOnItemClickListener((parent, view, position, id1) -> {
-            String name = arrayOfTasks[(int) id1];
-            Intent intent = nameToIntentMap.get(name);
-            if (intent != null) {
-                intent.putExtra(Constants.ATTRIBUTE_TITLE, name);
-                startActivity(intent);
+    private List<NamedIntent> initIntentArray(int grade) throws IOException, ClassNotFoundException {
+        Gson gson = new Gson();
+        List<NamedIntent> intentList = new ArrayList<>();
+        AssetManager am = getAssets();
+        try (InputStream is = am.open(SETUP_FILE)) {
+            JsonArray array = new JsonParser().parse(new InputStreamReader(is)).getAsJsonArray();
+            for (int i = 0; i < array.size(); i++) {
+                Assignment assignment = gson.fromJson(array.get(i), Assignment.class);
+                if (ArrayUtils.contains(assignment.getGrades(), grade)) {
+                    intentList.add(createIntent(assignment));
+                }
             }
-        });
-        menuResources.recycle();
+        }
+        return intentList;
     }
 
-    private void setupNameToIntent() {
-        Intent intent;
-        nameToIntentMap = new HashMap<>();
+    private void initListView(List<NamedIntent> intentArray) {
+        ListView listView = (ListView) findViewById(R.id.list_activity_grade_base);
+        NamedIntent[] array = intentArray.toArray(new NamedIntent[0]);
+        listView.setAdapter(new Adapter(this, array));
+        listView.setOnItemClickListener((parent, view, position, id1) -> {
+            NamedIntent ni = (NamedIntent) listView.getItemAtPosition(position);
+            startActivity(ni);
+        });
+    }
 
-        intent = new Intent(this, ChatActivity.class);
-        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 1);
-        intent.putExtra(Constants.ATTRIBUTE_FILE, "simple_add.txt");
-        nameToIntentMap.put(getResources().getString(R.string.activity_grade_simple_add10), intent);
+    private NamedIntent createIntent(Assignment assignment) throws ClassNotFoundException {
+        NamedIntent intent;
 
-        intent = new Intent(this, ChatActivity.class);
-        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 1);
-        intent.putExtra(Constants.ATTRIBUTE_FILE, "simple_guess.txt");
-        nameToIntentMap.put(getResources().getString(R.string.activity_grade_guess_number), intent);
+        Class<?> clazz = Class.forName(assignment.getActivity());
+        intent = new NamedIntent(this, clazz, assignment.getTitle());
+        intent.putExtra(Constants.ATTRIBUTE_TITLE, assignment.getTitle());
+        if (assignment.getExamples() != 0) {
+            intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, assignment.getExamples());
+        }
+        if (assignment.getComplexity() != null) {
+            intent.putExtra(Constants.ATTRIBUTE_COMPLEXITY, Complexity.valueOf(assignment.getComplexity()));
+        }
+        if (assignment.getResource() != null) {
+            intent.putExtra(Constants.ATTRIBUTE_FILE, assignment.getResource());
+        }
+        if (assignment.getFileMask() != null) {
+            intent.putExtra(Constants.ATTRIBUTE_FILE_MASK, assignment.getFileMask());
+        }
+        intent.putExtra(Constants.ATTRIBUTE_FILE_MASK, assignment.getMultilang());
+        return intent;
+    }
 
-        intent = new Intent(this, ChatActivity.class);
-        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 1);
-        intent.putExtra(Constants.ATTRIBUTE_FILE, "simple_sub.txt");
-        nameToIntentMap.put(getResources().getString(R.string.activity_grade_simple_sub10), intent);
+    private static class Adapter extends ArrayAdapter<NamedIntent> {
+        Adapter(@NonNull Context context, @NonNull NamedIntent[] objects) {
+            super(context, R.layout.activity_main_list_item,
+                    R.id.activity_main_list_item_label, objects);
+        }
 
-        intent = new Intent(this, ChatActivity.class);
-        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 1);
-        intent.putExtra(Constants.ATTRIBUTE_FILE, "simple_add_20.txt");
-        nameToIntentMap.put(getResources().getString(R.string.activity_grade_simple_add20), intent);
+        @Override
+        @NonNull
+        public View getView(int position, View convertView, @NonNull ViewGroup parent) {
+            NamedIntent intent = getItem(position);
+            if (convertView == null) {
+                convertView = LayoutInflater.from(getContext())
+                        .inflate(R.layout.activity_main_list_item, parent, false);
+            }
+            TextView tvLabel = (TextView) convertView.findViewById(R.id.activity_main_list_item_label);
+            tvLabel.setText(intent.getName());
+            return convertView;
+        }
+    }
 
-        intent = new Intent(this, ChatActivity.class);
-        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 1);
-        intent.putExtra(Constants.ATTRIBUTE_FILE, "simple_sub_20.txt");
-        nameToIntentMap.put(getResources().getString(R.string.activity_grade_simple_sub20), intent);
+    private static class NamedIntent extends Intent {
+        private final String name;
 
-        intent = new Intent(this, ChatActivity.class);
-        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 1);
-        intent.putExtra(Constants.ATTRIBUTE_FILE, "mul.txt");
-        nameToIntentMap.put(getResources().getString(R.string.activity_grade_mul), intent);
+        NamedIntent(Context packageContext, Class<?> cls, String name) {
+            super(packageContext, cls);
+            this.name = name;
+        }
 
-        intent = new Intent(this, ChatActivity.class);
-        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 3);
-        intent.putExtra(Constants.ATTRIBUTE_FILE, "sub_zero.txt");
-        nameToIntentMap.put(getResources().getString(R.string.activity_grade_sub_zero), intent);
-
-        intent = new Intent(this, ChatActivity.class);
-        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 3);
-        intent.putExtra(Constants.ATTRIBUTE_FILE, "sub_zero_long.txt");
-        nameToIntentMap.put(getResources().getString(R.string.activity_grade_sub_zero_long), intent);
-
-        intent = new Intent(this, ChatActivity.class);
-        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 3);
-        intent.putExtra(Constants.ATTRIBUTE_FILE, "muldiv_10_100_1000.txt");
-        nameToIntentMap.put(getResources().getString(R.string.activity_grade_muldiv_10_100_1000), intent);
-
-        intent = new Intent(this, ChatActivity.class);
-        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 3);
-        intent.putExtra(Constants.ATTRIBUTE_FILE, "single_quotient.txt");
-        nameToIntentMap.put(getResources().getString(R.string.activity_grade_single_quotient), intent);
-
-        intent = new Intent(this, ChatActivity.class);
-        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 3);
-        intent.putExtra(Constants.ATTRIBUTE_FILE, "long_div.txt");
-        nameToIntentMap.put(getResources().getString(R.string.activity_grade_long_div), intent);
-
-        intent = new Intent(this, ChatActivity.class);
-        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 1);
-        intent.putExtra(Constants.ATTRIBUTE_FILE, "long_long_div.txt");
-        nameToIntentMap.put(getResources().getString(R.string.activity_grade_long_long_div), intent);
-
-        intent = new Intent(this, ChatActivity.class);
-        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 1);
-        intent.putExtra(Constants.ATTRIBUTE_FILE, "div_rem.txt");
-        nameToIntentMap.put(getResources().getString(R.string.activity_grade_div_rem), intent);
-
-        intent = new Intent(this, ChatActivity.class);
-        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 3);
-        intent.putExtra(Constants.ATTRIBUTE_FILE, "long_mul.txt");
-        nameToIntentMap.put(getResources().getString(R.string.activity_grade_long_mul), intent);
-
-        intent = new Intent(this, ChatActivity.class);
-        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 1);
-        intent.putExtra(Constants.ATTRIBUTE_FILE, "time_hard.txt");
-        intent.putExtra(Constants.ATTRIBUTE_FILE_MASK, "TIME.jpg");
-        nameToIntentMap.put(getResources().getString(R.string.activity_grade_time_add_sub_hard), intent);
-
-        intent = new Intent(this, ChatActivity.class);
-        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 1);
-        intent.putExtra(Constants.ATTRIBUTE_FILE, "time_easy_add.txt");
-        intent.putExtra(Constants.ATTRIBUTE_FILE_MASK, "TIME.jpg");
-        nameToIntentMap.put(getResources().getString(R.string.activity_grade_time_add_easy), intent);
-
-        intent = new Intent(this, ChatActivity.class);
-        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 1);
-        intent.putExtra(Constants.ATTRIBUTE_FILE, "time_easy_sub.txt");
-        intent.putExtra(Constants.ATTRIBUTE_FILE_MASK, "TIME.jpg");
-        nameToIntentMap.put(getResources().getString(R.string.activity_grade_time_sub_easy), intent);
-
-        intent = new Intent(this, Grid2dActivity.class);
-        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 1);
-        intent.putExtra(Constants.ATTRIBUTE_COMPLEXITY, Complexity.EASY);
-        nameToIntentMap.put(getResources().getString(R.string.activity_grade_grid_2d_easy), intent);
-
-        intent = new Intent(this, Grid2dActivity.class);
-        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 7);
-        intent.putExtra(Constants.ATTRIBUTE_COMPLEXITY, Complexity.HARD);
-        nameToIntentMap.put(getResources().getString(R.string.activity_grade_grid_2d_hard), intent);
-
-        intent = new Intent(this, DictionaryActivity.class);
-        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 12);
-        intent.putExtra(Constants.ATTRIBUTE_FILE_MASK, "First250Words");
-        intent.putExtra(Constants.ATTRIBUTE_MULTILANG, false);
-        nameToIntentMap.put(getResources().getString(R.string.activity_grade_dictionary), intent);
-
-        intent = new Intent(this, DictionaryActivity.class);
-        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 12);
-        intent.putExtra(Constants.ATTRIBUTE_FILE_MASK, "First250Words");
-        intent.putExtra(Constants.ATTRIBUTE_MULTILANG, true);
-        nameToIntentMap.put(getResources().getString(R.string.activity_grade_dictionary_multilang), intent);
-
-        intent = new Intent(this, DictionaryActivity.class);
-        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 12);
-        intent.putExtra(Constants.ATTRIBUTE_FILE_MASK, "50MostCommonIrregularVerbs");
-        intent.putExtra(Constants.ATTRIBUTE_MULTILANG, false);
-        nameToIntentMap.put(getResources().getString(R.string.activity_grade_irregular_verbs), intent);
-
-        intent = new Intent(this, ExaminationActivity.class);
-        intent.putExtra(Constants.ATTRIBUTE_FILE, "PresentSimple.txt");
-        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 3);
-        nameToIntentMap.put(getResources().getString(R.string.activity_grade_present_simple), intent);
-
-        intent = new Intent(this, ExaminationActivity.class);
-        intent.putExtra(Constants.ATTRIBUTE_FILE, "PresentContinuous.txt");
-        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 3);
-        nameToIntentMap.put(getResources().getString(R.string.activity_grade_present_continuous), intent);
-
-        intent = new Intent(this, ExaminationActivity.class);
-        intent.putExtra(Constants.ATTRIBUTE_FILE, "PastSimple.txt");
-        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 3);
-        nameToIntentMap.put(getResources().getString(R.string.activity_grade_past_simple), intent);
-
-        intent = new Intent(this, TimeSetActivity.class);
-        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 8);
-        intent.putExtra(Constants.ATTRIBUTE_COMPLEXITY, Complexity.EASY);
-        nameToIntentMap.put(getResources().getString(R.string.activity_grade_time_set_easy), intent);
-
-        intent = new Intent(this, TimeSetActivity.class);
-        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 8);
-        intent.putExtra(Constants.ATTRIBUTE_COMPLEXITY, Complexity.HARD);
-        nameToIntentMap.put(getResources().getString(R.string.activity_grade_time_set_hard), intent);
-
-        intent = new Intent(this, ClockfaceActivity.class);
-        nameToIntentMap.put(getResources().getString(R.string.activity_grade_clockface), intent);
-
-        intent = new Intent(this, ChatActivity.class);
-        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 1);
-        intent.putExtra(Constants.ATTRIBUTE_FILE, "round_hundreds.txt");
-        nameToIntentMap.put(getResources().getString(R.string.activity_grade_round_easy), intent);
-
-        intent = new Intent(this, ChatActivity.class);
-        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 1);
-        intent.putExtra(Constants.ATTRIBUTE_FILE, "round_millions.txt");
-        nameToIntentMap.put(getResources().getString(R.string.activity_grade_round_hard), intent);
-
-        intent = new Intent(this, FiguresActivity.class);
-        nameToIntentMap.put(getResources().getString(R.string.activity_grade_cubes), intent);
-
-        intent = new Intent(this, ExaminationActivity.class);
-        intent.putExtra(Constants.ATTRIBUTE_FILE, "Articles.txt");
-        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 1);
-        nameToIntentMap.put(getResources().getString(R.string.activity_grade_articles), intent);
-
-        intent = new Intent(this, ChatActivity.class);
-        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 1);
-        intent.putExtra(Constants.ATTRIBUTE_FILE, "fractions_add_sub.txt");
-        nameToIntentMap.put(getResources().getString(R.string.activity_grade_fractions_add_sub), intent);
-
-        intent = new Intent(this, ChatActivity.class);
-        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 1);
-        intent.putExtra(Constants.ATTRIBUTE_FILE, "fractions_mul.txt");
-        nameToIntentMap.put(getResources().getString(R.string.activity_grade_fractions_mul), intent);
-
-        intent = new Intent(this, ChatActivity.class);
-        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 1);
-        intent.putExtra(Constants.ATTRIBUTE_FILE, "fractions_div.txt");
-        nameToIntentMap.put(getResources().getString(R.string.activity_grade_fractions_div), intent);
-
-        intent = new Intent(this, ChatActivity.class);
-        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 1);
-        intent.putExtra(Constants.ATTRIBUTE_FILE, "cm_kg_l.txt");
-        nameToIntentMap.put(getResources().getString(R.string.activity_grade_cm_kg_l), intent);
-
-        intent = new Intent(this, ChatActivity.class);
-        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 1);
-        intent.putExtra(Constants.ATTRIBUTE_FILE, "parens_easy.txt");
-        nameToIntentMap.put(getResources().getString(R.string.activity_grade_parens_easy), intent);
-
-        intent = new Intent(this, ChatActivity.class);
-        intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, 1);
-        intent.putExtra(Constants.ATTRIBUTE_FILE, "tenth_mul_div.txt");
-        nameToIntentMap.put(getResources().getString(R.string.activity_grade_tenth_mul_div), intent);
+        String getName() {
+            return name;
+        }
     }
 }

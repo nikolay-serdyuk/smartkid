@@ -1,0 +1,270 @@
+[
+  {
+    "title": "Простое сложение до 10",
+    "activity": "com.nserdyuk.smartkid.tasks.ChatActivity",
+    "examples": 1,
+    "resource": "simple_add.txt",
+    "grades": [0]
+  },
+  {
+    "title": "Угадай число",
+    "activity": "com.nserdyuk.smartkid.tasks.ChatActivity",
+    "examples": 1,
+    "resource": "simple_guess.txt",
+    "grades": [0]
+  },
+  {
+    "title": "Простое вычитание до 10",
+    "activity": "com.nserdyuk.smartkid.tasks.ChatActivity",
+    "examples": 1,
+    "resource": "simple_sub.txt",
+    "grades": [0]
+  },
+  {
+    "title": "Простое сложение до 20",
+    "activity": "com.nserdyuk.smartkid.tasks.ChatActivity",
+    "examples": 1,
+    "resource": "simple_add_20.txt",
+    "grades": [0]
+  },
+  {
+    "title": "Простое вычитание до 20",
+    "activity": "com.nserdyuk.smartkid.tasks.ChatActivity",
+    "examples": 1,
+    "resource": "simple_sub_20.txt",
+    "grades": [0]
+  },
+  {
+    "title": "Рисование кубиков",
+    "activity": "com.nserdyuk.smartkid.tasks.FiguresActivity",
+    "grades": [0]
+  },
+  {
+    "title": "Координатный угол (легкий уровень)",
+    "activity": "com.nserdyuk.smartkid.tasks.Grid2dActivity",
+    "examples": 1,
+    "complexity": "EASY",
+    "grades": [0, 1]
+  },
+  {
+    "title": "Сколько времени?",
+    "activity": "com.nserdyuk.smartkid.tasks.ClockfaceActivity",
+    "grades": [1]
+  },
+  {
+    "title": "Установка времени (легкий уровень)",
+    "activity": "com.nserdyuk.smartkid.tasks.TimeSetActivity",
+    "examples": 8,
+    "complexity": "EASY",
+    "grades": [1]
+  },
+  {
+    "title": "Время, сложение (легкий уровень)",
+    "activity": "com.nserdyuk.smartkid.tasks.ChatActivity",
+    "examples": 1,
+    "fileMask": "TIME.jpg",
+    "resource": "time_easy_add.txt",
+    "grades": [1]
+  },
+  {
+    "title": "Время, вычитание (легкий уровень)",
+    "activity": "com.nserdyuk.smartkid.tasks.ChatActivity",
+    "examples": 1,
+    "fileMask": "TIME.jpg",
+    "resource": "time_easy_sub.txt",
+    "grades": [1]
+  },
+  {
+    "title": "Установка времени (сложный уровень)",
+    "activity": "com.nserdyuk.smartkid.tasks.TimeSetActivity",
+    "examples": 8,
+    "complexity": "HARD",
+    "grades": [1, 2]
+  },
+  {
+    "title": "Таблица умножения",
+    "activity": "com.nserdyuk.smartkid.tasks.ChatActivity",
+    "examples": 1,
+    "resource": "mul.txt",
+    "grades": [2]
+  },
+  {
+    "title": "Сложение и вычитание (обычное или с нулем)",
+    "activity": "com.nserdyuk.smartkid.tasks.ChatActivity",
+    "examples": 3,
+    "resource": "sub_zero.txt",
+    "grades": [2]
+  },
+  {
+    "title": "Однозначное частное",
+    "activity": "com.nserdyuk.smartkid.tasks.ChatActivity",
+    "examples": 3,
+    "resource": "single_quotient.txt",
+    "grades": [2]
+  },
+  {
+    "title": "Деление столбиком",
+    "activity": "com.nserdyuk.smartkid.tasks.ChatActivity",
+    "examples": 3,
+    "resource": "long_div.txt",
+    "grades": [2]
+  },
+  {
+    "title": "Выражения со скобками (легкий уровень)",
+    "activity": "com.nserdyuk.smartkid.tasks.ChatActivity",
+    "examples": 1,
+    "resource": "parens_easy.txt",
+    "grades": [2]
+  },
+  {
+    "title": "Координатный угол (сложный уровень)",
+    "activity": "com.nserdyuk.smartkid.tasks.Grid2dActivity",
+    "examples": 1,
+    "complexity": "HARD",
+    "grades": [2, 3]
+  },
+  {
+    "title": "Present Simple",
+    "activity": "com.nserdyuk.smartkid.tasks.ExaminationActivity",
+    "examples": 3,
+    "resource": "PresentSimple.txt",
+    "grades": [2, 3, 4]
+  },
+  {
+    "title": "Деление с остатком",
+    "activity": "com.nserdyuk.smartkid.tasks.ChatActivity",
+    "examples": 1,
+    "resource": "div_rem.txt",
+    "grades": [2, 3, 4]
+  },
+  {
+    "title": "Время, сложение и вычитание (сложный уровень)",
+    "activity": "com.nserdyuk.smartkid.tasks.ChatActivity",
+    "examples": 1,
+    "resource": "time_hard.txt",
+    "fileMask": "TIME.jpg",
+    "grades": [2, 3, 4]
+  },
+  {
+    "title": "Перевод с английского",
+    "activity": "com.nserdyuk.smartkid.tasks.DictionaryActivity",
+    "examples": 12,
+    "fileMask": "First250Words",
+    "multilang": false,
+    "grades": [2, 3, 4]
+  },
+  {
+    "title": "Перевод с английского и обратно",
+    "activity": "com.nserdyuk.smartkid.tasks.DictionaryActivity",
+    "examples": 12,
+    "fileMask": "First250Words",
+    "multilang": true,
+    "grades": [2, 3, 4]
+  },
+  {
+    "title": "Сложение и вычитание больших чисел",
+    "activity": "com.nserdyuk.smartkid.tasks.ChatActivity",
+    "examples": 3,
+    "resource": "sub_zero_long.txt",
+    "grades": [3, 4, 5]
+  },
+  {
+    "title": "Умножение двухзначных чисел",
+    "activity": "com.nserdyuk.smartkid.tasks.ChatActivity",
+    "examples": 3,
+    "resource": "long_mul.txt",
+    "grades": [3, 4, 5]
+  },
+  {
+    "title": "Present Continuous",
+    "activity": "com.nserdyuk.smartkid.tasks.ExaminationActivity",
+    "examples": 3,
+    "resource": "PresentContinuous.txt",
+    "grades": [3, 4, 5]
+  },
+  {
+    "title": "Деление и умножение на 10, 100, 1000",
+    "activity": "com.nserdyuk.smartkid.tasks.ChatActivity",
+    "examples": 3,
+    "resource": "muldiv_10_100_1000.txt",
+    "grades": [3, 4]
+  },
+  {
+    "title": "Деление столбиком двухзначных (4 к.)",
+    "activity": "com.nserdyuk.smartkid.tasks.ChatActivity",
+    "examples": 1,
+    "resource": "long_long_div.txt",
+    "grades": [4, 5]
+  },
+  {
+    "title": "Округление чисел (легкий уровень)",
+    "activity": "com.nserdyuk.smartkid.tasks.ChatActivity",
+    "examples": 1,
+    "resource": "round_hundreds.txt",
+    "grades": [5]
+  },
+  {
+    "title": "Past Simple",
+    "activity": "com.nserdyuk.smartkid.tasks.ExaminationActivity",
+    "examples": 3,
+    "resource": "PastSimple.txt",
+    "grades": [5]
+  },
+  {
+    "title": "Округление чисел (сложный уровень)",
+    "activity": "com.nserdyuk.smartkid.tasks.ChatActivity",
+    "examples": 1,
+    "resource": "round_millions.txt",
+    "grades": [5, 6]
+  },
+  {
+    "title": "Сложение и вычитание дробей",
+    "activity": "com.nserdyuk.smartkid.tasks.ChatActivity",
+    "examples": 1,
+    "resource": "fractions_add_sub.txt",
+    "grades": [5, 6]
+  },
+  {
+    "title": "Умножение дробей",
+    "activity": "com.nserdyuk.smartkid.tasks.ChatActivity",
+    "examples": 1,
+    "resource": "fractions_mul.txt",
+    "grades": [5, 6]
+  },
+  {
+    "title": "Деление дробей",
+    "activity": "com.nserdyuk.smartkid.tasks.ChatActivity",
+    "examples": 1,
+    "resource": "fractions_div.txt",
+    "grades": [5, 6]
+  },
+  {
+    "title": "Irregular Verbs",
+    "activity": "com.nserdyuk.smartkid.tasks.DictionaryActivity",
+    "examples": 12,
+    "fileMask": "50MostCommonIrregularVerbs",
+    "multilang": false,
+    "grades": [5, 6]
+  },
+  {
+    "title": "Articles",
+    "activity": "com.nserdyuk.smartkid.tasks.ExaminationActivity",
+    "examples": 3,
+    "resource": "Articles.txt",
+    "grades": [5, 6]
+  },
+  {
+    "title": "Преобразование величин",
+    "activity": "com.nserdyuk.smartkid.tasks.ChatActivity",
+    "examples": 1,
+    "resource": "cm_kg_l.txt",
+    "grades": [6]
+  },
+  {
+    "title": "Деление и умножение на 0.01, 0.1, 10, 100",
+    "activity": "com.nserdyuk.smartkid.tasks.ChatActivity",
+    "examples": 1,
+    "resource": "tenth_mul_div.txt",
+    "grades": [6]
+  }
+]
