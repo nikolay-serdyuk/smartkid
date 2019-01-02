@@ -116,7 +116,7 @@ public class DictionaryActivity extends AppCompatActivity {
         @Override
         protected String doInBackground(Void... params) {
             try {
-                files.addAll(Utils.getFilteredAssetsList(am, fileMask));
+                files.addAll(Utils.getFilteredAssetsList(am, Constants.DEFAULT_ASSIGNMENTS_DIR, fileMask));
                 if (!files.isEmpty()) {
                     String lastViewedFile = loadLastViewedFile();
                     return lastViewedFile.contains(fileMask) ? lastViewedFile : files.get(0);

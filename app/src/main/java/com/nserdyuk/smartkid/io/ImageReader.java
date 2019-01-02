@@ -6,9 +6,11 @@ import android.os.AsyncTask;
 import android.support.annotation.Nullable;
 import android.util.Log;
 
+import com.nserdyuk.smartkid.common.Constants;
 import com.nserdyuk.smartkid.common.Utils;
 import com.nserdyuk.smartkid.common.ErrorListener;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
@@ -48,7 +50,7 @@ public class ImageReader extends AsyncTask<String, Void, Drawable> {
 
     private InputStream readRandomAsset(AssetManager am, String mask) throws IOException {
         Utils.assertNonUiThread();
-        List<String> list = Utils.getFilteredAssetsList(am, mask);
+        List<String> list = Utils.getFilteredAssetsList(am, Constants.DEFAULT_PICS_DIR, mask);
         if (list.isEmpty()) {
             throw new IOException(String.format(Locale.US, ERROR_NO_IMAGES_FOUND, mask));
         }

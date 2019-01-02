@@ -5,6 +5,7 @@ import android.content.res.AssetManager;
 import android.os.Looper;
 import android.widget.Toast;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
@@ -15,11 +16,12 @@ import java.util.stream.Stream;
 public final class Utils {
     private static final String ERROR_CANT_RUN_IN_UI = "can't run in UI thread";
 
-    public static List<String> getFilteredAssetsList(AssetManager am, String mask) throws IOException {
-        return Optional.ofNullable(am.list(""))
+    public static List<String> getFilteredAssetsList(AssetManager am, String path, String mask) throws IOException {
+        return Optional.ofNullable(am.list(path))
                 .map(Arrays::stream)
                 .orElseGet(Stream::empty)
                 .filter(file -> file.contains(mask))
+                .map(f -> path + File.separator + f)
                 .collect(Collectors.toList());
     }
 

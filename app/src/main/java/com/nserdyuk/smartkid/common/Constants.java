@@ -9,6 +9,9 @@ public final class Constants {
     public static final String ATTRIBUTE_FILE_MASK = "FILE_MASK";
     public static final String ATTRIBUTE_MULTILANG = "MULTILANG";
 
+    public static final String SETUP_FILE = "setup.json";
+    public static final String DEFAULT_PICS_DIR = "pics";
+    public static final String DEFAULT_ASSIGNMENTS_DIR = "assignments";
     public static final String DEFAULT_PICS_MASK = ".gif";
 
     public static final char STRING_DELIMITER = '|';

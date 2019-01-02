@@ -31,7 +31,6 @@ import java.util.Comparator;
 import java.util.List;
 
 public class GradeActivity extends AppCompatActivity {
-    private static final String SETUP_FILE = "assignments.json";
     private static final String ACTIVITY_NOT_FOUND_ERROR = "Activity not found";
     private static final String CANT_READ_SETUP_ERROR = "Can't read setup file";
 
@@ -55,7 +54,7 @@ public class GradeActivity extends AppCompatActivity {
         Gson gson = new Gson();
         List<NamedIntent> intentList = new ArrayList<>();
         AssetManager am = getAssets();
-        try (InputStream is = am.open(SETUP_FILE)) {
+        try (InputStream is = am.open(Constants.SETUP_FILE)) {
             JsonArray array = new JsonParser().parse(new InputStreamReader(is)).getAsJsonArray();
             for (int i = 0; i < array.size(); i++) {
                 Assignment assignment = gson.fromJson(array.get(i), Assignment.class);
@@ -95,7 +94,7 @@ public class GradeActivity extends AppCompatActivity {
         if (assignment.getFileMask() != null) {
             intent.putExtra(Constants.ATTRIBUTE_FILE_MASK, assignment.getFileMask());
         }
-        intent.putExtra(Constants.ATTRIBUTE_FILE_MASK, assignment.getMultilang());
+        intent.putExtra(Constants.ATTRIBUTE_MULTILANG, assignment.getMultilang());
         return intent;
     }
 
