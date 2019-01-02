@@ -40,7 +40,7 @@ public class GradeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_grade);
         int grade = getIntent().getIntExtra(Constants.ATTRIBUTE_GRADE, 0);
         try {
-            List<NamedIntent> intentList = initIntentArray(grade);
+            List<NamedIntent> intentList = createIntents(grade);
             intentList.sort(Comparator.comparing(NamedIntent::getName));
             initListView(intentList);
         } catch (IOException e) {
@@ -50,7 +50,7 @@ public class GradeActivity extends AppCompatActivity {
         }
     }
 
-    private List<NamedIntent> initIntentArray(int grade) throws IOException, ClassNotFoundException {
+    private List<NamedIntent> createIntents(int grade) throws IOException, ClassNotFoundException {
         Gson gson = new Gson();
         List<NamedIntent> intentList = new ArrayList<>();
         AssetManager am = getAssets();
@@ -107,12 +107,12 @@ public class GradeActivity extends AppCompatActivity {
         @Override
         @NonNull
         public View getView(int position, View convertView, @NonNull ViewGroup parent) {
-            NamedIntent intent = getItem(position);
             if (convertView == null) {
                 convertView = LayoutInflater.from(getContext())
                         .inflate(R.layout.activity_main_list_item, parent, false);
             }
             TextView tvLabel = (TextView) convertView.findViewById(R.id.activity_main_list_item_label);
+            NamedIntent intent = getItem(position);
             tvLabel.setText(intent.getName());
             return convertView;
         }
