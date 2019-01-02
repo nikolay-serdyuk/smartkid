@@ -9,6 +9,3 @@ written in C++ and they are not included in this repository.
 ![Screenshot](docs/images/Screenshot_20190102-120553.png)
 ![Screenshot](docs/images/Screenshot_20190102-121032.png)
 ![Screenshot](docs/images/Screenshot_20190102-121142.png)
-![Screenshot](docs/images/Screenshot_20190102-120636.png)
-![Screenshot](docs/images/Screenshot_20190102-120751.png)
-![Screenshot](docs/images/Screenshot_20190102-120826.png)
