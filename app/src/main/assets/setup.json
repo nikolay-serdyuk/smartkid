@@ -267,4 +267,12 @@
     "resource": "assignments/tenth_mul_div.txt",
     "grades": [6]
   }
+,
+  {
+    "title": "Перевод из дробей в проценты",
+    "activity": "com.nserdyuk.smartkid.tasks.ChatActivity",
+    "examples": 1,
+    "resource": "assignments/fractions_percent.txt",
+    "grades": [6]
+  }
 ]
