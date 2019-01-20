@@ -150,14 +150,13 @@ public class ChatActivity extends CommunicationActivity {
 
         TextView textView = (TextView) item.findViewById(R.id.tv_activity_chat_list_item);
         textView.setTextColor(bubble.textColor);
-        // Can't use non-deprecated method Html.fromHtml(String source, int flags)
-        // because it requires at least API 24 whereas my device supports API 19.
-        textView.setText(Html.fromHtml(bubble.message));
+        textView.setText(Html.fromHtml(bubble.message, Html.FROM_HTML_MODE_LEGACY),
+                TextView.BufferType.SPANNABLE);
 
         scrollView.post(() ->
                 ObjectAnimator.ofInt(scrollView, "scrollY", svLinearLayout.getBottom())
-                .setDuration(ANIMATION_DURATION)
-                .start());
+                        .setDuration(ANIMATION_DURATION)
+                        .start());
     }
 
     private static class Bubble {
