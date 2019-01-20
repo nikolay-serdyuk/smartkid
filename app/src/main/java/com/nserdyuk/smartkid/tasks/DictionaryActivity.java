@@ -57,8 +57,10 @@ public class DictionaryActivity extends AppCompatActivity {
         yesAnswerMsg = getResources().getString(R.string.yes_answer);
         noAnswerMsg = getResources().getString(R.string.no_answer);
 
-        previousPageQuestion = getResources().getString(R.string.activity_dictionary_previous_page_question);
-        nextPageQuestion = getResources().getString(R.string.activity_dictionary_next_page_question);
+        previousPageQuestion = getResources().getString(
+                R.string.activity_dictionary_previous_page_question);
+        nextPageQuestion = getResources().getString(
+                R.string.activity_dictionary_next_page_question);
 
         textView = (TextView) findViewById(R.id.tv_activity_dictionary);
         adapter = new ArrayAdapter<>(this, R.layout.activity_dictionary_list_item,
@@ -116,7 +118,8 @@ public class DictionaryActivity extends AppCompatActivity {
         @Override
         protected String doInBackground(Void... params) {
             try {
-                files.addAll(Utils.getFilteredAssetsList(am, Constants.DEFAULT_ASSIGNMENTS_DIR, fileMask));
+                files.addAll(Utils.getFilteredAssetsList(am, Constants.DEFAULT_ASSIGNMENTS_DIR,
+                        fileMask));
                 if (!files.isEmpty()) {
                     String lastViewedFile = loadLastViewedFile();
                     return lastViewedFile.contains(fileMask) ? lastViewedFile : files.get(0);

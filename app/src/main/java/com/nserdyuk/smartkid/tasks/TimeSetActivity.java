@@ -80,8 +80,10 @@ public class TimeSetActivity extends AppCompatActivity {
 
         ListView lv = (ListView) findViewById(R.id.list_activity_timeset);
         adapter = new Adapter(this, examples, rightAnswerMsg, wrongAnswerMsg);
-        adapter.setRightAnswerColor(ContextCompat.getColor(this, R.color.activity_timeset_right_answer));
-        adapter.setWrongAnswerColor(ContextCompat.getColor(this, R.color.activity_timeset_wrong_answer));
+        adapter.setRightAnswerColor(
+                ContextCompat.getColor(this, R.color.activity_timeset_right_answer));
+        adapter.setWrongAnswerColor(
+                ContextCompat.getColor(this, R.color.activity_timeset_wrong_answer));
         lv.setAdapter(adapter);
         lv.setOnItemClickListener((parent, view, position, id) -> {
             selectedItem = id;
@@ -141,12 +143,12 @@ public class TimeSetActivity extends AppCompatActivity {
             this.expression = expression;
         }
 
-        void setUserInput(TimeItem userInput) {
-            this.userInput = userInput;
-        }
-
         TimeItem getUserInput() {
             return userInput;
+        }
+
+        void setUserInput(TimeItem userInput) {
+            this.userInput = userInput;
         }
 
         boolean checkUserInput() {
@@ -166,7 +168,7 @@ public class TimeSetActivity extends AppCompatActivity {
         private final boolean swapHoursMinutes;
 
         ExampleFactory(List<Pair<Integer, String>> hoursMap,
-                       List<Pair<Integer, String>> minutesMap, boolean swapHoursMinutes) {
+                List<Pair<Integer, String>> minutesMap, boolean swapHoursMinutes) {
             this.hoursMap = hoursMap;
             this.minutesMap = minutesMap;
             this.swapHoursMinutes = swapHoursMinutes;
@@ -181,29 +183,20 @@ public class TimeSetActivity extends AppCompatActivity {
             Pair<Integer, String> minutesPair = minutesMap.get(minutesIdx);
             String minutesStr = minutesPair.getRight();
 
-            String expression = swapHoursMinutes ? minutesStr + " " + hoursStr : hoursStr + " " + minutesStr;
-            return new Example(new TimeItem(hoursPair.getLeft(), minutesPair.getLeft()), expression);
-        }
-    }
-
-    private class OnTimeSetListener implements TimePickerDialog.OnTimeSetListener {
-
-        @Override
-        public void onTimeSet(TimePicker view, int hour, int minute) {
-            int adjustedHour = hour % 12;
-            examples[(int) selectedItem].setUserInput(new TimeItem(adjustedHour == 0 ? 12 : adjustedHour, minute));
-            adapter.notifyDataSetChanged();
+            String expression =
+                    swapHoursMinutes ? minutesStr + " " + hoursStr : hoursStr + " " + minutesStr;
+            return new Example(new TimeItem(hoursPair.getLeft(), minutesPair.getLeft()),
+                    expression);
         }
     }
 
     private static class Adapter extends ArrayAdapter<Example> {
         private final static int COLOR_RIGHT = Color.GRAY;
         private final static int COLOR_WRONG = Color.RED;
-
-        private int rightAnswerColor;
-        private int wrongAnswerColor;
         private final String rightAnswerMsg;
         private final String wrongAnswerMsg;
+        private int rightAnswerColor;
+        private int wrongAnswerColor;
 
         Adapter(Context context, Example[] tasks, String rightAnswerMsg, String wrongAnswerMsg) {
             super(context, 0, tasks);
@@ -213,20 +206,20 @@ public class TimeSetActivity extends AppCompatActivity {
             this.wrongAnswerColor = COLOR_WRONG;
         }
 
-        public void setRightAnswerColor(int rightAnswerColor) {
-            this.rightAnswerColor = rightAnswerColor;
-        }
-
         public int getRightAnswerColor() {
             return rightAnswerColor;
         }
 
-        public void setWrongAnswerColor(int wrongAnswerColor) {
-            this.wrongAnswerColor = wrongAnswerColor;
+        public void setRightAnswerColor(int rightAnswerColor) {
+            this.rightAnswerColor = rightAnswerColor;
         }
 
         public int getWrongAnswerColor() {
             return wrongAnswerColor;
+        }
+
+        public void setWrongAnswerColor(int wrongAnswerColor) {
+            this.wrongAnswerColor = wrongAnswerColor;
         }
 
         @NonNull
@@ -234,20 +227,34 @@ public class TimeSetActivity extends AppCompatActivity {
         public View getView(int position, View convertView, @NonNull ViewGroup parent) {
             Example example = getItem(position);
             if (convertView == null) {
-                convertView = LayoutInflater.from(getContext()).inflate(R.layout.activity_main_list_item, parent, false);
+                convertView = LayoutInflater.from(getContext()).inflate(
+                        R.layout.activity_main_list_item, parent, false);
             }
 
-            TextView tvLabel = (TextView) convertView.findViewById(R.id.activity_main_list_item_label);
+            TextView tvLabel = (TextView) convertView.findViewById(
+                    R.id.activity_main_list_item_label);
             String label = example.toString();
             TimeItem userInput = example.getUserInput();
             if (userInput != null) {
                 boolean resultOk = example.checkUserInput();
                 String message = resultOk ? rightAnswerMsg : wrongAnswerMsg;
-                label = String.format(Locale.US, Constants.TIMESET_EXAMPLE_FORMAT, label, userInput, message);
+                label = String.format(Locale.US, Constants.TIMESET_EXAMPLE_FORMAT, label, userInput,
+                        message);
                 tvLabel.setBackgroundColor(resultOk ? rightAnswerColor : wrongAnswerColor);
             }
             tvLabel.setText(label);
             return convertView;
+        }
+    }
+
+    private class OnTimeSetListener implements TimePickerDialog.OnTimeSetListener {
+
+        @Override
+        public void onTimeSet(TimePicker view, int hour, int minute) {
+            int adjustedHour = hour % 12;
+            examples[(int) selectedItem].setUserInput(
+                    new TimeItem(adjustedHour == 0 ? 12 : adjustedHour, minute));
+            adapter.notifyDataSetChanged();
         }
     }
 }

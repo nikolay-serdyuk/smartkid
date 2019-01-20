@@ -103,7 +103,8 @@ public class Cube implements Shape {
         indexBuffer.position(0);
 
         triangleBorderIndices = TRIANGLE_BORDER_INDEX_LIST.length;
-        ByteBuffer tbilByteBuffer = ByteBuffer.allocateDirect(TRIANGLE_BORDER_INDEX_LIST.length * 2);
+        ByteBuffer tbilByteBuffer = ByteBuffer.allocateDirect(
+                TRIANGLE_BORDER_INDEX_LIST.length * 2);
         tbilByteBuffer.order(ByteOrder.nativeOrder());
         triangleBorderIndicesBuffer = tbilByteBuffer.asShortBuffer();
         triangleBorderIndicesBuffer.put(TRIANGLE_BORDER_INDEX_LIST);
@@ -111,13 +112,13 @@ public class Cube implements Shape {
     }
 
     @Override
-    public void setVisible(boolean visible) {
-        this.visible = visible;
+    public boolean getVisible() {
+        return visible;
     }
 
     @Override
-    public boolean getVisible() {
-        return visible;
+    public void setVisible(boolean visible) {
+        this.visible = visible;
     }
 
     @Override

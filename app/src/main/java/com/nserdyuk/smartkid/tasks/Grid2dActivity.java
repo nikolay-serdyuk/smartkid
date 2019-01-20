@@ -71,7 +71,7 @@ public class Grid2dActivity extends CommunicationActivity {
         rightAnswerMsg = getResources().getString(R.string.right_answer);
         wrongAnswerMsg = getResources().getString(R.string.wrong_answer);
 
-        grid2dView = (Grid2dView)findViewById(R.id.grid_activity_grid2d);
+        grid2dView = (Grid2dView) findViewById(R.id.grid_activity_grid2d);
         grid2dView.setBackgroundColor(COLOR_BACKGROUND);
         grid2dView.setOnTouchListener(point -> {
             grid2dView.setClickable(false);
@@ -79,8 +79,10 @@ public class Grid2dActivity extends CommunicationActivity {
         });
 
         int examplesNum = getIntent().getIntExtra(Constants.ATTRIBUTE_EXAMPLES, 0);
-        Complexity complexity = (Complexity) getIntent().getSerializableExtra(Constants.ATTRIBUTE_COMPLEXITY);
-        bot = new Grid2dBot(this, examplesNum, complexity, grid2dView.getRows(), grid2dView.getColumns()) {
+        Complexity complexity = (Complexity) getIntent().getSerializableExtra(
+                Constants.ATTRIBUTE_COMPLEXITY);
+        bot = new Grid2dBot(this, examplesNum, complexity, grid2dView.getRows(),
+                grid2dView.getColumns()) {
 
             @Override
             public void send(Object object) {

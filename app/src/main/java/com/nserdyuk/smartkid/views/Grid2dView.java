@@ -26,7 +26,7 @@ public class Grid2dView extends View {
     private final static int ROWS = 10;
     private final static int TEXT_LEFT_MARGIN = 35;
     private final static int TEXT_TOP_MARGIN = 15;
-
+    private final List<Point> points = new ArrayList<>();
     private Paint paint;
     private Canvas canvas;
     private int leftMargin;
@@ -44,8 +44,6 @@ public class Grid2dView extends View {
     private int minorAxisWidth = WIDTH_GRID_MINOR;
     private int majorAxisWidth = 2 * WIDTH_GRID_MINOR;
     private OnTouchListener onTouchListener;
-
-    private final List<Point> points = new ArrayList<>();
 
     public Grid2dView(Context context) {
         super(context);
@@ -95,9 +93,13 @@ public class Grid2dView extends View {
         this.textSize = size;
     }
 
-    public int getRows() { return ROWS; }
+    public int getRows() {
+        return ROWS;
+    }
 
-    public int getColumns() { return COLUMNS; }
+    public int getColumns() {
+        return COLUMNS;
+    }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
@@ -206,7 +208,8 @@ public class Grid2dView extends View {
     }
 
     private void drawBar(int color) {
-        Rect r = new Rect(leftMargin, topMargin, leftMargin + (COLUMNS - 1) * columnWidth, topMargin + (ROWS - 1) * rowHeight);
+        Rect r = new Rect(leftMargin, topMargin, leftMargin + (COLUMNS - 1) * columnWidth,
+                topMargin + (ROWS - 1) * rowHeight);
         paint.setStyle(Paint.Style.FILL);
         paint.setColor(color);
         canvas.drawRect(r, paint);

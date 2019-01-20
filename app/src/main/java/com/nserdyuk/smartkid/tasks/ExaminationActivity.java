@@ -91,7 +91,8 @@ public class ExaminationActivity extends CommunicationActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_examination);
 
-        answerBlockLayout = (LinearLayout)findViewById(R.id.ll_activity_examination_question_block);
+        answerBlockLayout = (LinearLayout) findViewById(
+                R.id.ll_activity_examination_question_block);
         titleMessage = getIntent().getStringExtra(Constants.ATTRIBUTE_TITLE);
         title = (TextView) findViewById(R.id.tv_activity_examination_title);
         updateTitle();
@@ -119,7 +120,8 @@ public class ExaminationActivity extends CommunicationActivity {
 
     private void updateTitle() {
         title.setText(correctAnswers == 0 ?
-                titleMessage : String.format(Locale.US, Constants.RIGHT_ANSWER_FORMAT, titleMessage, correctAnswers));
+                titleMessage : String.format(Locale.US, Constants.RIGHT_ANSWER_FORMAT, titleMessage,
+                correctAnswers));
     }
 
     private void addAnswerButton(String answer) {

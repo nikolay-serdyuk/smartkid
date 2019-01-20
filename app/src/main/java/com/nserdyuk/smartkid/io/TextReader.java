@@ -10,10 +10,10 @@ import java.io.InputStreamReader;
 import java.util.Random;
 
 public class TextReader {
-    private int lines;
     private final String fileName;
     private final int examples;
     private final AssetManager am;
+    private int lines;
 
     public TextReader(AssetManager am, String fileName, int examples) {
         this.am = am;

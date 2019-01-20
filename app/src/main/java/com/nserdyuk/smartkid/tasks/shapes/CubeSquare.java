@@ -20,19 +20,19 @@ public class CubeSquare implements Shape {
     }
 
     @Override
-    public void setVisible(boolean visible) {
-        for (Shape cubeLine : cubeLines) {
-            cubeLine.setVisible(visible);
-        }
-    }
-
-    @Override
     public boolean getVisible() {
         boolean visible = false;
         for (Shape cubeLine : cubeLines) {
             visible |= cubeLine.getVisible();
         }
         return visible;
+    }
+
+    @Override
+    public void setVisible(boolean visible) {
+        for (Shape cubeLine : cubeLines) {
+            cubeLine.setVisible(visible);
+        }
     }
 
     @Override

@@ -7,10 +7,9 @@ import android.support.annotation.Nullable;
 import android.util.Log;
 
 import com.nserdyuk.smartkid.common.Constants;
-import com.nserdyuk.smartkid.common.Utils;
 import com.nserdyuk.smartkid.common.ErrorListener;
+import com.nserdyuk.smartkid.common.Utils;
 
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
@@ -37,7 +36,7 @@ public class ImageReader extends AsyncTask<String, Void, Drawable> {
     @Override
     protected Drawable doInBackground(String... mask) {
         Drawable drawable = null;
-        try (InputStream is = readRandomAsset(assetManager, mask[0])){
+        try (InputStream is = readRandomAsset(assetManager, mask[0])) {
             drawable = Drawable.createFromStream(is, null);
         } catch (IOException e) {
             Log.e(TAG, ERROR_LOAD_IMAGES, e);

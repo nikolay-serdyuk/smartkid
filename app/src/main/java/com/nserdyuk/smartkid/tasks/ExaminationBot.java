@@ -55,7 +55,7 @@ abstract class ExaminationBot extends Bot {
         }
 
         Utils.delay(SHORT_DELAY);
-        String input = (String)obj;
+        String input = (String) obj;
         try {
             if (START_MESSAGE.equals(input)) {
                 sendWithDelay(greetingMsg, LONG_DELAY);
@@ -84,7 +84,8 @@ abstract class ExaminationBot extends Bot {
 
     private boolean checkAllExamples() {
         for (Test example : examples) {
-            if (!StringUtils.split(example.getQuestionAndAnswers(), Constants.STRING_DELIMITER)[1].equals(example.getUserAnswers())) {
+            if (!StringUtils.split(example.getQuestionAndAnswers(),
+                    Constants.STRING_DELIMITER)[1].equals(example.getUserAnswers())) {
                 return false;
             }
         }

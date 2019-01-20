@@ -20,19 +20,19 @@ public class CompositeCube implements Shape {
     }
 
     @Override
-    public void setVisible(boolean visible) {
-        for (Shape cubeSquare : cubeSquares) {
-            cubeSquare.setVisible(visible);
-        }
-    }
-
-    @Override
     public boolean getVisible() {
         boolean visible = false;
         for (Shape cubeSquare : cubeSquares) {
             visible |= cubeSquare.getVisible();
         }
         return visible;
+    }
+
+    @Override
+    public void setVisible(boolean visible) {
+        for (Shape cubeSquare : cubeSquares) {
+            cubeSquare.setVisible(visible);
+        }
     }
 
     @Override

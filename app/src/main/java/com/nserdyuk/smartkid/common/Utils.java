@@ -16,7 +16,11 @@ import java.util.stream.Stream;
 public final class Utils {
     private static final String ERROR_CANT_RUN_IN_UI = "can't run in UI thread";
 
-    public static List<String> getFilteredAssetsList(AssetManager am, String path, String mask) throws IOException {
+    private Utils() {
+    }
+
+    public static List<String> getFilteredAssetsList(AssetManager am, String path, String mask)
+            throws IOException {
         return Optional.ofNullable(am.list(path))
                 .map(Arrays::stream)
                 .orElseGet(Stream::empty)
@@ -67,6 +71,4 @@ public final class Utils {
             showError(a, m);
         }
     }
-
-    private Utils() {}
 }

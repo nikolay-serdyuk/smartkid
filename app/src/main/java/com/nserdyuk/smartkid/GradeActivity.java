@@ -3,9 +3,9 @@ package com.nserdyuk.smartkid;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.AssetManager;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,9 +17,9 @@ import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonParser;
 import com.nserdyuk.smartkid.common.Complexity;
+import com.nserdyuk.smartkid.common.Constants;
 import com.nserdyuk.smartkid.common.Utils;
 import com.nserdyuk.smartkid.models.Assignment;
-import com.nserdyuk.smartkid.common.Constants;
 
 import org.apache.commons.lang3.ArrayUtils;
 
@@ -86,7 +86,8 @@ public class GradeActivity extends AppCompatActivity {
             intent.putExtra(Constants.ATTRIBUTE_EXAMPLES, assignment.getExamples());
         }
         if (assignment.getComplexity() != null) {
-            intent.putExtra(Constants.ATTRIBUTE_COMPLEXITY, Complexity.valueOf(assignment.getComplexity()));
+            intent.putExtra(Constants.ATTRIBUTE_COMPLEXITY,
+                    Complexity.valueOf(assignment.getComplexity()));
         }
         if (assignment.getResource() != null) {
             intent.putExtra(Constants.ATTRIBUTE_FILE, assignment.getResource());
@@ -111,7 +112,8 @@ public class GradeActivity extends AppCompatActivity {
                 convertView = LayoutInflater.from(getContext())
                         .inflate(R.layout.activity_main_list_item, parent, false);
             }
-            TextView tvLabel = (TextView) convertView.findViewById(R.id.activity_main_list_item_label);
+            TextView tvLabel = (TextView) convertView.findViewById(
+                    R.id.activity_main_list_item_label);
             NamedIntent intent = getItem(position);
             tvLabel.setText(intent.getName());
             return convertView;

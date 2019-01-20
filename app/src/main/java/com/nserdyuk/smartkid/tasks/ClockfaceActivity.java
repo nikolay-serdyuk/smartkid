@@ -20,7 +20,8 @@ import java.util.Locale;
 import java.util.Random;
 
 public class ClockfaceActivity extends AppCompatActivity {
-    private final static String ERROR_LOAD_CLOCKFACE_IMAGE = "An error occurred while loading the Clockface image";
+    private final static String ERROR_LOAD_CLOCKFACE_IMAGE =
+            "An error occurred while loading the Clockface image";
     private final static String CLOCKFACE_PICTURE = "clockface.png";
     private final static int COLOR_BACKGROUND = Color.WHITE;
     private final static int LONG_DELAY = 1500;
@@ -104,7 +105,8 @@ public class ClockfaceActivity extends AppCompatActivity {
             }
 
             String title = solved != 0 ?
-                    String.format(Locale.US, Constants.CLOCKFACE_TITLE_FORMAT, solvedMsg, solved) : "";
+                    String.format(Locale.US, Constants.CLOCKFACE_TITLE_FORMAT, solvedMsg, solved)
+                    : "";
             titleMessage.setText(title);
             timePicker.setEnabled(true);
         }
@@ -123,7 +125,8 @@ public class ClockfaceActivity extends AppCompatActivity {
             boolean askNew;
 
             timePicker.setEnabled(false);
-            if (ClockfaceActivity.this.hour == this.hour && ClockfaceActivity.this.minute == this.minute) {
+            if (ClockfaceActivity.this.hour == this.hour
+                    && ClockfaceActivity.this.minute == this.minute) {
                 titleMessage.setText(rightAnswerMsg);
                 askNew = true;
                 solved++;

@@ -28,6 +28,16 @@ public class ClockfaceView extends AppCompatImageView {
 
     private Paint paint;
 
+    public ClockfaceView(Context context) {
+        super(context);
+        init();
+    }
+
+    public ClockfaceView(Context context, AttributeSet attrs) {
+        super(context, attrs);
+        init();
+    }
+
     public int getHourHandWidth() {
         return hourHandWidth;
     }
@@ -42,16 +52,6 @@ public class ClockfaceView extends AppCompatImageView {
 
     public void setMinuteHandWidth(int minuteHandWidth) {
         this.minuteHandWidth = minuteHandWidth;
-    }
-
-    public ClockfaceView(Context context) {
-        super(context);
-        init();
-    }
-
-    public ClockfaceView(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        init();
     }
 
     public int getHour() {

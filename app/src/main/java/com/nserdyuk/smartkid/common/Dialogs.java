@@ -8,8 +8,11 @@ import android.support.v7.app.AppCompatActivity;
 import com.nserdyuk.smartkid.R;
 
 public final class Dialogs {
+    private Dialogs() {
+    }
+
     public static Dialog showYesNoDialog(AppCompatActivity activity, String title, String yesMsg,
-                                         DialogInterface.OnClickListener onYesListener, String noMsg) {
+            DialogInterface.OnClickListener onYesListener, String noMsg) {
         return new AlertDialog.Builder(activity)
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 .setTitle(title)
@@ -24,8 +27,5 @@ public final class Dialogs {
                 activity.getResources().getString(R.string.yes_answer),
                 (dialog, which) -> activity.finish(),
                 activity.getResources().getString(R.string.no_answer));
-    }
-
-    private Dialogs() {
     }
 }

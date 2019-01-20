@@ -28,11 +28,10 @@ abstract class Grid2dBot extends Bot {
     private final int rows;
     private final int columns;
     private final Random random;
-
+    private final List<Point> userList = new ArrayList<>();
     private int currentPoint;
     private int solved;
     private List<Point> generatedList = new ArrayList<>();
-    private final List<Point> userList = new ArrayList<>();
 
 
     Grid2dBot(Context context, int examplesNum, Complexity complexity, int rows, int columns) {
@@ -80,7 +79,8 @@ abstract class Grid2dBot extends Bot {
         }
         Point p = generatedList.get(currentPoint++);
         String msg = String.format(Locale.US,
-                solved == 0 ? Constants.GRID2D_POINT_FORMAT : Constants.GRID2D_POINT_FORMAT_EXAMPLES,
+                solved == 0 ? Constants.GRID2D_POINT_FORMAT
+                        : Constants.GRID2D_POINT_FORMAT_EXAMPLES,
                 p.getX(), p.getY(), solved);
         sendWithDelay(msg, SHORT_DELAY);
     }

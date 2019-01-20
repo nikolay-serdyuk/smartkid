@@ -130,7 +130,8 @@ public class ChatActivity extends CommunicationActivity {
     private void updateTitle() {
         String t;
         if (correctAnswers > 0) {
-            t = String.format(Locale.US, Constants.RIGHT_ANSWER_FORMAT, titleMessage, correctAnswers);
+            t = String.format(Locale.US, Constants.RIGHT_ANSWER_FORMAT, titleMessage,
+                    correctAnswers);
         } else {
             t = titleMessage;
         }
@@ -167,7 +168,8 @@ public class ChatActivity extends CommunicationActivity {
         private final int leftMargin;
         private final int rightMargin;
 
-        Bubble(int image, int textColor, int gravity, int leftMargin, int rightMargin, String message) {
+        Bubble(int image, int textColor, int gravity, int leftMargin, int rightMargin,
+                String message) {
             this.image = image;
             this.textColor = textColor;
             this.gravity = gravity;
@@ -194,13 +196,13 @@ public class ChatActivity extends CommunicationActivity {
         @Override
         public boolean onKey(View view, int keyCode, KeyEvent event) {
             if (keyCode == KeyEvent.KEYCODE_ENTER && event.getAction() == KeyEvent.ACTION_DOWN) {
-                    String msg = editText.getText().toString();
-                    if (!msg.isEmpty()) {
-                        drawBubble(new LeftBubble(msg));
-                        editText.setText("");
-                        send(msg);
-                    }
-                    return true;
+                String msg = editText.getText().toString();
+                if (!msg.isEmpty()) {
+                    drawBubble(new LeftBubble(msg));
+                    editText.setText("");
+                    send(msg);
+                }
+                return true;
             }
             return false;
         }

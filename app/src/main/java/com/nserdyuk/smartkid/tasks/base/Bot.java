@@ -50,7 +50,8 @@ public abstract class Bot extends HandlerThread {
         }
     }
 
-    protected void onStart() {}
+    protected void onStart() {
+    }
 
     protected abstract void onMessage(Object o);
 }
