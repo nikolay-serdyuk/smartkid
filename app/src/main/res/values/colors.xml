@@ -2,8 +2,7 @@
 <resources>
     <color name="colorRed">#FF0000</color>
 
-    <color name="activity_chat_left_bubble">#39555B</color>
-    <color name="activity_chat_right_bubble">#29508E</color>
+    <color name="activity_chat_ed_border">#124559</color>
 
     <color name="activity_grid2d_bar">#AEF100</color>
     <color name="activity_grid2d_x_axis">#FD3F49</color>

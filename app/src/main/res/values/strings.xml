@@ -2,6 +2,7 @@
     <string name="app_name">SmartKid</string>
 
     <string name="greeting">"Привет!"</string>
+    <string name="answer_hint">"Ответ"</string>
     <string name="right_answer">"Правильно"</string>
     <string name="wrong_answer">"Ошибка…"</string>
     <string name="next_answer">"Еще"</string>

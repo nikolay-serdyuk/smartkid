@@ -12,7 +12,6 @@ public final class Constants {
     public static final String SETUP_FILE = "setup.json";
     public static final String DEFAULT_PICS_DIR = "pics";
     public static final String DEFAULT_ASSIGNMENTS_DIR = "assignments";
-    public static final String DEFAULT_PICS_MASK = ".gif";
 
     public static final char STRING_DELIMITER = '|';
 

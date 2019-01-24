@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_activity_chat_window"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
 
@@ -9,25 +10,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_vertical|center_horizontal"
-        android:textColor="@android:color/white"
-        android:textSize="30sp"
-        />
-
-    <ImageView
-        android:id="@+id/iv_activity_chat"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_activity_chat_title"
-        android:layout_above="@+id/rl_activity_chat_input_window"
-        android:src="@android:color/black"
-        />
+        android:minHeight="75sp"
+        android:textSize="25sp"/>
 
     <ScrollView
         android:id="@+id/sv_activity_chat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_activity_chat_title"
         android:layout_above="@+id/rl_activity_chat_input_window"
+        android:layout_below="@+id/tv_activity_chat_title"
         android:fillViewport="true">
         <LinearLayout
             android:id="@+id/ll_sv_activity_chat"
@@ -39,25 +30,25 @@
 
     <RelativeLayout
         android:id="@+id/rl_activity_chat_input_window"
-        android:layout_alignParentBottom="true"
         android:layout_width="wrap_content"
         android:layout_height="100dp"
+        android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentBottom="true">
         <EditText
             android:id="@+id/et_activity_chat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="numberSigned|numberDecimal"
-
-            android:ems="10"
-            android:textCursorDrawable="@drawable/activity_chat_cursor"
-            android:textSize="30sp"
-            android:background="@android:color/darker_gray"
-            android:gravity="center|center_vertical|fill_vertical"
+            android:layout_alignParentStart="false"
+            android:layout_centerInParent="true"
             android:layout_marginLeft="30dip"
             android:layout_marginRight="30dip"
-            android:layout_alignParentStart="false"
-            android:layout_centerInParent="true" />
+            android:background="@drawable/activity_chat_et_round_corners"
+            android:ems="10"
+            android:gravity="center|center_vertical|fill_vertical"
+            android:hint="@string/answer_hint"
+            android:inputType="numberSigned|numberDecimal"
+            android:textCursorDrawable="@drawable/activity_chat_cursor"
+            android:textSize="30sp"/>
     </RelativeLayout>
 </RelativeLayout>

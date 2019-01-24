@@ -1,7 +1,7 @@
 package com.nserdyuk.smartkid.tasks;
 
 import android.graphics.Color;
-import android.graphics.drawable.Drawable;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -78,7 +78,7 @@ public class ClockfaceActivity extends AppCompatActivity {
         ImageReader ir = new ImageReader(getAssets()) {
 
             @Override
-            protected void onPostExecute(Drawable drawable) {
+            protected void onPostExecute(BitmapDrawable drawable) {
                 if (drawable != null) {
                     clockface.setImageDrawable(drawable);
                 }

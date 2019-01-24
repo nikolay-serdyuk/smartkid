@@ -1,7 +1,7 @@
 package com.nserdyuk.smartkid.tasks;
 
 import android.graphics.Typeface;
-import android.graphics.drawable.Drawable;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.util.TypedValue;
 import android.view.View;
@@ -156,7 +156,7 @@ public class ExaminationActivity extends CommunicationActivity {
         ImageReader ir = new ImageReader(getAssets()) {
 
             @Override
-            protected void onPostExecute(Drawable drawable) {
+            protected void onPostExecute(BitmapDrawable drawable) {
                 if (drawable != null) {
                     LinearLayout ll = (LinearLayout) findViewById(R.id.ll_activity_examination);
                     ll.setBackground(drawable);

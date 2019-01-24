@@ -1,14 +1,29 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_height="wrap_content"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:layout_marginTop="15dip"
     android:layout_marginBottom="15dip"
+    android:gravity="center"
     android:orientation="horizontal">
-    <TextView android:id="@+id/tv_activity_chat_list_item"
+
+    <ImageView
+        android:id="@+id/iv_activity_chat_list_item"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:id="@+id/rl_activity_chat_list_item_bubble"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textSize="30sp"
-        android:gravity="center"
-        android:textColor="#000000"
-        />
-</RelativeLayout>
+        android:layout_weight="0.5">
+
+        <TextView
+            android:id="@+id/tv_activity_chat_list_item_bubble"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:minWidth="120dp"
+            android:textSize="23sp"/>
+    </LinearLayout>
+</LinearLayout>
