@@ -275,4 +275,12 @@
     "resource": "assignments/fractions_percent.txt",
     "grades": [6]
   }
+,
+  {
+    "title": "Сложение и вычитание отрицательных чисел",
+    "activity": "com.nserdyuk.smartkid.tasks.ChatActivity",
+    "examples": 1,
+    "resource": "assignments/add_sub_negative.txt",
+    "grades": [6]
+  }
 ]
