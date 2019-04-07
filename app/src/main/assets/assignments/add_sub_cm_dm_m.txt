@@ -1,0 +1,1000 @@
+{"question":"35см  -  21см \u003d ?","answers":[{"value":"14","hint":"см?"}]}
+{"question":"3дм 6см  +  48см \u003d ?","answers":[{"value":"8","hint":"дм?"},{"value":"4","hint":"см?"}]}
+{"question":"43см  +  47см \u003d ?","answers":[{"value":"90","hint":"см?"}]}
+{"question":"5дм  -  3дм 8см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"2","hint":"см?"}]}
+{"question":"2дм  -  7см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"3","hint":"см?"}]}
+{"question":"4дм 4см  -  16см \u003d ?","answers":[{"value":"2","hint":"дм?"},{"value":"8","hint":"см?"}]}
+{"question":"1дм 7см  +  4дм 9см \u003d ?","answers":[{"value":"66","hint":"см?"}]}
+{"question":"4дм  -  2дм 2см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"8","hint":"см?"}]}
+{"question":"31см  -  2дм 6см \u003d ?","answers":[{"value":"5","hint":"см?"}]}
+{"question":"40см  -  25см \u003d ?","answers":[{"value":"15","hint":"см?"}]}
+{"question":"45см  +  7см \u003d ?","answers":[{"value":"5","hint":"дм?"},{"value":"2","hint":"см?"}]}
+{"question":"47см  -  1дм 5см \u003d ?","answers":[{"value":"32","hint":"см?"}]}
+{"question":"2дм 2см  -  8см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"4","hint":"см?"}]}
+{"question":"1дм 7см  +  45см \u003d ?","answers":[{"value":"62","hint":"см?"}]}
+{"question":"36см  +  11см \u003d ?","answers":[{"value":"4","hint":"дм?"},{"value":"7","hint":"см?"}]}
+{"question":"4дм 3см  -  2дм 4см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"9","hint":"см?"}]}
+{"question":"9см  +  1дм 4см \u003d ?","answers":[{"value":"2","hint":"дм?"},{"value":"3","hint":"см?"}]}
+{"question":"4дм 8см  -  5см \u003d ?","answers":[{"value":"4","hint":"дм?"},{"value":"3","hint":"см?"}]}
+{"question":"2дм 1см  +  2дм 7см \u003d ?","answers":[{"value":"48","hint":"см?"}]}
+{"question":"1дм 4см  +  28см \u003d ?","answers":[{"value":"42","hint":"см?"}]}
+{"question":"27см  +  9см \u003d ?","answers":[{"value":"3","hint":"дм?"},{"value":"6","hint":"см?"}]}
+{"question":"1дм 9см  -  1дм 3см \u003d ?","answers":[{"value":"6","hint":"см?"}]}
+{"question":"49см  -  2дм \u003d ?","answers":[{"value":"2","hint":"дм?"},{"value":"9","hint":"см?"}]}
+{"question":"4дм  -  33см \u003d ?","answers":[{"value":"7","hint":"см?"}]}
+{"question":"1дм 1см  +  2дм 1см \u003d ?","answers":[{"value":"3","hint":"дм?"},{"value":"2","hint":"см?"}]}
+{"question":"3дм 8см  +  45см \u003d ?","answers":[{"value":"83","hint":"см?"}]}
+{"question":"4дм 3см  -  6см \u003d ?","answers":[{"value":"3","hint":"дм?"},{"value":"7","hint":"см?"}]}
+{"question":"30см  -  18см \u003d ?","answers":[{"value":"12","hint":"см?"}]}
+{"question":"3дм 6см  -  8см \u003d ?","answers":[{"value":"28","hint":"см?"}]}
+{"question":"2дм 8см  -  1дм 3см \u003d ?","answers":[{"value":"15","hint":"см?"}]}
+{"question":"3дм 8см  -  29см \u003d ?","answers":[{"value":"9","hint":"см?"}]}
+{"question":"1дм 5см  +  3дм 1см \u003d ?","answers":[{"value":"46","hint":"см?"}]}
+{"question":"32см  -  25см \u003d ?","answers":[{"value":"7","hint":"см?"}]}
+{"question":"1дм 9см  +  1дм 6см \u003d ?","answers":[{"value":"35","hint":"см?"}]}
+{"question":"38см  +  16см \u003d ?","answers":[{"value":"5","hint":"дм?"},{"value":"4","hint":"см?"}]}
+{"question":"21см  -  1дм 1см \u003d ?","answers":[{"value":"10","hint":"см?"}]}
+{"question":"38см  +  2дм 3см \u003d ?","answers":[{"value":"61","hint":"см?"}]}
+{"question":"32см  -  2дм 2см \u003d ?","answers":[{"value":"10","hint":"см?"}]}
+{"question":"50см  -  2дм \u003d ?","answers":[{"value":"30","hint":"см?"}]}
+{"question":"1дм 7см  -  1дм 3см \u003d ?","answers":[{"value":"4","hint":"см?"}]}
+{"question":"29см  +  26см \u003d ?","answers":[{"value":"55","hint":"см?"}]}
+{"question":"33см  +  7см \u003d ?","answers":[{"value":"40","hint":"см?"}]}
+{"question":"50см  -  1дм 9см \u003d ?","answers":[{"value":"3","hint":"дм?"},{"value":"1","hint":"см?"}]}
+{"question":"36см  +  44см \u003d ?","answers":[{"value":"80","hint":"см?"}]}
+{"question":"3дм 2см  +  4дм 4см \u003d ?","answers":[{"value":"76","hint":"см?"}]}
+{"question":"40см  -  8см \u003d ?","answers":[{"value":"32","hint":"см?"}]}
+{"question":"27см  +  22см \u003d ?","answers":[{"value":"49","hint":"см?"}]}
+{"question":"33см  +  15см \u003d ?","answers":[{"value":"48","hint":"см?"}]}
+{"question":"44см  -  2дм 1см \u003d ?","answers":[{"value":"2","hint":"дм?"},{"value":"3","hint":"см?"}]}
+{"question":"4дм 3см  -  2дм 3см \u003d ?","answers":[{"value":"2","hint":"дм?"}]}
+{"question":"4дм 1см  -  2дм \u003d ?","answers":[{"value":"21","hint":"см?"}]}
+{"question":"31см  +  22см \u003d ?","answers":[{"value":"53","hint":"см?"}]}
+{"question":"3дм 6см  +  19см \u003d ?","answers":[{"value":"55","hint":"см?"}]}
+{"question":"48см  -  47см \u003d ?","answers":[{"value":"1","hint":"см?"}]}
+{"question":"2дм 8см  +  5дм \u003d ?","answers":[{"value":"7","hint":"дм?"},{"value":"8","hint":"см?"}]}
+{"question":"20см  +  7см \u003d ?","answers":[{"value":"27","hint":"см?"}]}
+{"question":"1дм 9см  -  7см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"2","hint":"см?"}]}
+{"question":"12см  +  4дм \u003d ?","answers":[{"value":"52","hint":"см?"}]}
+{"question":"1дм 8см  -  1дм 3см \u003d ?","answers":[{"value":"5","hint":"см?"}]}
+{"question":"3дм  -  10см \u003d ?","answers":[{"value":"20","hint":"см?"}]}
+{"question":"4дм 4см  +  2дм 2см \u003d ?","answers":[{"value":"66","hint":"см?"}]}
+{"question":"2дм 1см  -  14см \u003d ?","answers":[{"value":"7","hint":"см?"}]}
+{"question":"3дм 9см  -  1дм 7см \u003d ?","answers":[{"value":"2","hint":"дм?"},{"value":"2","hint":"см?"}]}
+{"question":"49см  -  40см \u003d ?","answers":[{"value":"9","hint":"см?"}]}
+{"question":"1дм 3см  +  40см \u003d ?","answers":[{"value":"53","hint":"см?"}]}
+{"question":"6см  +  3дм 2см \u003d ?","answers":[{"value":"38","hint":"см?"}]}
+{"question":"2дм 6см  +  31см \u003d ?","answers":[{"value":"57","hint":"см?"}]}
+{"question":"4дм 6см  -  4дм 2см \u003d ?","answers":[{"value":"4","hint":"см?"}]}
+{"question":"43см  +  4дм 8см \u003d ?","answers":[{"value":"91","hint":"см?"}]}
+{"question":"4дм 9см  -  4дм 1см \u003d ?","answers":[{"value":"8","hint":"см?"}]}
+{"question":"39см  -  2дм 9см \u003d ?","answers":[{"value":"1","hint":"дм?"}]}
+{"question":"36см  -  3дм 2см \u003d ?","answers":[{"value":"4","hint":"см?"}]}
+{"question":"2дм  +  29см \u003d ?","answers":[{"value":"4","hint":"дм?"},{"value":"9","hint":"см?"}]}
+{"question":"2дм 9см  -  19см \u003d ?","answers":[{"value":"1","hint":"дм?"}]}
+{"question":"3дм 9см  +  3дм 5см \u003d ?","answers":[{"value":"7","hint":"дм?"},{"value":"4","hint":"см?"}]}
+{"question":"2дм 3см  -  22см \u003d ?","answers":[{"value":"1","hint":"см?"}]}
+{"question":"4дм 7см  -  3дм 4см \u003d ?","answers":[{"value":"13","hint":"см?"}]}
+{"question":"31см  +  1дм 1см \u003d ?","answers":[{"value":"4","hint":"дм?"},{"value":"2","hint":"см?"}]}
+{"question":"4дм 3см  -  42см \u003d ?","answers":[{"value":"1","hint":"см?"}]}
+{"question":"27см  -  13см \u003d ?","answers":[{"value":"14","hint":"см?"}]}
+{"question":"2дм 3см  +  44см \u003d ?","answers":[{"value":"6","hint":"дм?"},{"value":"7","hint":"см?"}]}
+{"question":"49см  -  3дм 3см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"6","hint":"см?"}]}
+{"question":"36см  -  1дм 4см \u003d ?","answers":[{"value":"22","hint":"см?"}]}
+{"question":"4дм 4см  -  29см \u003d ?","answers":[{"value":"15","hint":"см?"}]}
+{"question":"38см  -  8см \u003d ?","answers":[{"value":"30","hint":"см?"}]}
+{"question":"4дм 4см  +  2дм 9см \u003d ?","answers":[{"value":"7","hint":"дм?"},{"value":"3","hint":"см?"}]}
+{"question":"35см  -  1дм 2см \u003d ?","answers":[{"value":"23","hint":"см?"}]}
+{"question":"19см  +  20см \u003d ?","answers":[{"value":"3","hint":"дм?"},{"value":"9","hint":"см?"}]}
+{"question":"24см  +  48см \u003d ?","answers":[{"value":"72","hint":"см?"}]}
+{"question":"43см  -  19см \u003d ?","answers":[{"value":"24","hint":"см?"}]}
+{"question":"35см  +  2дм 1см \u003d ?","answers":[{"value":"5","hint":"дм?"},{"value":"6","hint":"см?"}]}
+{"question":"42см  +  6см \u003d ?","answers":[{"value":"48","hint":"см?"}]}
+{"question":"38см  +  4дм 3см \u003d ?","answers":[{"value":"8","hint":"дм?"},{"value":"1","hint":"см?"}]}
+{"question":"3дм 5см  -  29см \u003d ?","answers":[{"value":"6","hint":"см?"}]}
+{"question":"5см  +  23см \u003d ?","answers":[{"value":"28","hint":"см?"}]}
+{"question":"32см  -  30см \u003d ?","answers":[{"value":"2","hint":"см?"}]}
+{"question":"49см  -  6см \u003d ?","answers":[{"value":"4","hint":"дм?"},{"value":"3","hint":"см?"}]}
+{"question":"2дм 4см  -  5см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"9","hint":"см?"}]}
+{"question":"34см  -  2дм \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"4","hint":"см?"}]}
+{"question":"3дм 5см  -  20см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"5","hint":"см?"}]}
+{"question":"16см  +  4дм 6см \u003d ?","answers":[{"value":"62","hint":"см?"}]}
+{"question":"36см  -  2дм 9см \u003d ?","answers":[{"value":"7","hint":"см?"}]}
+{"question":"34см  -  12см \u003d ?","answers":[{"value":"2","hint":"дм?"},{"value":"2","hint":"см?"}]}
+{"question":"2дм 1см  +  4дм 2см \u003d ?","answers":[{"value":"63","hint":"см?"}]}
+{"question":"4дм 4см  +  12см \u003d ?","answers":[{"value":"56","hint":"см?"}]}
+{"question":"45см  -  14см \u003d ?","answers":[{"value":"3","hint":"дм?"},{"value":"1","hint":"см?"}]}
+{"question":"3дм 7см  -  8см \u003d ?","answers":[{"value":"2","hint":"дм?"},{"value":"9","hint":"см?"}]}
+{"question":"20см  +  9см \u003d ?","answers":[{"value":"2","hint":"дм?"},{"value":"9","hint":"см?"}]}
+{"question":"34см  -  33см \u003d ?","answers":[{"value":"1","hint":"см?"}]}
+{"question":"4дм 9см  -  17см \u003d ?","answers":[{"value":"32","hint":"см?"}]}
+{"question":"4дм 4см  -  1дм 2см \u003d ?","answers":[{"value":"32","hint":"см?"}]}
+{"question":"4дм 9см  +  30см \u003d ?","answers":[{"value":"7","hint":"дм?"},{"value":"9","hint":"см?"}]}
+{"question":"23см  +  3дм \u003d ?","answers":[{"value":"53","hint":"см?"}]}
+{"question":"2дм 6см  +  21см \u003d ?","answers":[{"value":"4","hint":"дм?"},{"value":"7","hint":"см?"}]}
+{"question":"4дм 7см  -  10см \u003d ?","answers":[{"value":"3","hint":"дм?"},{"value":"7","hint":"см?"}]}
+{"question":"1дм 5см  +  1дм 7см \u003d ?","answers":[{"value":"3","hint":"дм?"},{"value":"2","hint":"см?"}]}
+{"question":"5дм  -  42см \u003d ?","answers":[{"value":"8","hint":"см?"}]}
+{"question":"1дм 3см  -  10см \u003d ?","answers":[{"value":"3","hint":"см?"}]}
+{"question":"18см  +  43см \u003d ?","answers":[{"value":"61","hint":"см?"}]}
+{"question":"21см  +  49см \u003d ?","answers":[{"value":"70","hint":"см?"}]}
+{"question":"47см  -  9см \u003d ?","answers":[{"value":"38","hint":"см?"}]}
+{"question":"28см  -  1дм 6см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"2","hint":"см?"}]}
+{"question":"4дм 5см  +  3дм \u003d ?","answers":[{"value":"75","hint":"см?"}]}
+{"question":"15см  +  41см \u003d ?","answers":[{"value":"5","hint":"дм?"},{"value":"6","hint":"см?"}]}
+{"question":"1дм 9см  -  1дм 7см \u003d ?","answers":[{"value":"2","hint":"см?"}]}
+{"question":"47см  -  2дм 2см \u003d ?","answers":[{"value":"2","hint":"дм?"},{"value":"5","hint":"см?"}]}
+{"question":"3дм 2см  -  2дм 1см \u003d ?","answers":[{"value":"11","hint":"см?"}]}
+{"question":"35см  -  3дм 4см \u003d ?","answers":[{"value":"1","hint":"см?"}]}
+{"question":"1дм 4см  +  5см \u003d ?","answers":[{"value":"19","hint":"см?"}]}
+{"question":"4дм 4см  -  38см \u003d ?","answers":[{"value":"6","hint":"см?"}]}
+{"question":"49см  -  3дм 7см \u003d ?","answers":[{"value":"12","hint":"см?"}]}
+{"question":"4дм 9см  -  13см \u003d ?","answers":[{"value":"3","hint":"дм?"},{"value":"6","hint":"см?"}]}
+{"question":"1дм 8см  -  16см \u003d ?","answers":[{"value":"2","hint":"см?"}]}
+{"question":"3дм 8см  -  28см \u003d ?","answers":[{"value":"10","hint":"см?"}]}
+{"question":"4дм 3см  +  2дм 6см \u003d ?","answers":[{"value":"69","hint":"см?"}]}
+{"question":"17см  -  10см \u003d ?","answers":[{"value":"7","hint":"см?"}]}
+{"question":"15см  +  4дм 7см \u003d ?","answers":[{"value":"6","hint":"дм?"},{"value":"2","hint":"см?"}]}
+{"question":"2дм 6см  -  2дм 2см \u003d ?","answers":[{"value":"4","hint":"см?"}]}
+{"question":"42см  -  3дм 8см \u003d ?","answers":[{"value":"4","hint":"см?"}]}
+{"question":"1дм 7см  +  3дм 1см \u003d ?","answers":[{"value":"48","hint":"см?"}]}
+{"question":"4дм 1см  +  4дм 6см \u003d ?","answers":[{"value":"8","hint":"дм?"},{"value":"7","hint":"см?"}]}
+{"question":"43см  -  3дм 7см \u003d ?","answers":[{"value":"6","hint":"см?"}]}
+{"question":"50см  -  37см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"3","hint":"см?"}]}
+{"question":"46см  -  11см \u003d ?","answers":[{"value":"35","hint":"см?"}]}
+{"question":"17см  +  3дм 9см \u003d ?","answers":[{"value":"5","hint":"дм?"},{"value":"6","hint":"см?"}]}
+{"question":"36см  -  18см \u003d ?","answers":[{"value":"18","hint":"см?"}]}
+{"question":"5дм  -  2дм 1см \u003d ?","answers":[{"value":"2","hint":"дм?"},{"value":"9","hint":"см?"}]}
+{"question":"49см  -  1дм 4см \u003d ?","answers":[{"value":"35","hint":"см?"}]}
+{"question":"42см  -  1дм \u003d ?","answers":[{"value":"3","hint":"дм?"},{"value":"2","hint":"см?"}]}
+{"question":"1дм 7см  +  2дм 7см \u003d ?","answers":[{"value":"4","hint":"дм?"},{"value":"4","hint":"см?"}]}
+{"question":"29см  +  21см \u003d ?","answers":[{"value":"5","hint":"дм?"}]}
+{"question":"2дм 7см  +  26см \u003d ?","answers":[{"value":"5","hint":"дм?"},{"value":"3","hint":"см?"}]}
+{"question":"48см  -  3дм 2см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"6","hint":"см?"}]}
+{"question":"5дм  -  3дм 6см \u003d ?","answers":[{"value":"14","hint":"см?"}]}
+{"question":"1дм 5см  +  1дм 6см \u003d ?","answers":[{"value":"31","hint":"см?"}]}
+{"question":"5дм  -  8см \u003d ?","answers":[{"value":"42","hint":"см?"}]}
+{"question":"1дм 3см  -  1дм 2см \u003d ?","answers":[{"value":"1","hint":"см?"}]}
+{"question":"8см  -  7см \u003d ?","answers":[{"value":"1","hint":"см?"}]}
+{"question":"1дм 9см  +  4дм 7см \u003d ?","answers":[{"value":"66","hint":"см?"}]}
+{"question":"45см  +  4дм 5см \u003d ?","answers":[{"value":"9","hint":"дм?"}]}
+{"question":"5дм  +  43см \u003d ?","answers":[{"value":"93","hint":"см?"}]}
+{"question":"36см  +  5дм \u003d ?","answers":[{"value":"86","hint":"см?"}]}
+{"question":"50см  -  41см \u003d ?","answers":[{"value":"9","hint":"см?"}]}
+{"question":"2дм 8см  -  10см \u003d ?","answers":[{"value":"18","hint":"см?"}]}
+{"question":"3дм 6см  -  7см \u003d ?","answers":[{"value":"29","hint":"см?"}]}
+{"question":"45см  +  1дм 8см \u003d ?","answers":[{"value":"6","hint":"дм?"},{"value":"3","hint":"см?"}]}
+{"question":"34см  +  5дм \u003d ?","answers":[{"value":"84","hint":"см?"}]}
+{"question":"35см  +  2дм 6см \u003d ?","answers":[{"value":"61","hint":"см?"}]}
+{"question":"12см  +  2дм \u003d ?","answers":[{"value":"32","hint":"см?"}]}
+{"question":"4дм 7см  +  25см \u003d ?","answers":[{"value":"7","hint":"дм?"},{"value":"2","hint":"см?"}]}
+{"question":"3дм 1см  -  15см \u003d ?","answers":[{"value":"16","hint":"см?"}]}
+{"question":"38см  -  12см \u003d ?","answers":[{"value":"2","hint":"дм?"},{"value":"6","hint":"см?"}]}
+{"question":"31см  +  4дм \u003d ?","answers":[{"value":"7","hint":"дм?"},{"value":"1","hint":"см?"}]}
+{"question":"30см  +  1дм 1см \u003d ?","answers":[{"value":"4","hint":"дм?"},{"value":"1","hint":"см?"}]}
+{"question":"4дм 1см  -  7см \u003d ?","answers":[{"value":"34","hint":"см?"}]}
+{"question":"3дм 5см  +  3дм 3см \u003d ?","answers":[{"value":"68","hint":"см?"}]}
+{"question":"4дм 3см  -  1дм 8см \u003d ?","answers":[{"value":"25","hint":"см?"}]}
+{"question":"3дм 8см  -  34см \u003d ?","answers":[{"value":"4","hint":"см?"}]}
+{"question":"2дм 5см  +  19см \u003d ?","answers":[{"value":"4","hint":"дм?"},{"value":"4","hint":"см?"}]}
+{"question":"32см  -  1дм 8см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"4","hint":"см?"}]}
+{"question":"2дм 4см  +  3дм 2см \u003d ?","answers":[{"value":"56","hint":"см?"}]}
+{"question":"2дм 1см  +  3дм 4см \u003d ?","answers":[{"value":"55","hint":"см?"}]}
+{"question":"4дм 7см  -  3дм 2см \u003d ?","answers":[{"value":"15","hint":"см?"}]}
+{"question":"6см  +  7см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"3","hint":"см?"}]}
+{"question":"9см  -  8см \u003d ?","answers":[{"value":"1","hint":"см?"}]}
+{"question":"35см  +  29см \u003d ?","answers":[{"value":"6","hint":"дм?"},{"value":"4","hint":"см?"}]}
+{"question":"50см  -  13см \u003d ?","answers":[{"value":"37","hint":"см?"}]}
+{"question":"4дм  +  29см \u003d ?","answers":[{"value":"69","hint":"см?"}]}
+{"question":"45см  +  3дм 1см \u003d ?","answers":[{"value":"7","hint":"дм?"},{"value":"6","hint":"см?"}]}
+{"question":"5дм  +  3дм \u003d ?","answers":[{"value":"8","hint":"дм?"}]}
+{"question":"2дм 1см  +  13см \u003d ?","answers":[{"value":"34","hint":"см?"}]}
+{"question":"24см  -  9см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"5","hint":"см?"}]}
+{"question":"39см  -  3дм \u003d ?","answers":[{"value":"9","hint":"см?"}]}
+{"question":"25см  +  48см \u003d ?","answers":[{"value":"73","hint":"см?"}]}
+{"question":"3дм 7см  -  7см \u003d ?","answers":[{"value":"3","hint":"дм?"}]}
+{"question":"27см  -  2дм 2см \u003d ?","answers":[{"value":"5","hint":"см?"}]}
+{"question":"37см  -  5см \u003d ?","answers":[{"value":"3","hint":"дм?"},{"value":"2","hint":"см?"}]}
+{"question":"34см  +  25см \u003d ?","answers":[{"value":"5","hint":"дм?"},{"value":"9","hint":"см?"}]}
+{"question":"3дм 8см  +  16см \u003d ?","answers":[{"value":"54","hint":"см?"}]}
+{"question":"46см  -  42см \u003d ?","answers":[{"value":"4","hint":"см?"}]}
+{"question":"4дм 7см  -  34см \u003d ?","answers":[{"value":"13","hint":"см?"}]}
+{"question":"1дм 3см  +  1дм 3см \u003d ?","answers":[{"value":"2","hint":"дм?"},{"value":"6","hint":"см?"}]}
+{"question":"29см  +  2дм 4см \u003d ?","answers":[{"value":"5","hint":"дм?"},{"value":"3","hint":"см?"}]}
+{"question":"4дм 3см  -  1дм 9см \u003d ?","answers":[{"value":"24","hint":"см?"}]}
+{"question":"45см  -  2дм 1см \u003d ?","answers":[{"value":"24","hint":"см?"}]}
+{"question":"3дм 8см  -  9см \u003d ?","answers":[{"value":"2","hint":"дм?"},{"value":"9","hint":"см?"}]}
+{"question":"5см  +  4дм 2см \u003d ?","answers":[{"value":"4","hint":"дм?"},{"value":"7","hint":"см?"}]}
+{"question":"47см  -  36см \u003d ?","answers":[{"value":"11","hint":"см?"}]}
+{"question":"38см  -  12см \u003d ?","answers":[{"value":"2","hint":"дм?"},{"value":"6","hint":"см?"}]}
+{"question":"3дм 6см  -  3дм 4см \u003d ?","answers":[{"value":"2","hint":"см?"}]}
+{"question":"36см  +  2дм 3см \u003d ?","answers":[{"value":"59","hint":"см?"}]}
+{"question":"23см  -  5см \u003d ?","answers":[{"value":"18","hint":"см?"}]}
+{"question":"44см  +  1дм 3см \u003d ?","answers":[{"value":"57","hint":"см?"}]}
+{"question":"3дм  -  14см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"6","hint":"см?"}]}
+{"question":"4дм 5см  -  1дм 8см \u003d ?","answers":[{"value":"2","hint":"дм?"},{"value":"7","hint":"см?"}]}
+{"question":"28см  -  5см \u003d ?","answers":[{"value":"23","hint":"см?"}]}
+{"question":"47см  -  5см \u003d ?","answers":[{"value":"4","hint":"дм?"},{"value":"2","hint":"см?"}]}
+{"question":"3дм 4см  +  19см \u003d ?","answers":[{"value":"5","hint":"дм?"},{"value":"3","hint":"см?"}]}
+{"question":"4дм 4см  -  2дм 2см \u003d ?","answers":[{"value":"22","hint":"см?"}]}
+{"question":"47см  +  7см \u003d ?","answers":[{"value":"54","hint":"см?"}]}
+{"question":"1дм 9см  +  21см \u003d ?","answers":[{"value":"40","hint":"см?"}]}
+{"question":"1дм 1см  +  6см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"7","hint":"см?"}]}
+{"question":"44см  -  41см \u003d ?","answers":[{"value":"3","hint":"см?"}]}
+{"question":"33см  +  36см \u003d ?","answers":[{"value":"6","hint":"дм?"},{"value":"9","hint":"см?"}]}
+{"question":"39см  -  35см \u003d ?","answers":[{"value":"4","hint":"см?"}]}
+{"question":"3дм 6см  -  3дм 5см \u003d ?","answers":[{"value":"1","hint":"см?"}]}
+{"question":"7см  +  1дм \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"7","hint":"см?"}]}
+{"question":"30см  -  1дм 8см \u003d ?","answers":[{"value":"12","hint":"см?"}]}
+{"question":"48см  -  30см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"8","hint":"см?"}]}
+{"question":"3дм 6см  -  29см \u003d ?","answers":[{"value":"7","hint":"см?"}]}
+{"question":"19см  +  4дм 2см \u003d ?","answers":[{"value":"61","hint":"см?"}]}
+{"question":"2дм 4см  +  2дм 7см \u003d ?","answers":[{"value":"51","hint":"см?"}]}
+{"question":"4дм 9см  -  35см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"4","hint":"см?"}]}
+{"question":"25см  -  23см \u003d ?","answers":[{"value":"2","hint":"см?"}]}
+{"question":"18см  -  9см \u003d ?","answers":[{"value":"9","hint":"см?"}]}
+{"question":"5дм  +  9см \u003d ?","answers":[{"value":"5","hint":"дм?"},{"value":"9","hint":"см?"}]}
+{"question":"4дм 9см  -  9см \u003d ?","answers":[{"value":"4","hint":"дм?"}]}
+{"question":"26см  -  15см \u003d ?","answers":[{"value":"11","hint":"см?"}]}
+{"question":"4дм 4см  +  13см \u003d ?","answers":[{"value":"57","hint":"см?"}]}
+{"question":"18см  +  3дм 1см \u003d ?","answers":[{"value":"49","hint":"см?"}]}
+{"question":"2дм 2см  -  10см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"2","hint":"см?"}]}
+{"question":"41см  -  5см \u003d ?","answers":[{"value":"3","hint":"дм?"},{"value":"6","hint":"см?"}]}
+{"question":"11см  +  2дм 3см \u003d ?","answers":[{"value":"3","hint":"дм?"},{"value":"4","hint":"см?"}]}
+{"question":"1дм 1см  -  8см \u003d ?","answers":[{"value":"3","hint":"см?"}]}
+{"question":"2дм 7см  +  19см \u003d ?","answers":[{"value":"46","hint":"см?"}]}
+{"question":"4дм  -  38см \u003d ?","answers":[{"value":"2","hint":"см?"}]}
+{"question":"17см  -  15см \u003d ?","answers":[{"value":"2","hint":"см?"}]}
+{"question":"20см  +  15см \u003d ?","answers":[{"value":"3","hint":"дм?"},{"value":"5","hint":"см?"}]}
+{"question":"3дм 2см  +  33см \u003d ?","answers":[{"value":"6","hint":"дм?"},{"value":"5","hint":"см?"}]}
+{"question":"2дм 9см  +  9см \u003d ?","answers":[{"value":"3","hint":"дм?"},{"value":"8","hint":"см?"}]}
+{"question":"16см  +  9см \u003d ?","answers":[{"value":"2","hint":"дм?"},{"value":"5","hint":"см?"}]}
+{"question":"41см  +  4дм 6см \u003d ?","answers":[{"value":"8","hint":"дм?"},{"value":"7","hint":"см?"}]}
+{"question":"4дм 8см  -  3дм 4см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"4","hint":"см?"}]}
+{"question":"1дм 6см  +  8см \u003d ?","answers":[{"value":"24","hint":"см?"}]}
+{"question":"23см  -  14см \u003d ?","answers":[{"value":"9","hint":"см?"}]}
+{"question":"3дм 8см  +  1дм 1см \u003d ?","answers":[{"value":"49","hint":"см?"}]}
+{"question":"3дм 5см  -  6см \u003d ?","answers":[{"value":"29","hint":"см?"}]}
+{"question":"20см  +  40см \u003d ?","answers":[{"value":"6","hint":"дм?"}]}
+{"question":"41см  +  33см \u003d ?","answers":[{"value":"7","hint":"дм?"},{"value":"4","hint":"см?"}]}
+{"question":"4дм 8см  -  4дм 1см \u003d ?","answers":[{"value":"7","hint":"см?"}]}
+{"question":"4дм 4см  -  3дм 9см \u003d ?","answers":[{"value":"5","hint":"см?"}]}
+{"question":"35см  -  2дм 6см \u003d ?","answers":[{"value":"9","hint":"см?"}]}
+{"question":"6см  +  30см \u003d ?","answers":[{"value":"36","hint":"см?"}]}
+{"question":"4дм  +  41см \u003d ?","answers":[{"value":"81","hint":"см?"}]}
+{"question":"4дм 8см  -  32см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"6","hint":"см?"}]}
+{"question":"43см  +  50см \u003d ?","answers":[{"value":"93","hint":"см?"}]}
+{"question":"4дм 7см  -  18см \u003d ?","answers":[{"value":"29","hint":"см?"}]}
+{"question":"4дм 2см  +  46см \u003d ?","answers":[{"value":"8","hint":"дм?"},{"value":"8","hint":"см?"}]}
+{"question":"38см  -  29см \u003d ?","answers":[{"value":"9","hint":"см?"}]}
+{"question":"44см  +  1дм 2см \u003d ?","answers":[{"value":"56","hint":"см?"}]}
+{"question":"4дм 8см  +  30см \u003d ?","answers":[{"value":"78","hint":"см?"}]}
+{"question":"4дм 1см  +  2дм 2см \u003d ?","answers":[{"value":"6","hint":"дм?"},{"value":"3","hint":"см?"}]}
+{"question":"1дм 4см  +  6см \u003d ?","answers":[{"value":"20","hint":"см?"}]}
+{"question":"4дм 3см  -  8см \u003d ?","answers":[{"value":"3","hint":"дм?"},{"value":"5","hint":"см?"}]}
+{"question":"4дм 9см  -  2дм 1см \u003d ?","answers":[{"value":"28","hint":"см?"}]}
+{"question":"18см  -  1дм 3см \u003d ?","answers":[{"value":"5","hint":"см?"}]}
+{"question":"1дм 7см  +  37см \u003d ?","answers":[{"value":"54","hint":"см?"}]}
+{"question":"44см  -  35см \u003d ?","answers":[{"value":"9","hint":"см?"}]}
+{"question":"2дм 9см  -  7см \u003d ?","answers":[{"value":"2","hint":"дм?"},{"value":"2","hint":"см?"}]}
+{"question":"4дм 1см  -  33см \u003d ?","answers":[{"value":"8","hint":"см?"}]}
+{"question":"15см  -  6см \u003d ?","answers":[{"value":"9","hint":"см?"}]}
+{"question":"3дм 6см  -  30см \u003d ?","answers":[{"value":"6","hint":"см?"}]}
+{"question":"4дм 8см  +  8см \u003d ?","answers":[{"value":"56","hint":"см?"}]}
+{"question":"1дм 2см  +  27см \u003d ?","answers":[{"value":"3","hint":"дм?"},{"value":"9","hint":"см?"}]}
+{"question":"4дм 3см  +  4дм 9см \u003d ?","answers":[{"value":"9","hint":"дм?"},{"value":"2","hint":"см?"}]}
+{"question":"4дм  -  3дм 9см \u003d ?","answers":[{"value":"1","hint":"см?"}]}
+{"question":"23см  -  7см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"6","hint":"см?"}]}
+{"question":"14см  -  1дм 2см \u003d ?","answers":[{"value":"2","hint":"см?"}]}
+{"question":"3дм 3см  +  4дм 1см \u003d ?","answers":[{"value":"7","hint":"дм?"},{"value":"4","hint":"см?"}]}
+{"question":"43см  +  1дм 3см \u003d ?","answers":[{"value":"5","hint":"дм?"},{"value":"6","hint":"см?"}]}
+{"question":"8см  +  2дм \u003d ?","answers":[{"value":"2","hint":"дм?"},{"value":"8","hint":"см?"}]}
+{"question":"40см  -  1дм 2см \u003d ?","answers":[{"value":"28","hint":"см?"}]}
+{"question":"12см  +  42см \u003d ?","answers":[{"value":"5","hint":"дм?"},{"value":"4","hint":"см?"}]}
+{"question":"46см  +  3дм 9см \u003d ?","answers":[{"value":"8","hint":"дм?"},{"value":"5","hint":"см?"}]}
+{"question":"1дм 8см  +  5см \u003d ?","answers":[{"value":"2","hint":"дм?"},{"value":"3","hint":"см?"}]}
+{"question":"27см  +  2дм 8см \u003d ?","answers":[{"value":"55","hint":"см?"}]}
+{"question":"2дм 2см  -  9см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"3","hint":"см?"}]}
+{"question":"3дм 9см  +  3дм 7см \u003d ?","answers":[{"value":"7","hint":"дм?"},{"value":"6","hint":"см?"}]}
+{"question":"2дм 3см  +  7см \u003d ?","answers":[{"value":"3","hint":"дм?"}]}
+{"question":"22см  +  23см \u003d ?","answers":[{"value":"4","hint":"дм?"},{"value":"5","hint":"см?"}]}
+{"question":"23см  +  39см \u003d ?","answers":[{"value":"62","hint":"см?"}]}
+{"question":"4дм 9см  -  1дм 1см \u003d ?","answers":[{"value":"3","hint":"дм?"},{"value":"8","hint":"см?"}]}
+{"question":"46см  -  13см \u003d ?","answers":[{"value":"33","hint":"см?"}]}
+{"question":"27см  -  9см \u003d ?","answers":[{"value":"18","hint":"см?"}]}
+{"question":"39см  -  3дм 6см \u003d ?","answers":[{"value":"3","hint":"см?"}]}
+{"question":"5дм  +  4дм \u003d ?","answers":[{"value":"90","hint":"см?"}]}
+{"question":"3дм 4см  +  1дм 9см \u003d ?","answers":[{"value":"5","hint":"дм?"},{"value":"3","hint":"см?"}]}
+{"question":"38см  -  6см \u003d ?","answers":[{"value":"3","hint":"дм?"},{"value":"2","hint":"см?"}]}
+{"question":"25см  +  5дм \u003d ?","answers":[{"value":"7","hint":"дм?"},{"value":"5","hint":"см?"}]}
+{"question":"42см  -  17см \u003d ?","answers":[{"value":"2","hint":"дм?"},{"value":"5","hint":"см?"}]}
+{"question":"3дм 9см  -  2дм \u003d ?","answers":[{"value":"19","hint":"см?"}]}
+{"question":"1дм 6см  +  40см \u003d ?","answers":[{"value":"5","hint":"дм?"},{"value":"6","hint":"см?"}]}
+{"question":"32см  -  1дм 8см \u003d ?","answers":[{"value":"14","hint":"см?"}]}
+{"question":"42см  -  5см \u003d ?","answers":[{"value":"37","hint":"см?"}]}
+{"question":"9см  +  4дм 9см \u003d ?","answers":[{"value":"5","hint":"дм?"},{"value":"8","hint":"см?"}]}
+{"question":"27см  -  15см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"2","hint":"см?"}]}
+{"question":"4дм 9см  -  12см \u003d ?","answers":[{"value":"3","hint":"дм?"},{"value":"7","hint":"см?"}]}
+{"question":"5дм  -  3дм 2см \u003d ?","answers":[{"value":"18","hint":"см?"}]}
+{"question":"46см  -  37см \u003d ?","answers":[{"value":"9","hint":"см?"}]}
+{"question":"2дм 3см  -  7см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"6","hint":"см?"}]}
+{"question":"48см  -  3дм 6см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"2","hint":"см?"}]}
+{"question":"23см  -  1дм 7см \u003d ?","answers":[{"value":"6","hint":"см?"}]}
+{"question":"2дм 1см  -  12см \u003d ?","answers":[{"value":"9","hint":"см?"}]}
+{"question":"3дм 4см  +  32см \u003d ?","answers":[{"value":"66","hint":"см?"}]}
+{"question":"17см  +  8см \u003d ?","answers":[{"value":"25","hint":"см?"}]}
+{"question":"37см  -  1дм 2см \u003d ?","answers":[{"value":"25","hint":"см?"}]}
+{"question":"19см  +  1дм 6см \u003d ?","answers":[{"value":"3","hint":"дм?"},{"value":"5","hint":"см?"}]}
+{"question":"3дм  -  5см \u003d ?","answers":[{"value":"2","hint":"дм?"},{"value":"5","hint":"см?"}]}
+{"question":"5дм  -  1дм 7см \u003d ?","answers":[{"value":"3","hint":"дм?"},{"value":"3","hint":"см?"}]}
+{"question":"22см  +  47см \u003d ?","answers":[{"value":"69","hint":"см?"}]}
+{"question":"11см  +  13см \u003d ?","answers":[{"value":"2","hint":"дм?"},{"value":"4","hint":"см?"}]}
+{"question":"1дм 7см  +  37см \u003d ?","answers":[{"value":"54","hint":"см?"}]}
+{"question":"1дм 3см  +  26см \u003d ?","answers":[{"value":"3","hint":"дм?"},{"value":"9","hint":"см?"}]}
+{"question":"3дм  +  20см \u003d ?","answers":[{"value":"50","hint":"см?"}]}
+{"question":"2дм 9см  -  9см \u003d ?","answers":[{"value":"2","hint":"дм?"}]}
+{"question":"6см  +  43см \u003d ?","answers":[{"value":"49","hint":"см?"}]}
+{"question":"1дм 3см  +  17см \u003d ?","answers":[{"value":"30","hint":"см?"}]}
+{"question":"11см  +  3дм 3см \u003d ?","answers":[{"value":"4","hint":"дм?"},{"value":"4","hint":"см?"}]}
+{"question":"4дм 6см  +  31см \u003d ?","answers":[{"value":"77","hint":"см?"}]}
+{"question":"40см  -  1дм 6см \u003d ?","answers":[{"value":"24","hint":"см?"}]}
+{"question":"14см  +  9см \u003d ?","answers":[{"value":"23","hint":"см?"}]}
+{"question":"1дм 6см  +  2дм 3см \u003d ?","answers":[{"value":"3","hint":"дм?"},{"value":"9","hint":"см?"}]}
+{"question":"1дм 6см  -  6см \u003d ?","answers":[{"value":"10","hint":"см?"}]}
+{"question":"20см  +  37см \u003d ?","answers":[{"value":"57","hint":"см?"}]}
+{"question":"3дм 5см  +  47см \u003d ?","answers":[{"value":"8","hint":"дм?"},{"value":"2","hint":"см?"}]}
+{"question":"3дм 2см  -  18см \u003d ?","answers":[{"value":"14","hint":"см?"}]}
+{"question":"33см  +  10см \u003d ?","answers":[{"value":"43","hint":"см?"}]}
+{"question":"9см  -  8см \u003d ?","answers":[{"value":"1","hint":"см?"}]}
+{"question":"37см  -  1дм 5см \u003d ?","answers":[{"value":"22","hint":"см?"}]}
+{"question":"12см  +  13см \u003d ?","answers":[{"value":"2","hint":"дм?"},{"value":"5","hint":"см?"}]}
+{"question":"2дм 5см  -  1дм 5см \u003d ?","answers":[{"value":"1","hint":"дм?"}]}
+{"question":"5см  +  49см \u003d ?","answers":[{"value":"54","hint":"см?"}]}
+{"question":"4дм 8см  -  4дм \u003d ?","answers":[{"value":"8","hint":"см?"}]}
+{"question":"34см  -  27см \u003d ?","answers":[{"value":"7","hint":"см?"}]}
+{"question":"1дм 9см  +  23см \u003d ?","answers":[{"value":"42","hint":"см?"}]}
+{"question":"45см  -  32см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"3","hint":"см?"}]}
+{"question":"2дм 5см  -  2дм 4см \u003d ?","answers":[{"value":"1","hint":"см?"}]}
+{"question":"46см  -  2дм 1см \u003d ?","answers":[{"value":"2","hint":"дм?"},{"value":"5","hint":"см?"}]}
+{"question":"4дм 9см  -  3дм 7см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"2","hint":"см?"}]}
+{"question":"12см  +  25см \u003d ?","answers":[{"value":"37","hint":"см?"}]}
+{"question":"4дм 1см  -  1дм 1см \u003d ?","answers":[{"value":"30","hint":"см?"}]}
+{"question":"28см  +  3дм 2см \u003d ?","answers":[{"value":"6","hint":"дм?"}]}
+{"question":"4дм 1см  -  31см \u003d ?","answers":[{"value":"1","hint":"дм?"}]}
+{"question":"1дм 9см  +  2дм \u003d ?","answers":[{"value":"3","hint":"дм?"},{"value":"9","hint":"см?"}]}
+{"question":"3дм 5см  -  8см \u003d ?","answers":[{"value":"27","hint":"см?"}]}
+{"question":"3дм 5см  -  3дм 3см \u003d ?","answers":[{"value":"2","hint":"см?"}]}
+{"question":"4дм 9см  +  13см \u003d ?","answers":[{"value":"6","hint":"дм?"},{"value":"2","hint":"см?"}]}
+{"question":"30см  -  17см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"3","hint":"см?"}]}
+{"question":"31см  -  7см \u003d ?","answers":[{"value":"2","hint":"дм?"},{"value":"4","hint":"см?"}]}
+{"question":"4дм 7см  -  1дм 7см \u003d ?","answers":[{"value":"30","hint":"см?"}]}
+{"question":"31см  +  43см \u003d ?","answers":[{"value":"74","hint":"см?"}]}
+{"question":"8см  +  31см \u003d ?","answers":[{"value":"39","hint":"см?"}]}
+{"question":"1дм 1см  +  47см \u003d ?","answers":[{"value":"5","hint":"дм?"},{"value":"8","hint":"см?"}]}
+{"question":"3дм 2см  +  27см \u003d ?","answers":[{"value":"59","hint":"см?"}]}
+{"question":"14см  -  8см \u003d ?","answers":[{"value":"6","hint":"см?"}]}
+{"question":"1дм 8см  -  1дм 2см \u003d ?","answers":[{"value":"6","hint":"см?"}]}
+{"question":"44см  -  20см \u003d ?","answers":[{"value":"2","hint":"дм?"},{"value":"4","hint":"см?"}]}
+{"question":"2дм 4см  +  3дм 7см \u003d ?","answers":[{"value":"61","hint":"см?"}]}
+{"question":"33см  -  5см \u003d ?","answers":[{"value":"28","hint":"см?"}]}
+{"question":"4дм 6см  +  20см \u003d ?","answers":[{"value":"66","hint":"см?"}]}
+{"question":"4дм 5см  +  5дм \u003d ?","answers":[{"value":"95","hint":"см?"}]}
+{"question":"43см  +  46см \u003d ?","answers":[{"value":"8","hint":"дм?"},{"value":"9","hint":"см?"}]}
+{"question":"35см  -  19см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"6","hint":"см?"}]}
+{"question":"28см  +  39см \u003d ?","answers":[{"value":"6","hint":"дм?"},{"value":"7","hint":"см?"}]}
+{"question":"29см  -  11см \u003d ?","answers":[{"value":"18","hint":"см?"}]}
+{"question":"26см  -  6см \u003d ?","answers":[{"value":"2","hint":"дм?"}]}
+{"question":"4дм 9см  -  7см \u003d ?","answers":[{"value":"4","hint":"дм?"},{"value":"2","hint":"см?"}]}
+{"question":"8см  +  7см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"5","hint":"см?"}]}
+{"question":"2дм 5см  +  10см \u003d ?","answers":[{"value":"3","hint":"дм?"},{"value":"5","hint":"см?"}]}
+{"question":"32см  -  1дм 4см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"8","hint":"см?"}]}
+{"question":"36см  -  9см \u003d ?","answers":[{"value":"27","hint":"см?"}]}
+{"question":"29см  -  1дм \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"9","hint":"см?"}]}
+{"question":"50см  -  9см \u003d ?","answers":[{"value":"4","hint":"дм?"},{"value":"1","hint":"см?"}]}
+{"question":"38см  -  32см \u003d ?","answers":[{"value":"6","hint":"см?"}]}
+{"question":"49см  +  14см \u003d ?","answers":[{"value":"63","hint":"см?"}]}
+{"question":"3дм 7см  +  28см \u003d ?","answers":[{"value":"6","hint":"дм?"},{"value":"5","hint":"см?"}]}
+{"question":"1дм 8см  -  15см \u003d ?","answers":[{"value":"3","hint":"см?"}]}
+{"question":"4дм 7см  +  2дм 8см \u003d ?","answers":[{"value":"7","hint":"дм?"},{"value":"5","hint":"см?"}]}
+{"question":"5дм  +  13см \u003d ?","answers":[{"value":"63","hint":"см?"}]}
+{"question":"30см  +  7см \u003d ?","answers":[{"value":"37","hint":"см?"}]}
+{"question":"1дм 5см  +  1дм 4см \u003d ?","answers":[{"value":"29","hint":"см?"}]}
+{"question":"3дм 6см  -  21см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"5","hint":"см?"}]}
+{"question":"1дм 2см  -  5см \u003d ?","answers":[{"value":"7","hint":"см?"}]}
+{"question":"2дм 7см  +  35см \u003d ?","answers":[{"value":"6","hint":"дм?"},{"value":"2","hint":"см?"}]}
+{"question":"3дм 7см  +  35см \u003d ?","answers":[{"value":"7","hint":"дм?"},{"value":"2","hint":"см?"}]}
+{"question":"44см  -  31см \u003d ?","answers":[{"value":"13","hint":"см?"}]}
+{"question":"26см  -  16см \u003d ?","answers":[{"value":"1","hint":"дм?"}]}
+{"question":"4дм 1см  +  5см \u003d ?","answers":[{"value":"46","hint":"см?"}]}
+{"question":"6см  +  35см \u003d ?","answers":[{"value":"41","hint":"см?"}]}
+{"question":"4дм 3см  -  9см \u003d ?","answers":[{"value":"3","hint":"дм?"},{"value":"4","hint":"см?"}]}
+{"question":"3дм 1см  +  30см \u003d ?","answers":[{"value":"6","hint":"дм?"},{"value":"1","hint":"см?"}]}
+{"question":"2дм 4см  -  23см \u003d ?","answers":[{"value":"1","hint":"см?"}]}
+{"question":"28см  +  5см \u003d ?","answers":[{"value":"33","hint":"см?"}]}
+{"question":"40см  +  23см \u003d ?","answers":[{"value":"63","hint":"см?"}]}
+{"question":"1дм 5см  -  7см \u003d ?","answers":[{"value":"8","hint":"см?"}]}
+{"question":"4дм  +  3дм \u003d ?","answers":[{"value":"7","hint":"дм?"}]}
+{"question":"2дм 3см  -  2дм 1см \u003d ?","answers":[{"value":"2","hint":"см?"}]}
+{"question":"44см  -  21см \u003d ?","answers":[{"value":"2","hint":"дм?"},{"value":"3","hint":"см?"}]}
+{"question":"4дм 6см  +  2дм 5см \u003d ?","answers":[{"value":"71","hint":"см?"}]}
+{"question":"4дм 9см  +  33см \u003d ?","answers":[{"value":"8","hint":"дм?"},{"value":"2","hint":"см?"}]}
+{"question":"33см  +  41см \u003d ?","answers":[{"value":"7","hint":"дм?"},{"value":"4","hint":"см?"}]}
+{"question":"48см  -  3дм 7см \u003d ?","answers":[{"value":"11","hint":"см?"}]}
+{"question":"14см  +  34см \u003d ?","answers":[{"value":"48","hint":"см?"}]}
+{"question":"1дм 2см  +  42см \u003d ?","answers":[{"value":"5","hint":"дм?"},{"value":"4","hint":"см?"}]}
+{"question":"35см  -  1дм 9см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"6","hint":"см?"}]}
+{"question":"14см  -  1дм \u003d ?","answers":[{"value":"4","hint":"см?"}]}
+{"question":"50см  +  4дм 5см \u003d ?","answers":[{"value":"9","hint":"дм?"},{"value":"5","hint":"см?"}]}
+{"question":"45см  -  4дм 3см \u003d ?","answers":[{"value":"2","hint":"см?"}]}
+{"question":"31см  +  3дм \u003d ?","answers":[{"value":"61","hint":"см?"}]}
+{"question":"3дм 3см  -  1дм 5см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"8","hint":"см?"}]}
+{"question":"4дм  -  2дм 8см \u003d ?","answers":[{"value":"12","hint":"см?"}]}
+{"question":"46см  +  1дм 3см \u003d ?","answers":[{"value":"59","hint":"см?"}]}
+{"question":"2дм 5см  -  12см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"3","hint":"см?"}]}
+{"question":"1дм 6см  -  1дм 2см \u003d ?","answers":[{"value":"4","hint":"см?"}]}
+{"question":"30см  -  20см \u003d ?","answers":[{"value":"10","hint":"см?"}]}
+{"question":"3дм 3см  -  1дм 9см \u003d ?","answers":[{"value":"14","hint":"см?"}]}
+{"question":"3дм 8см  -  19см \u003d ?","answers":[{"value":"19","hint":"см?"}]}
+{"question":"15см  -  5см \u003d ?","answers":[{"value":"1","hint":"дм?"}]}
+{"question":"3дм 8см  -  3дм 6см \u003d ?","answers":[{"value":"2","hint":"см?"}]}
+{"question":"28см  +  4дм \u003d ?","answers":[{"value":"6","hint":"дм?"},{"value":"8","hint":"см?"}]}
+{"question":"3дм 1см  -  21см \u003d ?","answers":[{"value":"10","hint":"см?"}]}
+{"question":"10см  +  10см \u003d ?","answers":[{"value":"2","hint":"дм?"}]}
+{"question":"44см  +  13см \u003d ?","answers":[{"value":"5","hint":"дм?"},{"value":"7","hint":"см?"}]}
+{"question":"4дм 4см  -  4дм 1см \u003d ?","answers":[{"value":"3","hint":"см?"}]}
+{"question":"39см  +  4дм 4см \u003d ?","answers":[{"value":"8","hint":"дм?"},{"value":"3","hint":"см?"}]}
+{"question":"2дм 1см  -  19см \u003d ?","answers":[{"value":"2","hint":"см?"}]}
+{"question":"45см  -  1дм 8см \u003d ?","answers":[{"value":"2","hint":"дм?"},{"value":"7","hint":"см?"}]}
+{"question":"6см  +  5см \u003d ?","answers":[{"value":"11","hint":"см?"}]}
+{"question":"26см  +  4дм \u003d ?","answers":[{"value":"6","hint":"дм?"},{"value":"6","hint":"см?"}]}
+{"question":"41см  -  2дм 3см \u003d ?","answers":[{"value":"18","hint":"см?"}]}
+{"question":"4дм 7см  -  7см \u003d ?","answers":[{"value":"40","hint":"см?"}]}
+{"question":"46см  -  37см \u003d ?","answers":[{"value":"9","hint":"см?"}]}
+{"question":"2дм 7см  +  3дм 9см \u003d ?","answers":[{"value":"6","hint":"дм?"},{"value":"6","hint":"см?"}]}
+{"question":"44см  -  25см \u003d ?","answers":[{"value":"19","hint":"см?"}]}
+{"question":"50см  -  2дм 2см \u003d ?","answers":[{"value":"28","hint":"см?"}]}
+{"question":"40см  -  8см \u003d ?","answers":[{"value":"3","hint":"дм?"},{"value":"2","hint":"см?"}]}
+{"question":"2дм 3см  -  19см \u003d ?","answers":[{"value":"4","hint":"см?"}]}
+{"question":"3дм 5см  +  3дм 1см \u003d ?","answers":[{"value":"6","hint":"дм?"},{"value":"6","hint":"см?"}]}
+{"question":"46см  -  22см \u003d ?","answers":[{"value":"2","hint":"дм?"},{"value":"4","hint":"см?"}]}
+{"question":"42см  -  8см \u003d ?","answers":[{"value":"3","hint":"дм?"},{"value":"4","hint":"см?"}]}
+{"question":"45см  -  33см \u003d ?","answers":[{"value":"12","hint":"см?"}]}
+{"question":"24см  -  9см \u003d ?","answers":[{"value":"15","hint":"см?"}]}
+{"question":"50см  -  31см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"9","hint":"см?"}]}
+{"question":"7см  +  4дм 8см \u003d ?","answers":[{"value":"55","hint":"см?"}]}
+{"question":"1дм 1см  +  9см \u003d ?","answers":[{"value":"2","hint":"дм?"}]}
+{"question":"30см  -  5см \u003d ?","answers":[{"value":"25","hint":"см?"}]}
+{"question":"25см  -  1дм 2см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"3","hint":"см?"}]}
+{"question":"47см  -  8см \u003d ?","answers":[{"value":"3","hint":"дм?"},{"value":"9","hint":"см?"}]}
+{"question":"5см  +  21см \u003d ?","answers":[{"value":"26","hint":"см?"}]}
+{"question":"49см  +  32см \u003d ?","answers":[{"value":"81","hint":"см?"}]}
+{"question":"2дм 2см  -  1дм 1см \u003d ?","answers":[{"value":"11","hint":"см?"}]}
+{"question":"37см  +  1дм 6см \u003d ?","answers":[{"value":"53","hint":"см?"}]}
+{"question":"16см  +  5см \u003d ?","answers":[{"value":"2","hint":"дм?"},{"value":"1","hint":"см?"}]}
+{"question":"21см  -  16см \u003d ?","answers":[{"value":"5","hint":"см?"}]}
+{"question":"2дм 3см  -  22см \u003d ?","answers":[{"value":"1","hint":"см?"}]}
+{"question":"1дм 7см  +  3дм 7см \u003d ?","answers":[{"value":"5","hint":"дм?"},{"value":"4","hint":"см?"}]}
+{"question":"4дм 7см  -  4дм 2см \u003d ?","answers":[{"value":"5","hint":"см?"}]}
+{"question":"49см  +  23см \u003d ?","answers":[{"value":"72","hint":"см?"}]}
+{"question":"3дм  -  2дм \u003d ?","answers":[{"value":"10","hint":"см?"}]}
+{"question":"24см  +  30см \u003d ?","answers":[{"value":"5","hint":"дм?"},{"value":"4","hint":"см?"}]}
+{"question":"2дм 5см  +  21см \u003d ?","answers":[{"value":"46","hint":"см?"}]}
+{"question":"49см  -  4дм 4см \u003d ?","answers":[{"value":"5","hint":"см?"}]}
+{"question":"32см  -  23см \u003d ?","answers":[{"value":"9","hint":"см?"}]}
+{"question":"47см  +  27см \u003d ?","answers":[{"value":"74","hint":"см?"}]}
+{"question":"43см  -  19см \u003d ?","answers":[{"value":"24","hint":"см?"}]}
+{"question":"2дм 8см  +  2дм 1см \u003d ?","answers":[{"value":"49","hint":"см?"}]}
+{"question":"4дм 5см  -  22см \u003d ?","answers":[{"value":"2","hint":"дм?"},{"value":"3","hint":"см?"}]}
+{"question":"23см  -  9см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"4","hint":"см?"}]}
+{"question":"1дм 3см  +  24см \u003d ?","answers":[{"value":"3","hint":"дм?"},{"value":"7","hint":"см?"}]}
+{"question":"4дм 2см  +  8см \u003d ?","answers":[{"value":"50","hint":"см?"}]}
+{"question":"40см  +  28см \u003d ?","answers":[{"value":"68","hint":"см?"}]}
+{"question":"34см  -  31см \u003d ?","answers":[{"value":"3","hint":"см?"}]}
+{"question":"39см  -  32см \u003d ?","answers":[{"value":"7","hint":"см?"}]}
+{"question":"4дм 8см  +  2дм 4см \u003d ?","answers":[{"value":"7","hint":"дм?"},{"value":"2","hint":"см?"}]}
+{"question":"19см  -  1дм 2см \u003d ?","answers":[{"value":"7","hint":"см?"}]}
+{"question":"18см  +  45см \u003d ?","answers":[{"value":"63","hint":"см?"}]}
+{"question":"1дм 3см  -  10см \u003d ?","answers":[{"value":"3","hint":"см?"}]}
+{"question":"34см  +  1дм 6см \u003d ?","answers":[{"value":"50","hint":"см?"}]}
+{"question":"44см  -  7см \u003d ?","answers":[{"value":"37","hint":"см?"}]}
+{"question":"4дм 8см  -  4дм 4см \u003d ?","answers":[{"value":"4","hint":"см?"}]}
+{"question":"4дм  +  4дм 7см \u003d ?","answers":[{"value":"87","hint":"см?"}]}
+{"question":"40см  -  25см \u003d ?","answers":[{"value":"15","hint":"см?"}]}
+{"question":"2дм 5см  -  1дм 5см \u003d ?","answers":[{"value":"10","hint":"см?"}]}
+{"question":"4дм 2см  +  2дм \u003d ?","answers":[{"value":"6","hint":"дм?"},{"value":"2","hint":"см?"}]}
+{"question":"30см  +  18см \u003d ?","answers":[{"value":"48","hint":"см?"}]}
+{"question":"44см  -  34см \u003d ?","answers":[{"value":"1","hint":"дм?"}]}
+{"question":"3дм 8см  +  4дм 6см \u003d ?","answers":[{"value":"8","hint":"дм?"},{"value":"4","hint":"см?"}]}
+{"question":"1дм 6см  +  43см \u003d ?","answers":[{"value":"5","hint":"дм?"},{"value":"9","hint":"см?"}]}
+{"question":"39см  -  33см \u003d ?","answers":[{"value":"6","hint":"см?"}]}
+{"question":"25см  +  31см \u003d ?","answers":[{"value":"56","hint":"см?"}]}
+{"question":"34см  -  19см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"5","hint":"см?"}]}
+{"question":"23см  -  1дм 8см \u003d ?","answers":[{"value":"5","hint":"см?"}]}
+{"question":"4дм 7см  +  1дм 1см \u003d ?","answers":[{"value":"5","hint":"дм?"},{"value":"8","hint":"см?"}]}
+{"question":"3дм 2см  -  22см \u003d ?","answers":[{"value":"10","hint":"см?"}]}
+{"question":"3дм 8см  -  2дм 4см \u003d ?","answers":[{"value":"14","hint":"см?"}]}
+{"question":"46см  -  32см \u003d ?","answers":[{"value":"14","hint":"см?"}]}
+{"question":"4дм 1см  -  32см \u003d ?","answers":[{"value":"9","hint":"см?"}]}
+{"question":"47см  +  29см \u003d ?","answers":[{"value":"7","hint":"дм?"},{"value":"6","hint":"см?"}]}
+{"question":"37см  +  2дм 9см \u003d ?","answers":[{"value":"6","hint":"дм?"},{"value":"6","hint":"см?"}]}
+{"question":"48см  -  20см \u003d ?","answers":[{"value":"28","hint":"см?"}]}
+{"question":"34см  -  1дм \u003d ?","answers":[{"value":"24","hint":"см?"}]}
+{"question":"36см  -  6см \u003d ?","answers":[{"value":"30","hint":"см?"}]}
+{"question":"46см  -  6см \u003d ?","answers":[{"value":"4","hint":"дм?"}]}
+{"question":"1дм 7см  +  3дм 5см \u003d ?","answers":[{"value":"52","hint":"см?"}]}
+{"question":"4дм 6см  -  3дм 8см \u003d ?","answers":[{"value":"8","hint":"см?"}]}
+{"question":"7см  +  45см \u003d ?","answers":[{"value":"5","hint":"дм?"},{"value":"2","hint":"см?"}]}
+{"question":"1дм 2см  +  5см \u003d ?","answers":[{"value":"17","hint":"см?"}]}
+{"question":"2дм 6см  +  20см \u003d ?","answers":[{"value":"4","hint":"дм?"},{"value":"6","hint":"см?"}]}
+{"question":"49см  +  38см \u003d ?","answers":[{"value":"87","hint":"см?"}]}
+{"question":"35см  +  19см \u003d ?","answers":[{"value":"5","hint":"дм?"},{"value":"4","hint":"см?"}]}
+{"question":"18см  +  7см \u003d ?","answers":[{"value":"25","hint":"см?"}]}
+{"question":"32см  -  2дм 9см \u003d ?","answers":[{"value":"3","hint":"см?"}]}
+{"question":"32см  -  1дм 5см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"7","hint":"см?"}]}
+{"question":"4дм 6см  -  16см \u003d ?","answers":[{"value":"30","hint":"см?"}]}
+{"question":"3дм 3см  -  3дм 2см \u003d ?","answers":[{"value":"1","hint":"см?"}]}
+{"question":"35см  +  6см \u003d ?","answers":[{"value":"41","hint":"см?"}]}
+{"question":"4дм 8см  -  2дм 9см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"9","hint":"см?"}]}
+{"question":"3дм 9см  -  3дм \u003d ?","answers":[{"value":"9","hint":"см?"}]}
+{"question":"33см  +  15см \u003d ?","answers":[{"value":"48","hint":"см?"}]}
+{"question":"45см  -  39см \u003d ?","answers":[{"value":"6","hint":"см?"}]}
+{"question":"3дм 2см  +  27см \u003d ?","answers":[{"value":"59","hint":"см?"}]}
+{"question":"30см  +  14см \u003d ?","answers":[{"value":"4","hint":"дм?"},{"value":"4","hint":"см?"}]}
+{"question":"2дм 5см  -  24см \u003d ?","answers":[{"value":"1","hint":"см?"}]}
+{"question":"28см  -  18см \u003d ?","answers":[{"value":"10","hint":"см?"}]}
+{"question":"6см  +  2дм 1см \u003d ?","answers":[{"value":"2","hint":"дм?"},{"value":"7","hint":"см?"}]}
+{"question":"1дм 9см  -  1дм 3см \u003d ?","answers":[{"value":"6","hint":"см?"}]}
+{"question":"4дм 9см  -  1дм 5см \u003d ?","answers":[{"value":"34","hint":"см?"}]}
+{"question":"4дм 4см  +  4дм 1см \u003d ?","answers":[{"value":"85","hint":"см?"}]}
+{"question":"41см  -  1дм 5см \u003d ?","answers":[{"value":"26","hint":"см?"}]}
+{"question":"3дм 1см  +  50см \u003d ?","answers":[{"value":"8","hint":"дм?"},{"value":"1","hint":"см?"}]}
+{"question":"1дм 4см  +  5дм \u003d ?","answers":[{"value":"6","hint":"дм?"},{"value":"4","hint":"см?"}]}
+{"question":"7см  +  2дм 9см \u003d ?","answers":[{"value":"3","hint":"дм?"},{"value":"6","hint":"см?"}]}
+{"question":"13см  +  3дм 2см \u003d ?","answers":[{"value":"45","hint":"см?"}]}
+{"question":"2дм 3см  +  16см \u003d ?","answers":[{"value":"3","hint":"дм?"},{"value":"9","hint":"см?"}]}
+{"question":"18см  -  16см \u003d ?","answers":[{"value":"2","hint":"см?"}]}
+{"question":"25см  -  22см \u003d ?","answers":[{"value":"3","hint":"см?"}]}
+{"question":"1дм 7см  -  1дм 5см \u003d ?","answers":[{"value":"2","hint":"см?"}]}
+{"question":"2дм 2см  -  10см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"2","hint":"см?"}]}
+{"question":"46см  -  19см \u003d ?","answers":[{"value":"27","hint":"см?"}]}
+{"question":"7см  +  11см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"8","hint":"см?"}]}
+{"question":"28см  +  3дм 4см \u003d ?","answers":[{"value":"6","hint":"дм?"},{"value":"2","hint":"см?"}]}
+{"question":"4дм 4см  +  2дм 4см \u003d ?","answers":[{"value":"6","hint":"дм?"},{"value":"8","hint":"см?"}]}
+{"question":"4дм 5см  +  38см \u003d ?","answers":[{"value":"83","hint":"см?"}]}
+{"question":"3дм 4см  -  20см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"4","hint":"см?"}]}
+{"question":"2дм  +  1дм 5см \u003d ?","answers":[{"value":"35","hint":"см?"}]}
+{"question":"4дм 6см  -  2дм 8см \u003d ?","answers":[{"value":"18","hint":"см?"}]}
+{"question":"4дм 4см  -  3дм 4см \u003d ?","answers":[{"value":"10","hint":"см?"}]}
+{"question":"1дм 8см  +  9см \u003d ?","answers":[{"value":"2","hint":"дм?"},{"value":"7","hint":"см?"}]}
+{"question":"3дм 3см  +  4дм 6см \u003d ?","answers":[{"value":"7","hint":"дм?"},{"value":"9","hint":"см?"}]}
+{"question":"4дм 9см  +  26см \u003d ?","answers":[{"value":"75","hint":"см?"}]}
+{"question":"21см  -  14см \u003d ?","answers":[{"value":"7","hint":"см?"}]}
+{"question":"3дм 7см  +  37см \u003d ?","answers":[{"value":"7","hint":"дм?"},{"value":"4","hint":"см?"}]}
+{"question":"1дм 6см  -  10см \u003d ?","answers":[{"value":"6","hint":"см?"}]}
+{"question":"17см  +  4дм 8см \u003d ?","answers":[{"value":"6","hint":"дм?"},{"value":"5","hint":"см?"}]}
+{"question":"4дм 5см  +  20см \u003d ?","answers":[{"value":"6","hint":"дм?"},{"value":"5","hint":"см?"}]}
+{"question":"5см  +  36см \u003d ?","answers":[{"value":"4","hint":"дм?"},{"value":"1","hint":"см?"}]}
+{"question":"43см  -  7см \u003d ?","answers":[{"value":"3","hint":"дм?"},{"value":"6","hint":"см?"}]}
+{"question":"20см  -  12см \u003d ?","answers":[{"value":"8","hint":"см?"}]}
+{"question":"4дм 6см  -  28см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"8","hint":"см?"}]}
+{"question":"3дм 9см  -  22см \u003d ?","answers":[{"value":"17","hint":"см?"}]}
+{"question":"36см  +  9см \u003d ?","answers":[{"value":"4","hint":"дм?"},{"value":"5","hint":"см?"}]}
+{"question":"2дм 2см  -  1дм \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"2","hint":"см?"}]}
+{"question":"3дм 1см  +  8см \u003d ?","answers":[{"value":"39","hint":"см?"}]}
+{"question":"3дм 2см  -  8см \u003d ?","answers":[{"value":"24","hint":"см?"}]}
+{"question":"30см  -  21см \u003d ?","answers":[{"value":"9","hint":"см?"}]}
+{"question":"3дм 7см  +  1дм \u003d ?","answers":[{"value":"4","hint":"дм?"},{"value":"7","hint":"см?"}]}
+{"question":"2дм 7см  +  21см \u003d ?","answers":[{"value":"4","hint":"дм?"},{"value":"8","hint":"см?"}]}
+{"question":"40см  +  34см \u003d ?","answers":[{"value":"74","hint":"см?"}]}
+{"question":"4дм 3см  -  42см \u003d ?","answers":[{"value":"1","hint":"см?"}]}
+{"question":"4дм 5см  -  1дм 1см \u003d ?","answers":[{"value":"34","hint":"см?"}]}
+{"question":"35см  +  45см \u003d ?","answers":[{"value":"80","hint":"см?"}]}
+{"question":"45см  +  23см \u003d ?","answers":[{"value":"68","hint":"см?"}]}
+{"question":"40см  -  8см \u003d ?","answers":[{"value":"3","hint":"дм?"},{"value":"2","hint":"см?"}]}
+{"question":"2дм 6см  -  5см \u003d ?","answers":[{"value":"2","hint":"дм?"},{"value":"1","hint":"см?"}]}
+{"question":"26см  -  8см \u003d ?","answers":[{"value":"18","hint":"см?"}]}
+{"question":"46см  -  8см \u003d ?","answers":[{"value":"38","hint":"см?"}]}
+{"question":"12см  +  50см \u003d ?","answers":[{"value":"6","hint":"дм?"},{"value":"2","hint":"см?"}]}
+{"question":"2дм 5см  -  2дм \u003d ?","answers":[{"value":"5","hint":"см?"}]}
+{"question":"30см  -  2дм 3см \u003d ?","answers":[{"value":"7","hint":"см?"}]}
+{"question":"39см  -  2дм 8см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"1","hint":"см?"}]}
+{"question":"8см  +  4дм 7см \u003d ?","answers":[{"value":"55","hint":"см?"}]}
+{"question":"3дм 3см  -  1дм 3см \u003d ?","answers":[{"value":"20","hint":"см?"}]}
+{"question":"34см  +  3дм 3см \u003d ?","answers":[{"value":"6","hint":"дм?"},{"value":"7","hint":"см?"}]}
+{"question":"6см  +  50см \u003d ?","answers":[{"value":"5","hint":"дм?"},{"value":"6","hint":"см?"}]}
+{"question":"44см  +  13см \u003d ?","answers":[{"value":"5","hint":"дм?"},{"value":"7","hint":"см?"}]}
+{"question":"28см  -  26см \u003d ?","answers":[{"value":"2","hint":"см?"}]}
+{"question":"2дм 9см  -  8см \u003d ?","answers":[{"value":"2","hint":"дм?"},{"value":"1","hint":"см?"}]}
+{"question":"10см  +  40см \u003d ?","answers":[{"value":"5","hint":"дм?"}]}
+{"question":"4дм 4см  +  29см \u003d ?","answers":[{"value":"7","hint":"дм?"},{"value":"3","hint":"см?"}]}
+{"question":"1дм 2см  +  9см \u003d ?","answers":[{"value":"21","hint":"см?"}]}
+{"question":"19см  +  5см \u003d ?","answers":[{"value":"24","hint":"см?"}]}
+{"question":"2дм 7см  -  15см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"2","hint":"см?"}]}
+{"question":"33см  -  6см \u003d ?","answers":[{"value":"2","hint":"дм?"},{"value":"7","hint":"см?"}]}
+{"question":"41см  +  2дм 6см \u003d ?","answers":[{"value":"67","hint":"см?"}]}
+{"question":"27см  -  2дм 5см \u003d ?","answers":[{"value":"2","hint":"см?"}]}
+{"question":"41см  -  2дм 6см \u003d ?","answers":[{"value":"15","hint":"см?"}]}
+{"question":"2дм  +  47см \u003d ?","answers":[{"value":"67","hint":"см?"}]}
+{"question":"17см  +  27см \u003d ?","answers":[{"value":"44","hint":"см?"}]}
+{"question":"42см  -  10см \u003d ?","answers":[{"value":"32","hint":"см?"}]}
+{"question":"2дм 6см  +  41см \u003d ?","answers":[{"value":"67","hint":"см?"}]}
+{"question":"6см  +  32см \u003d ?","answers":[{"value":"38","hint":"см?"}]}
+{"question":"3дм 7см  -  10см \u003d ?","answers":[{"value":"27","hint":"см?"}]}
+{"question":"2дм  +  6см \u003d ?","answers":[{"value":"26","hint":"см?"}]}
+{"question":"2дм 8см  -  2дм 4см \u003d ?","answers":[{"value":"4","hint":"см?"}]}
+{"question":"1дм 9см  +  30см \u003d ?","answers":[{"value":"4","hint":"дм?"},{"value":"9","hint":"см?"}]}
+{"question":"3дм 8см  -  10см \u003d ?","answers":[{"value":"28","hint":"см?"}]}
+{"question":"11см  +  28см \u003d ?","answers":[{"value":"3","hint":"дм?"},{"value":"9","hint":"см?"}]}
+{"question":"8см  +  28см \u003d ?","answers":[{"value":"36","hint":"см?"}]}
+{"question":"32см  +  20см \u003d ?","answers":[{"value":"5","hint":"дм?"},{"value":"2","hint":"см?"}]}
+{"question":"4дм 9см  -  3дм \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"9","hint":"см?"}]}
+{"question":"43см  -  32см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"1","hint":"см?"}]}
+{"question":"4дм 7см  -  1дм 1см \u003d ?","answers":[{"value":"36","hint":"см?"}]}
+{"question":"1дм 1см  +  4дм 6см \u003d ?","answers":[{"value":"57","hint":"см?"}]}
+{"question":"5дм  -  2дм 1см \u003d ?","answers":[{"value":"29","hint":"см?"}]}
+{"question":"43см  -  33см \u003d ?","answers":[{"value":"10","hint":"см?"}]}
+{"question":"34см  +  17см \u003d ?","answers":[{"value":"51","hint":"см?"}]}
+{"question":"3дм 9см  -  22см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"7","hint":"см?"}]}
+{"question":"47см  -  43см \u003d ?","answers":[{"value":"4","hint":"см?"}]}
+{"question":"1дм 2см  +  37см \u003d ?","answers":[{"value":"4","hint":"дм?"},{"value":"9","hint":"см?"}]}
+{"question":"35см  +  2дм 6см \u003d ?","answers":[{"value":"6","hint":"дм?"},{"value":"1","hint":"см?"}]}
+{"question":"3дм 3см  +  43см \u003d ?","answers":[{"value":"7","hint":"дм?"},{"value":"6","hint":"см?"}]}
+{"question":"4дм 6см  +  20см \u003d ?","answers":[{"value":"66","hint":"см?"}]}
+{"question":"10см  +  8см \u003d ?","answers":[{"value":"18","hint":"см?"}]}
+{"question":"38см  -  11см \u003d ?","answers":[{"value":"27","hint":"см?"}]}
+{"question":"21см  -  19см \u003d ?","answers":[{"value":"2","hint":"см?"}]}
+{"question":"3дм 1см  -  1дм 2см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"9","hint":"см?"}]}
+{"question":"35см  -  2дм 7см \u003d ?","answers":[{"value":"8","hint":"см?"}]}
+{"question":"48см  +  24см \u003d ?","answers":[{"value":"72","hint":"см?"}]}
+{"question":"4дм 8см  -  43см \u003d ?","answers":[{"value":"5","hint":"см?"}]}
+{"question":"13см  +  7см \u003d ?","answers":[{"value":"2","hint":"дм?"}]}
+{"question":"4дм 7см  -  3дм 9см \u003d ?","answers":[{"value":"8","hint":"см?"}]}
+{"question":"5см  +  43см \u003d ?","answers":[{"value":"4","hint":"дм?"},{"value":"8","hint":"см?"}]}
+{"question":"4дм 2см  -  25см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"7","hint":"см?"}]}
+{"question":"3дм 6см  -  2дм 4см \u003d ?","answers":[{"value":"12","hint":"см?"}]}
+{"question":"4дм 9см  -  3дм 1см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"8","hint":"см?"}]}
+{"question":"4дм 1см  -  39см \u003d ?","answers":[{"value":"2","hint":"см?"}]}
+{"question":"48см  -  47см \u003d ?","answers":[{"value":"1","hint":"см?"}]}
+{"question":"2дм  +  21см \u003d ?","answers":[{"value":"41","hint":"см?"}]}
+{"question":"4дм 7см  +  3дм 4см \u003d ?","answers":[{"value":"81","hint":"см?"}]}
+{"question":"3дм 9см  -  1дм 4см \u003d ?","answers":[{"value":"25","hint":"см?"}]}
+{"question":"4дм 1см  +  3дм 2см \u003d ?","answers":[{"value":"73","hint":"см?"}]}
+{"question":"48см  +  2дм 7см \u003d ?","answers":[{"value":"75","hint":"см?"}]}
+{"question":"31см  +  2дм 8см \u003d ?","answers":[{"value":"5","hint":"дм?"},{"value":"9","hint":"см?"}]}
+{"question":"22см  +  3дм 5см \u003d ?","answers":[{"value":"5","hint":"дм?"},{"value":"7","hint":"см?"}]}
+{"question":"6см  +  4дм 8см \u003d ?","answers":[{"value":"54","hint":"см?"}]}
+{"question":"38см  +  5см \u003d ?","answers":[{"value":"43","hint":"см?"}]}
+{"question":"4дм 8см  -  3дм 8см \u003d ?","answers":[{"value":"10","hint":"см?"}]}
+{"question":"4дм 3см  +  2дм 3см \u003d ?","answers":[{"value":"66","hint":"см?"}]}
+{"question":"33см  -  2дм \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"3","hint":"см?"}]}
+{"question":"34см  +  25см \u003d ?","answers":[{"value":"59","hint":"см?"}]}
+{"question":"34см  +  4дм 1см \u003d ?","answers":[{"value":"7","hint":"дм?"},{"value":"5","hint":"см?"}]}
+{"question":"4дм 8см  -  47см \u003d ?","answers":[{"value":"1","hint":"см?"}]}
+{"question":"50см  +  47см \u003d ?","answers":[{"value":"97","hint":"см?"}]}
+{"question":"2дм 4см  +  2дм 4см \u003d ?","answers":[{"value":"48","hint":"см?"}]}
+{"question":"5дм  +  41см \u003d ?","answers":[{"value":"9","hint":"дм?"},{"value":"1","hint":"см?"}]}
+{"question":"4дм 3см  -  41см \u003d ?","answers":[{"value":"2","hint":"см?"}]}
+{"question":"11см  +  1дм 7см \u003d ?","answers":[{"value":"2","hint":"дм?"},{"value":"8","hint":"см?"}]}
+{"question":"45см  +  7см \u003d ?","answers":[{"value":"5","hint":"дм?"},{"value":"2","hint":"см?"}]}
+{"question":"29см  -  19см \u003d ?","answers":[{"value":"1","hint":"дм?"}]}
+{"question":"4дм 2см  -  2дм 3см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"9","hint":"см?"}]}
+{"question":"9см  +  13см \u003d ?","answers":[{"value":"2","hint":"дм?"},{"value":"2","hint":"см?"}]}
+{"question":"3дм 6см  -  21см \u003d ?","answers":[{"value":"15","hint":"см?"}]}
+{"question":"3дм  -  16см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"4","hint":"см?"}]}
+{"question":"2дм 1см  -  7см \u003d ?","answers":[{"value":"14","hint":"см?"}]}
+{"question":"21см  +  6см \u003d ?","answers":[{"value":"27","hint":"см?"}]}
+{"question":"21см  -  8см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"3","hint":"см?"}]}
+{"question":"3дм 4см  -  5см \u003d ?","answers":[{"value":"29","hint":"см?"}]}
+{"question":"44см  -  16см \u003d ?","answers":[{"value":"2","hint":"дм?"},{"value":"8","hint":"см?"}]}
+{"question":"2дм 6см  +  49см \u003d ?","answers":[{"value":"75","hint":"см?"}]}
+{"question":"2дм 4см  -  6см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"8","hint":"см?"}]}
+{"question":"1дм 8см  +  16см \u003d ?","answers":[{"value":"34","hint":"см?"}]}
+{"question":"50см  +  50см \u003d ?","answers":[{"value":"1","hint":"м?"}]}
+{"question":"2дм 9см  +  33см \u003d ?","answers":[{"value":"6","hint":"дм?"},{"value":"2","hint":"см?"}]}
+{"question":"1дм 8см  +  4дм 5см \u003d ?","answers":[{"value":"63","hint":"см?"}]}
+{"question":"36см  -  26см \u003d ?","answers":[{"value":"10","hint":"см?"}]}
+{"question":"3дм 3см  +  1дм 1см \u003d ?","answers":[{"value":"4","hint":"дм?"},{"value":"4","hint":"см?"}]}
+{"question":"36см  -  2дм 6см \u003d ?","answers":[{"value":"10","hint":"см?"}]}
+{"question":"3дм 7см  -  9см \u003d ?","answers":[{"value":"28","hint":"см?"}]}
+{"question":"25см  +  36см \u003d ?","answers":[{"value":"61","hint":"см?"}]}
+{"question":"34см  -  3дм \u003d ?","answers":[{"value":"4","hint":"см?"}]}
+{"question":"3дм 5см  -  2дм 8см \u003d ?","answers":[{"value":"7","hint":"см?"}]}
+{"question":"33см  +  1дм 8см \u003d ?","answers":[{"value":"51","hint":"см?"}]}
+{"question":"13см  -  6см \u003d ?","answers":[{"value":"7","hint":"см?"}]}
+{"question":"2дм 2см  +  4дм 3см \u003d ?","answers":[{"value":"6","hint":"дм?"},{"value":"5","hint":"см?"}]}
+{"question":"36см  -  1дм 6см \u003d ?","answers":[{"value":"2","hint":"дм?"}]}
+{"question":"12см  -  9см \u003d ?","answers":[{"value":"3","hint":"см?"}]}
+{"question":"11см  +  38см \u003d ?","answers":[{"value":"4","hint":"дм?"},{"value":"9","hint":"см?"}]}
+{"question":"44см  +  39см \u003d ?","answers":[{"value":"83","hint":"см?"}]}
+{"question":"3дм 7см  -  34см \u003d ?","answers":[{"value":"3","hint":"см?"}]}
+{"question":"1дм 8см  -  14см \u003d ?","answers":[{"value":"4","hint":"см?"}]}
+{"question":"3дм 3см  -  25см \u003d ?","answers":[{"value":"8","hint":"см?"}]}
+{"question":"45см  -  17см \u003d ?","answers":[{"value":"2","hint":"дм?"},{"value":"8","hint":"см?"}]}
+{"question":"3дм 5см  +  47см \u003d ?","answers":[{"value":"82","hint":"см?"}]}
+{"question":"4дм 4см  +  2дм 1см \u003d ?","answers":[{"value":"65","hint":"см?"}]}
+{"question":"48см  -  33см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"5","hint":"см?"}]}
+{"question":"3дм 3см  +  4дм 5см \u003d ?","answers":[{"value":"78","hint":"см?"}]}
+{"question":"34см  -  33см \u003d ?","answers":[{"value":"1","hint":"см?"}]}
+{"question":"32см  +  41см \u003d ?","answers":[{"value":"73","hint":"см?"}]}
+{"question":"34см  -  3дм 1см \u003d ?","answers":[{"value":"3","hint":"см?"}]}
+{"question":"4дм 6см  +  1дм 8см \u003d ?","answers":[{"value":"6","hint":"дм?"},{"value":"4","hint":"см?"}]}
+{"question":"31см  +  22см \u003d ?","answers":[{"value":"5","hint":"дм?"},{"value":"3","hint":"см?"}]}
+{"question":"1дм 1см  +  1дм 9см \u003d ?","answers":[{"value":"30","hint":"см?"}]}
+{"question":"2дм 8см  -  22см \u003d ?","answers":[{"value":"6","hint":"см?"}]}
+{"question":"30см  +  44см \u003d ?","answers":[{"value":"7","hint":"дм?"},{"value":"4","hint":"см?"}]}
+{"question":"4дм 8см  -  35см \u003d ?","answers":[{"value":"13","hint":"см?"}]}
+{"question":"1дм 6см  -  1дм \u003d ?","answers":[{"value":"6","hint":"см?"}]}
+{"question":"2дм  -  6см \u003d ?","answers":[{"value":"14","hint":"см?"}]}
+{"question":"34см  -  19см \u003d ?","answers":[{"value":"15","hint":"см?"}]}
+{"question":"2дм 6см  -  1дм 5см \u003d ?","answers":[{"value":"11","hint":"см?"}]}
+{"question":"39см  -  25см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"4","hint":"см?"}]}
+{"question":"14см  -  5см \u003d ?","answers":[{"value":"9","hint":"см?"}]}
+{"question":"32см  -  1дм 4см \u003d ?","answers":[{"value":"18","hint":"см?"}]}
+{"question":"2дм 8см  +  1дм 5см \u003d ?","answers":[{"value":"43","hint":"см?"}]}
+{"question":"4дм 1см  -  16см \u003d ?","answers":[{"value":"25","hint":"см?"}]}
+{"question":"49см  -  2дм 7см \u003d ?","answers":[{"value":"2","hint":"дм?"},{"value":"2","hint":"см?"}]}
+{"question":"7см  +  2дм 1см \u003d ?","answers":[{"value":"28","hint":"см?"}]}
+{"question":"37см  -  1дм 8см \u003d ?","answers":[{"value":"19","hint":"см?"}]}
+{"question":"14см  -  6см \u003d ?","answers":[{"value":"8","hint":"см?"}]}
+{"question":"4дм 5см  +  31см \u003d ?","answers":[{"value":"7","hint":"дм?"},{"value":"6","hint":"см?"}]}
+{"question":"2дм 3см  -  1дм 7см \u003d ?","answers":[{"value":"6","hint":"см?"}]}
+{"question":"6см  +  2дм 3см \u003d ?","answers":[{"value":"29","hint":"см?"}]}
+{"question":"43см  -  8см \u003d ?","answers":[{"value":"35","hint":"см?"}]}
+{"question":"1дм  +  5дм \u003d ?","answers":[{"value":"60","hint":"см?"}]}
+{"question":"1дм 8см  +  14см \u003d ?","answers":[{"value":"32","hint":"см?"}]}
+{"question":"4дм 1см  +  3дм 6см \u003d ?","answers":[{"value":"77","hint":"см?"}]}
+{"question":"4дм  +  5см \u003d ?","answers":[{"value":"45","hint":"см?"}]}
+{"question":"4дм 7см  -  3дм \u003d ?","answers":[{"value":"17","hint":"см?"}]}
+{"question":"38см  -  2дм 9см \u003d ?","answers":[{"value":"9","hint":"см?"}]}
+{"question":"23см  -  9см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"4","hint":"см?"}]}
+{"question":"4дм 7см  -  10см \u003d ?","answers":[{"value":"37","hint":"см?"}]}
+{"question":"3дм 2см  +  49см \u003d ?","answers":[{"value":"81","hint":"см?"}]}
+{"question":"1дм 9см  -  1дм 7см \u003d ?","answers":[{"value":"2","hint":"см?"}]}
+{"question":"2дм 6см  +  13см \u003d ?","answers":[{"value":"3","hint":"дм?"},{"value":"9","hint":"см?"}]}
+{"question":"2дм 3см  +  40см \u003d ?","answers":[{"value":"6","hint":"дм?"},{"value":"3","hint":"см?"}]}
+{"question":"31см  -  1дм 8см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"3","hint":"см?"}]}
+{"question":"3дм 9см  -  14см \u003d ?","answers":[{"value":"2","hint":"дм?"},{"value":"5","hint":"см?"}]}
+{"question":"30см  +  1дм 8см \u003d ?","answers":[{"value":"48","hint":"см?"}]}
+{"question":"4дм 7см  -  3дм 2см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"5","hint":"см?"}]}
+{"question":"13см  +  29см \u003d ?","answers":[{"value":"42","hint":"см?"}]}
+{"question":"33см  +  4дм \u003d ?","answers":[{"value":"73","hint":"см?"}]}
+{"question":"46см  +  17см \u003d ?","answers":[{"value":"63","hint":"см?"}]}
+{"question":"3дм 5см  +  25см \u003d ?","answers":[{"value":"60","hint":"см?"}]}
+{"question":"1дм 6см  +  4дм 4см \u003d ?","answers":[{"value":"60","hint":"см?"}]}
+{"question":"34см  -  2дм 6см \u003d ?","answers":[{"value":"8","hint":"см?"}]}
+{"question":"14см  +  43см \u003d ?","answers":[{"value":"5","hint":"дм?"},{"value":"7","hint":"см?"}]}
+{"question":"49см  -  32см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"7","hint":"см?"}]}
+{"question":"3дм 3см  -  1дм 5см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"8","hint":"см?"}]}
+{"question":"3дм 3см  -  2дм \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"3","hint":"см?"}]}
+{"question":"46см  +  4дм \u003d ?","answers":[{"value":"8","hint":"дм?"},{"value":"6","hint":"см?"}]}
+{"question":"2дм 4см  -  19см \u003d ?","answers":[{"value":"5","hint":"см?"}]}
+{"question":"2дм 6см  -  2дм \u003d ?","answers":[{"value":"6","hint":"см?"}]}
+{"question":"1дм 7см  -  6см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"1","hint":"см?"}]}
+{"question":"37см  -  1дм 2см \u003d ?","answers":[{"value":"2","hint":"дм?"},{"value":"5","hint":"см?"}]}
+{"question":"36см  -  2дм 9см \u003d ?","answers":[{"value":"7","hint":"см?"}]}
+{"question":"27см  -  1дм 9см \u003d ?","answers":[{"value":"8","hint":"см?"}]}
+{"question":"36см  -  2дм 1см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"5","hint":"см?"}]}
+{"question":"6см  +  4дм 8см \u003d ?","answers":[{"value":"54","hint":"см?"}]}
+{"question":"5дм  -  19см \u003d ?","answers":[{"value":"31","hint":"см?"}]}
+{"question":"4дм 4см  +  3дм 9см \u003d ?","answers":[{"value":"8","hint":"дм?"},{"value":"3","hint":"см?"}]}
+{"question":"3дм  -  20см \u003d ?","answers":[{"value":"10","hint":"см?"}]}
+{"question":"42см  +  1дм \u003d ?","answers":[{"value":"52","hint":"см?"}]}
+{"question":"4дм 9см  -  5см \u003d ?","answers":[{"value":"4","hint":"дм?"},{"value":"4","hint":"см?"}]}
+{"question":"46см  -  35см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"1","hint":"см?"}]}
+{"question":"3дм 4см  +  3дм 1см \u003d ?","answers":[{"value":"65","hint":"см?"}]}
+{"question":"4дм 6см  -  4дм 3см \u003d ?","answers":[{"value":"3","hint":"см?"}]}
+{"question":"3дм 8см  -  1дм 9см \u003d ?","answers":[{"value":"19","hint":"см?"}]}
+{"question":"20см  +  15см \u003d ?","answers":[{"value":"3","hint":"дм?"},{"value":"5","hint":"см?"}]}
+{"question":"11см  +  4дм 8см \u003d ?","answers":[{"value":"5","hint":"дм?"},{"value":"9","hint":"см?"}]}
+{"question":"31см  -  8см \u003d ?","answers":[{"value":"23","hint":"см?"}]}
+{"question":"20см  -  1дм 2см \u003d ?","answers":[{"value":"8","hint":"см?"}]}
+{"question":"29см  +  2дм 5см \u003d ?","answers":[{"value":"54","hint":"см?"}]}
+{"question":"48см  +  4дм 7см \u003d ?","answers":[{"value":"9","hint":"дм?"},{"value":"5","hint":"см?"}]}
+{"question":"1дм 1см  +  32см \u003d ?","answers":[{"value":"4","hint":"дм?"},{"value":"3","hint":"см?"}]}
+{"question":"3дм 3см  +  11см \u003d ?","answers":[{"value":"4","hint":"дм?"},{"value":"4","hint":"см?"}]}
+{"question":"3дм 4см  +  1дм 5см \u003d ?","answers":[{"value":"49","hint":"см?"}]}
+{"question":"27см  -  8см \u003d ?","answers":[{"value":"19","hint":"см?"}]}
+{"question":"1дм 9см  -  9см \u003d ?","answers":[{"value":"1","hint":"дм?"}]}
+{"question":"3дм  +  10см \u003d ?","answers":[{"value":"4","hint":"дм?"}]}
+{"question":"24см  -  19см \u003d ?","answers":[{"value":"5","hint":"см?"}]}
+{"question":"23см  -  17см \u003d ?","answers":[{"value":"6","hint":"см?"}]}
+{"question":"4дм 3см  +  14см \u003d ?","answers":[{"value":"57","hint":"см?"}]}
+{"question":"48см  +  22см \u003d ?","answers":[{"value":"7","hint":"дм?"}]}
+{"question":"18см  -  8см \u003d ?","answers":[{"value":"1","hint":"дм?"}]}
+{"question":"29см  +  4дм 4см \u003d ?","answers":[{"value":"73","hint":"см?"}]}
+{"question":"42см  -  12см \u003d ?","answers":[{"value":"30","hint":"см?"}]}
+{"question":"13см  +  4дм 1см \u003d ?","answers":[{"value":"5","hint":"дм?"},{"value":"4","hint":"см?"}]}
+{"question":"2дм 1см  -  20см \u003d ?","answers":[{"value":"1","hint":"см?"}]}
+{"question":"22см  -  14см \u003d ?","answers":[{"value":"8","hint":"см?"}]}
+{"question":"3дм  -  2дм 9см \u003d ?","answers":[{"value":"1","hint":"см?"}]}
+{"question":"4дм 7см  +  13см \u003d ?","answers":[{"value":"6","hint":"дм?"}]}
+{"question":"41см  +  1дм 8см \u003d ?","answers":[{"value":"5","hint":"дм?"},{"value":"9","hint":"см?"}]}
+{"question":"7см  +  3дм 5см \u003d ?","answers":[{"value":"4","hint":"дм?"},{"value":"2","hint":"см?"}]}
+{"question":"3дм 6см  -  22см \u003d ?","answers":[{"value":"14","hint":"см?"}]}
+{"question":"48см  -  14см \u003d ?","answers":[{"value":"3","hint":"дм?"},{"value":"4","hint":"см?"}]}
+{"question":"15см  +  47см \u003d ?","answers":[{"value":"62","hint":"см?"}]}
+{"question":"3дм 7см  -  29см \u003d ?","answers":[{"value":"8","hint":"см?"}]}
+{"question":"7см  +  49см \u003d ?","answers":[{"value":"5","hint":"дм?"},{"value":"6","hint":"см?"}]}
+{"question":"4дм  +  1дм 1см \u003d ?","answers":[{"value":"5","hint":"дм?"},{"value":"1","hint":"см?"}]}
+{"question":"2дм 3см  -  1дм 9см \u003d ?","answers":[{"value":"4","hint":"см?"}]}
+{"question":"24см  +  1дм 8см \u003d ?","answers":[{"value":"42","hint":"см?"}]}
+{"question":"3дм 3см  +  22см \u003d ?","answers":[{"value":"55","hint":"см?"}]}
+{"question":"1дм 5см  +  5см \u003d ?","answers":[{"value":"2","hint":"дм?"}]}
+{"question":"4дм 7см  +  43см \u003d ?","answers":[{"value":"9","hint":"дм?"}]}
+{"question":"4дм  -  3дм 5см \u003d ?","answers":[{"value":"5","hint":"см?"}]}
+{"question":"3дм 2см  -  3дм \u003d ?","answers":[{"value":"2","hint":"см?"}]}
+{"question":"1дм 8см  +  4дм 6см \u003d ?","answers":[{"value":"6","hint":"дм?"},{"value":"4","hint":"см?"}]}
+{"question":"21см  -  1дм \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"1","hint":"см?"}]}
+{"question":"3дм 9см  -  38см \u003d ?","answers":[{"value":"1","hint":"см?"}]}
+{"question":"1дм 9см  +  4дм 4см \u003d ?","answers":[{"value":"63","hint":"см?"}]}
+{"question":"2дм 5см  +  1дм 2см \u003d ?","answers":[{"value":"3","hint":"дм?"},{"value":"7","hint":"см?"}]}
+{"question":"4дм  -  6см \u003d ?","answers":[{"value":"3","hint":"дм?"},{"value":"4","hint":"см?"}]}
+{"question":"4дм 1см  +  10см \u003d ?","answers":[{"value":"5","hint":"дм?"},{"value":"1","hint":"см?"}]}
+{"question":"1дм 9см  +  45см \u003d ?","answers":[{"value":"64","hint":"см?"}]}
+{"question":"2дм 8см  +  34см \u003d ?","answers":[{"value":"6","hint":"дм?"},{"value":"2","hint":"см?"}]}
+{"question":"4дм 1см  -  2дм 8см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"3","hint":"см?"}]}
+{"question":"2дм 5см  -  6см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"9","hint":"см?"}]}
+{"question":"3дм 1см  +  38см \u003d ?","answers":[{"value":"69","hint":"см?"}]}
+{"question":"2дм 7см  +  6см \u003d ?","answers":[{"value":"3","hint":"дм?"},{"value":"3","hint":"см?"}]}
+{"question":"47см  -  12см \u003d ?","answers":[{"value":"35","hint":"см?"}]}
+{"question":"38см  +  35см \u003d ?","answers":[{"value":"7","hint":"дм?"},{"value":"3","hint":"см?"}]}
+{"question":"2дм  +  2дм 8см \u003d ?","answers":[{"value":"48","hint":"см?"}]}
+{"question":"2дм 1см  -  1дм \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"1","hint":"см?"}]}
+{"question":"30см  +  3дм \u003d ?","answers":[{"value":"60","hint":"см?"}]}
+{"question":"13см  +  8см \u003d ?","answers":[{"value":"2","hint":"дм?"},{"value":"1","hint":"см?"}]}
+{"question":"23см  -  1дм 7см \u003d ?","answers":[{"value":"6","hint":"см?"}]}
+{"question":"2дм 8см  -  21см \u003d ?","answers":[{"value":"7","hint":"см?"}]}
+{"question":"37см  -  1дм 3см \u003d ?","answers":[{"value":"24","hint":"см?"}]}
+{"question":"3дм 7см  -  3дм 5см \u003d ?","answers":[{"value":"2","hint":"см?"}]}
+{"question":"19см  -  1дм 5см \u003d ?","answers":[{"value":"4","hint":"см?"}]}
+{"question":"47см  -  38см \u003d ?","answers":[{"value":"9","hint":"см?"}]}
+{"question":"12см  +  25см \u003d ?","answers":[{"value":"3","hint":"дм?"},{"value":"7","hint":"см?"}]}
+{"question":"7см  +  3дм 9см \u003d ?","answers":[{"value":"4","hint":"дм?"},{"value":"6","hint":"см?"}]}
+{"question":"2дм 5см  -  2дм \u003d ?","answers":[{"value":"5","hint":"см?"}]}
+{"question":"35см  -  9см \u003d ?","answers":[{"value":"2","hint":"дм?"},{"value":"6","hint":"см?"}]}
+{"question":"41см  -  1дм 4см \u003d ?","answers":[{"value":"2","hint":"дм?"},{"value":"7","hint":"см?"}]}
+{"question":"35см  -  23см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"2","hint":"см?"}]}
+{"question":"3дм 1см  +  1дм 8см \u003d ?","answers":[{"value":"49","hint":"см?"}]}
+{"question":"1дм 2см  +  6см \u003d ?","answers":[{"value":"18","hint":"см?"}]}
+{"question":"30см  +  47см \u003d ?","answers":[{"value":"7","hint":"дм?"},{"value":"7","hint":"см?"}]}
+{"question":"37см  +  28см \u003d ?","answers":[{"value":"6","hint":"дм?"},{"value":"5","hint":"см?"}]}
+{"question":"2дм 2см  +  44см \u003d ?","answers":[{"value":"6","hint":"дм?"},{"value":"6","hint":"см?"}]}
+{"question":"1дм 5см  -  5см \u003d ?","answers":[{"value":"10","hint":"см?"}]}
+{"question":"4дм 5см  +  19см \u003d ?","answers":[{"value":"64","hint":"см?"}]}
+{"question":"2дм 8см  +  4дм 5см \u003d ?","answers":[{"value":"7","hint":"дм?"},{"value":"3","hint":"см?"}]}
+{"question":"17см  +  2дм 3см \u003d ?","answers":[{"value":"4","hint":"дм?"}]}
+{"question":"1дм 1см  -  9см \u003d ?","answers":[{"value":"2","hint":"см?"}]}
+{"question":"3дм 5см  +  4дм 3см \u003d ?","answers":[{"value":"7","hint":"дм?"},{"value":"8","hint":"см?"}]}
+{"question":"29см  -  22см \u003d ?","answers":[{"value":"7","hint":"см?"}]}
+{"question":"3дм 8см  -  1дм 7см \u003d ?","answers":[{"value":"21","hint":"см?"}]}
+{"question":"34см  -  3дм 2см \u003d ?","answers":[{"value":"2","hint":"см?"}]}
+{"question":"41см  +  3дм 8см \u003d ?","answers":[{"value":"79","hint":"см?"}]}
+{"question":"17см  +  1дм 3см \u003d ?","answers":[{"value":"3","hint":"дм?"}]}
+{"question":"35см  +  7см \u003d ?","answers":[{"value":"42","hint":"см?"}]}
+{"question":"3дм 4см  +  4дм 8см \u003d ?","answers":[{"value":"82","hint":"см?"}]}
+{"question":"1дм 7см  -  5см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"2","hint":"см?"}]}
+{"question":"6см  +  32см \u003d ?","answers":[{"value":"38","hint":"см?"}]}
+{"question":"29см  +  4дм 7см \u003d ?","answers":[{"value":"76","hint":"см?"}]}
+{"question":"39см  -  2дм 8см \u003d ?","answers":[{"value":"11","hint":"см?"}]}
+{"question":"5см  +  3дм 8см \u003d ?","answers":[{"value":"43","hint":"см?"}]}
+{"question":"31см  -  25см \u003d ?","answers":[{"value":"6","hint":"см?"}]}
+{"question":"2дм 4см  +  22см \u003d ?","answers":[{"value":"4","hint":"дм?"},{"value":"6","hint":"см?"}]}
+{"question":"4дм 9см  -  33см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"6","hint":"см?"}]}
+{"question":"4дм 4см  +  45см \u003d ?","answers":[{"value":"8","hint":"дм?"},{"value":"9","hint":"см?"}]}
+{"question":"10см  -  9см \u003d ?","answers":[{"value":"1","hint":"см?"}]}
+{"question":"2дм 8см  -  25см \u003d ?","answers":[{"value":"3","hint":"см?"}]}
+{"question":"3дм 1см  -  7см \u003d ?","answers":[{"value":"2","hint":"дм?"},{"value":"4","hint":"см?"}]}
+{"question":"35см  +  22см \u003d ?","answers":[{"value":"5","hint":"дм?"},{"value":"7","hint":"см?"}]}
+{"question":"20см  -  5см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"5","hint":"см?"}]}
+{"question":"5см  +  27см \u003d ?","answers":[{"value":"3","hint":"дм?"},{"value":"2","hint":"см?"}]}
+{"question":"7см  +  5дм \u003d ?","answers":[{"value":"57","hint":"см?"}]}
+{"question":"23см  +  5см \u003d ?","answers":[{"value":"28","hint":"см?"}]}
+{"question":"2дм  +  38см \u003d ?","answers":[{"value":"5","hint":"дм?"},{"value":"8","hint":"см?"}]}
+{"question":"17см  +  8см \u003d ?","answers":[{"value":"2","hint":"дм?"},{"value":"5","hint":"см?"}]}
+{"question":"3дм 8см  +  4дм 2см \u003d ?","answers":[{"value":"8","hint":"дм?"}]}
+{"question":"27см  +  43см \u003d ?","answers":[{"value":"7","hint":"дм?"}]}
+{"question":"16см  +  35см \u003d ?","answers":[{"value":"51","hint":"см?"}]}
+{"question":"24см  -  9см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"5","hint":"см?"}]}
+{"question":"4дм 4см  -  4дм \u003d ?","answers":[{"value":"4","hint":"см?"}]}
+{"question":"15см  -  7см \u003d ?","answers":[{"value":"8","hint":"см?"}]}
+{"question":"21см  +  2дм 3см \u003d ?","answers":[{"value":"44","hint":"см?"}]}
+{"question":"46см  -  19см \u003d ?","answers":[{"value":"27","hint":"см?"}]}
+{"question":"35см  -  26см \u003d ?","answers":[{"value":"9","hint":"см?"}]}
+{"question":"1дм 4см  +  32см \u003d ?","answers":[{"value":"4","hint":"дм?"},{"value":"6","hint":"см?"}]}
+{"question":"3дм 5см  +  33см \u003d ?","answers":[{"value":"6","hint":"дм?"},{"value":"8","hint":"см?"}]}
+{"question":"46см  -  36см \u003d ?","answers":[{"value":"10","hint":"см?"}]}
+{"question":"4дм  +  6см \u003d ?","answers":[{"value":"4","hint":"дм?"},{"value":"6","hint":"см?"}]}
+{"question":"5см  +  2дм 4см \u003d ?","answers":[{"value":"29","hint":"см?"}]}
+{"question":"38см  -  8см \u003d ?","answers":[{"value":"30","hint":"см?"}]}
+{"question":"1дм 4см  +  2дм 8см \u003d ?","answers":[{"value":"42","hint":"см?"}]}
+{"question":"2дм 5см  +  3дм 5см \u003d ?","answers":[{"value":"6","hint":"дм?"}]}
+{"question":"4дм 9см  +  19см \u003d ?","answers":[{"value":"6","hint":"дм?"},{"value":"8","hint":"см?"}]}
+{"question":"4дм 2см  +  9см \u003d ?","answers":[{"value":"5","hint":"дм?"},{"value":"1","hint":"см?"}]}
+{"question":"18см  +  1дм 6см \u003d ?","answers":[{"value":"3","hint":"дм?"},{"value":"4","hint":"см?"}]}
+{"question":"29см  +  3дм 7см \u003d ?","answers":[{"value":"6","hint":"дм?"},{"value":"6","hint":"см?"}]}
+{"question":"2дм  +  23см \u003d ?","answers":[{"value":"43","hint":"см?"}]}
+{"question":"2дм 2см  -  1дм 6см \u003d ?","answers":[{"value":"6","hint":"см?"}]}
+{"question":"3дм 2см  -  1дм 9см \u003d ?","answers":[{"value":"13","hint":"см?"}]}
+{"question":"4дм 2см  -  10см \u003d ?","answers":[{"value":"3","hint":"дм?"},{"value":"2","hint":"см?"}]}
+{"question":"4дм 8см  +  48см \u003d ?","answers":[{"value":"96","hint":"см?"}]}
+{"question":"2дм 7см  -  1дм 3см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"4","hint":"см?"}]}
+{"question":"3дм 2см  -  26см \u003d ?","answers":[{"value":"6","hint":"см?"}]}
+{"question":"31см  +  2дм 8см \u003d ?","answers":[{"value":"59","hint":"см?"}]}
+{"question":"41см  -  35см \u003d ?","answers":[{"value":"6","hint":"см?"}]}
+{"question":"28см  -  19см \u003d ?","answers":[{"value":"9","hint":"см?"}]}
+{"question":"2дм 6см  -  8см \u003d ?","answers":[{"value":"18","hint":"см?"}]}
+{"question":"4дм 5см  -  3дм 6см \u003d ?","answers":[{"value":"9","hint":"см?"}]}
+{"question":"35см  +  50см \u003d ?","answers":[{"value":"85","hint":"см?"}]}
+{"question":"3дм 2см  -  1дм 4см \u003d ?","answers":[{"value":"18","hint":"см?"}]}
+{"question":"16см  +  1дм 5см \u003d ?","answers":[{"value":"3","hint":"дм?"},{"value":"1","hint":"см?"}]}
+{"question":"50см  -  27см \u003d ?","answers":[{"value":"2","hint":"дм?"},{"value":"3","hint":"см?"}]}
+{"question":"16см  +  2дм 7см \u003d ?","answers":[{"value":"4","hint":"дм?"},{"value":"3","hint":"см?"}]}
+{"question":"3дм 8см  +  39см \u003d ?","answers":[{"value":"77","hint":"см?"}]}
+{"question":"15см  -  6см \u003d ?","answers":[{"value":"9","hint":"см?"}]}
+{"question":"15см  -  1дм 3см \u003d ?","answers":[{"value":"2","hint":"см?"}]}
+{"question":"48см  +  3дм 1см \u003d ?","answers":[{"value":"79","hint":"см?"}]}
+{"question":"2дм 1см  -  9см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"2","hint":"см?"}]}
+{"question":"3дм 9см  -  8см \u003d ?","answers":[{"value":"31","hint":"см?"}]}
+{"question":"17см  -  5см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"2","hint":"см?"}]}
+{"question":"18см  +  13см \u003d ?","answers":[{"value":"3","hint":"дм?"},{"value":"1","hint":"см?"}]}
+{"question":"1дм 6см  +  7см \u003d ?","answers":[{"value":"2","hint":"дм?"},{"value":"3","hint":"см?"}]}
+{"question":"4дм 6см  -  33см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"3","hint":"см?"}]}
+{"question":"24см  -  10см \u003d ?","answers":[{"value":"14","hint":"см?"}]}
+{"question":"4дм 5см  +  45см \u003d ?","answers":[{"value":"9","hint":"дм?"}]}
+{"question":"45см  -  1дм 2см \u003d ?","answers":[{"value":"3","hint":"дм?"},{"value":"3","hint":"см?"}]}
+{"question":"50см  -  1дм 8см \u003d ?","answers":[{"value":"3","hint":"дм?"},{"value":"2","hint":"см?"}]}
+{"question":"3дм 5см  -  1дм 5см \u003d ?","answers":[{"value":"20","hint":"см?"}]}
+{"question":"34см  +  3дм 8см \u003d ?","answers":[{"value":"72","hint":"см?"}]}
+{"question":"40см  -  3дм 5см \u003d ?","answers":[{"value":"5","hint":"см?"}]}
+{"question":"13см  +  24см \u003d ?","answers":[{"value":"37","hint":"см?"}]}
+{"question":"6см  +  19см \u003d ?","answers":[{"value":"2","hint":"дм?"},{"value":"5","hint":"см?"}]}
+{"question":"42см  +  1дм \u003d ?","answers":[{"value":"52","hint":"см?"}]}
+{"question":"29см  +  8см \u003d ?","answers":[{"value":"37","hint":"см?"}]}
+{"question":"1дм 5см  +  25см \u003d ?","answers":[{"value":"4","hint":"дм?"}]}
+{"question":"3дм 1см  -  29см \u003d ?","answers":[{"value":"2","hint":"см?"}]}
+{"question":"7см  +  4дм 1см \u003d ?","answers":[{"value":"4","hint":"дм?"},{"value":"8","hint":"см?"}]}
+{"question":"7см  +  30см \u003d ?","answers":[{"value":"37","hint":"см?"}]}
+{"question":"1дм 5см  +  5см \u003d ?","answers":[{"value":"20","hint":"см?"}]}
+{"question":"1дм 9см  +  3дм 8см \u003d ?","answers":[{"value":"57","hint":"см?"}]}
+{"question":"1дм 5см  +  2дм 4см \u003d ?","answers":[{"value":"3","hint":"дм?"},{"value":"9","hint":"см?"}]}
+{"question":"7см  +  3дм 3см \u003d ?","answers":[{"value":"40","hint":"см?"}]}
+{"question":"35см  -  1дм 2см \u003d ?","answers":[{"value":"2","hint":"дм?"},{"value":"3","hint":"см?"}]}
+{"question":"5см  +  1дм 8см \u003d ?","answers":[{"value":"23","hint":"см?"}]}
+{"question":"4дм 6см  -  21см \u003d ?","answers":[{"value":"2","hint":"дм?"},{"value":"5","hint":"см?"}]}
+{"question":"13см  -  11см \u003d ?","answers":[{"value":"2","hint":"см?"}]}
+{"question":"4дм 8см  -  34см \u003d ?","answers":[{"value":"14","hint":"см?"}]}
+{"question":"3дм 2см  -  1дм 8см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"4","hint":"см?"}]}
+{"question":"3дм 2см  +  6см \u003d ?","answers":[{"value":"38","hint":"см?"}]}
+{"question":"1дм 7см  +  50см \u003d ?","answers":[{"value":"67","hint":"см?"}]}
+{"question":"35см  +  23см \u003d ?","answers":[{"value":"5","hint":"дм?"},{"value":"8","hint":"см?"}]}
+{"question":"2дм 9см  -  14см \u003d ?","answers":[{"value":"15","hint":"см?"}]}
+{"question":"4дм 1см  -  2дм 7см \u003d ?","answers":[{"value":"1","hint":"дм?"},{"value":"4","hint":"см?"}]}
+{"question":"3дм 1см  -  2дм 5см \u003d ?","answers":[{"value":"6","hint":"см?"}]}
+{"question":"40см  -  22см \u003d ?","answers":[{"value":"18","hint":"см?"}]}
+{"question":"17см  -  16см \u003d ?","answers":[{"value":"1","hint":"см?"}]}
+{"question":"4дм 6см  -  14см \u003d ?","answers":[{"value":"32","hint":"см?"}]}
+{"question":"4дм 2см  -  19см \u003d ?","answers":[{"value":"2","hint":"дм?"},{"value":"3","hint":"см?"}]}
+{"question":"40см  -  35см \u003d ?","answers":[{"value":"5","hint":"см?"}]}
+{"question":"1дм 8см  +  42см \u003d ?","answers":[{"value":"60","hint":"см?"}]}
+{"question":"3дм 2см  -  11см \u003d ?","answers":[{"value":"2","hint":"дм?"},{"value":"1","hint":"см?"}]}
+{"question":"1дм 4см  +  31см \u003d ?","answers":[{"value":"45","hint":"см?"}]}
+{"question":"1дм 7см  +  2дм 5см \u003d ?","answers":[{"value":"4","hint":"дм?"},{"value":"2","hint":"см?"}]}
+{"question":"3дм 6см  +  33см \u003d ?","answers":[{"value":"69","hint":"см?"}]}
+{"question":"4дм 4см  -  18см \u003d ?","answers":[{"value":"2","hint":"дм?"},{"value":"6","hint":"см?"}]}
+{"question":"12см  +  2дм 7см \u003d ?","answers":[{"value":"3","hint":"дм?"},{"value":"9","hint":"см?"}]}
+{"question":"1дм 5см  +  28см \u003d ?","answers":[{"value":"4","hint":"дм?"},{"value":"3","hint":"см?"}]}
+{"question":"5дм  -  24см \u003d ?","answers":[{"value":"26","hint":"см?"}]}
+{"question":"50см  -  1дм 6см \u003d ?","answers":[{"value":"34","hint":"см?"}]}
+{"question":"39см  -  2дм 4см \u003d ?","answers":[{"value":"15","hint":"см?"}]}
+{"question":"46см  -  2дм 6см \u003d ?","answers":[{"value":"20","hint":"см?"}]}
+{"question":"5дм  +  3дм 9см \u003d ?","answers":[{"value":"8","hint":"дм?"},{"value":"9","hint":"см?"}]}
+{"question":"9см  -  8см \u003d ?","answers":[{"value":"1","hint":"см?"}]}
+{"question":"32см  +  4дм 2см \u003d ?","answers":[{"value":"74","hint":"см?"}]}
+{"question":"19см  -  1дм 1см \u003d ?","answers":[{"value":"8","hint":"см?"}]}
+{"question":"47см  -  21см \u003d ?","answers":[{"value":"2","hint":"дм?"},{"value":"6","hint":"см?"}]}
+{"question":"1дм 1см  +  2дм \u003d ?","answers":[{"value":"31","hint":"см?"}]}
+{"question":"2дм 6см  -  2дм 2см \u003d ?","answers":[{"value":"4","hint":"см?"}]}
+{"question":"27см  +  4дм 8см \u003d ?","answers":[{"value":"7","hint":"дм?"},{"value":"5","hint":"см?"}]}
+{"question":"2дм 7см  -  2дм \u003d ?","answers":[{"value":"7","hint":"см?"}]}
+{"question":"3дм 7см  -  15см \u003d ?","answers":[{"value":"2","hint":"дм?"},{"value":"2","hint":"см?"}]}
+{"question":"39см  -  2дм 5см \u003d ?","answers":[{"value":"14","hint":"см?"}]}

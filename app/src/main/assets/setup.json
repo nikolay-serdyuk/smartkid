@@ -110,6 +110,13 @@
     "grades": [2]
   },
   {
+    "title": "Сложение и вычитание см, дм, м",
+    "activity": "com.nserdyuk.smartkid.tasks.ChatActivity",
+    "examples": 1,
+    "resource": "assignments/add_sub_cm_dm_m.txt",
+    "grades": [2]
+  },
+  {
     "title": "Выражения со скобками (легкий уровень)",
     "activity": "com.nserdyuk.smartkid.tasks.ChatActivity",
     "examples": 1,
