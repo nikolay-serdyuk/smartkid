@@ -176,6 +176,13 @@
     "grades": [3, 4, 5]
   },
   {
+    "title": "Умножение в столбик",
+    "activity": "com.nserdyuk.smartkid.tasks.ChatActivity",
+    "examples": 1,
+    "resource": "assignments/short_mul.txt",
+    "grades": [3]
+  },
+  {
     "title": "Умножение двухзначных чисел",
     "activity": "com.nserdyuk.smartkid.tasks.ChatActivity",
     "examples": 3,
